@@ -13,9 +13,9 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        student.layer.cornerRadius = 30.0
-        clubLogin.layer.cornerRadius = 30.0
-        createClub.layer.cornerRadius = 300
+        student.layer.cornerRadius = 20.0
+        clubLogin.layer.cornerRadius = 20.0
+        createClub.layer.cornerRadius = 20.0
         // Do any additional setup after loading the view, typically from a nib.
     }
     @IBOutlet weak var student: UIButton!
