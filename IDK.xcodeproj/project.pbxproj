@@ -14,6 +14,7 @@
 		3F0B7BCA2005B474005BC1CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0B7BC92005B474005BC1CC /* Assets.xcassets */; };
 		3F0B7BCD2005B474005BC1CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0B7BCB2005B474005BC1CC /* LaunchScreen.storyboard */; };
 		3F2AD06C200EAA450053136F /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AD06B200EAA450053136F /* HomeTableViewController.swift */; };
+		3FC2FDBA200F00D40006D0DE /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2FDB9200F00D40006D0DE /* HomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3F0B7BCC2005B474005BC1CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F0B7BCE2005B474005BC1CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F2AD06B200EAA450053136F /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewController.swift; path = ../HomeTableViewController.swift; sourceTree = "<group>"; };
+		3FC2FDB9200F00D40006D0DE /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				3F0B7BC22005B474005BC1CC /* FirstViewController.swift */,
 				3F0B7BC42005B474005BC1CC /* SecondViewController.swift */,
 				3F2AD06B200EAA450053136F /* HomeTableViewController.swift */,
+				3FC2FDB9200F00D40006D0DE /* HomeTableViewCell.swift */,
 				3F0B7BC62005B474005BC1CC /* Main.storyboard */,
 				3F0B7BC92005B474005BC1CC /* Assets.xcassets */,
 				3F0B7BCB2005B474005BC1CC /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F2AD06C200EAA450053136F /* HomeTableViewController.swift in Sources */,
+				3FC2FDBA200F00D40006D0DE /* HomeTableViewCell.swift in Sources */,
 				3F0B7BC52005B474005BC1CC /* SecondViewController.swift in Sources */,
 				3F0B7BC12005B474005BC1CC /* AppDelegate.swift in Sources */,
 				3F0B7BC32005B474005BC1CC /* FirstViewController.swift in Sources */,

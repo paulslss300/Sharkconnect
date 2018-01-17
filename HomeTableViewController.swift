@@ -44,10 +44,10 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! HomeTableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = "temp"
+        cell.cellLabel?.text = "temp"
         cell.detailTextLabel?.text = "rgzrg"
 
         return cell
