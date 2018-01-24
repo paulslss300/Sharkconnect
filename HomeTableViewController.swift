@@ -13,11 +13,14 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     var numberOfCells: Int = 10
     
+    var postArray = [Post]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate  = self
         tableView.dataSource = self
 
+        let post1 = Post()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
