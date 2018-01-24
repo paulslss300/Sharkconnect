@@ -22,7 +22,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IDK/UserTableViewController.swift"
@@ -35,14 +35,14 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "IDK.UserTableViewController.__deallocating_deinit"
                   moduleName = "IDK"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/student/Desktop/2017-slss-2/IDK/UserTableViewController.swift"
-                  timestampString = "538347886.450302"
+                  timestampString = "538455265.548445"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -50,14 +50,14 @@
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "IDK.UserTableViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; IDK.UserTableViewController"
                   moduleName = "IDK"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/student/Desktop/2017-slss-2/IDK/UserTableViewController.swift"
-                  timestampString = "538347886.452269"
+                  timestampString = "538455265.550445"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -65,14 +65,14 @@
                   offsetFromSymbolStart = "58">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "IDK.UserTableViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; IDK.UserTableViewController"
                   moduleName = "IDK"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/student/Desktop/2017-slss-2/IDK/UserTableViewController.swift"
-                  timestampString = "538347886.453611"
+                  timestampString = "538455265.55177"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -80,14 +80,14 @@
                   offsetFromSymbolStart = "23">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "IDK.UserTableViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;IDK.UserTableViewController&gt;"
                   moduleName = "IDK"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/student/Desktop/2017-slss-2/IDK/UserTableViewController.swift"
-                  timestampString = "538347886.455003"
+                  timestampString = "538455265.553071"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -95,14 +95,14 @@
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "IDK.UserTableViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;IDK.UserTableViewController&gt;"
                   moduleName = "IDK"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/student/Desktop/2017-slss-2/IDK/UserTableViewController.swift"
-                  timestampString = "538347886.456203"
+                  timestampString = "538455265.554358"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -115,7 +115,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IDK/UserTableViewController.swift"

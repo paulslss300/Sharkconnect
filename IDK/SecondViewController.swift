@@ -15,8 +15,8 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    let loginName = "test"
-    let password = "test"
+    let loginName = "t"
+    let password = "t"
     
     override func viewDidLoad() {
         super.viewDidLoad()

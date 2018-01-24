@@ -44,7 +44,7 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UserTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! UserTableViewCell
+        let cell: UserTableViewCell = tableView.dequeueReusableCell(withIdentifier: "userReuseIdentifier", for: indexPath) as! UserTableViewCell
 
         // Configure the cell...
 
