@@ -8,11 +8,16 @@
 
 import Foundation
 
-var createPost = CreatePostViewController()
+
 
 struct Post {
-    var postTi = createPost.postTitle
-    var postDe = createPost.postDescription
+    var postTi: String
+    var postDe: String
+    
+    init(postTi: String, postDe: String) {
+        self.postTi = postTi
+        self.postDe = postDe
+    }
     
 }
 

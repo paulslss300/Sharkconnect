@@ -13,14 +13,18 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     var numberOfCells: Int = 10
     
-    var postArray = [Post]()
+    var createPost = CreatePostViewController()
+    
+    var posts = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate  = self
         tableView.dataSource = self
+        // Load the sample data.
+        loadSamplePosts()
 
-        let post1 = Post()
+        //let post1 = Post()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -36,24 +40,34 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return numberOfCells
+        return posts.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! HomeTableViewCell
+        
+        let post = posts[indexPath.row]
 
         // Configure the cell...
-        cell.cellLabel?.text = "temp"
-        cell.detailTextLabel?.text = "rgzrg"
+        cell.cellTitle?.text = post.postTi
+        cell.cellDescription?.text = post.postDe
+
 
         return cell
+    }
+    
+    //MARK: Private Methods
+    
+    private func loadSamplePosts() {
+        // error occur in the line below
+        // to fix, change the value of postTi and postDe to actual strings
+        let post1 = Post(postTi: createPost.postTitle.text!, postDe: createPost.postDescription.text!)
+        posts += [post1]
     }
     
 
