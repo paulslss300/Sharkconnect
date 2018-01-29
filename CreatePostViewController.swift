@@ -9,7 +9,14 @@
 import UIKit
 
 class CreatePostViewController: UIViewController {
-
+    
+    
+    var actualPostTitle: String = ""
+    var actualPostDescription: String = ""
+    @IBAction func createPostButton(_ sender: Any) {
+        var actualPostTitle: String = postTitle.text!
+        var actualPostDescription: String = postDescription.text!
+    }
     @IBOutlet weak var postTitle: UITextField!
     @IBOutlet weak var postDescription: UITextField!
     @IBOutlet weak var postLabel: UILabel!

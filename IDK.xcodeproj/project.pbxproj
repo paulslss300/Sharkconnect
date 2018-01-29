@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3353139D201FE20C0068EE03 /* CreatePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353139C201FE20C0068EE03 /* CreatePopUpViewController.swift */; };
 		3F0B7BC12005B474005BC1CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B7BC02005B474005BC1CC /* AppDelegate.swift */; };
 		3F0B7BC32005B474005BC1CC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B7BC22005B474005BC1CC /* FirstViewController.swift */; };
 		3F0B7BC52005B474005BC1CC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B7BC42005B474005BC1CC /* SecondViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3353139C201FE20C0068EE03 /* CreatePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePopUpViewController.swift; sourceTree = "<group>"; };
 		3F0B7BBD2005B474005BC1CC /* IDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0B7BC02005B474005BC1CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F0B7BC22005B474005BC1CC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				3F0B7BC62005B474005BC1CC /* Main.storyboard */,
 				3F0B7BC92005B474005BC1CC /* Assets.xcassets */,
 				3F0B7BCB2005B474005BC1CC /* LaunchScreen.storyboard */,
+				3353139C201FE20C0068EE03 /* CreatePopUpViewController.swift */,
 				3F0B7BCE2005B474005BC1CC /* Info.plist */,
 			);
 			path = IDK;
@@ -164,6 +167,7 @@
 				3F6D3DB120166DBC0030D95D /* UserTableViewCell.swift in Sources */,
 				3F0B7BC52005B474005BC1CC /* SecondViewController.swift in Sources */,
 				3F0B7BC12005B474005BC1CC /* AppDelegate.swift in Sources */,
+				3353139D201FE20C0068EE03 /* CreatePopUpViewController.swift in Sources */,
 				3F6D3DAF20166CA50030D95D /* UserTableViewController.swift in Sources */,
 				3F0B7BC32005B474005BC1CC /* FirstViewController.swift in Sources */,
 			);

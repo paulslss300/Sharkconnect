@@ -12,6 +12,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
     @IBOutlet weak var tableView: UITableView!
     var numberOfCells: Int = 10
+    let cellSpacing: CGFloat = 5
     
     var createPost = CreatePostViewController()
     
@@ -46,6 +47,11 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
+    
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacing
+    }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,7 +72,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     private func loadSamplePosts() {
         // error occur in the line below
         // to fix, change the value of postTi and postDe to actual strings
-        let post1 = Post(postTi: createPost.postTitle.text!, postDe: createPost.postDescription.text!)
+        let post1 = Post(postTi: createPost.actualPostTitle, postDe: createPost.actualPostDescription)
         posts += [post1]
     }
     
