@@ -12,11 +12,10 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
     @IBOutlet weak var tableView: UITableView!
     var numberOfCells: Int = 10
-    let cellSpacing: CGFloat = 5
+    
     
     //var createPost = CreatePostViewController()
     
-    var posts = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,19 +44,14 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
-    }
-    
-    // Set the spacing between sections
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return cellSpacing
+        return Post.posts.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! HomeTableViewCell
         
-        let post = posts[indexPath.row]
+        let post = Post.posts[indexPath.row]
 
         // Configure the cell...
         cell.cellTitle?.text = post.postTi

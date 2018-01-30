@@ -13,6 +13,7 @@ import Foundation
 struct Post {
     var postTi: String
     var postDe: String
+    static var posts = [Post]()
     
     init(postTi: String, postDe: String) {
         self.postTi = postTi
