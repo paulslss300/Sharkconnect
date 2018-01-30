@@ -10,12 +10,15 @@ import UIKit
 
 class CreatePostViewController: UIViewController {
     
+    var homeTableview = HomeTableViewController()
+    var actualPostTitle: String = "111"
+    var actualPostDescription: String = "222"
     
-    var actualPostTitle: String = ""
-    var actualPostDescription: String = ""
     @IBAction func createPostButton(_ sender: Any) {
         var actualPostTitle: String = postTitle.text!
         var actualPostDescription: String = postDescription.text!
+        let post1 = Post(postTi: actualPostTitle, postDe: actualPostDescription)
+        homeTableview.posts += [post1]
     }
     @IBOutlet weak var postTitle: UITextField!
     @IBOutlet weak var postDescription: UITextField!

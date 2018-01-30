@@ -14,7 +14,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     var numberOfCells: Int = 10
     let cellSpacing: CGFloat = 5
     
-    var createPost = CreatePostViewController()
+    //var createPost = CreatePostViewController()
     
     var posts = [Post]()
     
@@ -72,8 +72,8 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     private func loadSamplePosts() {
         // error occur in the line below
         // to fix, change the value of postTi and postDe to actual strings
-        let post1 = Post(postTi: createPost.actualPostTitle, postDe: createPost.actualPostDescription)
-        posts += [post1]
+        //let post1 = Post(postTi: createPost.actualPostTitle, postDe: createPost.actualPostDescription)
+        
     }
     
 
