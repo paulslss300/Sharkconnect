@@ -10,22 +10,27 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
+    var createClubClass = CreateClubViewController()
+    @IBOutlet weak var warningText: UILabel!
     
     @IBOutlet weak var loginTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
     
-    let loginName = "t"
-    let password = "t"
     
+    //if createClubClass.createdClub == true {}
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        if loginTextField.text == loginName && passwordTextField.text == password {
-            performSegue(withIdentifier: "correctLogin", sender: self)
+        //if loginTextField.text == loginName && passwordTextField.text == password {
+      //      performSegue(withIdentifier: "correctLogin", sender: self)
+      //  }
+        for (loginTextField.text!, passwordTextField.text!) in clubs {
+            print("1")
         }
     }
     override func didReceiveMemoryWarning() {
