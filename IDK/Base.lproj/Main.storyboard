@@ -165,7 +165,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="zVJ-kz-s83" kind="show" id="G5p-WS-TfD"/>
+                                    <segue destination="FPj-r1-3Ew" kind="show" id="8WM-Hn-4ej"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -178,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yy6-7j-1aL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5052" y="1579"/>
+            <point key="canvasLocation" x="5052" y="1578.2608695652175"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="hNz-n2-bh7">
@@ -699,7 +699,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NJP-DE-U0P"/>
-        <segue reference="G5p-WS-TfD"/>
         <segue reference="rZz-s7-wi4"/>
     </inferredMetricsTieBreakers>
 </document>

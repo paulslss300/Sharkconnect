@@ -13,6 +13,7 @@ struct Club {
     var ClubPa: String
     static var clubs = [String: String]()
     
+    
     init(ClubNa: String, ClubPa: String) {
         self.ClubNa = ClubNa
         self.ClubPa = ClubPa

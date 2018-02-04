@@ -10,9 +10,11 @@ import UIKit
 
 class CreateClubViewController: UIViewController {
     
+    
     var actualClubName: String = ""
     var actualClubPassword: String = ""
-    //var createdClub: Bool = false
+    var createdClub: Bool = true
+    
     
     @IBOutlet weak var ClubName: UITextField!
     @IBOutlet weak var ClubPassword: UITextField!
@@ -21,14 +23,25 @@ class CreateClubViewController: UIViewController {
         actualClubName = ClubName.text!
         actualClubPassword = ClubPassword.text!
         
-        for (findLTextFieldValue, findPTextFieldValue) in Club.clubs {
-            if actualClubName != findLTextFieldValue {
-                Club.clubs[actualClubName] = actualClubPassword
+        if actualClubName.isEmpty {
+            createdClub = false
+        } else {
+            createdClub = true
+        }
+        
+        // this is to populate the dictionary
+        //without this, the for loop below won't work
+        Club.clubs["TEST"] = "TEST"
+        for (findLTextFieldValue, _) in Club.clubs {
+            if actualClubName != findLTextFieldValue && createdClub {
+               Club.clubs[actualClubName] = actualClubPassword
             }
         }
+    }
 
         //createdClub = true
-    }
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
