@@ -20,7 +20,13 @@ class CreateClubViewController: UIViewController {
     @IBAction func CreateClubButton(_ sender: Any) {
         actualClubName = ClubName.text!
         actualClubPassword = ClubPassword.text!
-        Club.clubs[actualClubName] = actualClubPassword
+        
+        for (findLTextFieldValue, findPTextFieldValue) in Club.clubs {
+            if actualClubName != findLTextFieldValue {
+                Club.clubs[actualClubName] = actualClubPassword
+            }
+        }
+
         //createdClub = true
     }
 

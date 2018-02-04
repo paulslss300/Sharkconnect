@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -291,7 +291,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AVS-1E-u0N">
-                                <rect key="frame" x="9" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YbH-pN-Oay">
@@ -370,14 +370,6 @@
                                             <segue destination="9pv-A4-QxB" kind="show" id="zqW-Kg-5s5"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPu-CK-qGK">
-                                        <rect key="frame" x="0.0" y="27" width="360" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="1" blue="0.080762223663329191" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <gestureRecognizers/>
                             </view>
@@ -391,9 +383,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="loginTextField" destination="ISJ-ZJ-bCf" id="hzp-P9-62E"/>
-                        <outlet property="passwordTextField" destination="mhy-Ur-beb" id="tgK-o4-gSK"/>
-                        <outlet property="warningText" destination="OPu-CK-qGK" id="MCL-8U-G9m"/>
+                        <outlet property="LoginTextField" destination="ISJ-ZJ-bCf" id="24N-8J-8pf"/>
+                        <outlet property="loginPassword" destination="mhy-Ur-beb" id="Yfj-aN-EPi"/>
                         <segue destination="FPj-r1-3Ew" kind="show" identifier="correctLogin" id="NJP-DE-U0P"/>
                     </connections>
                 </viewController>
@@ -707,8 +698,8 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rZz-s7-wi4"/>
         <segue reference="NJP-DE-U0P"/>
         <segue reference="G5p-WS-TfD"/>
+        <segue reference="rZz-s7-wi4"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,10 +11,12 @@ import UIKit
 class SecondViewController: UIViewController {
     
     var createClubClass = CreateClubViewController()
-    @IBOutlet weak var warningText: UILabel!
-    
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+
+    @IBOutlet weak var LoginTextField: UITextField!
+    @IBOutlet weak var loginPassword: UITextField!
+
+    var loginTextFieldText: String = ""
+    var passwordTextFieldText: String = ""
     
     
     //if createClubClass.createdClub == true {}
@@ -26,11 +28,17 @@ class SecondViewController: UIViewController {
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        loginTextFieldText = LoginTextField.text!
+        passwordTextFieldText = loginPassword.text!
+        
+        
         //if loginTextField.text == loginName && passwordTextField.text == password {
       //      performSegue(withIdentifier: "correctLogin", sender: self)
       //  }
-        for (loginTextField.text!, passwordTextField.text!) in clubs {
-            print("1")
+        for (loginTextFieldValue, passwordTextFieldValue) in Club.clubs {
+            if loginTextFieldText == loginTextFieldValue && passwordTextFieldText == passwordTextFieldValue {
+                performSegue(withIdentifier: "correctLogin", sender: self)
+            }
         }
     }
     override func didReceiveMemoryWarning() {
@@ -40,4 +48,5 @@ class SecondViewController: UIViewController {
 
 
 }
+
 
