@@ -18,6 +18,7 @@ class SecondViewController: UIViewController {
 
     var loginTextFieldText: String = ""
     var passwordTextFieldText: String = ""
+    var clubIdentifier: String = ""
     
     
     //if createClubClass.createdClub == true {}
@@ -34,6 +35,7 @@ class SecondViewController: UIViewController {
         
         for (loginTextFieldValue, passwordTextFieldValue) in Club.clubs {
             if loginTextFieldText == loginTextFieldValue && passwordTextFieldText == passwordTextFieldValue {
+                clubIdentifier = loginTextFieldValue
                 performSegue(withIdentifier: "correctLogin", sender: self)
             }
         }

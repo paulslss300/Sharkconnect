@@ -55,7 +55,7 @@
                                         <rect key="frame" x="0.0" y="138" width="240" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="LOGIN">
+                                        <state key="normal" title="CREATE CLUB">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.51203981160000001" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -500,7 +500,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06x-yy-QhG">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZ8-3F-YGD">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -515,7 +515,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TLV-zY-gWj">
-                                        <rect key="frame" x="0.0" y="114" width="375" height="484"/>
+                                        <rect key="frame" x="0.0" y="114" width="375" height="533"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableView>
                                 </subviews>
@@ -689,7 +689,7 @@
                                         <rect key="frame" x="0.0" y="138" width="240" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="LOGIN">
+                                        <state key="normal" title="CREATE ACCOUNT">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.51203981160000001" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -742,7 +742,7 @@
         <!--Club Login-->
         <scene sceneID="kt2-B5-vmO">
             <objects>
-                <viewController id="4gB-yS-MLt" userLabel="Club Login" customClass="SecondViewController" customModule="IDK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4gB-yS-MLt" userLabel="Club Login" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tpC-cu-Ypj"/>
                         <viewControllerLayoutGuide type="bottom" id="9hm-P2-2w3"/>
