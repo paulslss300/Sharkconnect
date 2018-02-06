@@ -22,6 +22,8 @@
 		3F6D3DAF20166CA50030D95D /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D3DAE20166CA50030D95D /* UserTableViewController.swift */; };
 		3F6D3DB120166DBC0030D95D /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D3DB020166DBC0030D95D /* UserTableViewCell.swift */; };
 		3FC2FDBA200F00D40006D0DE /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2FDB9200F00D40006D0DE /* HomeTableViewCell.swift */; };
+		3FCF3C172029226F00ED4F77 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF3C162029226F00ED4F77 /* Student.swift */; };
+		3FCF3C1920292A2200ED4F77 /* CreateStudentAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF3C1820292A2200ED4F77 /* CreateStudentAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		3F6D3DAE20166CA50030D95D /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		3F6D3DB020166DBC0030D95D /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTableViewCell.swift; path = ../UserTableViewCell.swift; sourceTree = "<group>"; };
 		3FC2FDB9200F00D40006D0DE /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		3FCF3C162029226F00ED4F77 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Student.swift; path = ../Student.swift; sourceTree = "<group>"; };
+		3FCF3C1820292A2200ED4F77 /* CreateStudentAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateStudentAccountViewController.swift; path = ../CreateStudentAccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 			children = (
 				3F1CC9D52018409C007F0F89 /* Post.swift */,
 				3F634577202292430089F29F /* Club.swift */,
+				3FCF3C162029226F00ED4F77 /* Student.swift */,
+				3FCF3C1820292A2200ED4F77 /* CreateStudentAccountViewController.swift */,
 				3F1CC9D1201837B0007F0F89 /* CreatePostViewController.swift */,
 				3F634579202293490089F29F /* CreateClubViewController.swift */,
 				3F6D3DB020166DBC0030D95D /* UserTableViewCell.swift */,
@@ -173,7 +179,9 @@
 				3FC2FDBA200F00D40006D0DE /* HomeTableViewCell.swift in Sources */,
 				3F1CC9D2201837B0007F0F89 /* CreatePostViewController.swift in Sources */,
 				3F6D3DB120166DBC0030D95D /* UserTableViewCell.swift in Sources */,
+				3FCF3C1920292A2200ED4F77 /* CreateStudentAccountViewController.swift in Sources */,
 				3F63457A202293490089F29F /* CreateClubViewController.swift in Sources */,
+				3FCF3C172029226F00ED4F77 /* Student.swift in Sources */,
 				3F0B7BC52005B474005BC1CC /* SecondViewController.swift in Sources */,
 				3F0B7BC12005B474005BC1CC /* AppDelegate.swift in Sources */,
 				3353139D201FE20C0068EE03 /* CreatePopUpViewController.swift in Sources */,
@@ -320,7 +328,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "No-Clue.IDK";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -333,7 +341,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "No-Clue.IDK";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

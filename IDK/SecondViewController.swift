@@ -14,6 +14,7 @@ class SecondViewController: UIViewController {
 
     @IBOutlet weak var LoginTextField: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
+    
 
     var loginTextFieldText: String = ""
     var passwordTextFieldText: String = ""
@@ -31,10 +32,6 @@ class SecondViewController: UIViewController {
         loginTextFieldText = LoginTextField.text!
         passwordTextFieldText = loginPassword.text!
         
-        
-        //if loginTextField.text == loginName && passwordTextField.text == password {
-      //      performSegue(withIdentifier: "correctLogin", sender: self)
-      //  }
         for (loginTextFieldValue, passwordTextFieldValue) in Club.clubs {
             if loginTextFieldText == loginTextFieldValue && passwordTextFieldText == passwordTextFieldValue {
                 performSegue(withIdentifier: "correctLogin", sender: self)

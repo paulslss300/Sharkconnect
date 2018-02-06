@@ -13,11 +13,13 @@ import Foundation
 struct Post {
     var postTi: String
     var postDe: String
+    var clubIdentifier: String
     static var posts = [Post]()
     
-    init(postTi: String, postDe: String) {
+    init(postTi: String, postDe: String, clubIdentifier: String) {
         self.postTi = postTi
         self.postDe = postDe
+        self.clubIdentifier = clubIdentifier
     }
     
 }

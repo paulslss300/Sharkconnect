@@ -21,8 +21,6 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         super.viewDidLoad()
         tableView.delegate  = self
         tableView.dataSource = self
-        // Load the sample data.
-        loadSamplePosts()
 
         //let post1 = Post()
         // Uncomment the following line to preserve selection between presentations
@@ -59,15 +57,6 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
 
         return cell
-    }
-    
-    //MARK: Private Methods
-    
-    private func loadSamplePosts() {
-        // error occur in the line below
-        // to fix, change the value of postTi and postDe to actual strings
-        //let post1 = Post(postTi: createPost.actualPostTitle, postDe: createPost.actualPostDescription)
-        
     }
     
 

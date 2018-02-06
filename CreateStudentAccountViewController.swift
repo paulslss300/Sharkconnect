@@ -1,47 +1,45 @@
 //
-//  CreateClubViewController.swift
+//  CreateStudentAccountViewController.swift
 //  IDK
 //
-//  Created by Student on 2018-01-31.
+//  Created by Student on 2018-02-05.
 //  Copyright © 2018 No Clue. All rights reserved.
 //
 
 import UIKit
 
-class CreateClubViewController: UIViewController {
+class CreateStudentAccountViewController: UIViewController {
     
     
-    var actualClubName: String = ""
-    var actualClubPassword: String = ""
-    var createdClub: Bool = true
+    var actualStudentName: String = ""
+    var actualStudentPassword: String = ""
+    var createdStudent: Bool = false
     
-    
-    @IBOutlet weak var ClubName: UITextField!
-    @IBOutlet weak var ClubPassword: UITextField!
+    @IBOutlet weak var StudentName: UITextField!
+    @IBOutlet weak var StudentPassword: UITextField!
     
     @IBAction func CreateClubButton(_ sender: Any) {
-        actualClubName = ClubName.text!
-        actualClubPassword = ClubPassword.text!
+        actualStudentName = StudentName.text!
+        actualStudentPassword = StudentPassword.text!
         
-        if actualClubName.isEmpty || actualClubPassword.isEmpty {
-            createdClub = false
+        if actualStudentName.isEmpty || actualStudentPassword.isEmpty {
+            createdStudent = false
         } else {
-            createdClub = true
+            createdStudent = true
         }
         
         // this is to populate the dictionary
         //without this, the for loop below won't work
-        Club.clubs["TEST"] = "TEST"
-        for (findLTextFieldValue, _) in Club.clubs {
-            if actualClubName != findLTextFieldValue && createdClub {
-               Club.clubs[actualClubName] = actualClubPassword
+        Student.students["TEST"] = "TEST"
+        for (findLTextFieldValue, _) in Student.students {
+            if actualStudentName != findLTextFieldValue && createdStudent {
+                Student.students[actualStudentName] = actualStudentPassword
             }
         }
     }
 
-        //createdClub = true
     
-
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
