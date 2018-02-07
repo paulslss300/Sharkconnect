@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+struct ClubCell {
+    var ClubCellTi: String
+    static var clubcells = [ClubCell]()
+    
+    init(ClubCellTi: String) {
+        self.ClubCellTi = ClubCellTi
+    }
+    
+}
+
