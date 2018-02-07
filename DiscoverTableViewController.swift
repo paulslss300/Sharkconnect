@@ -46,6 +46,7 @@ class DiscoverTableViewController: UIViewController, UITableViewDataSource, UITa
         
         // Configure the cell...
         cell.clubCellLabel?.text = clubcell.ClubCellTi
+        cell.clubCellImage.image = clubcell.ClubCellImageName
 
         return cell
     }

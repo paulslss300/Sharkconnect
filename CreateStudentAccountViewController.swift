@@ -14,31 +14,43 @@ class CreateStudentAccountViewController: UIViewController {
     var actualStudentName: String = ""
     var actualStudentPassword: String = ""
     var createdStudent: Bool = false
+    var checkStudentName: Bool = false
     
     @IBOutlet weak var createdStudentLabel: UILabel!
     @IBOutlet weak var StudentName: UITextField!
     @IBOutlet weak var StudentPassword: UITextField!
+    
     @IBAction func CreateStudentButton(_ sender: Any) {
         actualStudentName = StudentName.text!
         actualStudentPassword = StudentPassword.text!
         
-        if actualStudentName.isEmpty || actualStudentPassword.isEmpty {
+        // this is to populate the dictionary
+        //without this, feature won't work
+        Student.students["THIS IS A MAJOR SECURITY LOOP HOLE!"] = "THIS IS A MAJOR SECURITY LOOP HOLE!"
+        
+        // check 1
+        for (findLTextFieldValue, _) in Student.students {
+            if actualStudentName != findLTextFieldValue {
+                checkStudentName = false
+            } else {
+                checkStudentName = true
+            }
+        }
+        
+        //check 2
+        if (actualStudentName.isEmpty || actualStudentPassword.isEmpty) && checkStudentName {
             createdStudent = false
         } else {
             createdStudent = true
         }
         
-        // this is to populate the dictionary
-        //without this, the for loop below won't work
-        Student.students["THIS IS A MAJOR SECURITY LOOP HOLE!"] = "THIS IS A MAJOR SECURITY LOOP HOLE!"
-        for (findLTextFieldValue, _) in Student.students {
-            if actualStudentName != findLTextFieldValue && createdStudent {
-                Student.students[actualStudentName] = actualStudentPassword
-                createdStudentLabel.text! = "Account Created!"
-            } else {
-                createdStudentLabel.text! = "Please Change a User Name or Password!"
-            }
-    }
+        //create club
+        if createdStudent {
+            Student.students[actualStudentName] = actualStudentPassword
+            createdStudentLabel.text! = "Account Created!"
+        } else {
+            createdStudentLabel.text! = "Please Change a User Name or Password!"
+        }
     
     
     }
