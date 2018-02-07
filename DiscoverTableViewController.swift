@@ -16,10 +16,12 @@ class DiscoverTableViewController: UIViewController, UITableViewDataSource, UITa
         super.viewDidLoad()
         discoverTableView.delegate  = self
         discoverTableView.dataSource = self
+        
+        // Load the sample data.
+        loadSampleClubs()
     }
     
-    // Load the sample data.
-    loadSampleClubs()
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,9 +42,12 @@ class DiscoverTableViewController: UIViewController, UITableViewDataSource, UITa
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell: DiscoverTableViewCell = tableView.dequeueReusableCell(withIdentifier: "discoveryReuseIdentifier", for: indexPath) as! DiscoverTableViewCell
 
+        let clubcell = ClubCell.clubcells[indexPath.row]
+        
         // Configure the cell...
+        cell.clubCellLabel?.text = clubcell.ClubCellTi
 
         return cell
     }
@@ -116,5 +121,4 @@ class DiscoverTableViewController: UIViewController, UITableViewDataSource, UITa
     }
     */
 
-}
 }
