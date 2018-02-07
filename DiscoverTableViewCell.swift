@@ -12,6 +12,7 @@ class DiscoverTableViewCell: UITableViewCell {
 
     @IBOutlet weak var clubCellLabel: UILabel!
     
+    @IBOutlet weak var clubCellImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -6,14 +6,16 @@
 //  Copyright © 2018 No Clue. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct ClubCell {
     var ClubCellTi: String
+    var ClubCellImageName: UIImage? = nil
     static var clubcells = [ClubCell]()
     
-    init(ClubCellTi: String) {
+    init(ClubCellTi: String, ClubCellImageName: UIImage) {
         self.ClubCellTi = ClubCellTi
+        self.ClubCellImageName = ClubCellImageName
     }
     
 }

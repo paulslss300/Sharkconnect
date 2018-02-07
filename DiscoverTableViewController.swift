@@ -21,8 +21,6 @@ class DiscoverTableViewController: UIViewController, UITableViewDataSource, UITa
         loadSampleClubs()
     }
     
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -55,23 +53,30 @@ class DiscoverTableViewController: UIViewController, UITableViewDataSource, UITa
     
     private func loadSampleClubs() {
         
+        let photo1 = UIImage(named: "dramaclub")
+        let photo2 = UIImage(named: "interactclub")
+        let photo3 = UIImage(named: "studentcouncil")
+        let photo4 = UIImage(named: "artclub")
+        let photo5 = UIImage(named: "stemclub")
+        let photo6 = UIImage(named: "mathclub")
+        
         // Populate Clubs
-        let clubcell1 = ClubCell(ClubCellTi: "Drama Club")
+        let clubcell1 = ClubCell(ClubCellTi: "Drama Club", ClubCellImageName: photo1!)
         ClubCell.clubcells += [clubcell1]
         
-        let clubcell2 = ClubCell(ClubCellTi: "Interact Club")
+        let clubcell2 = ClubCell(ClubCellTi: "Interact Club", ClubCellImageName: photo2!)
         ClubCell.clubcells += [clubcell2]
         
-        let clubcell3 = ClubCell(ClubCellTi: "Student Council")
+        let clubcell3 = ClubCell(ClubCellTi: "Student Council", ClubCellImageName: photo3!)
         ClubCell.clubcells += [clubcell3]
         
-        let clubcell4 = ClubCell(ClubCellTi: "Art Club")
+        let clubcell4 = ClubCell(ClubCellTi: "Art Club", ClubCellImageName: photo4!)
         ClubCell.clubcells += [clubcell4]
         
-        let clubcell5 = ClubCell(ClubCellTi: "STEM Club")
+        let clubcell5 = ClubCell(ClubCellTi: "STEM Club", ClubCellImageName: photo5!)
         ClubCell.clubcells += [clubcell5]
         
-        let clubcell6 = ClubCell(ClubCellTi: "Math Club")
+        let clubcell6 = ClubCell(ClubCellTi: "Math Club", ClubCellImageName: photo6!)
         ClubCell.clubcells += [clubcell6]
     }
     
