@@ -20,3 +20,5 @@ struct Club {
     }
     
 }
+
+var clubId: String = ""

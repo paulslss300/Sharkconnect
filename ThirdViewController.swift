@@ -9,6 +9,29 @@
 import UIKit
 
 class ThirdViewController: UIViewController {
+    
+    @IBOutlet weak var loginUserName: UITextField!
+    @IBOutlet weak var loginPassword: UITextField!
+    @IBOutlet weak var studentLoginLabel: UILabel!
+    
+    var loginTextFieldText: String = ""
+    var passwordTextFieldText: String = ""
+    
+    
+    @IBAction func loginButtonTapped(_ sender: Any) {
+
+        loginTextFieldText = loginUserName.text!
+        passwordTextFieldText = loginPassword.text!
+        
+        for (loginTextFieldValue, passwordTextFieldValue) in Student.students {
+            if loginTextFieldText == loginTextFieldValue && passwordTextFieldText == passwordTextFieldValue {
+                performSegue(withIdentifier: "studentCorrectLogin", sender: self)
+            } else {
+                studentLoginLabel.text! = "Please Check Your Inputs Are Correct!"
+            }
+        }
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

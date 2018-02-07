@@ -12,12 +12,12 @@ class CreatePostViewController: UIViewController {
     
     var actualPostTitle: String = ""
     var actualPostDescription: String = ""
-    var secondViewController = SecondViewController()
     
     @IBAction func createPostButton(_ sender: Any) {
         actualPostTitle = postTitle.text!
         actualPostDescription = postDescription.text!
-        let post1 = Post(postTi: actualPostTitle, postDe: actualPostDescription, clubIdentifier: secondViewController.clubIdentifier)
+        
+        let post1 = Post(postTi: actualPostTitle, postDe: actualPostDescription, clubIdentifier: clubId)
         Post.posts += [post1]
     }
     @IBOutlet weak var postTitle: UITextField!

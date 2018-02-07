@@ -13,16 +13,15 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        student.layer.cornerRadius = 20.0
-        clubLogin.layer.cornerRadius = 20.0
-        createClub.layer.cornerRadius = 20.0
+        
+        studentLogin.layer.cornerRadius = 10.0
+        clubLogin.layer.cornerRadius = 10.0
         // Do any additional setup after loading the view, typically from a nib.
     }
-    @IBOutlet weak var student: UIButton!
 
     @IBOutlet weak var clubLogin: UIButton!
+    @IBOutlet weak var studentLogin: UIButton!
     
-    @IBOutlet weak var createClub: UIButton!
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

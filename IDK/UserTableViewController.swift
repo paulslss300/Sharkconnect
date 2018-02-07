@@ -12,6 +12,12 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
     var numberOfCells: Int = 10
     
+    // IMPORTANT FEATURE ----- LOG OUT BUTTON
+    @IBAction func logOutButton(_ sender: Any) {
+        clubId = ""
+    }
+    
+    
     @IBOutlet weak var userTableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

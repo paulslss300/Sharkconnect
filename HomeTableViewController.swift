@@ -11,9 +11,7 @@ import UIKit
 class HomeTableViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    var numberOfCells: Int = 10
-    
-    
+
     //var createPost = CreatePostViewController()
     
     

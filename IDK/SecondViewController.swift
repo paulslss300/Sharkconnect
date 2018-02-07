@@ -10,17 +10,16 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    var createClubClass = CreateClubViewController()
+    
 
     @IBOutlet weak var LoginTextField: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
+    @IBOutlet weak var clubLoginLabel: UILabel!
     
-
     var loginTextFieldText: String = ""
     var passwordTextFieldText: String = ""
-    var clubIdentifier: String = ""
     
-    
+    //var createClubClass = CreateClubViewController()
     //if createClubClass.createdClub == true {}
     
 
@@ -35,8 +34,10 @@ class SecondViewController: UIViewController {
         
         for (loginTextFieldValue, passwordTextFieldValue) in Club.clubs {
             if loginTextFieldText == loginTextFieldValue && passwordTextFieldText == passwordTextFieldValue {
-                clubIdentifier = loginTextFieldValue
+                clubId = loginTextFieldValue
                 performSegue(withIdentifier: "correctLogin", sender: self)
+            } else {
+                clubLoginLabel.text! = "Please Check Your Inputs Are Correct!"
             }
         }
     }

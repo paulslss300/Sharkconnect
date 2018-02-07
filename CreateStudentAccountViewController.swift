@@ -15,10 +15,10 @@ class CreateStudentAccountViewController: UIViewController {
     var actualStudentPassword: String = ""
     var createdStudent: Bool = false
     
+    @IBOutlet weak var createdStudentLabel: UILabel!
     @IBOutlet weak var StudentName: UITextField!
     @IBOutlet weak var StudentPassword: UITextField!
-    
-    @IBAction func CreateClubButton(_ sender: Any) {
+    @IBAction func CreateStudentButton(_ sender: Any) {
         actualStudentName = StudentName.text!
         actualStudentPassword = StudentPassword.text!
         
@@ -30,12 +30,17 @@ class CreateStudentAccountViewController: UIViewController {
         
         // this is to populate the dictionary
         //without this, the for loop below won't work
-        Student.students["TEST"] = "TEST"
+        Student.students["THIS IS A MAJOR SECURITY LOOP HOLE!"] = "THIS IS A MAJOR SECURITY LOOP HOLE!"
         for (findLTextFieldValue, _) in Student.students {
             if actualStudentName != findLTextFieldValue && createdStudent {
                 Student.students[actualStudentName] = actualStudentPassword
+                createdStudentLabel.text! = "Account Created!"
+            } else {
+                createdStudentLabel.text! = "Please Change a User Name or Password!"
             }
-        }
+    }
+    
+    
     }
 
     

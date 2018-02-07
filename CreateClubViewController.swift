@@ -18,6 +18,7 @@ class CreateClubViewController: UIViewController {
     
     @IBOutlet weak var ClubName: UITextField!
     @IBOutlet weak var ClubPassword: UITextField!
+    @IBOutlet weak var createdClubLabel: UILabel!
     
     @IBAction func CreateClubButton(_ sender: Any) {
         actualClubName = ClubName.text!
@@ -31,10 +32,13 @@ class CreateClubViewController: UIViewController {
         
         // this is to populate the dictionary
         //without this, the for loop below won't work
-        Club.clubs["TEST"] = "TEST"
+        Club.clubs["THIS IS A MAJOR SECURITY LOOP HOLE!"] = "THIS IS A MAJOR SECURITY LOOP HOLE!"
         for (findLTextFieldValue, _) in Club.clubs {
             if actualClubName != findLTextFieldValue && createdClub {
                Club.clubs[actualClubName] = actualClubPassword
+                createdClubLabel.text! = "Club Created!"
+            } else {
+                createdClubLabel.text! = "Please change Club Name or Password!"
             }
         }
     }
