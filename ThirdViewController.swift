@@ -16,6 +16,7 @@ class ThirdViewController: UIViewController {
     
     var loginTextFieldText: String = ""
     var passwordTextFieldText: String = ""
+    var loginSuccessful: Bool = false
     
     
     @IBAction func loginButtonTapped(_ sender: Any) {
@@ -25,11 +26,18 @@ class ThirdViewController: UIViewController {
         
         for (loginTextFieldValue, passwordTextFieldValue) in Student.students {
             if loginTextFieldText == loginTextFieldValue && passwordTextFieldText == passwordTextFieldValue {
-                performSegue(withIdentifier: "studentCorrectLogin", sender: self)
+                loginSuccessful = true
             } else {
-                studentLoginLabel.text! = "Please Check Your Inputs Are Correct!"
+                loginSuccessful = false
             }
         }
+        
+        if loginSuccessful {
+            performSegue(withIdentifier: "studentCorrectLogin", sender: self)
+        } else {
+            studentLoginLabel.text! = "Please Check Your Inputs Are Correct!"
+        }
+
     }
 
 

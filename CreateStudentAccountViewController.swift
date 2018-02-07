@@ -26,32 +26,31 @@ class CreateStudentAccountViewController: UIViewController {
         
         // this is to populate the dictionary
         //without this, feature won't work
-        Student.students["THIS IS A MAJOR SECURITY LOOP HOLE!"] = "THIS IS A MAJOR SECURITY LOOP HOLE!"
+        Student.students["this is supposed to be a very long string"] = "this is supposed to be a very long string"
         
         // check 1
         for (findLTextFieldValue, _) in Student.students {
             if actualStudentName != findLTextFieldValue {
-                checkStudentName = false
-            } else {
                 checkStudentName = true
+            } else if actualStudentName == findLTextFieldValue {
+                checkStudentName = false
             }
         }
         
         //check 2
-        if (actualStudentName.isEmpty || actualStudentPassword.isEmpty) && checkStudentName {
-            createdStudent = false
-        } else {
+        if !(actualStudentName.isEmpty || actualStudentPassword.isEmpty) && checkStudentName {
             createdStudent = true
+        } else if actualStudentName.isEmpty || actualStudentPassword.isEmpty || !checkStudentName {
+            createdStudent = false
         }
         
-        //create club
+        //create student account
         if createdStudent {
             Student.students[actualStudentName] = actualStudentPassword
             createdStudentLabel.text! = "Account Created!"
         } else {
             createdStudentLabel.text! = "Please Change a User Name or Password!"
         }
-    
     
     }
 
