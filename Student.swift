@@ -11,7 +11,7 @@ import Foundation
 struct Student {
     var StudentNa: String
     var StudentPa: String
-    static var students = [String: String]()
+    static var students = [Student]()
     
     
     init(StudentNa: String, StudentPa: String) {

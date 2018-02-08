@@ -551,7 +551,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06x-yy-QhG">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZ8-3F-YGD">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -575,7 +575,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TLV-zY-gWj">
-                                        <rect key="frame" x="0.0" y="114" width="375" height="484"/>
+                                        <rect key="frame" x="0.0" y="114" width="375" height="533"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="discoveryReuseIdentifier" rowHeight="68" id="gcf-1S-Fga" customClass="DiscoverTableViewCell" customModule="IDK" customModuleProvider="target">
@@ -982,9 +982,9 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NJP-DE-U0P"/>
-        <segue reference="6m8-vh-SW8"/>
-        <segue reference="Rwv-9S-APn"/>
-        <segue reference="AjU-YC-aKN"/>
+        <segue reference="fsC-Wt-ep3"/>
+        <segue reference="yOk-uO-gMH"/>
+        <segue reference="AIM-Nz-Izg"/>
+        <segue reference="fjd-ft-vaC"/>
     </inferredMetricsTieBreakers>
 </document>

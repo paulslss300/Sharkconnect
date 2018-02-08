@@ -24,8 +24,8 @@ class ThirdViewController: UIViewController {
         loginTextFieldText = loginUserName.text!
         passwordTextFieldText = loginPassword.text!
         
-        for (loginTextFieldValue, passwordTextFieldValue) in Student.students {
-            if loginTextFieldText == loginTextFieldValue && passwordTextFieldText == passwordTextFieldValue {
+        for studentAccount in Student.students {
+            if loginTextFieldText == studentAccount.StudentNa && passwordTextFieldText == studentAccount.StudentPa {
                 loginSuccessful = true
             } else {
                 loginSuccessful = false

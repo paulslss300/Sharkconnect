@@ -24,19 +24,15 @@ class CreateStudentAccountViewController: UIViewController {
         actualStudentName = StudentName.text!
         actualStudentPassword = StudentPassword.text!
         
-        // this is to populate the dictionary
-        //without this, feature won't work
-        Student.students["this is supposed to be a very long string"] = "this is supposed to be a very long string"
-        
         // check 1
-        for (findLTextFieldValue, _) in Student.students {
-            if actualStudentName != findLTextFieldValue {
+        for student in Student.students {
+            if actualStudentName != student.StudentNa {
                 checkStudentName = true
-            } else if actualStudentName == findLTextFieldValue {
+            } else {
                 checkStudentName = false
             }
         }
-        
+
         //check 2
         if !(actualStudentName.isEmpty || actualStudentPassword.isEmpty) && checkStudentName {
             createdStudent = true
@@ -46,7 +42,8 @@ class CreateStudentAccountViewController: UIViewController {
         
         //create student account
         if createdStudent {
-            Student.students[actualStudentName] = actualStudentPassword
+            let newStudent = Student.init(StudentNa: actualStudentName, StudentPa: actualStudentPassword)
+            Student.students += [newStudent]
             createdStudentLabel.text! = "Account Created!"
         } else {
             createdStudentLabel.text! = "Please Change a User Name or Password!"
@@ -54,13 +51,10 @@ class CreateStudentAccountViewController: UIViewController {
     
     }
 
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
