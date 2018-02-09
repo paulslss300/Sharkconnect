@@ -16,10 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // this is to populate the dictionary
+        // this is to populate the student array
         //without this, feature won't work
         let firstStudent = Student.init(StudentNa: "Bob", StudentPa: "123")
         Student.students += [firstStudent]
+        
+        // this is to populate the club array
+        //without this, feature won't work
+        let firstClub = Club.init(ClubNa: "firstClub", ClubPa: "456")
+        Club.clubs += [firstClub]
         
         // Override point for customization after application launch.
         // Load the sample data.

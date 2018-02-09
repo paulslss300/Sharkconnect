@@ -11,7 +11,7 @@ import Foundation
 struct Club {
     var ClubNa: String
     var ClubPa: String
-    static var clubs = [String: String]()
+    static var clubs = [Club]()
     
     
     init(ClubNa: String, ClubPa: String) {

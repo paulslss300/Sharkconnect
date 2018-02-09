@@ -13,7 +13,8 @@ class CreateClubViewController: UIViewController {
     
     var actualClubName: String = ""
     var actualClubPassword: String = ""
-    var createdClub: Bool = true
+    var createdClub: Bool = false
+    var checkClubName: Bool = false
     
     
     @IBOutlet weak var ClubName: UITextField!
@@ -30,21 +31,33 @@ class CreateClubViewController: UIViewController {
             createdClub = true
         }
         
-        // this is to populate the dictionary
-        //without this, the for loop below won't work
-        Club.clubs["THIS IS A MAJOR SECURITY LOOP HOLE!"] = "THIS IS A MAJOR SECURITY LOOP HOLE!"
-        for (findLTextFieldValue, _) in Club.clubs {
-            if actualClubName != findLTextFieldValue && createdClub {
-               Club.clubs[actualClubName] = actualClubPassword
-                createdClubLabel.text! = "Club Created!"
+        
+        // check 1
+        for club in Club.clubs {
+            if actualClubName != club.ClubNa {
+                checkClubName = true
             } else {
-                createdClubLabel.text! = "Please change Club Name or Password!"
+                checkClubName = false
             }
         }
-    }
+        
+        //check 2
+        if !(actualClubName.isEmpty || actualClubPassword.isEmpty) && checkClubName {
+            createdClub = true
+        } else if actualClubName.isEmpty || actualClubPassword.isEmpty || !checkClubName {
+            createdClub = false
+        }
 
-        //createdClub = true
-    
+        
+        //create new club
+        if createdClub {
+            let newClub = Club.init(ClubNa: actualClubName, ClubPa: actualClubPassword)
+            Club.clubs += [newClub]
+            createdClubLabel.text! = "Account Created!"
+        } else {
+            createdClubLabel.text! = "Please Change a User Name or Password!"
+        }
+    }
 
 
     override func viewDidLoad() {

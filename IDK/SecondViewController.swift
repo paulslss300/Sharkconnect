@@ -18,10 +18,7 @@ class SecondViewController: UIViewController {
     
     var loginTextFieldText: String = ""
     var passwordTextFieldText: String = ""
-    
-    //var createClubClass = CreateClubViewController()
-    //if createClubClass.createdClub == true {}
-    
+    var clubLoginSuccessful: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +29,26 @@ class SecondViewController: UIViewController {
         loginTextFieldText = LoginTextField.text!
         passwordTextFieldText = loginPassword.text!
         
-        for (loginTextFieldValue, passwordTextFieldValue) in Club.clubs {
-            if loginTextFieldText == loginTextFieldValue && passwordTextFieldText == passwordTextFieldValue {
-                clubId = loginTextFieldValue
-                performSegue(withIdentifier: "correctLogin", sender: self)
+        for clubAccount in Club.clubs {
+            if loginTextFieldText == clubAccount.ClubNa && passwordTextFieldText == clubAccount.ClubPa {
+                clubLoginSuccessful = true
             } else {
-                clubLoginLabel.text! = "Please Check Your Inputs Are Correct!"
+                clubLoginSuccessful = false
             }
         }
+
+
+        if clubLoginSuccessful {
+            performSegue(withIdentifier: "correctLogin", sender: self)
+        } else {
+            clubLoginLabel.text! = "Please Check Your Inputs Are Correct!"
+        }
+        
     }
+
+
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,5 +56,6 @@ class SecondViewController: UIViewController {
 
 
 }
+
 
 
