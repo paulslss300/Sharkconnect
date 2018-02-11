@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		33360A942030EFBB00B2654F /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33360A932030EFBB00B2654F /* Defaults.swift */; };
 		3353139D201FE20C0068EE03 /* CreatePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353139C201FE20C0068EE03 /* CreatePopUpViewController.swift */; };
+		33EED5112030F54300FAFADB /* ImageImporterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EED5102030F54300FAFADB /* ImageImporterViewController.swift */; };
 		3F08316A202AAD3B0072311C /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F083169202AAD3B0072311C /* DiscoverTableViewController.swift */; };
 		3F08316C202AB82F0072311C /* DiscoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F08316B202AB82F0072311C /* DiscoverTableViewCell.swift */; };
 		3F0B7BC12005B474005BC1CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B7BC02005B474005BC1CC /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		33360A932030EFBB00B2654F /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		3353139C201FE20C0068EE03 /* CreatePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePopUpViewController.swift; sourceTree = "<group>"; };
+		33EED5102030F54300FAFADB /* ImageImporterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageImporterViewController.swift; sourceTree = "<group>"; };
 		3F083169202AAD3B0072311C /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverTableViewController.swift; path = ../DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		3F08316B202AB82F0072311C /* DiscoverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverTableViewCell.swift; path = ../DiscoverTableViewCell.swift; sourceTree = "<group>"; };
 		3F0B7BBD2005B474005BC1CC /* IDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +111,7 @@
 				3F0B7BC22005B474005BC1CC /* FirstViewController.swift */,
 				3F0B7BC42005B474005BC1CC /* SecondViewController.swift */,
 				3F859367202A5A5B00DA2E76 /* ThirdViewController.swift */,
+				33EED5102030F54300FAFADB /* ImageImporterViewController.swift */,
 				3F0B7BC62005B474005BC1CC /* Main.storyboard */,
 				3F0B7BC92005B474005BC1CC /* Assets.xcassets */,
 				3F0B7BCB2005B474005BC1CC /* LaunchScreen.storyboard */,
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33EED5112030F54300FAFADB /* ImageImporterViewController.swift in Sources */,
 				3F634578202292430089F29F /* Club.swift in Sources */,
 				3F2AD06C200EAA450053136F /* HomeTableViewController.swift in Sources */,
 				3F08316C202AB82F0072311C /* DiscoverTableViewCell.swift in Sources */,
