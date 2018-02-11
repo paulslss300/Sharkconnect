@@ -18,12 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // this is to populate the student array
         //without this, feature won't work
-        let firstStudent = Student.init(StudentNa: "Bob", StudentPa: "123")
+        let firstStudent = Student.init(StudentNa: "Bob", StudentPa: "574739202833")
         Student.students += [firstStudent]
         
         // this is to populate the club array
         //without this, feature won't work
-        let firstClub = Club.init(ClubNa: "firstClub", ClubPa: "456")
+        let firstClub = Club.init(ClubNa: "firstClub", ClubPa: "910282739302")
         Club.clubs += [firstClub]
         
         // Override point for customization after application launch.

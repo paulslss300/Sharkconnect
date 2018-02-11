@@ -53,6 +53,11 @@ class CreateClubViewController: UIViewController {
         if createdClub {
             let newClub = Club.init(ClubNa: actualClubName, ClubPa: actualClubPassword)
             Club.clubs += [newClub]
+            
+            let photo0 = UIImage(named: "default")
+            let newClubcell = ClubCell.init(ClubCellTi: actualClubName, ClubCellImageName: photo0!)
+            ClubCell.clubcells += [newClubcell]
+        
             createdClubLabel.text! = "Account Created!"
         } else {
             createdClubLabel.text! = "Please Change a User Name or Password!"

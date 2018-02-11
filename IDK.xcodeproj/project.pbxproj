@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33360A942030EFBB00B2654F /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33360A932030EFBB00B2654F /* Defaults.swift */; };
 		3353139D201FE20C0068EE03 /* CreatePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353139C201FE20C0068EE03 /* CreatePopUpViewController.swift */; };
 		3F08316A202AAD3B0072311C /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F083169202AAD3B0072311C /* DiscoverTableViewController.swift */; };
 		3F08316C202AB82F0072311C /* DiscoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F08316B202AB82F0072311C /* DiscoverTableViewCell.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33360A932030EFBB00B2654F /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		3353139C201FE20C0068EE03 /* CreatePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePopUpViewController.swift; sourceTree = "<group>"; };
 		3F083169202AAD3B0072311C /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverTableViewController.swift; path = ../DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		3F08316B202AB82F0072311C /* DiscoverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverTableViewCell.swift; path = ../DiscoverTableViewCell.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		3F0B7BB42005B474005BC1CC = {
 			isa = PBXGroup;
 			children = (
+				33360A932030EFBB00B2654F /* Defaults.swift */,
 				3F0B7BBF2005B474005BC1CC /* IDK */,
 				3F0B7BBE2005B474005BC1CC /* Products */,
 			);
@@ -205,6 +208,7 @@
 				3353139D201FE20C0068EE03 /* CreatePopUpViewController.swift in Sources */,
 				3F08316A202AAD3B0072311C /* DiscoverTableViewController.swift in Sources */,
 				3F6D3DAF20166CA50030D95D /* UserTableViewController.swift in Sources */,
+				33360A942030EFBB00B2654F /* Defaults.swift in Sources */,
 				3F0B7BC32005B474005BC1CC /* FirstViewController.swift in Sources */,
 				3F73B23B202A7F81006B9723 /* ClubCell.swift in Sources */,
 			);
