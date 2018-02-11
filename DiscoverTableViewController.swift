@@ -34,18 +34,18 @@ class DiscoverTableViewController: UIViewController, UITableViewDataSource, UITa
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return ClubCell.clubcells.count
+        return Club.clubs.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DiscoverTableViewCell = tableView.dequeueReusableCell(withIdentifier: "discoveryReuseIdentifier", for: indexPath) as! DiscoverTableViewCell
 
-        let clubcell = ClubCell.clubcells[indexPath.row]
+        let club = Club.clubs[indexPath.row]
         
         // Configure the cell...
-        cell.clubCellLabel?.text = clubcell.ClubCellTi
-        cell.clubCellImage.image = clubcell.ClubCellImageName
+        cell.clubCellLabel?.text = club.ClubNa
+        cell.clubCellImage.image = club.ClubCellImageName
 
         return cell
     }

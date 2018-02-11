@@ -52,6 +52,8 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         // Configure the cell...
         cell.cellTitle?.text = post.postTi
         cell.cellDescription?.text = post.postDe
+        cell.cellImage.image = post.postImage
+        cell.cellIdentifier?.text = post.clubIdentifier
 
 
         return cell

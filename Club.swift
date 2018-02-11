@@ -6,19 +6,24 @@
 //  Copyright © 2018 No Clue. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Club {
     var ClubNa: String
     var ClubPa: String
+    var ClubCellImageName: UIImage? = nil
     static var clubs = [Club]()
     
     
-    init(ClubNa: String, ClubPa: String) {
+    init(ClubNa: String, ClubPa: String, ClubCellImageName: UIImage) {
         self.ClubNa = ClubNa
         self.ClubPa = ClubPa
+        self.ClubCellImageName = ClubCellImageName
     }
     
 }
 
 var clubId: String = ""
+var actualClubName: String = ""
+var actualClubPassword: String = ""
+var myAvatar: UIImage? = nil

@@ -12,13 +12,15 @@ class CreatePostViewController: UIViewController {
     
     var actualPostTitle: String = ""
     var actualPostDescription: String = ""
+    var actualPostImage: UIImage? = nil
     
     @IBAction func createPostButton(_ sender: Any) {
         actualPostTitle = postTitle.text!
         actualPostDescription = postDescription.text!
         
-        let post1 = Post(postTi: actualPostTitle, postDe: actualPostDescription, clubIdentifier: clubId)
+        let post1 = Post(postTi: actualPostTitle, postDe: actualPostDescription, clubIdentifier: clubId, postImage: myAvatar!)
         Post.posts += [post1]
+        
     }
     @IBOutlet weak var postTitle: UITextField!
     @IBOutlet weak var postDescription: UITextField!

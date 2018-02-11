@@ -11,11 +11,9 @@ import UIKit
 class CreateClubViewController: UIViewController {
     
     
-    var actualClubName: String = ""
-    var actualClubPassword: String = ""
+    
     var createdClub: Bool = false
     var checkClubName: Bool = false
-    
     
     @IBOutlet weak var ClubName: UITextField!
     @IBOutlet weak var ClubPassword: UITextField!
@@ -51,13 +49,10 @@ class CreateClubViewController: UIViewController {
         
         //create new club
         if createdClub {
-            let newClub = Club.init(ClubNa: actualClubName, ClubPa: actualClubPassword)
+            myAvatar = UIImage(named: "default")
+            let newClub = Club.init(ClubNa: actualClubName, ClubPa: actualClubPassword, ClubCellImageName: myAvatar!)
             Club.clubs += [newClub]
             
-            let photo0 = UIImage(named: "default")
-            let newClubcell = ClubCell.init(ClubCellTi: actualClubName, ClubCellImageName: photo0!)
-            ClubCell.clubcells += [newClubcell]
-        
             createdClubLabel.text! = "Account Created!"
         } else {
             createdClubLabel.text! = "Please Change a User Name or Password!"

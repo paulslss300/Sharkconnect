@@ -19,7 +19,6 @@ class SecondViewController: UIViewController {
     var loginTextFieldText: String = ""
     var passwordTextFieldText: String = ""
     var clubLoginSuccessful: Bool = false
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,6 +31,7 @@ class SecondViewController: UIViewController {
         for clubAccount in Club.clubs {
             if loginTextFieldText == clubAccount.ClubNa && passwordTextFieldText == clubAccount.ClubPa {
                 clubLoginSuccessful = true
+                clubId = loginTextFieldText
             } else {
                 clubLoginSuccessful = false
             }
