@@ -14,7 +14,6 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
     //var createPost = CreatePostViewController()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate  = self

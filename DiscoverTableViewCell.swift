@@ -14,6 +14,10 @@ class DiscoverTableViewCell: UITableViewCell {
     
     @IBOutlet weak var clubCellImage: UIImageView!
     
+    @IBAction func subscribeButton(_ sender: Any) {
+        //add the club this cell represents to subscribedClubs
+        //display subscribedClubs at the user interface
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

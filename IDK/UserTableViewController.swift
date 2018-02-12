@@ -9,8 +9,6 @@
 import UIKit
 
 class UserTableViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
-
-    var numberOfCells: Int = 10
     
     // IMPORTANT FEATURE ----- LOG OUT BUTTON
     @IBAction func logOutButton(_ sender: Any) {
@@ -19,6 +17,7 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
     
     
     @IBOutlet weak var userTableview: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userTableview.delegate  = self
@@ -40,19 +39,21 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return numberOfCells
+        return subscribedClubs.count
     }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UserTableViewCell = tableView.dequeueReusableCell(withIdentifier: "userReuseIdentifier", for: indexPath) as! UserTableViewCell
 
+        let subscribedClub = subscribedClubs[indexPath.row]
         // Configure the cell...
+
 
         return cell
     }

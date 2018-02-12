@@ -27,3 +27,5 @@ var clubId: String = ""
 var actualClubName: String = ""
 var actualClubPassword: String = ""
 var myAvatar: UIImage? = nil
+
+var subscribedClubs = [Club]()
