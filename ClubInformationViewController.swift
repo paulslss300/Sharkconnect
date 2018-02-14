@@ -13,6 +13,11 @@ class ClubInformationViewController: UIViewController {
     var selectedClub: Club? = nil
 
     @IBOutlet weak var clubName: UILabel!
+    @IBAction func suscribeButton(_ sender: Any) {
+        subscribedClubs += [selectedClub!]
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
