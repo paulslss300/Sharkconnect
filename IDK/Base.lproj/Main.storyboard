@@ -634,30 +634,37 @@
                                         <rect key="frame" x="0.0" y="114" width="375" height="533"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IDs-Ax-khK">
-                                            <size key="itemSize" width="140" height="166"/>
+                                            <size key="itemSize" width="139" height="139"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="discovercells" id="119-wR-apL" customClass="DiscoverCollectionViewCell" customModule="IDK" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="140" height="166"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="139"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="166"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="139" height="139"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Xi-CD-acP">
-                                                            <rect key="frame" x="6" y="9" width="128" height="128"/>
+                                                        <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Xi-CD-acP">
+                                                            <rect key="frame" x="5" y="5" width="128" height="128"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Club Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehP-nO-pLe">
-                                                            <rect key="frame" x="6" y="145" width="128" height="21"/>
+                                                        <view alpha="0.84999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rSA-mG-uiV">
+                                                            <rect key="frame" x="20" y="46" width="99" height="47"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Club Name" textAlignment="center" lineBreakMode="wordWrap" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ehP-nO-pLe">
+                                                                    <rect key="frame" x="0.0" y="10" width="99" height="27"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="1" green="0.98578627037020417" blue="0.42708583567140723" alpha="0.90493899828767121" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </view>
                                                     </subviews>
                                                 </view>
                                                 <connections>
@@ -695,16 +702,17 @@
                     <tabBarItem key="tabBarItem" title="search" id="MFl-nl-KCx"/>
                     <connections>
                         <outlet property="discoverView" destination="UW1-zD-3Py" id="lIk-Zk-N76"/>
+                        <segue destination="OrF-Al-IfX" kind="show" identifier="showclubinformation" id="lnt-xu-q8B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5cD-f9-1L9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3360.8000000000002" y="-606.74662668665667"/>
         </scene>
-        <!--View Controller-->
+        <!--Club Information View Controller-->
         <scene sceneID="Nt2-WO-92A">
             <objects>
-                <viewController id="OrF-Al-IfX" sceneMemberID="viewController">
+                <viewController id="OrF-Al-IfX" customClass="ClubInformationViewController" customModule="IDK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M5R-lO-SoU"/>
                         <viewControllerLayoutGuide type="bottom" id="2J6-zU-qGw"/>
@@ -712,12 +720,24 @@
                     <view key="view" contentMode="scaleToFill" id="T1C-gG-OEN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Club name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9av-m2-7Vs">
+                                <rect key="frame" x="119" y="139" width="136" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="clubName" destination="9av-m2-7Vs" id="tEl-Hm-8YZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gy-nK-HId" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4139" y="-574"/>
+            <point key="canvasLocation" x="4138.3999999999996" y="-574.36281859070471"/>
         </scene>
         <!--home-->
         <scene sceneID="4Rl-Bt-qiw">
@@ -753,7 +773,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4j-SO-TUC">
-                                                            <rect key="frame" x="15" y="108" width="323" height="39"/>
+                                                            <rect key="frame" x="15" y="108" width="323" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -1097,9 +1117,9 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yOk-uO-gMH"/>
-        <segue reference="NJP-DE-U0P"/>
-        <segue reference="6m8-vh-SW8"/>
+        <segue reference="8WM-Hn-4ej"/>
         <segue reference="3yK-Wj-Oyx"/>
+        <segue reference="yOk-uO-gMH"/>
+        <segue reference="6m8-vh-SW8"/>
     </inferredMetricsTieBreakers>
 </document>
