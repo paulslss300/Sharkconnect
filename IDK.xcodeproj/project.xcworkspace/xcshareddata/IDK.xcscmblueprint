@@ -1,0 +1,28 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "846627FBCB61FF774CEDD004C07579B62B38FBD1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "846627FBCB61FF774CEDD004C07579B62B38FBD1" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4A5EA11E-1AC9-4A8C-A7B2-4D2833B7EDB0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "846627FBCB61FF774CEDD004C07579B62B38FBD1" : "2017-slss-3\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "IDK",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "IDK.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/gameofapps\/2017-slss-2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "846627FBCB61FF774CEDD004C07579B62B38FBD1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/gameofapps\/2017-slss-2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "846627FBCB61FF774CEDD004C07579B62B38FBD1"
+    }
+  ]
+}

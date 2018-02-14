@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		3353139D201FE20C0068EE03 /* CreatePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353139C201FE20C0068EE03 /* CreatePopUpViewController.swift */; };
 		33EED5112030F54300FAFADB /* ImageImporterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EED5102030F54300FAFADB /* ImageImporterViewController.swift */; };
-		3F08316A202AAD3B0072311C /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F083169202AAD3B0072311C /* DiscoverTableViewController.swift */; };
-		3F08316C202AB82F0072311C /* DiscoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F08316B202AB82F0072311C /* DiscoverTableViewCell.swift */; };
 		3F0B7BC12005B474005BC1CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B7BC02005B474005BC1CC /* AppDelegate.swift */; };
 		3F0B7BC32005B474005BC1CC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B7BC22005B474005BC1CC /* FirstViewController.swift */; };
 		3F0B7BC52005B474005BC1CC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B7BC42005B474005BC1CC /* SecondViewController.swift */; };
@@ -26,6 +24,8 @@
 		3F6D3DB120166DBC0030D95D /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D3DB020166DBC0030D95D /* UserTableViewCell.swift */; };
 		3F859368202A5A5B00DA2E76 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F859367202A5A5B00DA2E76 /* ThirdViewController.swift */; };
 		3F95E75D202E73440083C2F0 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95E75C202E73440083C2F0 /* CalendarViewController.swift */; };
+		3FBEC2E62033BFEE00025E71 /* DiscoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEC2E42033BFEE00025E71 /* DiscoverCollectionViewCell.swift */; };
+		3FBEC2E72033BFEE00025E71 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBEC2E52033BFEE00025E71 /* DiscoverViewController.swift */; };
 		3FC2FDBA200F00D40006D0DE /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2FDB9200F00D40006D0DE /* HomeTableViewCell.swift */; };
 		3FCF3C172029226F00ED4F77 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF3C162029226F00ED4F77 /* Student.swift */; };
 		3FCF3C1920292A2200ED4F77 /* CreateStudentAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF3C1820292A2200ED4F77 /* CreateStudentAccountViewController.swift */; };
@@ -34,8 +34,6 @@
 /* Begin PBXFileReference section */
 		3353139C201FE20C0068EE03 /* CreatePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePopUpViewController.swift; sourceTree = "<group>"; };
 		33EED5102030F54300FAFADB /* ImageImporterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageImporterViewController.swift; sourceTree = "<group>"; };
-		3F083169202AAD3B0072311C /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverTableViewController.swift; path = ../DiscoverTableViewController.swift; sourceTree = "<group>"; };
-		3F08316B202AB82F0072311C /* DiscoverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverTableViewCell.swift; path = ../DiscoverTableViewCell.swift; sourceTree = "<group>"; };
 		3F0B7BBD2005B474005BC1CC /* IDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0B7BC02005B474005BC1CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F0B7BC22005B474005BC1CC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +51,8 @@
 		3F6D3DB020166DBC0030D95D /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTableViewCell.swift; path = ../UserTableViewCell.swift; sourceTree = "<group>"; };
 		3F859367202A5A5B00DA2E76 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = ../ThirdViewController.swift; sourceTree = "<group>"; };
 		3F95E75C202E73440083C2F0 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		3FBEC2E42033BFEE00025E71 /* DiscoverCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverCollectionViewCell.swift; path = "../../2017-slss-3/DiscoverCollectionViewCell.swift"; sourceTree = "<group>"; };
+		3FBEC2E52033BFEE00025E71 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverViewController.swift; path = "../../2017-slss-3/DiscoverViewController.swift"; sourceTree = "<group>"; };
 		3FC2FDB9200F00D40006D0DE /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		3FCF3C162029226F00ED4F77 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Student.swift; path = ../Student.swift; sourceTree = "<group>"; };
 		3FCF3C1820292A2200ED4F77 /* CreateStudentAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateStudentAccountViewController.swift; path = ../CreateStudentAccountViewController.swift; sourceTree = "<group>"; };
@@ -97,10 +97,10 @@
 				3F6D3DB020166DBC0030D95D /* UserTableViewCell.swift */,
 				3F6D3DAE20166CA50030D95D /* UserTableViewController.swift */,
 				3F95E75C202E73440083C2F0 /* CalendarViewController.swift */,
+				3FBEC2E42033BFEE00025E71 /* DiscoverCollectionViewCell.swift */,
+				3FBEC2E52033BFEE00025E71 /* DiscoverViewController.swift */,
 				3FC2FDB9200F00D40006D0DE /* HomeTableViewCell.swift */,
 				3F2AD06B200EAA450053136F /* HomeTableViewController.swift */,
-				3F08316B202AB82F0072311C /* DiscoverTableViewCell.swift */,
-				3F083169202AAD3B0072311C /* DiscoverTableViewController.swift */,
 				3F0B7BC02005B474005BC1CC /* AppDelegate.swift */,
 				3F0B7BC22005B474005BC1CC /* FirstViewController.swift */,
 				3F0B7BC42005B474005BC1CC /* SecondViewController.swift */,
@@ -191,20 +191,20 @@
 				33EED5112030F54300FAFADB /* ImageImporterViewController.swift in Sources */,
 				3F634578202292430089F29F /* Club.swift in Sources */,
 				3F2AD06C200EAA450053136F /* HomeTableViewController.swift in Sources */,
-				3F08316C202AB82F0072311C /* DiscoverTableViewCell.swift in Sources */,
 				3F1CC9D62018409C007F0F89 /* Post.swift in Sources */,
 				3FC2FDBA200F00D40006D0DE /* HomeTableViewCell.swift in Sources */,
 				3F1CC9D2201837B0007F0F89 /* CreatePostViewController.swift in Sources */,
 				3F6D3DB120166DBC0030D95D /* UserTableViewCell.swift in Sources */,
 				3FCF3C1920292A2200ED4F77 /* CreateStudentAccountViewController.swift in Sources */,
+				3FBEC2E72033BFEE00025E71 /* DiscoverViewController.swift in Sources */,
 				3F859368202A5A5B00DA2E76 /* ThirdViewController.swift in Sources */,
 				3F63457A202293490089F29F /* CreateClubViewController.swift in Sources */,
 				3F95E75D202E73440083C2F0 /* CalendarViewController.swift in Sources */,
 				3FCF3C172029226F00ED4F77 /* Student.swift in Sources */,
+				3FBEC2E62033BFEE00025E71 /* DiscoverCollectionViewCell.swift in Sources */,
 				3F0B7BC52005B474005BC1CC /* SecondViewController.swift in Sources */,
 				3F0B7BC12005B474005BC1CC /* AppDelegate.swift in Sources */,
 				3353139D201FE20C0068EE03 /* CreatePopUpViewController.swift in Sources */,
-				3F08316A202AAD3B0072311C /* DiscoverTableViewController.swift in Sources */,
 				3F6D3DAF20166CA50030D95D /* UserTableViewController.swift in Sources */,
 				3F0B7BC32005B474005BC1CC /* FirstViewController.swift in Sources */,
 			);
