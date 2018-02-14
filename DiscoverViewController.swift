@@ -16,9 +16,9 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let itemSize = UIScreen.main.bounds.width/2 - 45
+        let itemSize = UIScreen.main.bounds.width/2 - 50
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsetsMake(20, 10, 10, 20)
+        layout.sectionInset = UIEdgeInsetsMake(20, 30, 10, 30)
         layout.itemSize = CGSize(width: itemSize, height: itemSize)
         layout.minimumInteritemSpacing = 3
         layout.minimumLineSpacing = 3

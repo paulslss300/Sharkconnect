@@ -632,7 +632,7 @@
                                     </searchBar>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UW1-zD-3Py">
                                         <rect key="frame" x="0.0" y="114" width="375" height="533"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IDs-Ax-khK">
                                             <size key="itemSize" width="139" height="139"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -647,11 +647,16 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="139" height="139"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
+                                                        <view alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jec-bh-1aF">
+                                                            <rect key="frame" x="0.0" y="0.0" width="139" height="139"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </view>
                                                         <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Xi-CD-acP">
                                                             <rect key="frame" x="5" y="5" width="128" height="128"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
-                                                        <view alpha="0.84999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rSA-mG-uiV">
+                                                        <view alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rSA-mG-uiV">
                                                             <rect key="frame" x="20" y="46" width="99" height="47"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
@@ -721,8 +726,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="6S5-0g-oNi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Club name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9av-m2-7Vs">
-                                <rect key="frame" x="119" y="139" width="136" height="39"/>
+                                <rect key="frame" x="119" y="164" width="136" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -730,6 +738,12 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6S5-0g-oNi" secondAttribute="trailing" id="Vok-H3-vSY"/>
+                            <constraint firstItem="2J6-zU-qGw" firstAttribute="top" secondItem="6S5-0g-oNi" secondAttribute="bottom" id="pvE-ND-WJQ"/>
+                            <constraint firstItem="6S5-0g-oNi" firstAttribute="leading" secondItem="T1C-gG-OEN" secondAttribute="leading" id="yCl-UP-7vV"/>
+                            <constraint firstItem="6S5-0g-oNi" firstAttribute="top" secondItem="M5R-lO-SoU" secondAttribute="bottom" id="yaB-Sw-sHC"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="clubName" destination="9av-m2-7Vs" id="tEl-Hm-8YZ"/>
