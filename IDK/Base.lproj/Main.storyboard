@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -536,7 +536,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vaW-To-9Ab" id="YTk-sf-9Gf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LLX-Ws-sYk">
@@ -661,8 +661,8 @@
                                                     </subviews>
                                                 </view>
                                                 <connections>
-                                                    <outlet property="clubImage" destination="8Xi-CD-acP" id="9Zf-jL-ryY"/>
-                                                    <outlet property="clubName" destination="ehP-nO-pLe" id="nMq-0m-hf9"/>
+                                                    <outlet property="clubImage" destination="8Xi-CD-acP" id="7Ei-PD-z2G"/>
+                                                    <outlet property="clubName" destination="ehP-nO-pLe" id="cQa-1L-TdM"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -693,10 +693,31 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="search" id="MFl-nl-KCx"/>
+                    <connections>
+                        <outlet property="discoverView" destination="UW1-zD-3Py" id="lIk-Zk-N76"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5cD-f9-1L9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3360.8000000000002" y="-606.74662668665667"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Nt2-WO-92A">
+            <objects>
+                <viewController id="OrF-Al-IfX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M5R-lO-SoU"/>
+                        <viewControllerLayoutGuide type="bottom" id="2J6-zU-qGw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T1C-gG-OEN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4gy-nK-HId" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4139" y="-574"/>
         </scene>
         <!--home-->
         <scene sceneID="4Rl-Bt-qiw">
@@ -721,7 +742,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="258"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5ci-gi-0Cs" id="y0Q-MD-eqR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="257.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K27-Qk-WZL">
