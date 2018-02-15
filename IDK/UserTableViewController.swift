@@ -52,7 +52,10 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
         let cell: UserTableViewCell = tableView.dequeueReusableCell(withIdentifier: "userReuseIdentifier", for: indexPath) as! UserTableViewCell
 
         let subscribedClub = subscribedClubs[indexPath.row]
+        
         // Configure the cell...
+        cell.clubImage.image = subscribedClub.ClubCellImageName
+        cell.clubName?.text = subscribedClub.ClubNa
 
 
         return cell
