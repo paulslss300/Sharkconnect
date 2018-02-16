@@ -24,3 +24,4 @@ struct Post {
     
 }
 
+var subscribedPosts = [Post]()

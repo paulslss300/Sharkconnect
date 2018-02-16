@@ -46,7 +46,15 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! HomeTableViewCell
         
-        let post = Post.posts[indexPath.row]
+        for post in Post.posts{
+            for club in subscribedClubs {
+                if post.clubIdentifier == club.ClubNa {
+                    subscribedPosts += [post]
+            }
+            }
+        }
+        
+        let post = subscribedPosts[indexPath.row]
 
         // Configure the cell...
         cell.cellTitle?.text = post.postTi
