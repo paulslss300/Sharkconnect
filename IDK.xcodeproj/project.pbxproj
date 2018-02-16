@@ -46,6 +46,18 @@
 		3F1CC9D1201837B0007F0F89 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostViewController.swift; path = ../CreatePostViewController.swift; sourceTree = "<group>"; };
 		3F1CC9D52018409C007F0F89 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = ../Post.swift; sourceTree = "<group>"; };
 		3F2AD06B200EAA450053136F /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewController.swift; path = ../HomeTableViewController.swift; sourceTree = "<group>"; };
+		3F395A6520364E9600909ED6 /* Syncopate-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Syncopate-Regular.ttf"; sourceTree = "<group>"; };
+		3F395A6620364EA000909ED6 /* Syncopate-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Syncopate-Bold.ttf"; sourceTree = "<group>"; };
+		3F395A67203651A800909ED6 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		3F395A68203651AE00909ED6 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		3F395A69203651B200909ED6 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		3F395A6A203651B700909ED6 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		3F395A6B203651BB00909ED6 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		3F395A6C203651C000909ED6 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		3F395A6D203651C800909ED6 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		3F395A6E203651CC00909ED6 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		3F395A6F203651D300909ED6 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		3F395A70203651DB00909ED6 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		3F634577202292430089F29F /* Club.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Club.swift; path = ../Club.swift; sourceTree = "<group>"; };
 		3F634579202293490089F29F /* CreateClubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateClubViewController.swift; path = ../CreateClubViewController.swift; sourceTree = "<group>"; };
 		3F6D3DAE20166CA50030D95D /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +102,18 @@
 		3F0B7BBF2005B474005BC1CC /* IDK */ = {
 			isa = PBXGroup;
 			children = (
+				3F395A6520364E9600909ED6 /* Syncopate-Regular.ttf */,
+				3F395A6620364EA000909ED6 /* Syncopate-Bold.ttf */,
+				3F395A67203651A800909ED6 /* OpenSans-Bold.ttf */,
+				3F395A68203651AE00909ED6 /* OpenSans-BoldItalic.ttf */,
+				3F395A69203651B200909ED6 /* OpenSans-ExtraBold.ttf */,
+				3F395A6A203651B700909ED6 /* OpenSans-ExtraBoldItalic.ttf */,
+				3F395A6B203651BB00909ED6 /* OpenSans-Italic.ttf */,
+				3F395A6C203651C000909ED6 /* OpenSans-Light.ttf */,
+				3F395A6D203651C800909ED6 /* OpenSans-LightItalic.ttf */,
+				3F395A6E203651CC00909ED6 /* OpenSans-Regular.ttf */,
+				3F395A6F203651D300909ED6 /* OpenSans-SemiBold.ttf */,
+				3F395A70203651DB00909ED6 /* OpenSans-SemiBoldItalic.ttf */,
 				3F1CC9D52018409C007F0F89 /* Post.swift */,
 				3F634577202292430089F29F /* Club.swift */,
 				3FCF3C162029226F00ED4F77 /* Student.swift */,
