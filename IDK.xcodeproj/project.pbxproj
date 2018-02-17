@@ -23,13 +23,15 @@
 		3F6D3DAF20166CA50030D95D /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D3DAE20166CA50030D95D /* UserTableViewController.swift */; };
 		3F6D3DB120166DBC0030D95D /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D3DB020166DBC0030D95D /* UserTableViewCell.swift */; };
 		3F859368202A5A5B00DA2E76 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F859367202A5A5B00DA2E76 /* ThirdViewController.swift */; };
-		3F95E75D202E73440083C2F0 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95E75C202E73440083C2F0 /* CalendarViewController.swift */; };
 		3F9D9CB92033E24E002B94C9 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D9CB82033E24E002B94C9 /* DiscoverViewController.swift */; };
 		3F9D9CBB2033E262002B94C9 /* DiscoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D9CBA2033E262002B94C9 /* DiscoverCollectionViewCell.swift */; };
 		3F9D9CBD2033EB41002B94C9 /* ClubInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D9CBC2033EB41002B94C9 /* ClubInformationViewController.swift */; };
 		3FC2FDBA200F00D40006D0DE /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2FDB9200F00D40006D0DE /* HomeTableViewCell.swift */; };
 		3FCF3C172029226F00ED4F77 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF3C162029226F00ED4F77 /* Student.swift */; };
 		3FCF3C1920292A2200ED4F77 /* CreateStudentAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF3C1820292A2200ED4F77 /* CreateStudentAccountViewController.swift */; };
+		3FF150F02037A047003BD27B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF150EF2037A047003BD27B /* CalendarViewController.swift */; };
+		3FF150F42037A16F003BD27B /* WeekdaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF150F32037A16F003BD27B /* WeekdaysView.swift */; };
+		3FF150F62037A191003BD27B /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF150F52037A191003BD27B /* MonthView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,13 +65,15 @@
 		3F6D3DAE20166CA50030D95D /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		3F6D3DB020166DBC0030D95D /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTableViewCell.swift; path = ../UserTableViewCell.swift; sourceTree = "<group>"; };
 		3F859367202A5A5B00DA2E76 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = ../ThirdViewController.swift; sourceTree = "<group>"; };
-		3F95E75C202E73440083C2F0 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		3F9D9CB82033E24E002B94C9 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverViewController.swift; path = ../DiscoverViewController.swift; sourceTree = "<group>"; };
 		3F9D9CBA2033E262002B94C9 /* DiscoverCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverCollectionViewCell.swift; path = ../DiscoverCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F9D9CBC2033EB41002B94C9 /* ClubInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClubInformationViewController.swift; path = ../ClubInformationViewController.swift; sourceTree = "<group>"; };
 		3FC2FDB9200F00D40006D0DE /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		3FCF3C162029226F00ED4F77 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Student.swift; path = ../Student.swift; sourceTree = "<group>"; };
 		3FCF3C1820292A2200ED4F77 /* CreateStudentAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateStudentAccountViewController.swift; path = ../CreateStudentAccountViewController.swift; sourceTree = "<group>"; };
+		3FF150EF2037A047003BD27B /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		3FF150F32037A16F003BD27B /* WeekdaysView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekdaysView.swift; sourceTree = "<group>"; };
+		3FF150F52037A191003BD27B /* MonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,9 +127,9 @@
 				3F634579202293490089F29F /* CreateClubViewController.swift */,
 				3F6D3DB020166DBC0030D95D /* UserTableViewCell.swift */,
 				3F6D3DAE20166CA50030D95D /* UserTableViewController.swift */,
-				3F95E75C202E73440083C2F0 /* CalendarViewController.swift */,
 				3F9D9CBA2033E262002B94C9 /* DiscoverCollectionViewCell.swift */,
 				3F9D9CB82033E24E002B94C9 /* DiscoverViewController.swift */,
+				3FF150EF2037A047003BD27B /* CalendarViewController.swift */,
 				3FC2FDB9200F00D40006D0DE /* HomeTableViewCell.swift */,
 				3F2AD06B200EAA450053136F /* HomeTableViewController.swift */,
 				3F0B7BC02005B474005BC1CC /* AppDelegate.swift */,
@@ -133,6 +137,8 @@
 				3F0B7BC42005B474005BC1CC /* SecondViewController.swift */,
 				3F859367202A5A5B00DA2E76 /* ThirdViewController.swift */,
 				33EED5102030F54300FAFADB /* ImageImporterViewController.swift */,
+				3FF150F52037A191003BD27B /* MonthView.swift */,
+				3FF150F32037A16F003BD27B /* WeekdaysView.swift */,
 				3F0B7BC62005B474005BC1CC /* Main.storyboard */,
 				3F0B7BC92005B474005BC1CC /* Assets.xcassets */,
 				3F0B7BCB2005B474005BC1CC /* LaunchScreen.storyboard */,
@@ -215,6 +221,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF150F02037A047003BD27B /* CalendarViewController.swift in Sources */,
+				3FF150F42037A16F003BD27B /* WeekdaysView.swift in Sources */,
 				33EED5112030F54300FAFADB /* ImageImporterViewController.swift in Sources */,
 				3F634578202292430089F29F /* Club.swift in Sources */,
 				3F2AD06C200EAA450053136F /* HomeTableViewController.swift in Sources */,
@@ -224,11 +232,11 @@
 				3F1CC9D2201837B0007F0F89 /* CreatePostViewController.swift in Sources */,
 				3F9D9CBB2033E262002B94C9 /* DiscoverCollectionViewCell.swift in Sources */,
 				3F6D3DB120166DBC0030D95D /* UserTableViewCell.swift in Sources */,
+				3FF150F62037A191003BD27B /* MonthView.swift in Sources */,
 				3FCF3C1920292A2200ED4F77 /* CreateStudentAccountViewController.swift in Sources */,
 				3F9D9CB92033E24E002B94C9 /* DiscoverViewController.swift in Sources */,
 				3F859368202A5A5B00DA2E76 /* ThirdViewController.swift in Sources */,
 				3F63457A202293490089F29F /* CreateClubViewController.swift in Sources */,
-				3F95E75D202E73440083C2F0 /* CalendarViewController.swift in Sources */,
 				3FCF3C172029226F00ED4F77 /* Student.swift in Sources */,
 				3F0B7BC52005B474005BC1CC /* SecondViewController.swift in Sources */,
 				3F0B7BC12005B474005BC1CC /* AppDelegate.swift in Sources */,
