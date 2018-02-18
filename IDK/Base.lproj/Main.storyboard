@@ -661,6 +661,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="user" id="NIl-OW-BtJ"/>
                     <connections>
+                        <outlet property="clubSettingsClub" destination="NeE-Xa-ktw" id="iRF-6E-v3L"/>
                         <outlet property="userTableview" destination="OgT-hG-JT7" id="eQB-1B-JFy"/>
                     </connections>
                 </viewController>
@@ -1226,10 +1227,10 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uPu-7e-rYG"/>
+        <segue reference="VdO-mu-1oa"/>
         <segue reference="AjU-YC-aKN"/>
         <segue reference="8WM-Hn-4ej"/>
         <segue reference="6m8-vh-SW8"/>
-        <segue reference="Rwv-9S-APn"/>
+        <segue reference="3yK-Wj-Oyx"/>
     </inferredMetricsTieBreakers>
 </document>

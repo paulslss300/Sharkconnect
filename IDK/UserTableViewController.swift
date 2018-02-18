@@ -17,11 +17,16 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
     
     
     @IBOutlet weak var userTableview: UITableView!
-    
+    @IBOutlet weak var clubSettingsClub: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         userTableview.delegate  = self
         userTableview.dataSource = self
+        
+        if clubId == "student" {
+            clubSettingsClub.isEnabled = false
+            clubSettingsClub.setTitle("", for: .normal)
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
