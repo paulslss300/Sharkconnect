@@ -12,6 +12,9 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
     @IBOutlet weak var tableView: UITableView!
 
+    @IBOutlet weak var displayPost: UISegmentedControl!
+    
+    var displayAllClubs: Bool = true
     //var createPost = CreatePostViewController()
     
     override func viewDidLoad() {
@@ -27,6 +30,19 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    @IBAction func indexChanged(_ sender: Any) {
+        switch displayPost.selectedSegmentIndex
+        {
+        case 0: displayAllClubs = true
+            
+        case 1: displayAllClubs = false
+            
+        default:
+            break
+        }
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -54,13 +70,22 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             }
         }
         
-        let post = subscribedPosts[indexPath.row]
-
-        // Configure the cell...
-        cell.cellTitle?.text = post.postTi
-        cell.cellDescription?.text = post.postDe
-        cell.cellImage.image = post.postImage
-        cell.cellIdentifier?.text = post.clubIdentifier
+        if displayAllClubs {
+            let post = Post.posts[indexPath.row]
+            // Configure the cell...
+            cell.cellTitle?.text = post.postTi
+            cell.cellDescription?.text = post.postDe
+            cell.cellImage.image = post.postImage
+            cell.cellIdentifier?.text = post.clubIdentifier
+        } else {
+            let post = subscribedPosts[indexPath.row]
+            // Configure the cell...
+            cell.cellTitle?.text = post.postTi
+            cell.cellDescription?.text = post.postDe
+            cell.cellImage.image = post.postImage
+            cell.cellIdentifier?.text = post.clubIdentifier
+        }
+        
 
 
         return cell

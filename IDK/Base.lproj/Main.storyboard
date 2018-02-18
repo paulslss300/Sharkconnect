@@ -878,15 +878,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zjl-Lq-FhO">
                                 <rect key="frame" x="0.0" y="90" width="375" height="528"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="258" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c7g-9i-ztq">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="528"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="208" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c7g-9i-ztq">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="484"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reuseIdentifier" rowHeight="258" id="5ci-gi-0Cs" customClass="HomeTableViewCell" customModule="IDK" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="258"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reuseIdentifier" rowHeight="208" id="5ci-gi-0Cs" customClass="HomeTableViewCell" customModule="IDK" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="208"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5ci-gi-0Cs" id="y0Q-MD-eqR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="257.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="207.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K27-Qk-WZL">
@@ -925,15 +926,20 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bVx-fs-9Wh">
+                                        <rect key="frame" x="40" y="8" width="294" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="All Posts"/>
+                                            <segment title="Subscribed Club Posts"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="indexChanged:" destination="YfU-Ee-kHj" eventType="valueChanged" id="M12-Lw-aTh"/>
+                                            <action selector="postDisplay:" destination="YfU-Ee-kHj" eventType="valueChanged" id="xws-n6-FfO"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="c7g-9i-ztq" secondAttribute="trailing" id="7UM-S0-fsH"/>
-                                    <constraint firstItem="c7g-9i-ztq" firstAttribute="leading" secondItem="Zjl-Lq-FhO" secondAttribute="leading" id="M4r-Rm-Iva"/>
-                                    <constraint firstAttribute="bottom" secondItem="c7g-9i-ztq" secondAttribute="bottom" id="MmL-6c-bCO"/>
-                                    <constraint firstItem="c7g-9i-ztq" firstAttribute="top" secondItem="Zjl-Lq-FhO" secondAttribute="top" id="e7f-Jr-Hjg"/>
-                                    <constraint firstItem="c7g-9i-ztq" firstAttribute="leading" secondItem="Zjl-Lq-FhO" secondAttribute="leading" id="ino-44-K9J"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4d-oG-xbB">
                                 <rect key="frame" x="0.0" y="20" width="375" height="70"/>
@@ -965,12 +971,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="home" id="9T5-bZ-2rk"/>
                     <connections>
+                        <outlet property="displayPost" destination="bVx-fs-9Wh" id="9w0-oa-fQW"/>
                         <outlet property="tableView" destination="c7g-9i-ztq" id="S0R-Ej-pql"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43h-Q7-HZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3311" y="136"/>
+            <point key="canvasLocation" x="3309.5999999999999" y="135.38230884557723"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="QN2-Tk-3mN">
@@ -1227,7 +1234,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VdO-mu-1oa"/>
         <segue reference="AjU-YC-aKN"/>
         <segue reference="8WM-Hn-4ej"/>
         <segue reference="6m8-vh-SW8"/>
