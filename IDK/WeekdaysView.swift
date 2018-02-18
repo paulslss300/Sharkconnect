@@ -1,10 +1,11 @@
 //
-//  WeekdaysView.swift
-//  myCalendar2
+//  CalendarViewController.swift
+//  IDK
 //
-//  Created by Muskan on 10/22/17.
-//  Copyright © 2017 akhil. All rights reserved.
+//  Created by launchpad on 2018-02-18.
+//  Copyright  2018 No Clue. All rights reserved.
 //
+
 
 import UIKit
 
@@ -49,3 +50,4 @@ class WeekdaysView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+

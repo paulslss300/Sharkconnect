@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Helvetica.ttc">
             <string>Helvetica</string>
+        </array>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
         </array>
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans-Regular</string>
@@ -164,7 +168,7 @@
                                     <!--2018-02-07 00:14:52 +0000-->
                                 </date>
                             </datePicker>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNY-yj-I6z">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNY-yj-I6z">
                                 <rect key="frame" x="0.0" y="-4" width="377" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CREATE POST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbT-x3-vhW">
@@ -187,9 +191,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zz7-zq-2sH">
-                                <rect key="frame" x="124" y="79" width="130" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zz7-zq-2sH">
+                                <rect key="frame" x="129.5" y="79" width="119" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Syncopate-Regular" family="Syncopate" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -203,6 +206,13 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zz7-zq-2sH" firstAttribute="top" secondItem="SNY-yj-I6z" secondAttribute="bottom" constant="13" id="98o-SO-xBA"/>
+                            <constraint firstItem="SNY-yj-I6z" firstAttribute="centerX" secondItem="Zz7-zq-2sH" secondAttribute="centerX" id="Ogu-bm-ReL"/>
+                            <constraint firstItem="SNY-yj-I6z" firstAttribute="top" secondItem="6Ho-5F-DoX" secondAttribute="topMargin" constant="-24" id="VRI-hJ-5GA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SNY-yj-I6z" secondAttribute="trailing" constant="-18" id="eew-Xe-LVV"/>
+                            <constraint firstItem="SNY-yj-I6z" firstAttribute="leading" secondItem="6Ho-5F-DoX" secondAttribute="leading" id="mUB-b3-n6I"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="postDescription" destination="QgE-TO-bDC" id="d5W-Cn-Mda"/>
@@ -423,22 +433,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uHc-de-6pI">
-                                <rect key="frame" x="67" y="190" width="240" height="128"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hxq-1h-T1R">
+                                <rect key="frame" x="0.0" y="28" width="375" height="338"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background3" translatesAutoresizingMaskIntoConstraints="NO" id="5GE-WW-DUq">
+                                <rect key="frame" x="0.0" y="28" width="375" height="338"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="calendar" image="first" id="8JW-nq-dGI"/>
                     <connections>
-                        <outlet property="CalendarView" destination="uHc-de-6pI" id="OS6-PT-o6B"/>
+                        <outlet property="CalendarView" destination="Hxq-1h-T1R" id="exb-zM-OFq"/>
+                        <outlet property="calendarContainerView" destination="Hxq-1h-T1R" id="Cn7-oa-arf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EIc-Lp-YSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3310" y="808"/>
+            <point key="canvasLocation" x="3481" y="812"/>
         </scene>
         <!--Create Pop Up View Controller-->
         <scene sceneID="ydY-pz-k4o">
@@ -662,7 +676,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06x-yy-QhG">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZ8-3F-YGD">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -686,7 +700,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UW1-zD-3Py">
-                                        <rect key="frame" x="0.0" y="114" width="375" height="533"/>
+                                        <rect key="frame" x="0.0" y="114" width="375" height="484"/>
                                         <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IDs-Ax-khK">
                                             <size key="itemSize" width="139" height="139"/>
@@ -855,10 +869,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zjl-Lq-FhO">
-                                <rect key="frame" x="0.0" y="90" width="375" height="577"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="528"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="258" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c7g-9i-ztq">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="528"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reuseIdentifier" rowHeight="258" id="5ci-gi-0Cs" customClass="HomeTableViewCell" customModule="IDK" customModuleProvider="target">
@@ -1200,14 +1214,15 @@
     </scenes>
     <resources>
         <image name="Background" width="1440" height="810"/>
+        <image name="Background3" width="1440" height="810"/>
         <image name="SharkConnect" width="261" height="199"/>
         <image name="arrow" width="700" height="700"/>
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6m8-vh-SW8"/>
-        <segue reference="NJP-DE-U0P"/>
-        <segue reference="Rwv-9S-APn"/>
         <segue reference="AjU-YC-aKN"/>
+        <segue reference="NJP-DE-U0P"/>
+        <segue reference="6m8-vh-SW8"/>
+        <segue reference="3yK-Wj-Oyx"/>
     </inferredMetricsTieBreakers>
 </document>

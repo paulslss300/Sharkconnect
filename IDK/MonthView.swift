@@ -1,10 +1,11 @@
 //
-//  MonthView.swift
-//  myCalendar2
+//  CalendarViewController.swift
+//  IDK
 //
-//  Created by Muskan on 10/22/17.
-//  Copyright © 2017 akhil. All rights reserved.
+//  Created by launchpad on 2018-02-18.
+//  Copyright  2018 No Clue. All rights reserved.
 //
+
 
 import UIKit
 
@@ -72,7 +73,7 @@ class MonthView: UIView {
     let lblName: UILabel = {
         let lbl=UILabel()
         lbl.text="Default Month Year text"
-        lbl.textColor = CFCalendarSetLocale.monthViewLblColor
+        lbl.textColor = CalendarStyle.monthViewLblColor
         lbl.textAlignment = .center
         lbl.font=UIFont.boldSystemFont(ofSize: 16)
         lbl.translatesAutoresizingMaskIntoConstraints=false
@@ -102,3 +103,5 @@ class MonthView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+
