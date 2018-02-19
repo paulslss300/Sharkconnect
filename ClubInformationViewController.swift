@@ -15,6 +15,11 @@ class ClubInformationViewController: UIViewController {
     @IBOutlet weak var clubName: UILabel!
     
     @IBAction func suscribeButton(_ sender: Any) {
+       // for club in subscribedClubs {
+         //   if selectedClub?.ClubNa != club.ClubNa {
+           //     subscribedClubs += [selectedClub!]
+            //}
+        //}
         subscribedClubs += [selectedClub!]
     }
     

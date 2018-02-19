@@ -18,6 +18,9 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
     
     @IBOutlet weak var userTableview: UITableView!
     @IBOutlet weak var clubSettingsClub: UIButton!
+    
+    var i: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userTableview.delegate  = self
@@ -26,6 +29,7 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
         if clubId == "student" {
             clubSettingsClub.isEnabled = false
             clubSettingsClub.setTitle("", for: .normal)
+           // subscribedClubs = Array(Set(subscribedClubs))
         }
 
         // Uncomment the following line to preserve selection between presentations
@@ -50,6 +54,7 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return subscribedClubs.count
+        
     }
 
 
