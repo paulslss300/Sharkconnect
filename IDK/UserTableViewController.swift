@@ -29,7 +29,6 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
         if clubId == "student" {
             clubSettingsClub.isEnabled = false
             clubSettingsClub.setTitle("", for: .normal)
-           // subscribedClubs = Array(Set(subscribedClubs))
         }
 
         // Uncomment the following line to preserve selection between presentations

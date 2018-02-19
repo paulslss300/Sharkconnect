@@ -10,21 +10,6 @@ import UIKit
 
 class ClubInformationViewController: UIViewController {
     
-    var selectedClub: Club? = nil
-    
-    @IBOutlet weak var clubName: UILabel!
-    
-    @IBAction func suscribeButton(_ sender: Any) {
-       // for club in subscribedClubs {
-         //   if selectedClub?.ClubNa != club.ClubNa {
-           //     subscribedClubs += [selectedClub!]
-            //}
-        //}
-        subscribedClubs += [selectedClub!]
-    }
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         clubName.text = selectedClub?.ClubNa
@@ -36,6 +21,26 @@ class ClubInformationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    var selectedClub: Club? = nil
+    
+    @IBOutlet weak var clubName: UILabel!
+    
+    @IBAction func suscribeButton(_ sender: Any) {
+        var duplicateClub: Bool = true
+        
+        if subscribedClubs.isEmpty{
+            subscribedClubs += [selectedClub!]
+        } else {
+            for club in subscribedClubs {
+                if selectedClub?.ClubNa != club.ClubNa {
+                    duplicateClub = false
+                }
+            }
+            if duplicateClub == false {
+                subscribedClubs += [selectedClub!]
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

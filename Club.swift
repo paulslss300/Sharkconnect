@@ -9,6 +9,7 @@
 import UIKit
 
 struct Club {
+    
     var ClubNa: String
     var ClubPa: String
     var ClubCellImageName: UIImage? = nil
