@@ -26,21 +26,26 @@ class ClubInformationViewController: UIViewController {
     @IBOutlet weak var clubName: UILabel!
     
     @IBAction func suscribeButton(_ sender: Any) {
-        var duplicateClub: Bool = true
         
-        if subscribedClubs.isEmpty{
+        var noDuplicate: Bool = false
+        
+        if subscribedClubs.isEmpty {
             subscribedClubs += [selectedClub!]
         } else {
+            
             for club in subscribedClubs {
-                if selectedClub?.ClubNa != club.ClubNa {
-                    duplicateClub = false
+                if (selectedClub?.ClubNa)! != club.ClubNa {
+                    noDuplicate = true
+                } else {
+                    noDuplicate = false
                 }
             }
-            if duplicateClub == false {
-                subscribedClubs += [selectedClub!]
-            }
+        }
+        if noDuplicate {
+            subscribedClubs += [selectedClub!]
         }
     }
+
 
     /*
     // MARK: - Navigation
