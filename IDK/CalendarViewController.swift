@@ -28,7 +28,7 @@ class CalendarViewController: UIViewController {
     // MARK: - Private methods
     func setupCalendar() {
         if calendarView == nil {
-            //calendarView = calendarView(theme: .dark)   // Can change this to .light or .dark as desired
+            calendarView = CalendarView(theme: .dark)   // Can change this to .light or .dark as desired
             calendarView.translatesAutoresizingMaskIntoConstraints = false
             calendarContainerView.addSubview(calendarView)
             calendarView.topAnchor.constraint(equalTo: calendarContainerView.topAnchor, constant: 0).isActive=true
