@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Load the sample data.
         loadSampleClubs()
+        loadSamplePosts()
         
         return true
     }
@@ -61,6 +62,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let samplelub6 = Club(ClubNa: "Math Club", ClubPa: "samplepassword", ClubCellImageName: photo6!)
         Club.clubs += [samplelub6]
+    }
+    
+    private func loadSamplePosts() {
+        
+        let photo1 = UIImage(named: "dramaclub")
+        let photo2 = UIImage(named: "interactclub")
+        let photo3 = UIImage(named: "studentcouncil")
+        let photo4 = UIImage(named: "artclub")
+        let photo5 = UIImage(named: "stemclub")
+        let photo6 = UIImage(named: "mathclub")
+        
+        // Populate Clubs
+        let samplePost1 = Post.init(postTi: "Drama Club Notice", postDe: "Be in mind the meeting is canceled", clubIdentifier: "Drama Club", postImage: photo1!)
+        Post.posts += [samplePost1]
+        
+        let samplePost2 = Post.init(postTi: "Math Club Notice", postDe: "Be in mind the meeting is on this Tuesday", clubIdentifier: "Math Club", postImage: photo2!)
+        Post.posts += [samplePost2]
+        
+        let samplePost3 = Post.init(postTi: "Interact Club Notice", postDe: "Be in mind the meeting is canceled", clubIdentifier: "Interact Club", postImage: photo3!)
+        Post.posts += [samplePost3]
+        
+        let samplePost4 = Post.init(postTi: "Last minute notice!", postDe: "Be in mind the meeting is canceled", clubIdentifier: "STEM Club", postImage: photo4!)
+        Post.posts += [samplePost4]
+        
+        let samplePost5 = Post.init(postTi: "Art Club Notice", postDe: "Be in mind the meeting is canceled", clubIdentifier: "Art Club", postImage: photo5!)
+        Post.posts += [samplePost5]
+        
+        let samplePost6 = Post.init(postTi: "We need your help", postDe: "come to the meeting today for more information", clubIdentifier: "Student Council", postImage: photo6!)
+        Post.posts += [samplePost6]
     }
 
 
