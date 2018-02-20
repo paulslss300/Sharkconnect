@@ -396,7 +396,7 @@
             </objects>
             <point key="canvasLocation" x="848.79999999999995" y="357.57121439280365"/>
         </scene>
-        <!--calendar-->
+        <!--Calendar-->
         <scene sceneID="Ufn-0I-DcJ">
             <objects>
                 <viewController id="IGT-pk-dQH" customClass="CalendarViewController" customModule="IDK" customModuleProvider="target" sceneMemberID="viewController">
@@ -433,7 +433,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="calendar" id="8JW-nq-dGI"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendarfinal" id="8JW-nq-dGI"/>
                     <connections>
                         <outlet property="calendarContainerView" destination="Hxq-1h-T1R" id="Cn7-oa-arf"/>
                     </connections>
@@ -616,7 +616,7 @@
             </objects>
             <point key="canvasLocation" x="4244" y="2411.2443778110946"/>
         </scene>
-        <!--user-->
+        <!--User-->
         <scene sceneID="6uv-bH-eGX">
             <objects>
                 <viewController id="zVJ-kz-s83" customClass="UserTableViewController" customModule="IDK" customModuleProvider="target" sceneMemberID="viewController">
@@ -699,7 +699,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="user" id="NIl-OW-BtJ"/>
+                    <tabBarItem key="tabBarItem" title="User" image="userfinal" id="NIl-OW-BtJ"/>
                     <connections>
                         <outlet property="clubSettingsClub" destination="NeE-Xa-ktw" id="iRF-6E-v3L"/>
                         <outlet property="userTableview" destination="OgT-hG-JT7" id="eQB-1B-JFy"/>
@@ -709,7 +709,7 @@
             </objects>
             <point key="canvasLocation" x="3360.8000000000002" y="1568.3658170914543"/>
         </scene>
-        <!--search-->
+        <!--Search-->
         <scene sceneID="eQx-mu-5Nd">
             <objects>
                 <viewController id="jji-nG-1Jf" customClass="DiscoverViewController" customModule="IDK" customModuleProvider="target" sceneMemberID="viewController">
@@ -820,7 +820,7 @@
                             <constraint firstAttribute="trailing" secondItem="06x-yy-QhG" secondAttribute="trailing" id="xL8-am-21U"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="search" id="MFl-nl-KCx"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="searchfinal" id="MFl-nl-KCx"/>
                     <connections>
                         <outlet property="discoverView" destination="UW1-zD-3Py" id="lIk-Zk-N76"/>
                         <segue destination="OrF-Al-IfX" kind="show" identifier="showclubinformation" id="lnt-xu-q8B"/>
@@ -843,7 +843,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="6S5-0g-oNi">
-                                <rect key="frame" x="0.0" y="257" width="375" height="361"/>
+                                <rect key="frame" x="0.0" y="257" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9vD-Mj-8BW">
@@ -904,7 +904,7 @@
             </objects>
             <point key="canvasLocation" x="4184.8000000000002" y="-1292.2038980509747"/>
         </scene>
-        <!--home-->
+        <!--Home-->
         <scene sceneID="4Rl-Bt-qiw">
             <objects>
                 <viewController id="YfU-Ee-kHj" customClass="HomeTableViewController" customModule="IDK" customModuleProvider="target" sceneMemberID="viewController">
@@ -1010,7 +1010,7 @@
                             <constraint firstAttribute="trailing" secondItem="Zjl-Lq-FhO" secondAttribute="trailing" id="yMd-9h-hLw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="home" id="9T5-bZ-2rk"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homefinal" id="9T5-bZ-2rk"/>
                     <connections>
                         <outlet property="displayPost" destination="bVx-fs-9Wh" id="9w0-oa-fQW"/>
                         <outlet property="tableView" destination="c7g-9i-ztq" id="S0R-Ej-pql"/>
@@ -1273,8 +1273,12 @@
         <image name="Background3" width="1440" height="810"/>
         <image name="SharkConnect" width="261" height="199"/>
         <image name="arrow" width="700" height="700"/>
+        <image name="calendarfinal" width="40" height="36"/>
+        <image name="homefinal" width="32" height="28"/>
         <image name="plus" width="700" height="700"/>
+        <image name="searchfinal" width="38" height="37"/>
         <image name="settings2" width="700" height="700"/>
+        <image name="userfinal" width="26" height="34"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6m8-vh-SW8"/>
