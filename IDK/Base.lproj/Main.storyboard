@@ -433,7 +433,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" image="calendarfinal" id="8JW-nq-dGI"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendarperfect" id="8JW-nq-dGI"/>
                     <connections>
                         <outlet property="calendarContainerView" destination="Hxq-1h-T1R" id="Cn7-oa-arf"/>
                     </connections>
@@ -454,17 +454,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5h-Rs-pxY">
-                                <rect key="frame" x="23" y="369" width="114" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <state key="normal" title="Create Post">
-                                    <color key="titleColor" red="0.033678756476683946" green="0.033678756476683946" blue="0.033678756476683946" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <segue destination="mZ3-Ku-5Vc" kind="show" id="1ji-cI-DmW"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vP-0e-Hgd">
                                 <rect key="frame" x="208" y="385" width="167" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -530,6 +519,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <segue destination="mDB-Wh-Lyi" kind="show" id="bPQ-0n-lEL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5h-Rs-pxY">
+                                <rect key="frame" x="26" y="377" width="114" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Create Post">
+                                    <color key="titleColor" red="0.033678756476683946" green="0.033678756476683946" blue="0.033678756476683946" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mZ3-Ku-5Vc" kind="show" id="1ji-cI-DmW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -699,7 +699,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="User" image="userfinal" id="NIl-OW-BtJ"/>
+                    <tabBarItem key="tabBarItem" title="User" image="userperfect" id="NIl-OW-BtJ"/>
                     <connections>
                         <outlet property="clubSettingsClub" destination="NeE-Xa-ktw" id="iRF-6E-v3L"/>
                         <outlet property="userTableview" destination="OgT-hG-JT7" id="eQB-1B-JFy"/>
@@ -820,7 +820,7 @@
                             <constraint firstAttribute="trailing" secondItem="06x-yy-QhG" secondAttribute="trailing" id="xL8-am-21U"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="searchfinal" id="MFl-nl-KCx"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="searchperfect" id="MFl-nl-KCx"/>
                     <connections>
                         <outlet property="discoverView" destination="UW1-zD-3Py" id="lIk-Zk-N76"/>
                         <segue destination="OrF-Al-IfX" kind="show" identifier="showclubinformation" id="lnt-xu-q8B"/>
@@ -1010,7 +1010,7 @@
                             <constraint firstAttribute="trailing" secondItem="Zjl-Lq-FhO" secondAttribute="trailing" id="yMd-9h-hLw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="homefinal" id="9T5-bZ-2rk"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homeperfect" id="9T5-bZ-2rk"/>
                     <connections>
                         <outlet property="displayPost" destination="bVx-fs-9Wh" id="9w0-oa-fQW"/>
                         <outlet property="tableView" destination="c7g-9i-ztq" id="S0R-Ej-pql"/>
@@ -1273,12 +1273,12 @@
         <image name="Background3" width="1440" height="810"/>
         <image name="SharkConnect" width="261" height="199"/>
         <image name="arrow" width="700" height="700"/>
-        <image name="calendarfinal" width="40" height="36"/>
-        <image name="homefinal" width="32" height="28"/>
+        <image name="calendarperfect" width="28" height="25"/>
+        <image name="homeperfect" width="32" height="28"/>
         <image name="plus" width="700" height="700"/>
-        <image name="searchfinal" width="38" height="37"/>
+        <image name="searchperfect" width="26" height="26"/>
         <image name="settings2" width="700" height="700"/>
-        <image name="userfinal" width="26" height="34"/>
+        <image name="userperfect" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6m8-vh-SW8"/>
