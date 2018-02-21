@@ -46,28 +46,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let photo7 = UIImage(named: "unnamed-4")
         let photo8 = UIImage(named: "unnamed-1")
-        let photo9 = UIImage(named: "unnamed-5")
+        let photo9 = UIImage(named: "stuco")
         let photo10 = UIImage(named: "unnamed")
         let photo11 = UIImage(named: "unnamed-3")
         let photo12 = UIImage(named: "unnamed-2")
         
         // Populate Clubs
-        let samplelub1 = Club(ClubNa: "Drama Club", ClubPa: "samplepassword", ClubCellImageName: photo1!, ClubCellCoverImage: photo7!)
+        let samplelub1 = Club(ClubNa: "Drama Club", ClubPa: "samplepassword", ClubDe: "Tell members what this group is about. Our newest production is R.E.D. and will be showing in two months! Written by students Emily Ison and Mandy Huang. We put on three to four plays a year. Our last play was High School Confidential - A  KDog Special. Our sponsor teacher? KDog aka Ms Kosar but please call her “KDog.” It makes her happy. Ecstatic. Absolutely glowing. :)",ClubCellImageName: photo1!, ClubCellCoverImage: photo7!)
         Club.clubs += [samplelub1]
         
-        let samplelub2 = Club(ClubNa: "Interact Club", ClubPa: "samplepassword", ClubCellImageName: photo2!, ClubCellCoverImage: photo8!)
+        let samplelub2 = Club(ClubNa: "Interact Club", ClubPa: "samplepassword", ClubDe: "Interact clubs are part of a larger organization called Rotary International. Our focus is on community involvement and service, demonstrated in our motto, service above self. \n Every project whether done through Interact or Rotary has an impact in our world. Handing out sandwiches to the hungry, fundraising to support charities, and participating in service projects are all ways that Interact and Rotary have helped to make our world a better place. ",ClubCellImageName: photo2!, ClubCellCoverImage: photo8!)
         Club.clubs += [samplelub2]
         
-        let samplelub3 = Club(ClubNa: "Student Council", ClubPa: "samplepassword", ClubCellImageName: photo3!, ClubCellCoverImage: photo9!)
+        let samplelub3 = Club(ClubNa: "Student Council", ClubPa: "samplepassword", ClubDe: "Stay up to date with all the events around the school! \n Student Council meetings are Tuesdays at lunch in Ms. Levin's room. The first meeting will be on Tuesday, September 26th :)", ClubCellImageName: photo3!, ClubCellCoverImage: photo9!)
         Club.clubs += [samplelub3]
         
-        let samplelub4 = Club(ClubNa: "Art Club", ClubPa: "samplepassword", ClubCellImageName: photo4!, ClubCellCoverImage: photo10!)
+        let samplelub4 = Club(ClubNa: "Art Club", ClubPa: "samplepassword", ClubDe: "Hello Everybody :) Welcome to SLSS Art Club! \n Feel free to add your friends who are interested in art club as well:D \n We host weekly art contests, annual gallery, and contribute to local charities in an artistic way! ", ClubCellImageName: photo4!, ClubCellCoverImage: photo10!)
         Club.clubs += [samplelub4]
         
-        let samplelub5 = Club(ClubNa: "STEM Club", ClubPa: "samplepassword", ClubCellImageName: photo5!, ClubCellCoverImage: photo11!)
+        let samplelub5 = Club(ClubNa: "STEM Club", ClubPa: "samplepassword", ClubDe: "Welcome to the SLSS STEM (Science, Technology, Engineering, and Math) Club! Meetings are held the first Monday lunch of every month in Ms Ranis' room (room 702). We have leadership opportunities, guest speakers, workshops, and more! See you all there!! ", ClubCellImageName: photo5!, ClubCellCoverImage: photo11!)
         Club.clubs += [samplelub5]
         
-        let samplelub6 = Club(ClubNa: "Math Club", ClubPa: "samplepassword", ClubCellImageName: photo6!, ClubCellCoverImage: photo12!)
+        let samplelub6 = Club(ClubNa: "Math Club", ClubPa: "samplepassword", ClubDe: "SLSS Math Club, the only place people buy 64 watermelons and no one wonders why... \n Meetings every Wednesday at lunch in room X.", ClubCellImageName: photo6!, ClubCellCoverImage: photo12!)
         Club.clubs += [samplelub6]
     }
     
@@ -84,19 +84,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let samplePost1 = Post.init(postTi: "Drama Club Notice", postDe: "Be in mind the meeting is canceled", clubIdentifier: "Drama Club", postImage: photo1!)
         Post.posts += [samplePost1]
         
-        let samplePost2 = Post.init(postTi: "Math Club Notice", postDe: "Be in mind the meeting is on this Tuesday", clubIdentifier: "Math Club", postImage: photo2!)
+        let samplePost2 = Post.init(postTi: "Math Club Notice", postDe: "Be in mind the meeting is on this Tuesday", clubIdentifier: "Math Club", postImage: photo6!)
         Post.posts += [samplePost2]
         
-        let samplePost3 = Post.init(postTi: "Interact Club Notice", postDe: "Be in mind the meeting is canceled", clubIdentifier: "Interact Club", postImage: photo3!)
+        let samplePost3 = Post.init(postTi: "Interact Club Notice", postDe: "Be in mind the meeting is canceled", clubIdentifier: "Interact Club", postImage: photo2!)
         Post.posts += [samplePost3]
         
-        let samplePost4 = Post.init(postTi: "Last minute notice!", postDe: "Be in mind the meeting is canceled", clubIdentifier: "STEM Club", postImage: photo4!)
+        let samplePost4 = Post.init(postTi: "Last minute notice!", postDe: "Be in mind the meeting is canceled", clubIdentifier: "STEM Club", postImage: photo5!)
         Post.posts += [samplePost4]
         
-        let samplePost5 = Post.init(postTi: "Art Club Notice", postDe: "Be in mind the meeting is canceled", clubIdentifier: "Art Club", postImage: photo5!)
+        let samplePost5 = Post.init(postTi: "Art Club Notice", postDe: "Be in mind the meeting is canceled", clubIdentifier: "Art Club", postImage: photo4!)
         Post.posts += [samplePost5]
         
-        let samplePost6 = Post.init(postTi: "We need your help", postDe: "come to the meeting today for more information", clubIdentifier: "Student Council", postImage: photo6!)
+        let samplePost6 = Post.init(postTi: "We need your help", postDe: "come to the meeting today for more information", clubIdentifier: "Student Council", postImage: photo3!)
         Post.posts += [samplePost6]
     }
 

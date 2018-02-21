@@ -28,6 +28,17 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        subscribedPosts = []
+        
+        for post in Post.posts{
+            for club in subscribedClubs {
+                if post.clubIdentifier == club.ClubNa {
+                    subscribedPosts += [post]
+                }
+            }
+        }
+
     }
 
     @IBAction func indexChanged(_ sender: Any) {
@@ -40,6 +51,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         default:
             break
         }
+        tableView.reloadData()
     }
     
     
@@ -55,20 +67,18 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Post.posts.count
+        if displayAllClubs {
+            return Post.posts.count
+        } else {
+            return subscribedPosts.count
+        }
+        
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! HomeTableViewCell
         
-        for post in Post.posts{
-            for club in subscribedClubs {
-                if post.clubIdentifier == club.ClubNa {
-                    subscribedPosts += [post]
-            }
-            }
-        }
         
         if displayAllClubs {
             let post = Post.posts[indexPath.row]
@@ -86,8 +96,6 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             cell.cellIdentifier?.text = post.clubIdentifier
         }
         
-
-
         return cell
     }
     

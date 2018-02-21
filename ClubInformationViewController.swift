@@ -13,6 +13,7 @@ class ClubInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         clubName.text = selectedClub?.ClubNa
+        clubDe.text = selectedClub?.ClubDe
         clubCoverImage.image = selectedClub?.ClubCellCoverImage
         clubImage.image = selectedClub?.ClubCellImageName
         subscribeButton.layer.cornerRadius = 6.0
@@ -28,6 +29,8 @@ class ClubInformationViewController: UIViewController {
     @IBOutlet weak var subscribeButton: UIButton!
     
     @IBOutlet weak var clubName: UILabel!
+    
+    @IBOutlet weak var clubDe: UITextView!
     
     @IBOutlet weak var clubCoverImage: UIImageView!
     
