@@ -10,10 +10,11 @@ import UIKit
 
 class ImageImporterViewController: UIViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
+    let image = UIImagePickerController()
+    
     @IBOutlet weak var myImageView: UIImageView!
     
     @IBAction func importImage(_ sender: Any) {
-        let image = UIImagePickerController()
         image.delegate = self
         
         image.sourceType = UIImagePickerControllerSourceType.photoLibrary
@@ -40,6 +41,7 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        myImageView.image = myAvatar
 
         // Do any additional setup after loading the view.
     }
