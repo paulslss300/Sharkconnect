@@ -11,7 +11,7 @@ import UIKit
 class HomeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellTitle: UILabel!
-    @IBOutlet weak var cellDescription: UILabel!
+    @IBOutlet weak var cellDescription: UITextView! 
     @IBOutlet weak var cellIdentifier: UILabel!
     @IBOutlet weak var cellImage: UIImageView!
     

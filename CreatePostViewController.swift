@@ -23,7 +23,8 @@ class CreatePostViewController: UIViewController {
         
     }
     @IBOutlet weak var postTitle: UITextField!
-    @IBOutlet weak var postDescription: UITextField!
+    @IBOutlet weak var postDescription: UITextView!
+  
     // Create a club object
     // Populate image, name and description
     // Return club object to previous view controller for display in table

@@ -126,13 +126,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Post Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QgE-TO-bDC">
-                                <rect key="frame" x="118" y="300" width="142" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTB-qK-czg">
                                 <rect key="frame" x="313" y="540" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -186,11 +179,18 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Post Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J0U-qp-2kZ">
+                                <rect key="frame" x="75" y="279" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="postDescription" destination="QgE-TO-bDC" id="d5W-Cn-Mda"/>
+                        <outlet property="postDescription" destination="J0U-qp-2kZ" id="F8Y-ae-ARd"/>
                         <outlet property="postTitle" destination="OHj-IS-Fsv" id="ihb-nA-9SJ"/>
                     </connections>
                 </viewController>
@@ -957,13 +957,6 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4j-SO-TUC">
-                                                            <rect key="frame" x="15" y="108" width="323" height="26"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XJF-8z-gXN">
                                                             <rect key="frame" x="15" y="11" width="60" height="60"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -975,10 +968,17 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Aor-mA-mLh">
+                                                            <rect key="frame" x="8" y="108" width="359" height="41"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="cellDescription" destination="c4j-SO-TUC" id="a12-WS-JZW"/>
+                                                    <outlet property="cellDescription" destination="Aor-mA-mLh" id="j4F-sn-Q0m"/>
                                                     <outlet property="cellIdentifier" destination="dWP-70-TdL" id="zaF-qe-MVt"/>
                                                     <outlet property="cellImage" destination="XJF-8z-gXN" id="BOC-8d-FsZ"/>
                                                     <outlet property="cellTitle" destination="K27-Qk-WZL" id="d7e-RV-2VU"/>
@@ -1284,11 +1284,11 @@
         <image name="usericonFINAL" width="700" height="700"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MBC-8d-t6g"/>
-        <segue reference="3yK-Wj-Oyx"/>
-        <segue reference="yOk-uO-gMH"/>
         <segue reference="fjd-ft-vaC"/>
+        <segue reference="3yK-Wj-Oyx"/>
+        <segue reference="8WM-Hn-4ej"/>
         <segue reference="1ji-cI-DmW"/>
         <segue reference="y0p-Bx-6Mf"/>
+        <segue reference="yOk-uO-gMH"/>
     </inferredMetricsTieBreakers>
 </document>
