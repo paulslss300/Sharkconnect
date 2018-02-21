@@ -12,6 +12,8 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
     
     let image = UIImagePickerController()
     
+    @IBOutlet weak var clubDescription: UITextView!
+    
     @IBOutlet weak var myImageView: UIImageView!
     
     @IBAction func importImage(_ sender: Any) {
@@ -28,6 +30,14 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
         
     }
     
+    @IBAction func setDescription(_ sender: Any) {
+        MyDescription = clubDescription.text
+    }
+    
+    @IBAction func setAvatar(_ sender: Any) {
+        myAvatar = myImageView.image
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
             myImageView.image = image
@@ -41,7 +51,7 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        myImageView.image = myAvatar
+        //myImageView.image = myAvatar
 
         // Do any additional setup after loading the view.
     }
