@@ -10,6 +10,9 @@ import UIKit
 
 class ClubInformationViewController: UIViewController {
     
+    
+    //subscribeButton.backgroundColor = UIColor(red: 102, green: 153, blue: 153, alpha: 1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         clubName.text = selectedClub?.ClubNa
@@ -50,6 +53,7 @@ class ClubInformationViewController: UIViewController {
             for club in subscribedClubs {
                 if (selectedClub?.ClubNa)! != club.ClubNa {
                     noDuplicate = true
+                    
                 } else {
                     noDuplicate = false
                     subscribedClubs = subscribedClubs.filter({ (club) -> Bool in
