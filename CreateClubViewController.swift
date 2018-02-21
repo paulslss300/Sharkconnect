@@ -50,7 +50,8 @@ class CreateClubViewController: UIViewController {
         //create new club
         if createdClub {
             myAvatar = UIImage(named: "default")
-            let newClub = Club.init(ClubNa: actualClubName, ClubPa: actualClubPassword, ClubCellImageName: myAvatar!)
+            myClubCover = UIImage(named: "defaultCoverImage")
+            let newClub = Club.init(ClubNa: actualClubName, ClubPa: actualClubPassword, ClubCellImageName: myAvatar!, ClubCellCoverImage: myClubCover!)
             Club.clubs += [newClub]
             
             createdClubLabel.text! = "Account Created!"

@@ -868,36 +868,39 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3v1-c4-2Ie">
-                                <rect key="frame" x="137" y="206" width="100" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xnc-X4-RqZ">
                                 <rect key="frame" x="0.0" y="89" width="375" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BXB-RS-vrB">
-                                <rect key="frame" x="297" y="105" width="62" height="25"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pif-fv-a7x">
+                                <rect key="frame" x="132" y="196" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ch2-so-SWM">
-                                        <rect key="frame" x="-24" y="-3" width="86" height="30"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3v1-c4-2Ie">
+                                        <rect key="frame" x="5" y="5" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <state key="normal" title="Subscribe"/>
-                                        <connections>
-                                            <action selector="suscribeButton:" destination="OrF-Al-IfX" eventType="touchUpInside" id="AC8-4m-8Yk"/>
-                                        </connections>
-                                    </button>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.73744844543147203" green="0.73744844543147203" blue="0.73744844543147203" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ch2-so-SWM">
+                                <rect key="frame" x="273" y="98" width="86" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Subscribe"/>
+                                <connections>
+                                    <action selector="suscribeButton:" destination="OrF-Al-IfX" eventType="touchUpInside" id="AC8-4m-8Yk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="clubCoverImage" destination="Xnc-X4-RqZ" id="mso-Qa-9JL"/>
+                        <outlet property="clubImage" destination="3v1-c4-2Ie" id="Xg4-Ig-DJV"/>
                         <outlet property="clubName" destination="9av-m2-7Vs" id="tEl-Hm-8YZ"/>
+                        <outlet property="subscribeButton" destination="Ch2-so-SWM" id="Q3x-b6-azh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gy-nK-HId" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1281,11 +1284,11 @@
         <image name="userperfect" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6m8-vh-SW8"/>
-        <segue reference="1ji-cI-DmW"/>
         <segue reference="MBC-8d-t6g"/>
         <segue reference="3yK-Wj-Oyx"/>
+        <segue reference="yOk-uO-gMH"/>
+        <segue reference="fjd-ft-vaC"/>
+        <segue reference="1ji-cI-DmW"/>
         <segue reference="y0p-Bx-6Mf"/>
-        <segue reference="AjU-YC-aKN"/>
     </inferredMetricsTieBreakers>
 </document>

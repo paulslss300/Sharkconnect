@@ -44,23 +44,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let photo5 = UIImage(named: "stemclub")
         let photo6 = UIImage(named: "mathclub")
         
+        let photo7 = UIImage(named: "unnamed-4")
+        let photo8 = UIImage(named: "unnamed-1")
+        let photo9 = UIImage(named: "unnamed-5")
+        let photo10 = UIImage(named: "unnamed")
+        let photo11 = UIImage(named: "unnamed-3")
+        let photo12 = UIImage(named: "unnamed-2")
+        
         // Populate Clubs
-        let samplelub1 = Club(ClubNa: "Drama Club", ClubPa: "samplepassword", ClubCellImageName: photo1!)
+        let samplelub1 = Club(ClubNa: "Drama Club", ClubPa: "samplepassword", ClubCellImageName: photo1!, ClubCellCoverImage: photo7!)
         Club.clubs += [samplelub1]
         
-        let samplelub2 = Club(ClubNa: "Interact Club", ClubPa: "samplepassword", ClubCellImageName: photo2!)
+        let samplelub2 = Club(ClubNa: "Interact Club", ClubPa: "samplepassword", ClubCellImageName: photo2!, ClubCellCoverImage: photo8!)
         Club.clubs += [samplelub2]
         
-        let samplelub3 = Club(ClubNa: "Student Council", ClubPa: "samplepassword", ClubCellImageName: photo3!)
+        let samplelub3 = Club(ClubNa: "Student Council", ClubPa: "samplepassword", ClubCellImageName: photo3!, ClubCellCoverImage: photo9!)
         Club.clubs += [samplelub3]
         
-        let samplelub4 = Club(ClubNa: "Art Club", ClubPa: "samplepassword", ClubCellImageName: photo4!)
+        let samplelub4 = Club(ClubNa: "Art Club", ClubPa: "samplepassword", ClubCellImageName: photo4!, ClubCellCoverImage: photo10!)
         Club.clubs += [samplelub4]
         
-        let samplelub5 = Club(ClubNa: "STEM Club", ClubPa: "samplepassword", ClubCellImageName: photo5!)
+        let samplelub5 = Club(ClubNa: "STEM Club", ClubPa: "samplepassword", ClubCellImageName: photo5!, ClubCellCoverImage: photo11!)
         Club.clubs += [samplelub5]
         
-        let samplelub6 = Club(ClubNa: "Math Club", ClubPa: "samplepassword", ClubCellImageName: photo6!)
+        let samplelub6 = Club(ClubNa: "Math Club", ClubPa: "samplepassword", ClubCellImageName: photo6!, ClubCellCoverImage: photo12!)
         Club.clubs += [samplelub6]
     }
     

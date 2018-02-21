@@ -13,7 +13,9 @@ class ClubInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         clubName.text = selectedClub?.ClubNa
-
+        clubCoverImage.image = selectedClub?.ClubCellCoverImage
+        clubImage.image = selectedClub?.ClubCellImageName
+        subscribeButton.layer.cornerRadius = 6.0
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,7 +25,13 @@ class ClubInformationViewController: UIViewController {
     
     var selectedClub: Club? = nil
     
+    @IBOutlet weak var subscribeButton: UIButton!
+    
     @IBOutlet weak var clubName: UILabel!
+    
+    @IBOutlet weak var clubCoverImage: UIImageView!
+    
+    @IBOutlet weak var clubImage: UIImageView!
     
     @IBAction func suscribeButton(_ sender: Any) {
         
