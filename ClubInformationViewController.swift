@@ -64,6 +64,9 @@ class ClubInformationViewController: UIViewController {
         }
         if noDuplicate {
             subscribedClubs += [selectedClub!]
+            subscribeButton.setTitle("subscribed", for: .normal)
+        } else {
+            subscribeButton.setTitle("subscribe", for: .normal)
         }
         
         
