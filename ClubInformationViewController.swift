@@ -38,7 +38,10 @@ class ClubInformationViewController: UIViewController {
     
     @IBAction func suscribeButton(_ sender: Any) {
         
+        //sender.isSelected = !sender.isSelected
+        
         var noDuplicate: Bool = false
+        
         
         if subscribedClubs.isEmpty {
             subscribedClubs += [selectedClub!]
@@ -49,12 +52,17 @@ class ClubInformationViewController: UIViewController {
                     noDuplicate = true
                 } else {
                     noDuplicate = false
+                    subscribedClubs = subscribedClubs.filter({ (club) -> Bool in
+                        return !(club.ClubNa == selectedClub?.ClubNa)
+                    })
                 }
             }
         }
         if noDuplicate {
             subscribedClubs += [selectedClub!]
         }
+        
+        
     }
 
 
