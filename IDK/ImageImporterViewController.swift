@@ -45,6 +45,12 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
                 club.ClubCellImageName = myImageView.image
             }
         }
+        for post in Post.posts {
+            if post.clubIdentifier == actualClubName {
+                post.postImage = myImageView.image
+                myAvatar = myImageView.image
+            }
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
@@ -60,7 +66,7 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //myImageView.image = myAvatar
+        myImageView.image = myAvatar
 
         // Do any additional setup after loading the view.
     }

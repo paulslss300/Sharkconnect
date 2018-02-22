@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3353139D201FE20C0068EE03 /* CreatePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353139C201FE20C0068EE03 /* CreatePopUpViewController.swift */; };
 		3363875A203A2891004F533C /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33638759203A2890004F533C /* CalenderView.swift */; };
 		3363875C203A289B004F533C /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363875B203A289A004F533C /* MonthView.swift */; };
 		3363875E203A28A1004F533C /* WeekdaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363875D203A28A1004F533C /* WeekdaysView.swift */; };
@@ -36,7 +35,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3353139C201FE20C0068EE03 /* CreatePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePopUpViewController.swift; sourceTree = "<group>"; };
 		33638759203A2890004F533C /* CalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
 		3363875B203A289A004F533C /* MonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
 		3363875D203A28A1004F533C /* WeekdaysView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekdaysView.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				3F0B7BC62005B474005BC1CC /* Main.storyboard */,
 				3F0B7BC92005B474005BC1CC /* Assets.xcassets */,
 				3F0B7BCB2005B474005BC1CC /* LaunchScreen.storyboard */,
-				3353139C201FE20C0068EE03 /* CreatePopUpViewController.swift */,
 				3F0B7BCE2005B474005BC1CC /* Info.plist */,
 			);
 			path = IDK;
@@ -219,7 +216,6 @@
 				3363875E203A28A1004F533C /* WeekdaysView.swift in Sources */,
 				3F0B7BC52005B474005BC1CC /* SecondViewController.swift in Sources */,
 				3F0B7BC12005B474005BC1CC /* AppDelegate.swift in Sources */,
-				3353139D201FE20C0068EE03 /* CreatePopUpViewController.swift in Sources */,
 				3F6D3DAF20166CA50030D95D /* UserTableViewController.swift in Sources */,
 				3363875A203A2891004F533C /* CalenderView.swift in Sources */,
 				3F0B7BC32005B474005BC1CC /* FirstViewController.swift in Sources */,

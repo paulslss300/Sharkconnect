@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Post {
+class Post {
     var postTi: String
     var postDe: String
     var clubIdentifier: String
