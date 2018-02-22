@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Club {
+class Club {
     
     var ClubNa: String
     var ClubPa: String

@@ -32,10 +32,19 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
     
     @IBAction func setDescription(_ sender: Any) {
         MyDescription = clubDescription.text
+        for club in Club.clubs {
+            if club.ClubNa == actualClubName {
+                club.ClubDe = clubDescription.text
+            }
+        }
     }
     
     @IBAction func setAvatar(_ sender: Any) {
-        myAvatar = myImageView.image
+        for club in Club.clubs {
+            if club.ClubNa == actualClubName {
+                club.ClubCellImageName = myImageView.image
+            }
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
