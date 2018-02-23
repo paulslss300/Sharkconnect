@@ -431,6 +431,17 @@
                                 <rect key="frame" x="0.0" y="115" width="375" height="338"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="FCw-hc-w5I">
+                                <rect key="frame" x="0.0" y="485" width="375" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Events Currently Scheduled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54U-YZ-N0x">
+                                <rect key="frame" x="16" y="462" width="254" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1347,6 +1358,7 @@
         <image name="Background" width="1440" height="810"/>
         <image name="Background3" width="1440" height="810"/>
         <image name="SharkConnect" width="261" height="199"/>
+        <image name="calendar" width="288" height="133"/>
         <image name="calendarperfect" width="28" height="25"/>
         <image name="homeperfect" width="32" height="28"/>
         <image name="homeresized" width="49" height="42"/>
