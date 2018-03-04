@@ -87,6 +87,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             cell.cellDescription?.text = post.postDe
             cell.cellImage.image = post.postImage
             cell.cellIdentifier?.text = post.clubIdentifier
+            cell.cellDate?.text = post.postDa
         } else {
             let post = subscribedPosts[indexPath.row]
             // Configure the cell...
@@ -94,6 +95,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             cell.cellDescription?.text = post.postDe
             cell.cellImage.image = post.postImage
             cell.cellIdentifier?.text = post.clubIdentifier
+            cell.cellDate?.text = post.postDa
         }
         
         return cell
