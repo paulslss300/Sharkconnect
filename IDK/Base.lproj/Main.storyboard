@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -773,6 +773,7 @@
                     <connections>
                         <outlet property="clubSettingsClub" destination="NeE-Xa-ktw" id="iRF-6E-v3L"/>
                         <outlet property="userTableview" destination="OgT-hG-JT7" id="eQB-1B-JFy"/>
+                        <segue destination="OrF-Al-IfX" kind="show" identifier="showclubinformationthroughuser" id="cIC-cy-jsf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WvJ-rB-lJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -909,7 +910,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2J6-zU-qGw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="T1C-gG-OEN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="6S5-0g-oNi">
@@ -989,11 +990,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t4L-FN-pes">
-                                <rect key="frame" x="0.0" y="324" width="375" height="343"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -1128,6 +1124,7 @@
                     <connections>
                         <outlet property="displayPost" destination="bVx-fs-9Wh" id="9w0-oa-fQW"/>
                         <outlet property="tableView" destination="c7g-9i-ztq" id="S0R-Ej-pql"/>
+                        <segue destination="OrF-Al-IfX" kind="show" identifier="showclubinformationthroughpost" id="yXH-D6-ug6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43h-Q7-HZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1397,11 +1394,12 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yOk-uO-gMH"/>
-        <segue reference="i1j-Du-eCQ"/>
+        <segue reference="3yK-Wj-Oyx"/>
+        <segue reference="MBC-8d-t6g"/>
+        <segue reference="cIC-cy-jsf"/>
+        <segue reference="VdO-mu-1oa"/>
         <segue reference="y0p-Bx-6Mf"/>
-        <segue reference="adI-ie-3y8"/>
-        <segue reference="fjd-ft-vaC"/>
-        <segue reference="AIM-Nz-Izg"/>
         <segue reference="1ji-cI-DmW"/>
+        <segue reference="fjd-ft-vaC"/>
     </inferredMetricsTieBreakers>
 </document>

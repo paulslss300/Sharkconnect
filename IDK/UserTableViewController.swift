@@ -10,6 +10,8 @@ import UIKit
 
 class UserTableViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
+    var selectedClub: Club? = nil
+    
     // IMPORTANT FEATURE ----- LOG OUT BUTTON
     @IBAction func logOutButton(_ sender: Any) {
         clubId = ""
@@ -54,6 +56,12 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
         // #warning Incomplete implementation, return the number of rows
         return subscribedClubs.count
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let club = subscribedClubs[indexPath.row]
+        selectedClub = club
+        performSegue(withIdentifier: "showclubinformationthroughuser", sender: self)
     }
 
 
@@ -106,14 +114,17 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let destinationViewController = segue.destination as? ClubInformationViewController {
+            destinationViewController.selectedClub = selectedClub
+        }
+
     }
-    */
 
 }

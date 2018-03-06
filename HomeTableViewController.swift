@@ -14,6 +14,8 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
     @IBOutlet weak var displayPost: UISegmentedControl!
     
+    var selectedClub: Club? = nil
+    
     var displayAllClubs: Bool = true
     //var createPost = CreatePostViewController()
     
@@ -73,6 +75,27 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             return subscribedPosts.count
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if displayAllClubs {
+            let post = Post.posts[indexPath.row]
+            for club in Club.clubs {
+                if club.ClubNa == post.clubIdentifier {
+                    selectedClub = club
+                    performSegue(withIdentifier: "showclubinformationthroughpost", sender: self)
+                }
+            }
+        } else {
+            let post = subscribedPosts[indexPath.row]
+            for club in Club.clubs {
+                if club.ClubNa == post.clubIdentifier {
+                    selectedClub = club
+                    performSegue(withIdentifier: "showclubinformationthroughpost", sender: self)
+                }
+            }
+        }
+
     }
 
     
@@ -137,14 +160,17 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let destinationViewController = segue.destination as? ClubInformationViewController {
+            destinationViewController.selectedClub = selectedClub
+        }
     }
-    */
+    
 
 }
