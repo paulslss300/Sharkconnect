@@ -9,25 +9,51 @@
 import UIKit
 
 class ImageImporterViewController: UIViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate{
-    
-    let image = UIImagePickerController()
-    
+
     @IBOutlet weak var clubDescription: UITextView!
     
     @IBOutlet weak var myImageView: UIImageView!
     
+    @IBOutlet weak var myClubCoverView: UIImageView!
+    
+    var avatarButtonSelected = false
+    
     @IBAction func importImage(_ sender: Any) {
+        let image = UIImagePickerController()
         image.delegate = self
-        
         image.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        
         image.allowsEditing = false
+        
+        avatarButtonSelected = true
         
         self.present(image, animated: true)
         {
             //After it is complete
         }
         
+    }
+    
+    @IBAction func importCover(_ sender: Any) {
+        let imageCover = UIImagePickerController()
+        imageCover.delegate = self
+        imageCover.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        imageCover.allowsEditing = false
+        
+        avatarButtonSelected = false
+        
+        self.present(imageCover, animated: true){
+            //after it is complete
+        }
+    }
+    
+    @IBAction func setCover(_ sender: Any) {
+        
+        for club in Club.clubs {
+            if club.ClubNa == actualClubName {
+                club.ClubCellCoverImage = myClubCoverView.image
+            }
+        }
+ 
     }
     
     @IBAction func setDescription(_ sender: Any) {
@@ -55,7 +81,13 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            myImageView.image = image
+            // The user has selected an image
+            if avatarButtonSelected == true{
+                myImageView.image = image
+            }else{
+                myClubCoverView.image = image
+            }
+            
         }else{
             //Error message
         }
@@ -63,10 +95,12 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
         self.dismiss(animated: true, completion: nil)
     }
     
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         myImageView.image = myAvatar
+        myClubCoverView.image = myClubCover
 
         // Do any additional setup after loading the view.
     }
@@ -75,8 +109,6 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
     /*
     // MARK: - Navigation
 
@@ -86,5 +118,4 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
         // Pass the selected object to the new view controller.
     }
     */
-
 }

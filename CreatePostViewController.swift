@@ -16,15 +16,17 @@ class CreatePostViewController: UIViewController {
     var actualPostTitle: String = ""
     var actualPostDescription: String = ""
     var actualPostImage: UIImage? = nil
-    var actualDatePicked: String = ""
+    var actualDatePicked: Date? = nil
     
     @IBAction func createPostButton(_ sender: Any) {
         actualPostTitle = postTitle.text!
         actualPostDescription = postDescription.text!
-        actualDatePicked = dateField.text!
         
-        let post1 = Post(postTi: actualPostTitle, postDe: actualPostDescription, clubIdentifier: clubId, postImage: myAvatar!, postDa: actualDatePicked)
-        Post.posts += [post1]
+        if let actualDatePicked = actualDatePicked, let myAvatar = myAvatar {
+            let post1 = Post(postTi: actualPostTitle, postDe: actualPostDescription, clubIdentifier: clubId, postImage: myAvatar, postDa: actualDatePicked)
+            Post.posts += [post1]
+        }
+       
         
     }
     @IBOutlet weak var postTitle: UITextField!
@@ -57,6 +59,8 @@ class CreatePostViewController: UIViewController {
         //format picker for date
         picker.datePickerMode = .date
     }
+    
+    
 
     @objc func donePressed(){
         //format date
@@ -68,6 +72,8 @@ class CreatePostViewController: UIViewController {
         
         dateField.text = "\(dateString)"
         self.view.endEditing(true)
+        
+        actualDatePicked = picker.date
     }
     
     override func didReceiveMemoryWarning() {

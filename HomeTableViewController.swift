@@ -102,7 +102,6 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! HomeTableViewCell
         
-        
         if displayAllClubs {
             let post = Post.posts[indexPath.row]
             // Configure the cell...
@@ -110,7 +109,9 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             cell.cellDescription?.text = post.postDe
             cell.cellImage.image = post.postImage
             cell.cellIdentifier?.text = post.clubIdentifier
-            cell.cellDate?.text = post.postDa
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            cell.cellDate?.text = dateFormatter.string(from: post.postDa)
         } else {
             let post = subscribedPosts[indexPath.row]
             // Configure the cell...
@@ -118,7 +119,9 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             cell.cellDescription?.text = post.postDe
             cell.cellImage.image = post.postImage
             cell.cellIdentifier?.text = post.clubIdentifier
-            cell.cellDate?.text = post.postDa
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            cell.cellDate?.text = dateFormatter.string(from: post.postDa)
         }
         
         return cell

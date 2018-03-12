@@ -81,22 +81,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let photo6 = UIImage(named: "mathclub")
         
         // Populate Clubs
-        let samplePost1 = Post.init(postTi: "Notice", postDe: "Hey crew!!!! We decided to EXTEND crew applications for R.E.D until Monday! There are a few people who want to hand it in Monday so we decided to extend it until Monday for everyone.", clubIdentifier: "Drama Club", postImage: photo1!, postDa: "March 9 2018")
-        Post.posts += [samplePost1]
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        let samplePost2 = Post.init(postTi: "Update", postDe: "Cayley, Pascal and Gauss math contests are on Tuesday. Talk to Mr.Lin if you want to participate", clubIdentifier: "Math Club", postImage: photo6!, postDa: "March 10 2018")
-        Post.posts += [samplePost2]
+        if let date = dateFormatter.date(from: "2018-03-09") {
+            let samplePost1 = Post.init(postTi: "Notice", postDe: "Hey crew!!!! We decided to EXTEND crew applications for R.E.D until Monday! There are a few people who want to hand it in Monday so we decided to extend it until Monday for everyone.", clubIdentifier: "Drama Club", postImage: photo1!, postDa: date)
+            Post.posts += [samplePost1]
+        }
         
-        let samplePost3 = Post.init(postTi: "Notice", postDe: "Hey guys! There will be no general meeting tomorrow. More updates on our projects will be coming up next week!", clubIdentifier: "Interact Club", postImage: photo2!, postDa: "March 11 2018")
-        Post.posts += [samplePost3]
+        if let date = dateFormatter.date(from: "2018-03-17") {
+            let samplePost2 = Post.init(postTi: "Update", postDe: "Cayley, Pascal and Gauss math contests are on Tuesday. Talk to Mr.Lin if you want to participate", clubIdentifier: "Math Club", postImage: photo6!, postDa: date)
+            Post.posts += [samplePost2]
+        }
+      
         
-        let samplePost4 = Post.init(postTi: "New Program!", postDe: "The Team Challenges Program is back for our first event of 2018! On Friday, Mar. 9 at JN Burnett Secondary, join them for TCP World Domination with snacks and prizes included for only $2 a person.", clubIdentifier: "STEM Club", postImage: photo5!, postDa: "March 12 2018")
-        Post.posts += [samplePost4]
-        
-        let samplePost5 = Post.init(postTi: "Upcoming meeting!", postDe: "Meeting today in room 202, we will talking more about our upcoming showcase and showing you guys some art pieces for inspiration :)", clubIdentifier: "Art Club", postImage: photo4!, postDa: "March 13 2018")
-        Post.posts += [samplePost5]
-        
-        let samplePost6 = Post.init(postTi: "Volunteers needed!", postDe: "Come to the meeting today at lunch for more information", clubIdentifier: "Student Council", postImage: photo3!, postDa: "March 14 2018")
+        if let date = dateFormatter.date(from: "2018-04-13") {
+            let samplePost3 = Post.init(postTi: "Notice", postDe: "Hey guys! There will be no general meeting tomorrow. More updates on our projects will be coming up next week!", clubIdentifier: "Interact Club", postImage: photo2!, postDa: date)
+            Post.posts += [samplePost3]
+        }
+
+        if let date = dateFormatter.date(from: "2018-01-11") {
+            let samplePost4 = Post.init(postTi: "New Program!", postDe: "The Team Challenges Program is back for our first event of 2018! On Friday, Mar. 9 at JN Burnett Secondary, join them for TCP World Domination with snacks and prizes included for only $2 a person.", clubIdentifier: "STEM Club", postImage: photo5!, postDa: date)
+            Post.posts += [samplePost4]
+        }
+    
+        if let date = dateFormatter.date(from: "2018-02-08") {
+            let samplePost5 = Post.init(postTi: "Upcoming meeting!", postDe: "Meeting today in room 202, we will talking more about our upcoming showcase and showing you guys some art pieces for inspiration :)", clubIdentifier: "Art Club", postImage: photo4!, postDa: date)
+            Post.posts += [samplePost5]
+        }
+       
+        if let date = dateFormatter.date(from: "2018-06-12"){
+        let samplePost6 = Post.init(postTi: "Volunteers needed!", postDe: "Come to the meeting today at lunch for more information", clubIdentifier: "Student Council", postImage: photo3!, postDa: date)
         Post.posts += [samplePost6]
     }
 
@@ -126,3 +141,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+}
