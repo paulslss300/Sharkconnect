@@ -20,6 +20,9 @@ class ClubInformationViewController: UIViewController {
         clubCoverImage.image = selectedClub?.ClubCellCoverImage
         clubImage.image = selectedClub?.ClubCellImageName
         subscribeButton.layer.cornerRadius = 6.0
+        
+        clubDe.text = "Club Description"
+        clubDe.textColor = UIColor.lightGray
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +37,7 @@ class ClubInformationViewController: UIViewController {
     @IBOutlet weak var clubName: UILabel!
     
     @IBOutlet weak var clubDe: UITextView!
+    //clubDe.delegate = self
     
     @IBOutlet weak var clubCoverImage: UIImageView!
     
