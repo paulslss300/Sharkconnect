@@ -15,11 +15,12 @@ class ClubInformationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        clubName.text = selectedClub?.ClubNa
         clubDe.text = selectedClub?.ClubDe
         clubCoverImage.image = selectedClub?.ClubCellCoverImage
         clubImage.image = selectedClub?.ClubCellImageName
         subscribeButton.layer.cornerRadius = 6.0
+    
+        self.title = selectedClub?.ClubNa
         
         clubDe.text = "Club Description"
         clubDe.textColor = UIColor.lightGray

@@ -13,6 +13,8 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isHidden = true
+        tabBarController?.tabBar.isHidden = true
         
         studentLogin.layer.cornerRadius = 10.0
         clubLogin.layer.cornerRadius = 10.0
