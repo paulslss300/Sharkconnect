@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:IDK.xcodeproj">
+      location = "group:../../calendartrial/CalendarViewController.swift">
+   </FileRef>
+   <FileRef
+      location = "group:../../calendartrial/Lists.swift">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
