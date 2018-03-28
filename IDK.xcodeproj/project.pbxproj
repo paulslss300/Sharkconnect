@@ -25,9 +25,9 @@
 		3F9D9CBD2033EB41002B94C9 /* ClubInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D9CBC2033EB41002B94C9 /* ClubInformationViewController.swift */; };
 		3FC2FDBA200F00D40006D0DE /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2FDB9200F00D40006D0DE /* HomeTableViewCell.swift */; };
 		3FCF3C1920292A2200ED4F77 /* CreateStudentAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF3C1820292A2200ED4F77 /* CreateStudentAccountViewController.swift */; };
-		9847CC3E206AE2E4007A7A1E /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9847CC3C206AE2E4007A7A1E /* CalendarCollectionViewCell.swift */; };
-		9847CC3F206AE2E4007A7A1E /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9847CC3D206AE2E4007A7A1E /* CalendarTableViewCell.swift */; };
-		9874787B206AE4C3005C0395 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98747879206AE4C3005C0395 /* CalendarViewController.swift */; };
+		985DBC6D206B199600506D79 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DBC6C206B199600506D79 /* CalendarVC.swift */; };
+		985DBC6F206B1A0C00506D79 /* CalendarCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DBC6E206B1A0C00506D79 /* CalendarCVCell.swift */; };
+		985DBC71206B1A5000506D79 /* CalendarTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DBC70206B1A5000506D79 /* CalendarTVCell.swift */; };
 		9874787D206AEB41005C0395 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9874787C206AEB41005C0395 /* GlobalVariables.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,9 +52,9 @@
 		3F9D9CBC2033EB41002B94C9 /* ClubInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClubInformationViewController.swift; path = ../ClubInformationViewController.swift; sourceTree = "<group>"; };
 		3FC2FDB9200F00D40006D0DE /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		3FCF3C1820292A2200ED4F77 /* CreateStudentAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateStudentAccountViewController.swift; path = ../CreateStudentAccountViewController.swift; sourceTree = "<group>"; };
-		9847CC3C206AE2E4007A7A1E /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarCollectionViewCell.swift; path = ../../calendartrial/CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
-		9847CC3D206AE2E4007A7A1E /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarTableViewCell.swift; path = ../../calendartrial/CalendarTableViewCell.swift; sourceTree = "<group>"; };
-		98747879206AE4C3005C0395 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = ../../calendartrial/CalendarViewController.swift; sourceTree = "<group>"; };
+		985DBC6C206B199600506D79 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
+		985DBC6E206B1A0C00506D79 /* CalendarCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCVCell.swift; sourceTree = "<group>"; };
+		985DBC70206B1A5000506D79 /* CalendarTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTVCell.swift; sourceTree = "<group>"; };
 		9874787C206AEB41005C0395 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +72,9 @@
 		3F0B7BB42005B474005BC1CC = {
 			isa = PBXGroup;
 			children = (
+				985DBC70206B1A5000506D79 /* CalendarTVCell.swift */,
+				985DBC6E206B1A0C00506D79 /* CalendarCVCell.swift */,
+				985DBC6C206B199600506D79 /* CalendarVC.swift */,
 				3F0B7BBF2005B474005BC1CC /* IDK */,
 				3F0B7BBE2005B474005BC1CC /* Products */,
 			);
@@ -104,9 +107,6 @@
 				3F0B7BC42005B474005BC1CC /* SecondViewController.swift */,
 				3F859367202A5A5B00DA2E76 /* ThirdViewController.swift */,
 				33EED5102030F54300FAFADB /* ImageImporterViewController.swift */,
-				9847CC3C206AE2E4007A7A1E /* CalendarCollectionViewCell.swift */,
-				9847CC3D206AE2E4007A7A1E /* CalendarTableViewCell.swift */,
-				98747879206AE4C3005C0395 /* CalendarViewController.swift */,
 				3F0B7BC62005B474005BC1CC /* Main.storyboard */,
 				3F0B7BC92005B474005BC1CC /* Assets.xcassets */,
 				3F0B7BCB2005B474005BC1CC /* LaunchScreen.storyboard */,
@@ -190,23 +190,23 @@
 			files = (
 				9874787D206AEB41005C0395 /* GlobalVariables.swift in Sources */,
 				33EED5112030F54300FAFADB /* ImageImporterViewController.swift in Sources */,
+				985DBC6D206B199600506D79 /* CalendarVC.swift in Sources */,
 				3F2AD06C200EAA450053136F /* HomeTableViewController.swift in Sources */,
-				9847CC3F206AE2E4007A7A1E /* CalendarTableViewCell.swift in Sources */,
 				3FC2FDBA200F00D40006D0DE /* HomeTableViewCell.swift in Sources */,
 				3F9D9CBD2033EB41002B94C9 /* ClubInformationViewController.swift in Sources */,
 				3F1CC9D2201837B0007F0F89 /* CreatePostViewController.swift in Sources */,
 				3F9D9CBB2033E262002B94C9 /* DiscoverCollectionViewCell.swift in Sources */,
 				3F6D3DB120166DBC0030D95D /* UserTableViewCell.swift in Sources */,
 				3FCF3C1920292A2200ED4F77 /* CreateStudentAccountViewController.swift in Sources */,
-				9847CC3E206AE2E4007A7A1E /* CalendarCollectionViewCell.swift in Sources */,
+				985DBC6F206B1A0C00506D79 /* CalendarCVCell.swift in Sources */,
 				3F9D9CB92033E24E002B94C9 /* DiscoverViewController.swift in Sources */,
-				9874787B206AE4C3005C0395 /* CalendarViewController.swift in Sources */,
 				3F859368202A5A5B00DA2E76 /* ThirdViewController.swift in Sources */,
 				3F63457A202293490089F29F /* CreateClubViewController.swift in Sources */,
 				3F0B7BC52005B474005BC1CC /* SecondViewController.swift in Sources */,
 				3F0B7BC12005B474005BC1CC /* AppDelegate.swift in Sources */,
 				3F6D3DAF20166CA50030D95D /* UserTableViewController.swift in Sources */,
 				3F0B7BC32005B474005BC1CC /* FirstViewController.swift in Sources */,
+				985DBC71206B1A5000506D79 /* CalendarTVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
