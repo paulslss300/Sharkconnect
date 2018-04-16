@@ -48,25 +48,18 @@ class ClubInformationViewController: UIViewController {
         
         //sender.isSelected = !sender.isSelected
         
-        var noDuplicate: Bool = false
+        var noDuplicate: Bool = true
         
-        
-        if subscribedClubs.isEmpty {
-            subscribedClubs += [selectedClub!]
-        } else {
-            
-            for club in subscribedClubs {
-                if (selectedClub?.ClubNa)! != club.ClubNa {
-                    noDuplicate = true
-                    
-                } else {
-                    noDuplicate = false
-                    subscribedClubs = subscribedClubs.filter({ (club) -> Bool in
-                        return !(club.ClubNa == selectedClub?.ClubNa)
-                    })
-                }
+        for club in subscribedClubs {
+            if (selectedClub?.ClubNa)! == club.ClubNa {
+                noDuplicate = false
+                subscribedClubs = subscribedClubs.filter({ (club) -> Bool in
+                    return !(club.ClubNa == selectedClub?.ClubNa)
+                })
+                break
             }
         }
+        
         if noDuplicate {
             subscribedClubs += [selectedClub!]
         }

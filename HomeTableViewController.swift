@@ -77,7 +77,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if displayAllClubs {
             let post = Post.posts[indexPath.row]
             for club in Club.clubs {

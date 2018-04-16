@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -129,7 +130,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2Lk-fT-1W0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6Ho-5F-DoX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create a Post Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zz7-zq-2sH">
@@ -399,17 +400,88 @@
                         <viewControllerLayoutGuide type="bottom" id="2gW-fj-Zi4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Nmj-a1-BGj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Exh-8F-Y6W">
-                                <rect key="frame" x="0.0" y="28" width="375" height="639"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Exh-8F-Y6W">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bBh-xe-gbg">
-                                        <rect key="frame" x="0.0" y="115" width="375" height="300"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkT-Ou-5t3">
+                                        <rect key="frame" x="16" y="74" width="49" height="35"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="lastMonth:" destination="153-71-KgA" eventType="touchUpInside" id="Lzh-c0-xZQ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqj-ON-8g4">
+                                        <rect key="frame" x="166" y="80.5" width="42" height="22.5"/>
+                                        <color key="tintColor" red="0.81583954020000005" green="0.81583954020000005" blue="0.81583954020000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4V-i0-urb">
+                                        <rect key="frame" x="310" y="74" width="49" height="35"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="nextMonth:" destination="153-71-KgA" eventType="touchUpInside" id="nn6-5A-vet"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="1pa-gR-dGr">
+                                        <rect key="frame" x="0.0" y="113" width="375" height="22.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poV-zA-SNr">
+                                                <rect key="frame" x="0.0" y="0.0" width="38" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeL-Yn-oxb">
+                                                <rect key="frame" x="56" y="0.0" width="38.5" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThB-i6-Jdi">
+                                                <rect key="frame" x="112.5" y="0.0" width="38" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jS-Wa-6nL">
+                                                <rect key="frame" x="168.5" y="0.0" width="38" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xy-pN-H4M">
+                                                <rect key="frame" x="224.5" y="0.0" width="38" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fri" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dw7-ny-rAM">
+                                                <rect key="frame" x="280.5" y="0.0" width="38.5" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C06-IO-e7h">
+                                                <rect key="frame" x="337" y="0.0" width="38" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bBh-xe-gbg">
+                                        <rect key="frame" x="0.0" y="144" width="375" height="300"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="bBh-xe-gbg" secondAttribute="height" multiplier="5:4" id="dJG-7v-CBV"/>
+                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iEb-Ug-Srh">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -444,83 +516,8 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkT-Ou-5t3">
-                                        <rect key="frame" x="16" y="50" width="57" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="lastMonth:" destination="153-71-KgA" eventType="touchUpInside" id="Lzh-c0-xZQ"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqj-ON-8g4">
-                                        <rect key="frame" x="144" y="55" width="86" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" red="0.81583954020000005" green="0.81583954020000005" blue="0.81583954020000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="1pa-gR-dGr">
-                                        <rect key="frame" x="11" y="88" width="367" height="22.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Sun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poV-zA-SNr">
-                                                <rect key="frame" x="0.0" y="0.0" width="37" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeL-Yn-oxb">
-                                                <rect key="frame" x="55" y="0.0" width="37" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThB-i6-Jdi">
-                                                <rect key="frame" x="110" y="0.0" width="37" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Wed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jS-Wa-6nL">
-                                                <rect key="frame" x="165" y="0.0" width="37" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Thu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xy-pN-H4M">
-                                                <rect key="frame" x="220" y="0.0" width="37" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Fri" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dw7-ny-rAM">
-                                                <rect key="frame" x="275" y="0.0" width="37" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Sat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C06-IO-e7h">
-                                                <rect key="frame" x="330" y="0.0" width="37" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4V-i0-urb">
-                                        <rect key="frame" x="302" y="50" width="57" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="nextMonth:" destination="153-71-KgA" eventType="touchUpInside" id="nn6-5A-vet"/>
-                                        </connections>
-                                    </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vJQ-ud-F3r">
-                                        <rect key="frame" x="0.0" y="423" width="375" height="158"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vJQ-ud-F3r">
+                                        <rect key="frame" x="0.0" y="459" width="375" height="159"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CalendarTable" id="TTQ-m8-3Vo" customClass="CalendarTVCell" customModule="IDK" customModuleProvider="target">
@@ -565,9 +562,33 @@
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1pa-gR-dGr" secondAttribute="trailing" id="0dB-QF-PkW"/>
+                                    <constraint firstAttribute="trailing" secondItem="bBh-xe-gbg" secondAttribute="trailing" id="5ky-RG-p2L"/>
+                                    <constraint firstItem="1pa-gR-dGr" firstAttribute="leading" secondItem="Exh-8F-Y6W" secondAttribute="leading" id="7oN-bR-4ue"/>
+                                    <constraint firstItem="bBh-xe-gbg" firstAttribute="leading" secondItem="Exh-8F-Y6W" secondAttribute="leading" id="Cui-TI-Jfa"/>
+                                    <constraint firstAttribute="trailing" secondItem="vJQ-ud-F3r" secondAttribute="trailing" id="JdY-T7-DDw"/>
+                                    <constraint firstAttribute="bottom" secondItem="vJQ-ud-F3r" secondAttribute="bottom" id="Mvb-GT-wtR"/>
+                                    <constraint firstAttribute="trailing" secondItem="U4V-i0-urb" secondAttribute="trailing" constant="16" id="Wg5-SW-E5A"/>
+                                    <constraint firstItem="xkT-Ou-5t3" firstAttribute="leading" secondItem="Exh-8F-Y6W" secondAttribute="leading" constant="16" id="eaX-nC-vOi"/>
+                                    <constraint firstItem="aqj-ON-8g4" firstAttribute="centerX" secondItem="Exh-8F-Y6W" secondAttribute="centerX" id="gt1-mv-t0J"/>
+                                    <constraint firstItem="bBh-xe-gbg" firstAttribute="top" secondItem="1pa-gR-dGr" secondAttribute="bottom" constant="8.5" id="lh9-6q-Pzv"/>
+                                    <constraint firstItem="U4V-i0-urb" firstAttribute="baseline" secondItem="xkT-Ou-5t3" secondAttribute="baseline" id="qvR-uS-lpV"/>
+                                    <constraint firstItem="aqj-ON-8g4" firstAttribute="baseline" secondItem="xkT-Ou-5t3" secondAttribute="baseline" id="r9K-cq-2wH"/>
+                                    <constraint firstItem="1pa-gR-dGr" firstAttribute="top" secondItem="U4V-i0-urb" secondAttribute="bottom" constant="4" id="uS5-NN-jlG"/>
+                                    <constraint firstItem="vJQ-ud-F3r" firstAttribute="top" secondItem="bBh-xe-gbg" secondAttribute="bottom" constant="15" id="vwF-Ko-wNc"/>
+                                    <constraint firstItem="vJQ-ud-F3r" firstAttribute="leading" secondItem="Exh-8F-Y6W" secondAttribute="leading" id="wQV-ms-PL7"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Exh-8F-Y6W" secondAttribute="bottom" id="GxT-68-Pcq"/>
+                            <constraint firstItem="Exh-8F-Y6W" firstAttribute="top" secondItem="Nmj-a1-BGj" secondAttribute="top" id="IeQ-Ht-d0q"/>
+                            <constraint firstAttribute="trailing" secondItem="Exh-8F-Y6W" secondAttribute="trailing" id="aTE-Y9-eZM"/>
+                            <constraint firstItem="xkT-Ou-5t3" firstAttribute="top" secondItem="CQM-8V-ax9" secondAttribute="bottom" constant="10" id="g7x-Zv-dzd"/>
+                            <constraint firstItem="Exh-8F-Y6W" firstAttribute="leading" secondItem="Nmj-a1-BGj" secondAttribute="leading" id="qzk-5s-Oc5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Calendar" id="9Rc-Eo-ZH9"/>
                     <connections>
@@ -589,7 +610,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1gQ-AL-gLZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4U0-58-cvd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vP-0e-Hgd">
@@ -661,7 +682,7 @@
                         <viewControllerLayoutGuide type="bottom" id="3au-xL-i0w"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4aD-j0-MDi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="efw-5l-B8B">
@@ -769,7 +790,7 @@
                         <viewControllerLayoutGuide type="bottom" id="jPg-5l-aI5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ChZ-oG-Vrh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeE-Xa-ktw">
@@ -790,7 +811,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vaW-To-9Ab" id="YTk-sf-9Gf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LLX-Ws-sYk">
@@ -823,7 +844,6 @@
                                 </state>
                                 <connections>
                                     <action selector="logOutButton:" destination="zVJ-kz-s83" eventType="touchUpInside" id="l88-Am-qUx"/>
-                                    <segue destination="9pv-A4-QxB" kind="show" id="qes-VH-mcj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -836,9 +856,11 @@
                         <outlet property="clubSettingsClub" destination="NeE-Xa-ktw" id="iRF-6E-v3L"/>
                         <outlet property="userTableview" destination="OgT-hG-JT7" id="eQB-1B-JFy"/>
                         <segue destination="OrF-Al-IfX" kind="show" identifier="showclubinformationthroughuser" id="cIC-cy-jsf"/>
+                        <segue destination="rya-vf-aWm" kind="unwind" identifier="unwindToFirst" unwindAction="unwindToFirstWithSegue:" id="7bw-GI-kxj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WvJ-rB-lJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rya-vf-aWm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4033" y="1951"/>
         </scene>
@@ -851,11 +873,11 @@
                         <viewControllerLayoutGuide type="bottom" id="U8i-pl-tNM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kT7-o4-OEk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06x-yy-QhG">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rLu-by-3Bf">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -950,7 +972,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2J6-zU-qGw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="T1C-gG-OEN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="6S5-0g-oNi">
@@ -1033,23 +1055,31 @@
                         <viewControllerLayoutGuide type="bottom" id="txR-5n-Q3N"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gnz-dc-BnT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zjl-Lq-FhO">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zjl-Lq-FhO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="202" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c7g-9i-ztq">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="510"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bVx-fs-9Wh">
+                                        <rect key="frame" x="34.5" y="74" width="305" height="29"/>
+                                        <segments>
+                                            <segment title="All Posts"/>
+                                            <segment title="Subscribed Club Posts"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="indexChanged:" destination="YfU-Ee-kHj" eventType="valueChanged" id="M12-Lw-aTh"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="202" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c7g-9i-ztq">
+                                        <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reuseIdentifier" rowHeight="202" id="5ci-gi-0Cs" customClass="HomeTableViewCell" customModule="IDK" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="202"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5ci-gi-0Cs" id="y0Q-MD-eqR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="201.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="202"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K27-Qk-WZL">
@@ -1096,22 +1126,25 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bVx-fs-9Wh">
-                                        <rect key="frame" x="40" y="8" width="294" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <segments>
-                                            <segment title="All Posts"/>
-                                            <segment title="Subscribed Club Posts"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="indexChanged:" destination="YfU-Ee-kHj" eventType="valueChanged" id="M12-Lw-aTh"/>
-                                        </connections>
-                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="bVx-fs-9Wh" firstAttribute="centerX" secondItem="Zjl-Lq-FhO" secondAttribute="centerX" id="51D-8o-mZe"/>
+                                    <constraint firstItem="c7g-9i-ztq" firstAttribute="top" secondItem="bVx-fs-9Wh" secondAttribute="bottom" constant="18" id="Usi-ib-KiH"/>
+                                    <constraint firstAttribute="trailing" secondItem="c7g-9i-ztq" secondAttribute="trailing" id="fyG-LP-4Xs"/>
+                                    <constraint firstItem="c7g-9i-ztq" firstAttribute="leading" secondItem="Zjl-Lq-FhO" secondAttribute="leading" id="yEW-ZJ-EIk"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zjl-Lq-FhO" firstAttribute="top" secondItem="gnz-dc-BnT" secondAttribute="top" id="7IC-YB-ZpR"/>
+                            <constraint firstItem="txR-5n-Q3N" firstAttribute="top" secondItem="Zjl-Lq-FhO" secondAttribute="bottom" id="ewG-HR-4OS"/>
+                            <constraint firstItem="bVx-fs-9Wh" firstAttribute="top" secondItem="FMo-hq-80Y" secondAttribute="bottom" constant="10" id="iOq-sh-gA1"/>
+                            <constraint firstItem="txR-5n-Q3N" firstAttribute="top" secondItem="c7g-9i-ztq" secondAttribute="bottom" id="m7O-dl-jq6"/>
+                            <constraint firstAttribute="trailing" secondItem="Zjl-Lq-FhO" secondAttribute="trailing" id="pzC-CO-k5U"/>
+                            <constraint firstItem="Zjl-Lq-FhO" firstAttribute="leading" secondItem="gnz-dc-BnT" secondAttribute="leading" id="x33-zg-Wmj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="FEED" id="Awm-Z8-TKc">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Qrc-w0-JZO"/>
@@ -1390,7 +1423,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="YfU-Ee-kHj" kind="relationship" relationship="rootViewController" id="h32-3G-V02"/>
+                        <segue destination="YfU-Ee-kHj" kind="relationship" relationship="rootViewController" id="iTh-vN-dWS"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8v-2c-xVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1451,7 +1484,7 @@
                 <navigationController title="CLUBS SUBSCRIBED" automaticallyAdjustsScrollViewInsets="NO" id="qof-jA-iP4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="0kt-45-Pf7"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="MHN-mQ-36u">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MHN-mQ-36u">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.14117647058823529" green="0.28627450980392155" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
@@ -1476,12 +1509,12 @@
         <image name="settings2" width="700" height="700"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="i1j-Du-eCQ"/>
+        <segue reference="fsC-Wt-ep3"/>
+        <segue reference="yOk-uO-gMH"/>
+        <segue reference="AIM-Nz-Izg"/>
+        <segue reference="fjd-ft-vaC"/>
+        <segue reference="yXH-D6-ug6"/>
         <segue reference="1ji-cI-DmW"/>
         <segue reference="y0p-Bx-6Mf"/>
-        <segue reference="yXH-D6-ug6"/>
-        <segue reference="qes-VH-mcj"/>
-        <segue reference="fjd-ft-vaC"/>
-        <segue reference="yOk-uO-gMH"/>
     </inferredMetricsTieBreakers>
 </document>

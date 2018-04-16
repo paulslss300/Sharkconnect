@@ -112,39 +112,23 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let date = collectionView.cellForItem(at: indexPath)
         
-        //finalMonthIndex = String(format: "%02d", monthIndex)
-        
-        let checkDate =  String(format: "%02d", Int(selectedMonth[indexPath.row])!)
-        
-        if checkDate != "" {
+        displayedPosts = []
+        if selectedMonth[indexPath.row] != "" {
+            let checkDate =  String(format: "%02d", Int(selectedMonth[indexPath.row])!)
             date?.backgroundColor = UIColor.red
-        }
-        
-        // this is the actual date picked
-        let indexOfDatePicked = result.index(result.endIndex, offsetBy: -2)
-        datePicked = result.substring(to: indexOfDatePicked) + checkDate
-        
-        if displayedPosts.isEmpty {
+            
+            // this is the actual date picked
+            let indexOfDatePicked = result.index(result.endIndex, offsetBy: -2)
+            datePicked = result.substring(to: indexOfDatePicked) + checkDate
+            
             for post in subscribedPosts {
                 if datePicked == String(describing: post.postDa) {
                     displayedPosts += [post]
                 }
             }
-        } else {
-            for post in subscribedPosts {
-                for checkDuplicate in displayedPosts {
-                    if datePicked == String(describing: post.postDa) && datePicked != String(describing: checkDuplicate.postDa) {
-                        displayedPosts += [post]
-                    } else {
-                        displayedPosts.removeAll()
-                    }
-                }
-            }
         }
-        
         calendarTable.reloadData()
     }
-    
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
         let date = collectionView.cellForItem(at: indexPath)

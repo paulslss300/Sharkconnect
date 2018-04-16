@@ -24,6 +24,10 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var clubLogin: UIButton!
     @IBOutlet weak var studentLogin: UIButton!
     
+    @IBAction func unwindToFirst(segue: UIStoryboardSegue) {
+        // This is the target when performing an unwind segue all the way back here as a result of logout
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

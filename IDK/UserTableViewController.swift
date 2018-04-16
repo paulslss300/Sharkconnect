@@ -15,6 +15,7 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
     // IMPORTANT FEATURE ----- LOG OUT BUTTON
     @IBAction func logOutButton(_ sender: Any) {
         clubId = ""
+        performSegue(withIdentifier: "unwindToFirst", sender: self)
     }
     
     
@@ -38,6 +39,11 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        userTableview.reloadData()
     }
     
     //use these functions to make the navigation controller dissapear on a certain view controller
