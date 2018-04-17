@@ -22,7 +22,7 @@ class ClubInformationViewController: UIViewController {
     
         self.title = selectedClub?.ClubNa
         
-        clubDe.text = "Club Description"
+        clubDe.text = selectedClub?.ClubDe
         clubDe.textColor = UIColor.lightGray
     }
 
