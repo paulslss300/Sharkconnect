@@ -36,18 +36,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        subscribedPosts = []
-        
-        for post in Post.posts{
-            for club in subscribedClubs {
-                if post.clubIdentifier == club.ClubNa {
-                    subscribedPosts += [post]
-                }
-            }
-        }
-        
         tableView.reloadData()
-
     }
 
     @IBAction func indexChanged(_ sender: Any) {

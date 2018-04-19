@@ -18,6 +18,7 @@ var MyDescription: String = ""
 
 var subscribedClubs = [Club]()
 var subscribedPosts = [Post]()
+
 // 37 dates
 var selectedMonth = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 var displayedPosts = [Post]()

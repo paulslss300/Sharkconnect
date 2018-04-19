@@ -129,6 +129,7 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         }
         calendarTable.reloadData()
     }
+    
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
         let date = collectionView.cellForItem(at: indexPath)
@@ -154,6 +155,9 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCollection", for: indexPath) as! CalendarCVCell
         
         cell.backgroundColor = UIColor.clear
+        cell.image.isHidden = true
+        cell.image.layer.cornerRadius = 7.25
+        cell.image.layer.masksToBounds = true
         
         
         // update result
@@ -190,6 +194,18 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         
         let dates = selectedMonth[indexPath.row]
         cell.number?.text = dates
+        
+        // Highlight allthe events
+        for checkCell in [cell] as [CalendarCVCell] {
+            for checkPost in subscribedPosts {
+                if checkCell.number.text! == "" {
+                    checkCell.image.isHidden = true
+                } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == String(describing: checkPost.postDa) {
+                    checkCell.image.isHidden = false
+                }
+            }
+        }
+
         return cell
         
     }

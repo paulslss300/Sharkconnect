@@ -293,11 +293,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ClubInformationViewController.swift"
-            timestampString = "540947661.496056"
+            timestampString = "545872809.946399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "suscribeButton(_:)"
             landmarkType = "7">
          </BreakpointContent>

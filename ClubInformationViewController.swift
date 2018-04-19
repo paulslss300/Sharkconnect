@@ -63,6 +63,16 @@ class ClubInformationViewController: UIViewController {
         if noDuplicate {
             subscribedClubs += [selectedClub!]
         }
+        
+        subscribedPosts = []
+        for post in Post.posts{
+            for club in subscribedClubs {
+                if post.clubIdentifier == club.ClubNa {
+                    subscribedPosts += [post]
+                }
+            }
+        }
+
     }
 
 
