@@ -22,7 +22,6 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     var finalMonthIndex: String = ""
     var result: String = ""
     var datePicked: String = ""
-    var checkDisplayedPosts: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +56,12 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         monthIndex = Int(result.substring(with: indexofMonth1..<indexofMonth2))!
         finalMonthIndex = String(format: "%02d", monthIndex)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        calendarView.reloadData()
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -122,7 +127,11 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             datePicked = result.substring(to: indexOfDatePicked) + checkDate
             
             for post in subscribedPosts {
-                if datePicked == String(describing: post.postDa) {
+                
+                // get the date value for NSDate object
+                let indexOfDate = String(describing: post.postDa).index(String(describing: post.postDa).endIndex, offsetBy: -15)
+                
+                if datePicked == String(describing: post.postDa).substring(to: indexOfDate) {
                     displayedPosts += [post]
                 }
             }
@@ -198,9 +207,13 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         // Highlight allthe events
         for checkCell in [cell] as [CalendarCVCell] {
             for checkPost in subscribedPosts {
+                
+                // get the date value for NSDate object
+                let indexOfDate = String(describing: checkPost.postDa).index(String(describing: checkPost.postDa).endIndex, offsetBy: -15)
+                
                 if checkCell.number.text! == "" {
                     checkCell.image.isHidden = true
-                } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == String(describing: checkPost.postDa) {
+                } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == String(describing: checkPost.postDa).substring(to: indexOfDate) {
                     checkCell.image.isHidden = false
                 }
             }
