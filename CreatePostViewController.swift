@@ -27,7 +27,7 @@ class CreatePostViewController: UIViewController {
             Post.posts += [post1]
         }
        
-        
+       performSegue(withIdentifier: "unwindToTabBar", sender: self)
     }
     @IBOutlet weak var postTitle: UITextField!
     @IBOutlet weak var postDescription: UITextView!

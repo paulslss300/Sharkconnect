@@ -178,8 +178,7 @@
                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
                                 <state key="normal" title="post"/>
                                 <connections>
-                                    <action selector="createPostButton:" destination="mZ3-Ku-5Vc" eventType="touchUpInside" id="A1Q-3M-XM4"/>
-                                    <segue destination="FPj-r1-3Ew" kind="show" id="i1j-Du-eCQ"/>
+                                    <action selector="createPostButton:" destination="mZ3-Ku-5Vc" eventType="touchUpInside" id="chI-tM-NMZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -189,9 +188,11 @@
                         <outlet property="dateField" destination="DGe-4S-UeK" id="yzz-6C-ntE"/>
                         <outlet property="postDescription" destination="J0U-qp-2kZ" id="F8Y-ae-ARd"/>
                         <outlet property="postTitle" destination="OHj-IS-Fsv" id="ihb-nA-9SJ"/>
+                        <segue destination="pUH-Rk-2qP" kind="unwind" identifier="unwindToTabBar" unwindAction="unwindToTabBarWithSegue:" id="UwQ-jY-3dN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yy6-7j-1aL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pUH-Rk-2qP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6185" y="1951"/>
         </scene>
@@ -1652,10 +1653,10 @@
         <image name="settings2" width="700" height="700"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NJP-DE-U0P"/>
-        <segue reference="fjd-ft-vaC"/>
-        <segue reference="Rwv-9S-APn"/>
+        <segue reference="fsC-Wt-ep3"/>
         <segue reference="yOk-uO-gMH"/>
+        <segue reference="Rwv-9S-APn"/>
+        <segue reference="fjd-ft-vaC"/>
         <segue reference="cIC-cy-jsf"/>
         <segue reference="bGx-uX-Ui6"/>
         <segue reference="bPQ-0n-lEL"/>
