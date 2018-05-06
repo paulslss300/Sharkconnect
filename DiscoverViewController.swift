@@ -8,13 +8,17 @@
 
 import UIKit
 
-class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate  {
+class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
     @IBOutlet weak var discoverView: UICollectionView!
     
     var selectedClub: Club? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        discoverView.delegate  = self
+        discoverView.dataSource = self
         
         let itemSize = UIScreen.main.bounds.width/2 - 50
         let layout = UICollectionViewFlowLayout()

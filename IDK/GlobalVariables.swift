@@ -25,10 +25,10 @@ var displayedPosts = [Post]()
 var noteList = [Note]()
 
 class Note {
-    var postDe: String
+    var noteDe: String
     
-    init(postDe: String) {
-        self.postDe = postDe
+    init(noteDe: String) {
+        self.noteDe = noteDe
     }
 }
 

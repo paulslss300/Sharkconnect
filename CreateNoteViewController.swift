@@ -12,27 +12,31 @@ class CreateNoteViewController: UIViewController {
 
     @IBOutlet weak var noteContent: UITextView!
     
-    @IBAction func deleteNote(_ sender: Any) {
-        _ = navigationController?.popViewController(animated: true)
-    }
+    var selectedNote: Note? = nil
     
-    @IBAction func saveNote(_ sender: Any) {
-        let newNote = Note(postDe: noteContent.text!)
-        noteList += [newNote]
-        _ = navigationController?.popViewController(animated: true)     // go back to previous VC
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        noteContent.text = selectedNote?.noteDe
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func deleteNote(_ sender: Any) {
 
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func saveNote(_ sender: Any) {
+        selectedNote?.noteDe = noteContent.text
+        _ = navigationController?.popViewController(animated: true)     // go back to previous VC
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -46,6 +50,5 @@ class CreateNoteViewController: UIViewController {
 }
 
 /* To do:
- 1. display notes using tableview/collectionview in MoreVC
- 2. create a structure that is similar to DiscoverVC + ClubInformationVC
+ 3. save when the user leave createNoteVC, also save when the user presses save
  */

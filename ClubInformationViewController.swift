@@ -21,8 +21,7 @@ class ClubInformationViewController: UIViewController {
         subscribeButton.layer.cornerRadius = 6.0
     
         self.title = selectedClub?.ClubNa
-        
-        clubDe.text = selectedClub?.ClubDe
+
         clubDe.textColor = UIColor.lightGray
     }
 

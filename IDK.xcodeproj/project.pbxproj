@@ -29,6 +29,7 @@
 		985DBC6F206B1A0C00506D79 /* CalendarCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DBC6E206B1A0C00506D79 /* CalendarCVCell.swift */; };
 		985DBC71206B1A5000506D79 /* CalendarTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DBC70206B1A5000506D79 /* CalendarTVCell.swift */; };
 		9874787D206AEB41005C0395 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9874787C206AEB41005C0395 /* GlobalVariables.swift */; };
+		98B4A199209F87E1000052D3 /* MoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B4A198209F87E1000052D3 /* MoreCollectionViewCell.swift */; };
 		98B534CC209EA55E001FA976 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B534CB209EA55E001FA976 /* MoreViewController.swift */; };
 		98B534CE209EB1F3001FA976 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B534CD209EB1F3001FA976 /* CreateNoteViewController.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		985DBC6E206B1A0C00506D79 /* CalendarCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarCVCell.swift; path = ../CalendarCVCell.swift; sourceTree = "<group>"; };
 		985DBC70206B1A5000506D79 /* CalendarTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarTVCell.swift; path = ../CalendarTVCell.swift; sourceTree = "<group>"; };
 		9874787C206AEB41005C0395 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		98B4A198209F87E1000052D3 /* MoreCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreCollectionViewCell.swift; path = ../MoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		98B534CB209EA55E001FA976 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreViewController.swift; path = ../MoreViewController.swift; sourceTree = "<group>"; };
 		98B534CD209EB1F3001FA976 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNoteViewController.swift; path = ../CreateNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				33EED5102030F54300FAFADB /* ImageImporterViewController.swift */,
 				3F0B7BC02005B474005BC1CC /* AppDelegate.swift */,
 				98B534CB209EA55E001FA976 /* MoreViewController.swift */,
+				98B4A198209F87E1000052D3 /* MoreCollectionViewCell.swift */,
 				98B534CD209EB1F3001FA976 /* CreateNoteViewController.swift */,
 				3F0B7BC62005B474005BC1CC /* Main.storyboard */,
 				3F0B7BC92005B474005BC1CC /* Assets.xcassets */,
@@ -203,6 +206,7 @@
 				3F9D9CBD2033EB41002B94C9 /* ClubInformationViewController.swift in Sources */,
 				3F1CC9D2201837B0007F0F89 /* CreatePostViewController.swift in Sources */,
 				3F9D9CBB2033E262002B94C9 /* DiscoverCollectionViewCell.swift in Sources */,
+				98B4A199209F87E1000052D3 /* MoreCollectionViewCell.swift in Sources */,
 				3F6D3DB120166DBC0030D95D /* UserTableViewCell.swift in Sources */,
 				3FCF3C1920292A2200ED4F77 /* CreateStudentAccountViewController.swift in Sources */,
 				985DBC6F206B1A0C00506D79 /* CalendarCVCell.swift in Sources */,
