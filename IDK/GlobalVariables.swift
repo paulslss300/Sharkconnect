@@ -22,6 +22,15 @@ var subscribedPosts = [Post]()
 // 37 dates
 var selectedMonth = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 var displayedPosts = [Post]()
+var noteList = [Note]()
+
+class Note {
+    var postDe: String
+    
+    init(postDe: String) {
+        self.postDe = postDe
+    }
+}
 
 class Post {
     var postTi: String

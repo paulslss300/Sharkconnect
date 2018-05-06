@@ -30,6 +30,7 @@
 		985DBC71206B1A5000506D79 /* CalendarTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DBC70206B1A5000506D79 /* CalendarTVCell.swift */; };
 		9874787D206AEB41005C0395 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9874787C206AEB41005C0395 /* GlobalVariables.swift */; };
 		98B534CC209EA55E001FA976 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B534CB209EA55E001FA976 /* MoreViewController.swift */; };
+		98B534CE209EB1F3001FA976 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B534CD209EB1F3001FA976 /* CreateNoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		985DBC70206B1A5000506D79 /* CalendarTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarTVCell.swift; path = ../CalendarTVCell.swift; sourceTree = "<group>"; };
 		9874787C206AEB41005C0395 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		98B534CB209EA55E001FA976 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreViewController.swift; path = ../MoreViewController.swift; sourceTree = "<group>"; };
+		98B534CD209EB1F3001FA976 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNoteViewController.swift; path = ../CreateNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				33EED5102030F54300FAFADB /* ImageImporterViewController.swift */,
 				3F0B7BC02005B474005BC1CC /* AppDelegate.swift */,
 				98B534CB209EA55E001FA976 /* MoreViewController.swift */,
+				98B534CD209EB1F3001FA976 /* CreateNoteViewController.swift */,
 				3F0B7BC62005B474005BC1CC /* Main.storyboard */,
 				3F0B7BC92005B474005BC1CC /* Assets.xcassets */,
 				3F0B7BCB2005B474005BC1CC /* LaunchScreen.storyboard */,
@@ -210,6 +213,7 @@
 				3F0B7BC12005B474005BC1CC /* AppDelegate.swift in Sources */,
 				3F6D3DAF20166CA50030D95D /* UserTableViewController.swift in Sources */,
 				3F0B7BC32005B474005BC1CC /* FirstViewController.swift in Sources */,
+				98B534CE209EB1F3001FA976 /* CreateNoteViewController.swift in Sources */,
 				985DBC71206B1A5000506D79 /* CalendarTVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
