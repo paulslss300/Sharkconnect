@@ -26,7 +26,13 @@ class CreateNoteViewController: UIViewController {
     }
     
     @IBAction func deleteNote(_ sender: Any) {
-
+        for note in noteList {
+            if (selectedNote?.timeCreated)! == note.timeCreated {
+                noteList = noteList.filter({ (note) -> Bool in
+                    return !(note.timeCreated == selectedNote?.timeCreated)
+                })
+            }
+        }
         _ = navigationController?.popViewController(animated: true)
     }
     
@@ -51,4 +57,5 @@ class CreateNoteViewController: UIViewController {
 
 /* To do:
  3. save when the user leave createNoteVC, also save when the user presses save
+ 4. add time to Note, use time as an identifier
  */

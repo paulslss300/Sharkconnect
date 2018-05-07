@@ -40,7 +40,22 @@ class MoreViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @IBAction func newNote(_ sender: Any) {
-        let newNote = Note(noteDe: "")
+        
+        let today = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let result = formatter.string(from: today)
+
+        let date = Date()
+        let calendar = Calendar.current
+        
+        let hour = calendar.component(.hour, from: date) - 7
+        let minutes = calendar.component(.minute, from: date)
+        let seconds = calendar.component(.second, from: date)
+        
+        let time = result + "-" + String(format: "%02d", hour) + "-" + String(format: "%02d", minutes) + "-" + String(format: "%02d", seconds)
+        
+        let newNote = Note(noteDe: "", timeCreated: time)
         noteList += [newNote]
 
         selectedNote = newNote
