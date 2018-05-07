@@ -30,9 +30,9 @@ class MoreViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         notesCollectionView.reloadData()
-    }
+        }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

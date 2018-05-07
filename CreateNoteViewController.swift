@@ -20,6 +20,18 @@ class CreateNoteViewController: UIViewController {
         noteContent.text = selectedNote?.noteDe
     }
     
+    override func viewWillDisappear(_ _animated : Bool) {
+        super.viewWillDisappear(_animated)
+        
+        if self.isMovingFromParentViewController {
+            if noteContent.text.trimmingCharacters(in: .whitespaces).isEmpty {
+                deleteNote(self)
+            } else {
+                saveNote(self)
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -37,8 +49,13 @@ class CreateNoteViewController: UIViewController {
     }
     
     @IBAction func saveNote(_ sender: Any) {
-        selectedNote?.noteDe = noteContent.text
-        _ = navigationController?.popViewController(animated: true)     // go back to previous VC
+        if !noteContent.text.trimmingCharacters(in: .whitespaces).isEmpty {
+            selectedNote?.noteDe = noteContent.text
+            self.view.endEditing(true)
+        } else {
+            deleteNote(self)
+            _ = navigationController?.popViewController(animated: true)
+        }
         
     }
     
