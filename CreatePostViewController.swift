@@ -24,7 +24,7 @@ class CreatePostViewController: UIViewController {
         
         if let actualDatePicked = actualDatePicked, let myAvatar = myAvatar {
             let post1 = Post(postTi: actualPostTitle, postDe: actualPostDescription, clubIdentifier: clubId, postImage: myAvatar, postDa: actualDatePicked)
-            Post.posts += [post1]
+            Post.posts.insert(post1, at: 0)
         }
        
        performSegue(withIdentifier: "unwindToTabBar", sender: self)

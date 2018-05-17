@@ -8,9 +8,9 @@
 
 import UIKit
 
-class MoreViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class MoreViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var notesCollectionView: UICollectionView!
+    @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var slideMenu: UIView!
     @IBOutlet weak var slideMenuLeading: NSLayoutConstraint!
     
@@ -21,8 +21,8 @@ class MoreViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        notesCollectionView.delegate = self
-        notesCollectionView.dataSource = self
+        noteTableView.delegate = self
+        noteTableView.dataSource = self
         
         slideMenu.layer.shadowOpacity = 1
         slideMenu.layer.shadowRadius = 6
@@ -31,7 +31,7 @@ class MoreViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        notesCollectionView.reloadData()
+        noteTableView.reloadData()
         }
     
     override func didReceiveMemoryWarning() {
@@ -78,28 +78,34 @@ class MoreViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         slideMenuShowing = !slideMenuShowing
     }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return noteList.count
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let note = noteList[indexPath.row]
         selectedNote = note
-        
         performSegue(withIdentifier: "shownote", sender: self)
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return noteList.count
-    }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "notecells", for: indexPath) as! MoreCollectionViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: MoreTableViewCell = tableView.dequeueReusableCell(withIdentifier: "notecells", for: indexPath) as! MoreTableViewCell
         
         let note = noteList[indexPath.row]
         cell.noteContent.text? = note.noteDe
         
         return cell
-        
     }
+
 
     
     
