@@ -977,6 +977,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="discoverView" destination="UW1-zD-3Py" id="lIk-Zk-N76"/>
+                        <outlet property="searchBar" destination="rLu-by-3Bf" id="Aoi-Af-TM8"/>
                         <segue destination="OrF-Al-IfX" kind="show" identifier="showclubinformation" id="lnt-xu-q8B"/>
                     </connections>
                 </viewController>
@@ -1678,7 +1679,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nj1-Ua-702" id="usn-do-6xK">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H9T-u7-mom">
@@ -1744,8 +1745,8 @@
         <segue reference="yOk-uO-gMH"/>
         <segue reference="Rwv-9S-APn"/>
         <segue reference="fjd-ft-vaC"/>
-        <segue reference="cIC-cy-jsf"/>
         <segue reference="bPQ-0n-lEL"/>
         <segue reference="1ji-cI-DmW"/>
+        <segue reference="lnt-xu-q8B"/>
     </inferredMetricsTieBreakers>
 </document>
