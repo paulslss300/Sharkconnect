@@ -23,19 +23,22 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         discoverView.delegate  = self
         discoverView.dataSource = self
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
         
-        let itemSize = UIScreen.main.bounds.width/2 - 50
+        
+        /*
+        let itemSize = UIScreen.main.bounds.width/4
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsetsMake(20, 30, 10, 30)
         layout.itemSize = CGSize(width: itemSize, height: itemSize)
         layout.minimumInteritemSpacing = 3
-        layout.minimumLineSpacing = 3
-        
+        layout.minimumLineSpacing = 30
         discoverView.collectionViewLayout = layout
+        */
         
 
         
@@ -70,11 +73,16 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "discovercells", for: indexPath) as! DiscoverCollectionViewCell
         
+        cell.clubImage.layer.cornerRadius = 50.0
+        cell.imageView.layer.cornerRadius = 50.0
+        cell.clubImage.layer.masksToBounds = true
+        
         var club = Club.clubs[indexPath.row]
         
         if isSerching {
             club = filteredClubs[indexPath.row]
         }
+        
         
         cell.clubName?.text = club.ClubNa
         cell.clubImage.image = club.ClubCellImageName
@@ -90,7 +98,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
             discoverView.reloadData()
         } else {
             isSerching = true
-            filteredClubs = Club.clubs.filter({$0.ClubNa == searchBar.text!})
+            filteredClubs = Club.clubs.filter({$0.ClubNa.lowercased().contains(searchBar.text!.lowercased())})
             /*
             filteredClubs = Club.clubs.filter({ (club) -> Bool in
                 return !(club.ClubNa == searchBar.text!)

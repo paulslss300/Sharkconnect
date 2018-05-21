@@ -11,5 +11,6 @@ import UIKit
 class DiscoverCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var clubImage: UIImageView!
     @IBOutlet weak var clubName: UILabel!
+    @IBOutlet weak var imageView: UIView!
     
 }
