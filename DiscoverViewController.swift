@@ -51,10 +51,10 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let club = Club.clubs[indexPath.row]
+        var club = Club.clubs[indexPath.row]
         
         if isSerching {
-            let club = filteredClubs[indexPath.row]
+            club = filteredClubs[indexPath.row]
         }
         
         selectedClub = club
