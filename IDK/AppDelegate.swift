@@ -94,6 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Post.posts += [samplePost2]
             Post.posts += [samplePost2]
             Post.posts += [samplePost2]
+            Post.posts += [samplePost2]
         }
       
         

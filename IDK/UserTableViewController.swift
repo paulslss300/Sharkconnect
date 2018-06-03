@@ -86,6 +86,10 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UserTableViewCell = tableView.dequeueReusableCell(withIdentifier: "userReuseIdentifier", for: indexPath) as! UserTableViewCell
+        
+        cell.clubImage.layer.cornerRadius = 30.0
+        cell.imageView?.layer.cornerRadius = 30.0
+        cell.clubImage.layer.masksToBounds = true
 
         let subscribedClub = subscribedClubs[indexPath.row]
         

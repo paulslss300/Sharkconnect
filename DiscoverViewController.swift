@@ -28,20 +28,6 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
         discoverView.dataSource = self
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
-        
-        
-        /*
-        let itemSize = UIScreen.main.bounds.width/4
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsetsMake(20, 30, 10, 30)
-        layout.itemSize = CGSize(width: itemSize, height: itemSize)
-        layout.minimumInteritemSpacing = 3
-        layout.minimumLineSpacing = 30
-        discoverView.collectionViewLayout = layout
-        */
-        
-
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,7 +60,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "discovercells", for: indexPath) as! DiscoverCollectionViewCell
         
         cell.clubImage.layer.cornerRadius = 50.0
-        cell.imageView.layer.cornerRadius = 50.0
+        cell.imageView?.layer.cornerRadius = 50.0
         cell.clubImage.layer.masksToBounds = true
         
         var club = Club.clubs[indexPath.row]

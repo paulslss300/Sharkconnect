@@ -45,13 +45,7 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var postTableView: UITableView!
-    
-    let screenHeight = UIScreen.main.bounds.height
-    
-    let scrollViewContentHeight = 1113 as CGFloat
-    
-    var rect1: CGRect!
-    
+
     var selectedClub: Club? = nil
     
     var selectedPost: Post? = nil
@@ -91,20 +85,12 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let yOffset = scrollView.contentOffset.y
-        
         if scrollView == self.scrollView {
-            if yOffset >= scrollViewContentHeight - screenHeight {
-                scrollView.isScrollEnabled = false
-                postTableView.isScrollEnabled = true
-            }
+            postTableView.isScrollEnabled = (self.scrollView.contentOffset.y >= 200)
         }
         
         if scrollView == self.postTableView {
-            if yOffset <= 0 {
-                self.scrollView.isScrollEnabled = true
-                self.postTableView.isScrollEnabled = false
-            }
+            self.postTableView.isScrollEnabled = (postTableView.contentOffset.y > 0)
         }
     }
  
