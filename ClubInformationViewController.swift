@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ClubInformationViewController: UIViewController {
+class ClubInformationViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
     
     //subscribeButton.backgroundColor = UIColor(red: 102, green: 153, blue: 153, alpha: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        postTableView.delegate  = self
+        postTableView.dataSource = self
         clubDe.text = selectedClub?.ClubDe
         clubCoverImage.image = selectedClub?.ClubCellCoverImage
         clubImage.image = selectedClub?.ClubCellImageName
@@ -24,13 +26,27 @@ class ClubInformationViewController: UIViewController {
 
         clubDe.textColor = UIColor.lightGray
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        for post in Post.posts {
+            if post.clubIdentifier == (selectedClub?.ClubNa)! {
+                recentPosts += [post]
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBOutlet weak var postTableView: UITableView!
+    
     var selectedClub: Club? = nil
+    
+    var selectedPost: Post? = nil
+    
+    var recentPosts = [Post]()
     
     @IBOutlet weak var subscribeButton: UIButton!
     
@@ -62,17 +78,39 @@ class ClubInformationViewController: UIViewController {
         if noDuplicate {
             subscribedClubs += [selectedClub!]
         }
-        
-        subscribedPosts = []
-        for post in Post.posts{
-            for club in subscribedClubs {
-                if post.clubIdentifier == club.ClubNa {
-                    subscribedPosts += [post]
-                }
-            }
-        }
-
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return recentPosts.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 1
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = recentPosts[indexPath.row]
+        selectedPost = post
+        performSegue(withIdentifier: "showpost", sender: self)
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: ClubIInformationTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ClubInfoPostCells", for: indexPath) as! ClubIInformationTableViewCell
+        
+        let post = recentPosts[indexPath.row]
+        cell.postTitle?.text = post.postTi
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        cell.postDate?.text = dateFormatter.string(from: post.postDa)
+        cell.postDescription?.text = post.postDe
+        
+        return cell
+    }
+
 
 
     /*

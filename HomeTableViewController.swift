@@ -36,6 +36,15 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        subscribedPosts = []
+        for post in Post.posts{
+            for club in subscribedClubs {
+                if post.clubIdentifier == club.ClubNa {
+                    subscribedPosts += [post]
+                }
+            }
+        }
+
         tableView.reloadData()
     }
 
@@ -74,21 +83,16 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if displayAllClubs {
-            let post = Post.posts[indexPath.row]
-            for club in Club.clubs {
-                if club.ClubNa == post.clubIdentifier {
-                    selectedClub = club
-                    performSegue(withIdentifier: "showclubinformationthroughpost", sender: self)
-                }
-            }
-        } else {
-            let post = subscribedPosts[indexPath.row]
-            for club in Club.clubs {
-                if club.ClubNa == post.clubIdentifier {
-                    selectedClub = club
-                    performSegue(withIdentifier: "showclubinformationthroughpost", sender: self)
-                }
+        var post = Post.posts[indexPath.row]
+        
+        if !displayAllClubs {
+            post = subscribedPosts[indexPath.row]
+        }
+
+        for club in Club.clubs {
+            if club.ClubNa == post.clubIdentifier {
+                selectedClub = club
+                performSegue(withIdentifier: "showclubinformationthroughpost", sender: self)
             }
         }
 
@@ -98,27 +102,20 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! HomeTableViewCell
         
-        if displayAllClubs {
-            let post = Post.posts[indexPath.row]
-            // Configure the cell...
-            cell.cellTitle?.text = post.postTi
-            cell.cellDescription?.text = post.postDe
-            cell.cellImage.image = post.postImage
-            cell.cellIdentifier?.text = post.clubIdentifier
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            cell.cellDate?.text = dateFormatter.string(from: post.postDa)
-        } else {
-            let post = subscribedPosts[indexPath.row]
-            // Configure the cell...
-            cell.cellTitle?.text = post.postTi
-            cell.cellDescription?.text = post.postDe
-            cell.cellImage.image = post.postImage
-            cell.cellIdentifier?.text = post.clubIdentifier
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            cell.cellDate?.text = dateFormatter.string(from: post.postDa)
+        var post = Post.posts[indexPath.row]
+        
+        if !displayAllClubs {
+            post = subscribedPosts[indexPath.row]
         }
+        
+        // Configure the cell...
+        cell.cellTitle?.text = post.postTi
+        cell.cellDescription?.text = post.postDe
+        cell.cellImage.image = post.postImage
+        cell.cellIdentifier?.text = post.clubIdentifier
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        cell.cellDate?.text = dateFormatter.string(from: post.postDa)
         
         return cell
     }
