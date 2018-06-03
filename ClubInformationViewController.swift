@@ -8,9 +8,7 @@
 
 import UIKit
 
-class ClubInformationViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
-    
-    
+class ClubInformationViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     //subscribeButton.backgroundColor = UIColor(red: 102, green: 153, blue: 153, alpha: 1)
     
     override func viewDidLoad() {
@@ -27,12 +25,19 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         self.title = selectedClub?.ClubNa
 
         clubDe.textColor = UIColor.lightGray
+        postTableView.isScrollEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         for post in Post.posts {
             if post.clubIdentifier == (selectedClub?.ClubNa)! {
                 recentPosts += [post]
+            }
+        }
+        
+        for club in subscribedClubs {
+            if club.ClubNa == (selectedClub?.ClubNa)! {
+                subscribeButton.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
             }
         }
     }
@@ -75,25 +80,16 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
                 subscribedClubs = subscribedClubs.filter({ (club) -> Bool in
                     return !(club.ClubNa == selectedClub?.ClubNa)
                 })
+                subscribeButton.backgroundColor = UIColor(red: 159/225.0, green: 168/225.0, blue: 183/225.0, alpha: 1)
                 break
             }
         }
         
         if noDuplicate {
             subscribedClubs += [selectedClub!]
+            subscribeButton.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
         }
     }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == self.scrollView {
-            postTableView.isScrollEnabled = (self.scrollView.contentOffset.y >= 200)
-        }
-        
-        if scrollView == self.postTableView {
-            self.postTableView.isScrollEnabled = (postTableView.contentOffset.y > 0)
-        }
-    }
- 
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
