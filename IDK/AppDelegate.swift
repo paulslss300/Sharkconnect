@@ -92,6 +92,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let date = dateFormatter.date(from: "2018-03-17") {
             let samplePost2 = Post.init(postTi: "Update", postDe: "Cayley, Pascal and Gauss math contests are on Tuesday. Talk to Mr.Lin if you want to participate", clubIdentifier: "Math Club", postImage: photo6!, postDa: date)
             Post.posts += [samplePost2]
+            Post.posts += [samplePost2]
+            Post.posts += [samplePost2]
         }
       
         

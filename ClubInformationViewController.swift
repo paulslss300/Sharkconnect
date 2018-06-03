@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClubInformationViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
+class ClubInformationViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     
     
     //subscribeButton.backgroundColor = UIColor(red: 102, green: 153, blue: 153, alpha: 1)
@@ -17,6 +17,8 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         super.viewDidLoad()
         postTableView.delegate  = self
         postTableView.dataSource = self
+        scrollView.delegate = self
+        postTableView.isScrollEnabled = false
         clubDe.text = selectedClub?.ClubDe
         clubCoverImage.image = selectedClub?.ClubCellCoverImage
         clubImage.image = selectedClub?.ClubCellImageName
@@ -40,7 +42,15 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         // Dispose of any resources that can be recreated.
     }
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var postTableView: UITableView!
+    
+    let screenHeight = UIScreen.main.bounds.height
+    
+    let scrollViewContentHeight = 1113 as CGFloat
+    
+    var rect1: CGRect!
     
     var selectedClub: Club? = nil
     
@@ -79,6 +89,25 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
             subscribedClubs += [selectedClub!]
         }
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yOffset = scrollView.contentOffset.y
+        
+        if scrollView == self.scrollView {
+            if yOffset >= scrollViewContentHeight - screenHeight {
+                scrollView.isScrollEnabled = false
+                postTableView.isScrollEnabled = true
+            }
+        }
+        
+        if scrollView == self.postTableView {
+            if yOffset <= 0 {
+                self.scrollView.isScrollEnabled = true
+                self.postTableView.isScrollEnabled = false
+            }
+        }
+    }
+ 
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
