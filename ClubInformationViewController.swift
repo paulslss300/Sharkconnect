@@ -16,7 +16,6 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         postTableView.delegate  = self
         postTableView.dataSource = self
         scrollView.delegate = self
-        postTableView.isScrollEnabled = false
         clubDe.text = selectedClub?.ClubDe
         clubCoverImage.image = selectedClub?.ClubCellCoverImage
         clubImage.image = selectedClub?.ClubCellImageName
@@ -25,7 +24,6 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         self.title = selectedClub?.ClubNa
 
         clubDe.textColor = UIColor.lightGray
-        postTableView.isScrollEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,14 +122,15 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
 
 
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let destinationViewController = segue.destination as? ViewPostViewCellViewController {
+            destinationViewController.selectedPost = selectedPost
+        }
     }
-    */
+ 
 
 }

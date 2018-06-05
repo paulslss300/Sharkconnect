@@ -1180,7 +1180,7 @@
                         <outlet property="postTableView" destination="mda-yS-3di" id="pCo-SR-D4P"/>
                         <outlet property="scrollView" destination="zsM-2F-te8" id="RkD-bJ-NWc"/>
                         <outlet property="subscribeButton" destination="Ch2-so-SWM" id="Q3x-b6-azh"/>
-                        <segue destination="dsp-XH-4Zj" kind="push" id="abM-ay-Kaf"/>
+                        <segue destination="dsp-XH-4Zj" kind="push" identifier="showpost" id="abM-ay-Kaf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gy-nK-HId" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1234,7 +1234,7 @@
                                                             <rect key="frame" x="15" y="11" width="60" height="60"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Post Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Aor-mA-mLh">
+                                                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" editable="NO" text="Post Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Aor-mA-mLh">
                                                             <rect key="frame" x="8" y="119" width="359" height="74"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1255,6 +1255,14 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="this is for the preparation of the segue way to ClubInfoVC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frf-M6-YDa">
+                                                            <rect key="frame" x="15" y="11" width="60" height="60"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.62352941176470589" green="0.6588235294117647" blue="0.71764705882352942" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
@@ -1263,6 +1271,7 @@
                                                     <outlet property="cellIdentifier" destination="dWP-70-TdL" id="zaF-qe-MVt"/>
                                                     <outlet property="cellImage" destination="XJF-8z-gXN" id="BOC-8d-FsZ"/>
                                                     <outlet property="cellTitle" destination="K27-Qk-WZL" id="d7e-RV-2VU"/>
+                                                    <outlet property="labelOverImage" destination="frf-M6-YDa" id="Y5W-yl-Eyb"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -1294,17 +1303,17 @@
                         <outlet property="displayPost" destination="bVx-fs-9Wh" id="9w0-oa-fQW"/>
                         <outlet property="tableView" destination="c7g-9i-ztq" id="S0R-Ej-pql"/>
                         <segue destination="OrF-Al-IfX" kind="show" identifier="showclubinformationthroughpost" id="yXH-D6-ug6"/>
-                        <segue destination="dsp-XH-4Zj" kind="push" id="070-Ad-QMa"/>
+                        <segue destination="dsp-XH-4Zj" kind="push" identifier="showpost" id="070-Ad-QMa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43h-Q7-HZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4032.8000000000002" y="89.505247376311857"/>
         </scene>
-        <!--Put club name here-->
+        <!--Post-->
         <scene sceneID="EHz-xk-ZHm">
             <objects>
-                <viewController id="dsp-XH-4Zj" sceneMemberID="viewController">
+                <viewController id="dsp-XH-4Zj" customClass="ViewPostViewCellViewController" customModule="IDK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xon-MT-7bf"/>
                         <viewControllerLayoutGuide type="bottom" id="eVa-BL-K7J"/>
@@ -1313,44 +1322,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post Detail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGo-GA-Y5p">
-                                <rect key="frame" x="143" y="72" width="89" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztp-vF-BQ2">
-                                <rect key="frame" x="166" y="172" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teh-Md-a9z">
-                                <rect key="frame" x="148" y="201" width="84" height="21"/>
+                                <rect key="frame" x="33" y="144" width="308" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4C-em-HTx">
+                                <rect key="frame" x="155" y="72" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztp-vF-BQ2">
+                                <rect key="frame" x="112" y="173" width="150" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Post Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ffd-3i-fuc">
-                                <rect key="frame" x="67" y="308" width="240" height="128"/>
+                                <rect key="frame" x="67" y="202" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4C-em-HTx">
-                                <rect key="frame" x="70" y="374" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Put club name here" id="yCA-rc-8Mt"/>
+                    <navigationItem key="navigationItem" title="Post" id="yCA-rc-8Mt"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="clubImage" destination="f4C-em-HTx" id="FlH-H8-GJz"/>
+                        <outlet property="postDate" destination="ztp-vF-BQ2" id="LQi-Il-tQr"/>
+                        <outlet property="postDescription" destination="ffd-3i-fuc" id="Iw5-YM-GC7"/>
+                        <outlet property="postTitle" destination="teh-Md-a9z" id="tV9-rX-5HN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQg-h1-uNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1916,13 +1924,13 @@
         <image name="settings2" width="700" height="700"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fjd-ft-vaC"/>
-        <segue reference="Rwv-9S-APn"/>
-        <segue reference="yOk-uO-gMH"/>
-        <segue reference="fsC-Wt-ep3"/>
         <segue reference="yXH-D6-ug6"/>
-        <segue reference="abM-ay-Kaf"/>
-        <segue reference="bPQ-0n-lEL"/>
+        <segue reference="fsC-Wt-ep3"/>
+        <segue reference="yOk-uO-gMH"/>
+        <segue reference="Rwv-9S-APn"/>
+        <segue reference="fjd-ft-vaC"/>
         <segue reference="1ji-cI-DmW"/>
+        <segue reference="bPQ-0n-lEL"/>
+        <segue reference="abM-ay-Kaf"/>
     </inferredMetricsTieBreakers>
 </document>

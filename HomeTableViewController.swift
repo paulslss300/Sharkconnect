@@ -11,26 +11,19 @@ import UIKit
 class HomeTableViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-
+    
     @IBOutlet weak var displayPost: UISegmentedControl!
+    
+    var selectedPost: Post? = nil
     
     var selectedClub: Club? = nil
     
     var displayAllClubs: Bool = true
-    //var createPost = CreatePostViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate  = self
         tableView.dataSource = self
-
-        //let post1 = Post()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,12 +82,21 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             post = subscribedPosts[indexPath.row]
         }
 
+        selectedPost = post
+        performSegue(withIdentifier: "showpost", sender: self)
+    }
+    
+    func viewImage(tapGestureRecognizer: UITapGestureRecognizer) {
+        //the following line indicates the actual label tapped:
+        let clubidentifier = tapGestureRecognizer.view as! UILabel
+        
         for club in Club.clubs {
-            if club.ClubNa == post.clubIdentifier {
+            if club.ClubNa == clubidentifier.text {
                 selectedClub = club
-                performSegue(withIdentifier: "showclubinformationthroughpost", sender: self)
             }
         }
+        
+        performSegue(withIdentifier: "showclubinformationthroughpost", sender: self)
 
     }
 
@@ -108,7 +110,13 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             post = subscribedPosts[indexPath.row]
         }
         
+        // allowing action when label (over the cellImage) is tapped
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
+        cell.labelOverImage.isUserInteractionEnabled = true
+        cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
+
         // Configure the cell...
+        cell.labelOverImage?.text = post.clubIdentifier
         cell.cellTitle?.text = post.postTi
         cell.cellDescription?.text = post.postDe
         cell.cellImage.image = post.postImage
@@ -163,6 +171,10 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let destinationViewController = segue.destination as? ViewPostViewCellViewController {
+            destinationViewController.selectedPost = selectedPost
+        }
+        
         if let destinationViewController = segue.destination as? ClubInformationViewController {
             destinationViewController.selectedClub = selectedClub
         }

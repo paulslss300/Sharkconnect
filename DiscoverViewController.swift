@@ -22,8 +22,6 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         discoverView.delegate  = self
         discoverView.dataSource = self
         searchBar.delegate = self

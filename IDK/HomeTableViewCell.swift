@@ -15,6 +15,7 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var cellIdentifier: UILabel!
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellDate: UILabel!
+    @IBOutlet weak var labelOverImage: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
