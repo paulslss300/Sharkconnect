@@ -78,7 +78,6 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == "" {
             isSerching = false
-            view.endEditing(true)
             discoverView.reloadData()
         } else {
             isSerching = true
