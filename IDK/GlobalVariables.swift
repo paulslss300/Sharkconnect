@@ -40,14 +40,16 @@ class Post {
     var clubIdentifier: String
     var postImage: UIImage? = nil
     var postDa: Date
+    var postedImage: UIImage? = nil
     static var posts = [Post]()
     
-    init(postTi: String, postDe: String, clubIdentifier: String, postImage: UIImage, postDa: Date) {
+    init(postTi: String, postDe: String, clubIdentifier: String, postImage: UIImage, postDa: Date, postedImage: UIImage) {
         self.postTi = postTi
         self.postDe = postDe
         self.clubIdentifier = clubIdentifier
         self.postImage = postImage
         self.postDa = postDa
+        self.postedImage = postedImage
     }
 }
 

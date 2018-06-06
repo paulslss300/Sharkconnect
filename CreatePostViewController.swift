@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreatePostViewController: UIViewController {
+class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     let picker = UIDatePicker()
@@ -17,13 +17,14 @@ class CreatePostViewController: UIViewController {
     var actualPostDescription: String = ""
     var actualPostImage: UIImage? = nil
     var actualDatePicked: Date? = nil
+    var actualPostedImagePicked: UIImage? = nil
     
     @IBAction func createPostButton(_ sender: Any) {
         actualPostTitle = postTitle.text!
         actualPostDescription = postDescription.text!
         
         if let actualDatePicked = actualDatePicked, let myAvatar = myAvatar {
-            let post1 = Post(postTi: actualPostTitle, postDe: actualPostDescription, clubIdentifier: clubId, postImage: myAvatar, postDa: actualDatePicked)
+            let post1 = Post(postTi: actualPostTitle, postDe: actualPostDescription, clubIdentifier: clubId, postImage: myAvatar, postDa: actualDatePicked, postedImage: actualPostedImagePicked!)
             Post.posts.insert(post1, at: 0)
         }
        
@@ -32,7 +33,34 @@ class CreatePostViewController: UIViewController {
     @IBOutlet weak var postTitle: UITextField!
     @IBOutlet weak var postDescription: UITextView!
     @IBOutlet weak var dateField: UITextField!
-
+    @IBOutlet weak var postImageView: UIImageView!
+    
+    var settingPostImageButton = false
+    
+    @IBAction func importPostImage(_ sender: Any) {
+        let postMainImage = UIImagePickerController()
+        postMainImage.delegate = self
+        postMainImage.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        postMainImage.allowsEditing = false
+        
+        settingPostImageButton = true
+        
+        self.present(postMainImage, animated: true){}
+    }
+    
+    @IBAction func settingPostImage(_ sender: Any) {
+        actualPostedImagePicked = postImageView.image
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let myPostImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            //the user has selected an image
+            if settingPostImageButton == true{
+                postImageView.image = myPostImage
+            }
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
     
     // Create a club object
     // Populate image, name and description

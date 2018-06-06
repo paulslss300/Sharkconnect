@@ -120,6 +120,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         cell.cellTitle?.text = post.postTi
         cell.cellDescription?.text = post.postDe
         cell.cellImage.image = post.postImage
+        cell.cellPostedImage.image = post.postedImage
         cell.cellIdentifier?.text = post.clubIdentifier
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
