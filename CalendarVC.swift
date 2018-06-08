@@ -60,6 +60,12 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         calendarView.reloadData()
+        calendarTable.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        displayedPosts.removeAll()
     }
 
     
@@ -117,7 +123,6 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let date = collectionView.cellForItem(at: indexPath)
         
-        displayedPosts = []
         if selectedMonth[indexPath.row] != "" {
             let checkDate =  String(format: "%02d", Int(selectedMonth[indexPath.row])!)
             date?.backgroundColor = UIColor.red
@@ -140,6 +145,7 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        displayedPosts = []
         
         let date = collectionView.cellForItem(at: indexPath)
         date?.backgroundColor = UIColor.clear
@@ -218,7 +224,6 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
                 }
             }
         }
-
         return cell
         
     }
@@ -243,13 +248,6 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CalendarTVCell = tableView.dequeueReusableCell(withIdentifier: "CalendarTable", for: indexPath) as! CalendarTVCell
-        /*
-         for post in subscribedPosts {
-         if datePicked == post.postDate {
-         displayedPosts += [post]
-         }
-         }
-         */
         
         let postsToDisplay = displayedPosts[indexPath.row]
         

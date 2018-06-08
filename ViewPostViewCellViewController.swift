@@ -15,6 +15,7 @@ class ViewPostViewCellViewController: UIViewController {
         postDescription.text = selectedPost?.postDe
         clubImage.image = selectedPost?.postImage
         postTitle.text = selectedPost?.postTi
+        postImage.image = selectedPost?.postedImage
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         postDate.text = dateFormatter.string(from: (selectedPost?.postDa)!)
@@ -31,6 +32,7 @@ class ViewPostViewCellViewController: UIViewController {
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var postDate: UILabel!
     @IBOutlet weak var postDescription: UITextView!
+    @IBOutlet weak var postImage: UIImageView!
     /*
     // MARK: - Navigation
 

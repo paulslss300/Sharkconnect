@@ -23,5 +23,6 @@ class ClubIInformationTableViewCell: UITableViewCell {
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var postDate: UILabel!
     @IBOutlet weak var postDescription: UITextView!
+    @IBOutlet weak var postImage: UIImageView!
 
 }

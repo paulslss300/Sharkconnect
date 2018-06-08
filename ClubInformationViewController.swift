@@ -65,10 +65,22 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
     @IBOutlet weak var clubCoverImage: UIImageView!
     
     @IBOutlet weak var clubImage: UIImageView!
+
+    /*
+     
+     subscribedPosts = []
+     for post in Post.posts{
+     for club in subscribedClubs {
+     if post.clubIdentifier == club.ClubNa {
+     subscribedPosts += [post]
+     }
+     }
+     }
+
+     
+     */
     
     @IBAction func suscribeButton(_ sender: Any) {
-        
-        //sender.isSelected = !sender.isSelected
         
         var noDuplicate: Bool = true
         
@@ -78,6 +90,7 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
                 subscribedClubs = subscribedClubs.filter({ (club) -> Bool in
                     return !(club.ClubNa == selectedClub?.ClubNa)
                 })
+                subscribedPosts = subscribedPosts.filter({$0.clubIdentifier != selectedClub?.ClubNa})
                 subscribeButton.backgroundColor = UIColor(red: 159/225.0, green: 168/225.0, blue: 183/225.0, alpha: 1)
                 break
             }
@@ -85,6 +98,11 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         
         if noDuplicate {
             subscribedClubs += [selectedClub!]
+            for post in Post.posts{
+                if post.clubIdentifier == selectedClub?.ClubNa {
+                    subscribedPosts += [post]
+                }
+            }
             subscribeButton.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
         }
     }
@@ -116,6 +134,7 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         dateFormatter.dateFormat = "yyyy-MM-dd"
         cell.postDate?.text = dateFormatter.string(from: post.postDa)
         cell.postDescription?.text = post.postDe
+        cell.postImage?.image = post.postedImage
         
         return cell
     }

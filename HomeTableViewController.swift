@@ -28,7 +28,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        /*
         subscribedPosts = []
         for post in Post.posts{
             for club in subscribedClubs {
@@ -37,6 +37,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
                 }
             }
         }
+         */
 
         tableView.reloadData()
     }

@@ -15,6 +15,9 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
     // IMPORTANT FEATURE ----- LOG OUT BUTTON
     @IBAction func logOutButton(_ sender: Any) {
         clubId = ""
+        // the following removeAll() functions are temporary
+        subscribedClubs.removeAll()
+        subscribedPosts.removeAll()
         performSegue(withIdentifier: "unwindToFirst", sender: self)
     }
     
