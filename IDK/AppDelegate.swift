@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let photo4 = UIImage(named: "artclub")
         let photo5 = UIImage(named: "stemclub")
         let photo6 = UIImage(named: "mathclub")
+        let photo13 = UIImage(named: "school")
         
         let photo7 = UIImage(named: "unnamed-4")
         let photo8 = UIImage(named: "unnamed-1")
@@ -50,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let photo10 = UIImage(named: "unnamed")
         let photo11 = UIImage(named: "unnamed-3")
         let photo12 = UIImage(named: "unnamed-2")
+        let photo14 = UIImage(named: "schoolCover")
         
         // Populate Clubs
         let samplelub1 = Club(ClubNa: "Drama Club", ClubPa: "samplepassword", ClubDe: "Tell members what this group is about. Our newest production is R.E.D. and will be showing in two months! Written by students Emily Ison and Mandy Huang. We put on three to four plays a year. Our last play was High School Confidential - A  KDog Special. Our sponsor teacher? KDog aka Ms Kosar but please call her “KDog.” It makes her happy. Ecstatic. Absolutely glowing. :)",ClubCellImageName: photo1!, ClubCellCoverImage: photo7!)
@@ -69,7 +71,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let samplelub6 = Club(ClubNa: "Math Club", ClubPa: "samplepassword", ClubDe: "SLSS Math Club, the only place people buy 64 watermelons and no one wonders why... \n Meetings every Wednesday at lunch in room X.", ClubCellImageName: photo6!, ClubCellCoverImage: photo12!)
         Club.clubs += [samplelub6]
+        
+        let school = Club(ClubNa: "School", ClubPa: "samplepassword", ClubDe: "This is the school", ClubCellImageName: photo13!, ClubCellCoverImage: photo14!)
+        Club.clubs += [school]
+        subscribedClubs += [school]
     }
+
+    
     
     private func loadSamplePosts() {
         
@@ -79,6 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let photo4 = UIImage(named: "artclub")
         let photo5 = UIImage(named: "stemclub")
         let photo6 = UIImage(named: "mathclub")
+        let photo13 = UIImage(named: "school")
         
         // Populate Clubs
         let dateFormatter = DateFormatter()
@@ -116,6 +125,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let date = dateFormatter.date(from: "2018-06-12"){
         let samplePost6 = Post.init(postTi: "Volunteers needed!", postDe: "Come to the meeting today at lunch for more information", clubIdentifier: "Student Council", postImage: photo3!, postDa: date, postedImage: #imageLiteral(resourceName: "image6"))
         Post.posts += [samplePost6]
+        }
+        
+        if let date = dateFormatter.date(from: "2018-06-13"){
+            let samplePost6 = Post.init(postTi: "School Event", postDe: "Come to the meeting today at lunch for more information", clubIdentifier: "School", postImage: photo13!, postDa: date, postedImage: #imageLiteral(resourceName: "image6"))
+            Post.posts += [samplePost6]
+        }
     }
 
 
@@ -141,7 +156,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
-}
 
 }

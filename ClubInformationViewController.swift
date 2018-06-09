@@ -13,6 +13,9 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if selectedClub?.ClubNa == "School" {
+            subscribeButton.isHidden = true
+        }
         postTableView.delegate  = self
         postTableView.dataSource = self
         scrollView.delegate = self
@@ -132,7 +135,9 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         cell.postTitle?.text = post.postTi
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        cell.postDate?.text = dateFormatter.string(from: post.postDa)
+        if post.postDa != nil {
+            cell.postDate.text = dateFormatter.string(from: post.postDa!)
+        }
         cell.postDescription?.text = post.postDe
         cell.postImage?.image = post.postedImage
         

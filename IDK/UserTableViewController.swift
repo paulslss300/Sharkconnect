@@ -33,8 +33,7 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
         userTableview.dataSource = self
         
         if clubId == "student" {
-            clubSettingsClub.isEnabled = false
-            clubSettingsClub.setTitle("", for: .normal)
+            clubSettingsClub.isHidden = true
         }
 
         // Uncomment the following line to preserve selection between presentations

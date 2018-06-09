@@ -22,11 +22,9 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func createPostButton(_ sender: Any) {
         actualPostTitle = postTitle.text!
         actualPostDescription = postDescription.text!
-        
-        if let actualDatePicked = actualDatePicked, let myAvatar = myAvatar {
-            let post1 = Post(postTi: actualPostTitle, postDe: actualPostDescription, clubIdentifier: clubId, postImage: myAvatar, postDa: actualDatePicked, postedImage: actualPostedImagePicked!)
-            Post.posts.insert(post1, at: 0)
-        }
+
+        let post1 = Post(postTi: actualPostTitle, postDe: actualPostDescription, clubIdentifier: clubId, postImage: myAvatar!, postDa: actualDatePicked, postedImage: actualPostedImagePicked)
+        Post.posts.insert(post1, at: 0)
        
        performSegue(withIdentifier: "unwindToTabBar", sender: self)
     }

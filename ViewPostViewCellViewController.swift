@@ -18,7 +18,9 @@ class ViewPostViewCellViewController: UIViewController {
         postImage.image = selectedPost?.postedImage
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        postDate.text = dateFormatter.string(from: (selectedPost?.postDa)!)
+        if selectedPost?.postDa != nil {
+            postDate.text = dateFormatter.string(from: (selectedPost?.postDa)!)
+        }
     }
 
     override func didReceiveMemoryWarning() {

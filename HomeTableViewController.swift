@@ -123,13 +123,28 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         cell.cellImage.image = post.postImage
         cell.cellPostedImage.image = post.postedImage
         cell.cellIdentifier?.text = post.clubIdentifier
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        cell.cellDate?.text = dateFormatter.string(from: post.postDa)
+        if post.postDa != nil {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+        } else {
+            cell.cellDate.isHidden = true
+        }
+        
+        if cell.cellPostedImage.image == nil {
+            cell.cellPostedImage.isHidden = true
+        }
+        if cell.cellTitle?.text == "" {
+            cell.cellTitle.isHidden = true
+        }
+        if cell.cellDescription?.text == "" {
+            cell.cellDescription.isHidden = true
+        }
         
         return cell
     }
     
+    // if let actualDatePicked = actualDatePicked, let myAvatar = myAvatar {
 
     /*
     // Override to support conditional editing of the table view.
