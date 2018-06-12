@@ -48,15 +48,12 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
         self.present(postMainImage, animated: true){}
     }
     
-    @IBAction func settingPostImage(_ sender: Any) {
-        actualPostedImagePicked = postImageView.image
-    }
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let myPostImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             //the user has selected an image
             if settingPostImageButton == true{
                 postImageView.image = myPostImage
+                actualPostedImagePicked = postImageView.image
             }
         }
         self.dismiss(animated: true, completion: nil)
