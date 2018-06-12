@@ -19,13 +19,15 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     var actualDatePicked: Date? = nil
     var actualPostedImagePicked: UIImage? = nil
     
+    let homeVCCell = HomeTableViewCell()    //access the constraint from here
+    
     @IBAction func createPostButton(_ sender: Any) {
         actualPostTitle = postTitle.text!
         actualPostDescription = postDescription.text!
 
         let post1 = Post(postTi: actualPostTitle, postDe: actualPostDescription, clubIdentifier: clubId, postImage: myAvatar!, postDa: actualDatePicked, postedImage: actualPostedImagePicked)
         Post.posts.insert(post1, at: 0)
-       
+        
        performSegue(withIdentifier: "unwindToTabBar", sender: self)
     }
     @IBOutlet weak var postTitle: UITextField!

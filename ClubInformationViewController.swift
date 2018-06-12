@@ -133,13 +133,26 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         
         let post = recentPosts[indexPath.row]
         cell.postTitle?.text = post.postTi
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        if post.postDa != nil {
-            cell.postDate.text = dateFormatter.string(from: post.postDa!)
-        }
         cell.postDescription?.text = post.postDe
         cell.postImage?.image = post.postedImage
+        
+        if post.postDa != nil {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            cell.postDate.text = dateFormatter.string(from: post.postDa!)
+        } else {
+            cell.postDate.isHidden = true
+        }
+        
+        if cell.postImage.image == nil {
+            cell.postImage.isHidden = true
+        }
+        if  cell.postTitle?.text == "" {
+             cell.postTitle.isHidden = true
+        }
+        if  cell.postDescription?.text == "" {
+             cell.postDescription.isHidden = true
+        }
         
         return cell
     }

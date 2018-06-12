@@ -16,11 +16,25 @@ class ViewPostViewCellViewController: UIViewController {
         clubImage.image = selectedPost?.postImage
         postTitle.text = selectedPost?.postTi
         postImage.image = selectedPost?.postedImage
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
         if selectedPost?.postDa != nil {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
             postDate.text = dateFormatter.string(from: (selectedPost?.postDa)!)
+        } else {
+            postDate.isHidden = true
         }
+
+        if postImage.image == nil {
+            postImage.isHidden = true
+        }
+        if postTitle.text == "" {
+            postTitle.isHidden = true
+        }
+        if postDescription.text == "" {
+            postDescription.isHidden = true
+        }
+
     }
 
     override func didReceiveMemoryWarning() {

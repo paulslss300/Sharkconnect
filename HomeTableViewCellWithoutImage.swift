@@ -1,23 +1,22 @@
 //
-//  HomeTableViewCell.swift
+//  HomeTableViewCellWithoutImage.swift
 //  IDK
 //
-//  Created by Student on 2018-01-16.
+//  Created by Paul Tang on 2018-06-11.
 //  Copyright © 2018 No Clue. All rights reserved.
 //
 
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
-
+class HomeTableViewCellWithoutImage: UITableViewCell {
+    
     @IBOutlet weak var cellTitle: UILabel!
-    @IBOutlet weak var cellDescription: UITextView! 
+    @IBOutlet weak var cellDescription: UITextView!
     @IBOutlet weak var cellIdentifier: UILabel!
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellDate: UILabel!
     @IBOutlet weak var labelOverImage: UILabel!
-    @IBOutlet weak var cellPostedImage: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

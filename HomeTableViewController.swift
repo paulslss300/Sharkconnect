@@ -13,7 +13,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var displayPost: UISegmentedControl!
-    
+
     var selectedPost: Post? = nil
     
     var selectedClub: Club? = nil
@@ -28,17 +28,6 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        /*
-        subscribedPosts = []
-        for post in Post.posts{
-            for club in subscribedClubs {
-                if post.clubIdentifier == club.ClubNa {
-                    subscribedPosts += [post]
-                }
-            }
-        }
-         */
-
         tableView.reloadData()
     }
 
@@ -76,6 +65,28 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        //let cell = tableView.cellForRow(at: indexPath)
+        
+        var post = Post.posts[indexPath.row]
+        
+        if !displayAllClubs {
+            post = subscribedPosts[indexPath.row]
+        }
+        
+        if post.postedImage == nil && post.postDe == "" {
+            return 126
+        } else if post.postedImage == nil {
+            return 182
+        } else if post.postDe == "" {
+            return 218
+        } else {
+            return 283
+        }
+    }
+ 
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var post = Post.posts[indexPath.row]
         
@@ -101,15 +112,90 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
     }
 
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! HomeTableViewCell
         
         var post = Post.posts[indexPath.row]
         
         if !displayAllClubs {
             post = subscribedPosts[indexPath.row]
         }
+        
+        if post.postedImage == nil && post.postDe == "" {
+            
+            let cell: HomeTableViewCellWithoutBoth = tableView.dequeueReusableCell(withIdentifier: "cellWithoutBoth", for: indexPath) as! HomeTableViewCellWithoutBoth
+            
+            // allowing action when label (over the cellImage) is tapped
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
+            cell.labelOverImage.isUserInteractionEnabled = true
+            cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
+            
+            // Configure the cell...
+            cell.labelOverImage?.text = post.clubIdentifier
+            cell.cellTitle?.text = post.postTi
+            cell.cellImage.image = post.postImage
+            cell.cellIdentifier?.text = post.clubIdentifier
+            
+            return cell
+        }
+        else if post.postDe == "" {
+
+            let cell: HomeTableViewCellWithoutDescription = tableView.dequeueReusableCell(withIdentifier: "cellWithoutDescription", for: indexPath) as! HomeTableViewCellWithoutDescription
+            
+            // allowing action when label (over the cellImage) is tapped
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
+            cell.labelOverImage.isUserInteractionEnabled = true
+            cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
+            
+            // Configure the cell...
+            cell.labelOverImage?.text = post.clubIdentifier
+            cell.cellTitle?.text = post.postTi
+            cell.cellImage.image = post.postImage
+            cell.cellPostedImage.image = post.postedImage
+            cell.cellIdentifier?.text = post.clubIdentifier
+            
+            return cell
+        }
+        else if post.postedImage == nil {
+            
+            let cell: HomeTableViewCellWithoutImage = tableView.dequeueReusableCell(withIdentifier: "cellWithoutImage", for: indexPath) as! HomeTableViewCellWithoutImage
+            
+            // allowing action when label (over the cellImage) is tapped
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
+            cell.labelOverImage.isUserInteractionEnabled = true
+            cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
+            
+            // Configure the cell...
+            cell.labelOverImage?.text = post.clubIdentifier
+            cell.cellTitle?.text = post.postTi
+            cell.cellDescription?.text = post.postDe
+            cell.cellImage.image = post.postImage
+            cell.cellIdentifier?.text = post.clubIdentifier
+            
+            return cell
+        }
+        else {
+            
+            let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath) as!HomeTableViewCell
+            
+            // allowing action when label (over the cellImage) is tapped
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
+            cell.labelOverImage.isUserInteractionEnabled = true
+            cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
+            
+            // Configure the cell...
+            cell.labelOverImage?.text = post.clubIdentifier
+            cell.cellTitle?.text = post.postTi
+            cell.cellDescription?.text = post.postDe
+            cell.cellImage.image = post.postImage
+            cell.cellPostedImage.image = post.postedImage
+            cell.cellIdentifier?.text = post.clubIdentifier
+            
+            return cell
+        }
+        
+        /*
+        let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! HomeTableViewCell
+
         
         // allowing action when label (over the cellImage) is tapped
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
@@ -123,6 +209,29 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         cell.cellImage.image = post.postImage
         cell.cellPostedImage.image = post.postedImage
         cell.cellIdentifier?.text = post.clubIdentifier
+         */
+        
+        /*
+        if indexPath.row == 0 {
+            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "firstCustomCell")
+            //set the data here
+            return cell
+        }
+        else if indexPath.row == 1 {
+            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "secondCustomCell")
+            //set the data here
+            return cell
+        }
+        else {
+            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "thirdCustomCell")
+            //set the data here
+            return cell
+        }
+         */
+ 
+        
+        
+        /*
         if post.postDa != nil {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -140,8 +249,9 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         if cell.cellDescription?.text == "" {
             cell.cellDescription.isHidden = true
         }
+         */
         
-        return cell
+        
     }
     
     // if let actualDatePicked = actualDatePicked, let myAvatar = myAvatar {
