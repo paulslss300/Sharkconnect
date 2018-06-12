@@ -134,6 +134,11 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             cell.cellTitle?.text = post.postTi
             cell.cellImage.image = post.postImage
             cell.cellIdentifier?.text = post.clubIdentifier
+            if post.postDa != nil {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+            }
             
             return cell
         }
@@ -152,6 +157,11 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             cell.cellImage.image = post.postImage
             cell.cellPostedImage.image = post.postedImage
             cell.cellIdentifier?.text = post.clubIdentifier
+            if post.postDa != nil {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+            }
             
             return cell
         }
@@ -170,6 +180,11 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             cell.cellDescription?.text = post.postDe
             cell.cellImage.image = post.postImage
             cell.cellIdentifier?.text = post.clubIdentifier
+            if post.postDa != nil {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+            }
             
             return cell
         }
@@ -189,6 +204,11 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             cell.cellImage.image = post.postImage
             cell.cellPostedImage.image = post.postedImage
             cell.cellIdentifier?.text = post.clubIdentifier
+            if post.postDa != nil {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+            }
             
             return cell
         }
