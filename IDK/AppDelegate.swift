@@ -130,6 +130,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let date = dateFormatter.date(from: "2018-06-13"){
             let samplePost6 = Post.init(postTi: "School Event", postDe: "Come to the meeting today at lunch for more information", clubIdentifier: "School", postImage: photo13!, postDa: date, postedImage: #imageLiteral(resourceName: "image6"))
             Post.posts += [samplePost6]
+            subscribedPosts += [samplePost6]
         }
     }
 

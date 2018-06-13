@@ -121,6 +121,9 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        displayedPosts = []
+        
         let date = collectionView.cellForItem(at: indexPath)
         
         if selectedMonth[indexPath.row] != "" {
@@ -134,9 +137,9 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             for post in subscribedPosts {
                 
                 // get the date value for NSDate object
-                let indexOfDate = String(describing: post.postDa).index(String(describing: post.postDa).endIndex, offsetBy: -15)
+                let indexOfDate = String(describing: post.postDa!).index(String(describing: post.postDa!).endIndex, offsetBy: -15)
                 
-                if datePicked == String(describing: post.postDa).substring(to: indexOfDate) {
+                if datePicked == String(describing: post.postDa!).substring(to: indexOfDate) {
                     displayedPosts += [post]
                 }
             }
@@ -145,20 +148,8 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        displayedPosts = []
-        
         let date = collectionView.cellForItem(at: indexPath)
         date?.backgroundColor = UIColor.clear
-        
-        /*
-         GET TODAY'S DATE
-         let today = Date()
-         let formatter = DateFormatter()
-         formatter.dateFormat = "dd.MM.yyyy"
-         let result = formatter.string(from: today)
-         label.text = result
-         */
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -215,11 +206,11 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             for checkPost in subscribedPosts {
                 
                 // get the date value for NSDate object
-                let indexOfDate = String(describing: checkPost.postDa).index(String(describing: checkPost.postDa).endIndex, offsetBy: -15)
+                let indexOfDate = String(describing: checkPost.postDa!).index(String(describing: checkPost.postDa!).endIndex, offsetBy: -15)
                 
                 if checkCell.number.text! == "" {
                     checkCell.image.isHidden = true
-                } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == String(describing: checkPost.postDa).substring(to: indexOfDate) {
+                } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == String(describing: checkPost.postDa!).substring(to: indexOfDate) {
                     checkCell.image.isHidden = false
                 }
             }
