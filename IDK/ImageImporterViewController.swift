@@ -46,16 +46,6 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
         }
     }
     
-    @IBAction func setCover(_ sender: Any) {
-        
-        for club in Club.clubs {
-            if club.ClubNa == actualClubName {
-                club.ClubCellCoverImage = myClubCoverView.image
-            }
-        }
- 
-    }
-    
     @IBAction func setDescription(_ sender: Any) {
         MyDescription = clubDescription.text
         for club in Club.clubs {
@@ -65,27 +55,33 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
         }
     }
     
-    @IBAction func setAvatar(_ sender: Any) {
-        for club in Club.clubs {
-            if club.ClubNa == actualClubName {
-                club.ClubCellImageName = myImageView.image
-            }
-        }
-        for post in Post.posts {
-            if post.clubIdentifier == actualClubName {
-                post.postImage = myImageView.image
-                myAvatar = myImageView.image
-            }
-        }
-    }
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
             // The user has selected an image
             if avatarButtonSelected == true{
                 myImageView.image = image
-            }else{
+                
+                for club in Club.clubs {
+                    if club.ClubNa == actualClubName {
+                        club.ClubCellImageName = myImageView.image
+                    }
+                }
+                for post in Post.posts {
+                    if post.clubIdentifier == actualClubName {
+                        post.postImage = myImageView.image
+                        myAvatar = myImageView.image
+                    }
+                }
+
+            }else {
                 myClubCoverView.image = image
+                
+                for club in Club.clubs {
+                    if club.ClubNa == actualClubName {
+                        club.ClubCellCoverImage = myClubCoverView.image
+                    }
+                }
+
             }
             
         }else{
