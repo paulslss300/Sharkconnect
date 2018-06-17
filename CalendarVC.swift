@@ -164,6 +164,9 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         cell.image.isHidden = true
         cell.image.layer.cornerRadius = 7.25
         cell.image.layer.masksToBounds = true
+        cell.image2.isHidden = true
+        cell.image2.layer.cornerRadius = 7.25
+        cell.image2.layer.masksToBounds = true
         
         
         // update result
@@ -209,7 +212,10 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
                 let indexOfDate = String(describing: checkPost.postDa!).index(String(describing: checkPost.postDa!).endIndex, offsetBy: -15)
                 
                 if checkCell.number.text! == "" {
-                    checkCell.image.isHidden = true
+                    break
+                } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == String(describing: checkPost.postDa!).substring(to: indexOfDate) && checkPost.clubIdentifier == "School" {
+                    checkCell.image.isHidden = false
+                    checkCell.image2.isHidden = false
                 } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == String(describing: checkPost.postDa!).substring(to: indexOfDate) {
                     checkCell.image.isHidden = false
                 }
@@ -242,9 +248,6 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         
         let postsToDisplay = displayedPosts[indexPath.row]
         
-        // Configure the cell...
-        //cell.clubImage.image = subscribedClub.ClubCellImageName
-        //cell.clubName?.text = subscribedClub.ClubNa
         cell.clubName?.text = postsToDisplay.clubIdentifier
         cell.postDescription?.text = postsToDisplay.postTi
         

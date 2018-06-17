@@ -520,7 +520,11 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="aLR-f6-6B4">
-                                                            <rect key="frame" x="20" y="37" width="10" height="10"/>
+                                                            <rect key="frame" x="21" y="38" width="8" height="8"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Eyn-So-DQ2">
+                                                            <rect key="frame" x="21" y="30" width="8" height="8"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                     </subviews>
@@ -533,6 +537,7 @@
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="image" destination="aLR-f6-6B4" id="M0J-hB-z8K"/>
+                                                    <outlet property="image2" destination="Eyn-So-DQ2" id="AX5-Wx-ppf"/>
                                                     <outlet property="number" destination="uVY-PW-0at" id="Eba-Nh-PD5"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -627,7 +632,7 @@
                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                 </collectionViewFlowLayout>
             </objects>
-            <point key="canvasLocation" x="4033" y="1137"/>
+            <point key="canvasLocation" x="4032.8000000000002" y="1136.5817091454273"/>
         </scene>
         <!--Create Pop Up View Controller-->
         <scene sceneID="ydY-pz-k4o">
@@ -2050,7 +2055,7 @@
                                         <rect key="frame" x="0.0" y="44" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H0V-hh-Aqp" id="0qD-wE-wB8">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d39-HV-29w">
@@ -2075,7 +2080,7 @@
                                         <rect key="frame" x="0.0" y="88" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XdG-YI-XLn" id="QVD-au-FdK">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YW3-JF-FUV">
@@ -2131,6 +2136,7 @@
         <image name="SharkConnect" width="261" height="199"/>
         <image name="blue" width="225" height="225"/>
         <image name="calendarperfect" width="28" height="25"/>
+        <image name="gray" width="640" height="480"/>
         <image name="homeperfect" width="32" height="28"/>
         <image name="plus" width="700" height="700"/>
         <image name="searchperfect" width="26" height="26"/>

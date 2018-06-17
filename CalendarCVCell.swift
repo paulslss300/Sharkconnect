@@ -16,5 +16,6 @@ class CalendarCVCell: UICollectionViewCell {
     
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var image2: UIImageView!
 }
 
