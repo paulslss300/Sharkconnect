@@ -32,6 +32,9 @@
 		9861396920CF60BD006E736B /* HomeTableViewCellWithoutImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9861396820CF60BD006E736B /* HomeTableViewCellWithoutImage.swift */; };
 		9861396D20CF60DF006E736B /* HomeTableViewCellWithoutDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9861396C20CF60DF006E736B /* HomeTableViewCellWithoutDescription.swift */; };
 		9861396F20CF62DE006E736B /* HomeTableViewCellWithoutBoth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9861396E20CF62DE006E736B /* HomeTableViewCellWithoutBoth.swift */; };
+		9861397320D6FF96006E736B /* ClubInfoVCTableViewCellWithoutBoth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9861397220D6FF96006E736B /* ClubInfoVCTableViewCellWithoutBoth.swift */; };
+		9861397520D70231006E736B /* ClubInfoVCTableViewCellWithoutDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9861397420D70231006E736B /* ClubInfoVCTableViewCellWithoutDescription.swift */; };
+		9861397720D753A0006E736B /* ClubInfoVCTableViewCellWithoutImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9861397620D753A0006E736B /* ClubInfoVCTableViewCellWithoutImage.swift */; };
 		9874787D206AEB41005C0395 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9874787C206AEB41005C0395 /* GlobalVariables.swift */; };
 		987DB48C20C3A24600441E52 /* ClubIInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987DB48B20C3A24600441E52 /* ClubIInformationTableViewCell.swift */; };
 		98B534CC209EA55E001FA976 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B534CB209EA55E001FA976 /* MoreViewController.swift */; };
@@ -67,6 +70,9 @@
 		9861396820CF60BD006E736B /* HomeTableViewCellWithoutImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewCellWithoutImage.swift; path = ../HomeTableViewCellWithoutImage.swift; sourceTree = "<group>"; };
 		9861396C20CF60DF006E736B /* HomeTableViewCellWithoutDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewCellWithoutDescription.swift; path = ../HomeTableViewCellWithoutDescription.swift; sourceTree = "<group>"; };
 		9861396E20CF62DE006E736B /* HomeTableViewCellWithoutBoth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewCellWithoutBoth.swift; path = ../HomeTableViewCellWithoutBoth.swift; sourceTree = "<group>"; };
+		9861397220D6FF96006E736B /* ClubInfoVCTableViewCellWithoutBoth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClubInfoVCTableViewCellWithoutBoth.swift; path = ../ClubInfoVCTableViewCellWithoutBoth.swift; sourceTree = "<group>"; };
+		9861397420D70231006E736B /* ClubInfoVCTableViewCellWithoutDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClubInfoVCTableViewCellWithoutDescription.swift; path = ../ClubInfoVCTableViewCellWithoutDescription.swift; sourceTree = "<group>"; };
+		9861397620D753A0006E736B /* ClubInfoVCTableViewCellWithoutImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClubInfoVCTableViewCellWithoutImage.swift; path = ../ClubInfoVCTableViewCellWithoutImage.swift; sourceTree = "<group>"; };
 		9874787C206AEB41005C0395 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		987DB48B20C3A24600441E52 /* ClubIInformationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClubIInformationTableViewCell.swift; path = ../ClubIInformationTableViewCell.swift; sourceTree = "<group>"; };
 		98B534CB209EA55E001FA976 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreViewController.swift; path = ../MoreViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +117,9 @@
 				985DBC6C206B199600506D79 /* CalendarVC.swift */,
 				987DB48B20C3A24600441E52 /* ClubIInformationTableViewCell.swift */,
 				3F9D9CBC2033EB41002B94C9 /* ClubInformationViewController.swift */,
+				9861397220D6FF96006E736B /* ClubInfoVCTableViewCellWithoutBoth.swift */,
+				9861397420D70231006E736B /* ClubInfoVCTableViewCellWithoutDescription.swift */,
+				9861397620D753A0006E736B /* ClubInfoVCTableViewCellWithoutImage.swift */,
 				3F634579202293490089F29F /* CreateClubViewController.swift */,
 				98B534CD209EB1F3001FA976 /* CreateNoteViewController.swift */,
 				3F1CC9D1201837B0007F0F89 /* CreatePostViewController.swift */,
@@ -213,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9874787D206AEB41005C0395 /* GlobalVariables.swift in Sources */,
+				9861397720D753A0006E736B /* ClubInfoVCTableViewCellWithoutImage.swift in Sources */,
 				33EED5112030F54300FAFADB /* ImageImporterViewController.swift in Sources */,
 				985DBC6D206B199600506D79 /* CalendarVC.swift in Sources */,
 				3F2AD06C200EAA450053136F /* HomeTableViewController.swift in Sources */,
@@ -230,10 +240,12 @@
 				98C7147320AD4C78001818B6 /* MoreTableViewCell.swift in Sources */,
 				3F9D9CB92033E24E002B94C9 /* DiscoverViewController.swift in Sources */,
 				3F859368202A5A5B00DA2E76 /* ThirdViewController.swift in Sources */,
+				9861397520D70231006E736B /* ClubInfoVCTableViewCellWithoutDescription.swift in Sources */,
 				3F63457A202293490089F29F /* CreateClubViewController.swift in Sources */,
 				3F0B7BC52005B474005BC1CC /* SecondViewController.swift in Sources */,
 				3F0B7BC12005B474005BC1CC /* AppDelegate.swift in Sources */,
 				3F6D3DAF20166CA50030D95D /* UserTableViewController.swift in Sources */,
+				9861397320D6FF96006E736B /* ClubInfoVCTableViewCellWithoutBoth.swift in Sources */,
 				3F0B7BC32005B474005BC1CC /* FirstViewController.swift in Sources */,
 				9861396F20CF62DE006E736B /* HomeTableViewCellWithoutBoth.swift in Sources */,
 				98B534CE209EB1F3001FA976 /* CreateNoteViewController.swift in Sources */,

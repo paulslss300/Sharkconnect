@@ -8,24 +8,23 @@
 
 import UIKit
 
-class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
     
     
     let picker = UIDatePicker()
     
-    var actualPostTitle: String = ""
-    var actualPostDescription: String = ""
-    var actualPostImage: UIImage? = nil
     var actualDatePicked: Date? = nil
     var actualPostedImagePicked: UIImage? = nil
     
     let homeVCCell = HomeTableViewCell()    //access the constraint from here
     
     @IBAction func createPostButton(_ sender: Any) {
-        actualPostTitle = postTitle.text!
-        actualPostDescription = postDescription.text!
+        
+        if postDescription.text == "Add A Description" && postDescription.textColor == UIColor.lightGray {
+            postDescription.text = ""
+        }
 
-        let post1 = Post(postTi: actualPostTitle, postDe: actualPostDescription, clubIdentifier: clubId, postImage: myAvatar!, postDa: actualDatePicked, postedImage: actualPostedImagePicked)
+        let post1 = Post(postTi: postTitle.text!, postDe: postDescription.text!, clubIdentifier: clubId, postImage: myAvatar!, postDa: actualDatePicked, postedImage: actualPostedImagePicked)
         Post.posts.insert(post1, at: 0)
         
        performSegue(withIdentifier: "unwindToTabBar", sender: self)
@@ -65,8 +64,24 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        postDescription.delegate = self
         createDatePicker()
+        postDescription.text = "Add A Description"
+        postDescription.textColor = UIColor.lightGray
+    }
+    
+    func textViewDidBeginEditing(_ postDescription: UITextView) {
+        if postDescription.textColor == UIColor.lightGray {
+            postDescription.text = nil
+            postDescription.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ postDescription: UITextView) {
+        if postDescription.text.isEmpty {
+            postDescription.text = "Add A Description"
+            postDescription.textColor = UIColor.lightGray
+        }
     }
     
     func createDatePicker(){

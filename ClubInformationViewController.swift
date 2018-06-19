@@ -9,7 +9,6 @@
 import UIKit
 
 class ClubInformationViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
-    //subscribeButton.backgroundColor = UIColor(red: 102, green: 153, blue: 153, alpha: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +24,16 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         subscribeButton.layer.cornerRadius = 6.0
     
         self.title = selectedClub?.ClubNa
-
-        clubDe.textColor = UIColor.lightGray
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        recentPosts.removeAll()
         for post in Post.posts {
             if post.clubIdentifier == (selectedClub?.ClubNa)! {
                 recentPosts += [post]
             }
         }
+        postTableView.reloadData()
         
         for club in subscribedClubs {
             if club.ClubNa == (selectedClub?.ClubNa)! {
@@ -68,20 +67,6 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
     @IBOutlet weak var clubCoverImage: UIImageView!
     
     @IBOutlet weak var clubImage: UIImageView!
-
-    /*
-     
-     subscribedPosts = []
-     for post in Post.posts{
-     for club in subscribedClubs {
-     if post.clubIdentifier == club.ClubNa {
-     subscribedPosts += [post]
-     }
-     }
-     }
-
-     
-     */
     
     @IBAction func suscribeButton(_ sender: Any) {
         
@@ -118,8 +103,23 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 1
-        
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let post = recentPosts[indexPath.row]
+        
+        if post.postedImage == nil && post.postDe == "" {
+            return 80
+        } else if post.postedImage == nil {
+            return 160
+        } else if post.postDe == "" {
+            return 218
+        } else {
+            return 283
+        }
+    }
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = recentPosts[indexPath.row]
@@ -129,36 +129,72 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ClubIInformationTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ClubInfoPostCells", for: indexPath) as! ClubIInformationTableViewCell
         
         let post = recentPosts[indexPath.row]
-        cell.postTitle?.text = post.postTi
-        cell.postDescription?.text = post.postDe
-        cell.postImage?.image = post.postedImage
         
-        if post.postDa != nil {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            cell.postDate.text = dateFormatter.string(from: post.postDa!)
-        } else {
-            cell.postDate.isHidden = true
+        if post.postedImage == nil && post.postDe == "" {
+            let cell: ClubInfoVCTableViewCellWithoutBoth = tableView.dequeueReusableCell(withIdentifier: "CellWithoutBoth2", for: indexPath) as! ClubInfoVCTableViewCellWithoutBoth
+            
+            cell.cellTitle?.text = post.postTi
+            if post.postDa != nil {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+            } else {
+                cell.cellDate.isHidden = true
+            }
+            return cell
+            
         }
-        
-        if cell.postImage.image == nil {
-            cell.postImage.isHidden = true
+        else if post.postDe == "" {
+            let cell: ClubInfoVCTableViewCellWithoutDescription = tableView.dequeueReusableCell(withIdentifier: "CellWithoutDescription2", for: indexPath) as! ClubInfoVCTableViewCellWithoutDescription
+            
+            cell.cellTitle?.text = post.postTi
+            cell.cellPostedImage.image = post.postedImage
+            if post.postDa != nil {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+            } else {
+                cell.cellDate.isHidden = true
+            }
+            return cell
+
         }
-        if  cell.postTitle?.text == "" {
-             cell.postTitle.isHidden = true
+        else if post.postedImage == nil {
+            let cell: ClubInfoVCTableViewCellWithoutImage = tableView.dequeueReusableCell(withIdentifier: "CellWithoutImage2", for: indexPath) as! ClubInfoVCTableViewCellWithoutImage
+            
+            cell.cellTitle?.text = post.postTi
+            cell.cellDescription?.text = post.postDe
+            if post.postDa != nil {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+            } else {
+                cell.cellDate.isHidden = true
+            }
+            return cell
+
         }
-        if  cell.postDescription?.text == "" {
-             cell.postDescription.isHidden = true
+        else {
+            let cell: ClubIInformationTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ClubInfoPostCells2", for: indexPath) as! ClubIInformationTableViewCell
+            
+            
+            cell.postTitle?.text = post.postTi
+            cell.postDescription?.text = post.postDe
+            cell.postImage?.image = post.postedImage
+            
+            if post.postDa != nil {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                cell.postDate.text = dateFormatter.string(from: post.postDa!)
+            } else {
+                cell.postDate.isHidden = true
+            }
+            return cell
+            
         }
-        
-        return cell
     }
-
-
-
     
     // MARK: - Navigation
 

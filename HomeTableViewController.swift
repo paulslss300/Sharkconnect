@@ -67,8 +67,6 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        //let cell = tableView.cellForRow(at: indexPath)
-        
         var post = Post.posts[indexPath.row]
         
         if !displayAllClubs {
@@ -107,9 +105,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
                 selectedClub = club
             }
         }
-        
         performSegue(withIdentifier: "showclubinformationthroughpost", sender: self)
-
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -138,6 +134,8 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
                 cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+            } else {
+                cell.cellDate.isHidden = true
             }
             
             return cell
@@ -161,6 +159,8 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
                 cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+            } else {
+                cell.cellDate.isHidden = true
             }
             
             return cell
@@ -184,6 +184,8 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
                 cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+            } else {
+                cell.cellDate.isHidden = true
             }
             
             return cell
@@ -208,109 +210,13 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
                 cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+            } else {
+                cell.cellDate.isHidden = true
             }
             
             return cell
         }
-        
-        /*
-        let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! HomeTableViewCell
-
-        
-        // allowing action when label (over the cellImage) is tapped
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
-        cell.labelOverImage.isUserInteractionEnabled = true
-        cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
-
-        // Configure the cell...
-        cell.labelOverImage?.text = post.clubIdentifier
-        cell.cellTitle?.text = post.postTi
-        cell.cellDescription?.text = post.postDe
-        cell.cellImage.image = post.postImage
-        cell.cellPostedImage.image = post.postedImage
-        cell.cellIdentifier?.text = post.clubIdentifier
-         */
-        
-        /*
-        if indexPath.row == 0 {
-            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "firstCustomCell")
-            //set the data here
-            return cell
-        }
-        else if indexPath.row == 1 {
-            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "secondCustomCell")
-            //set the data here
-            return cell
-        }
-        else {
-            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "thirdCustomCell")
-            //set the data here
-            return cell
-        }
-         */
- 
-        
-        
-        /*
-        if post.postDa != nil {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            cell.cellDate.text = dateFormatter.string(from: post.postDa!)
-        } else {
-            cell.cellDate.isHidden = true
-        }
-        
-        if cell.cellPostedImage.image == nil {
-            cell.cellPostedImage.isHidden = true
-        }
-        if cell.cellTitle?.text == "" {
-            cell.cellTitle.isHidden = true
-        }
-        if cell.cellDescription?.text == "" {
-            cell.cellDescription.isHidden = true
-        }
-         */
-        
-        
     }
-    
-    // if let actualDatePicked = actualDatePicked, let myAvatar = myAvatar {
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
     // MARK: - Navigation
 
