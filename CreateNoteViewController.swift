@@ -59,6 +59,13 @@ class CreateNoteViewController: UIViewController {
         
     }
     
+    @IBAction func classifyNoteSwitch(_ sender: UISwitch) {
+        if sender.isOn == true {
+            selectedNote?.isHomework = true
+        } else {
+            selectedNote?.isHomework = false
+        }
+    }
     
     /*
     // MARK: - Navigation

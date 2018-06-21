@@ -27,10 +27,12 @@ var noteList = [Note]()
 class Note {
     var noteDe: String
     var timeCreated: String
+    var isHomework: Bool
     
-    init(noteDe: String, timeCreated: String) {
+    init(noteDe: String, timeCreated: String, isHomework: Bool) {
         self.noteDe = noteDe
         self.timeCreated = timeCreated
+        self.isHomework = isHomework
     }
 }
 

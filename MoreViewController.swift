@@ -49,13 +49,13 @@ class MoreViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let date = Date()
         let calendar = Calendar.current
         
-        let hour = calendar.component(.hour, from: date) - 7
+        let hour = calendar.component(.hour, from: date)
         let minutes = calendar.component(.minute, from: date)
         let seconds = calendar.component(.second, from: date)
         
         let time = result + "-" + String(format: "%02d", hour) + "-" + String(format: "%02d", minutes) + "-" + String(format: "%02d", seconds)
         
-        let newNote = Note(noteDe: "", timeCreated: time)
+        let newNote = Note(noteDe: "", timeCreated: time, isHomework: false)
         noteList += [newNote]
 
         selectedNote = newNote
@@ -100,8 +100,15 @@ class MoreViewController: UIViewController,UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MoreTableViewCell = tableView.dequeueReusableCell(withIdentifier: "notecells", for: indexPath) as! MoreTableViewCell
         
+        cell.dot.layer.cornerRadius = 10
+        cell.dot.layer.masksToBounds = true
+        
         let note = noteList[indexPath.row]
         cell.noteContent.text? = note.noteDe
+        cell.timeCreated.text? = note.timeCreated
+        if note.isHomework == false {
+            cell.dot.isHidden = true
+        }
         
         return cell
     }
