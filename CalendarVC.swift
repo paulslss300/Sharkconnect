@@ -214,7 +214,6 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
                 if checkCell.number.text! == "" {
                     break
                 } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == String(describing: checkPost.postDa!).substring(to: indexOfDate) && checkPost.clubIdentifier == "School" {
-                    checkCell.image.isHidden = false
                     checkCell.image2.isHidden = false
                 } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == String(describing: checkPost.postDa!).substring(to: indexOfDate) {
                     checkCell.image.isHidden = false

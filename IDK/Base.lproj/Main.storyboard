@@ -2241,13 +2241,13 @@
         <image name="usericongoodsize" width="22" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1ji-cI-DmW"/>
         <segue reference="fsC-Wt-ep3"/>
         <segue reference="yOk-uO-gMH"/>
         <segue reference="Rwv-9S-APn"/>
         <segue reference="fjd-ft-vaC"/>
-        <segue reference="yXH-D6-ug6"/>
-        <segue reference="abM-ay-Kaf"/>
+        <segue reference="070-Ad-QMa"/>
+        <segue reference="lnt-xu-q8B"/>
         <segue reference="bPQ-0n-lEL"/>
+        <segue reference="1ji-cI-DmW"/>
     </inferredMetricsTieBreakers>
 </document>

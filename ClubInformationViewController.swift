@@ -31,6 +31,8 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         for post in Post.posts {
             if post.clubIdentifier == (selectedClub?.ClubNa)! {
                 recentPosts += [post]
+                print(post.postTi)
+                print(post.postDe)
             }
         }
         postTableView.reloadData()
@@ -97,12 +99,12 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return recentPosts.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return recentPosts.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
