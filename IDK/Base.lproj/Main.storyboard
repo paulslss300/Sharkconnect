@@ -750,27 +750,6 @@
                                     <action selector="setDescription:" destination="mDB-Wh-Lyi" eventType="touchUpInside" id="7I3-N2-mnS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEV-5v-xa4">
-                                <rect key="frame" x="0.0" y="233" width="115" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <state key="normal" title="Import Image">
-                                    <color key="titleColor" red="0.50334390546693331" green="0.73602745695216332" blue="0.92155051231384277" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <color key="titleShadowColor" red="0.66333972472635072" green="0.71236972320572201" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="importImage:" destination="mDB-Wh-Lyi" eventType="touchUpInside" id="rUx-O7-jkK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfR-rj-0yE">
-                                <rect key="frame" x="270" y="233" width="105" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Import cover"/>
-                                <connections>
-                                    <action selector="importCover:" destination="mDB-Wh-Lyi" eventType="touchUpInside" id="PhX-f4-qkc"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kSo-GB-vfb">
                                 <rect key="frame" x="0.0" y="64" width="375" height="161"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -779,6 +758,30 @@
                                 <rect key="frame" x="136" y="183" width="103" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfR-rj-0yE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="161"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Cover">
+                                    <color key="titleColor" red="0.16578002697004904" green="0.29276950287627218" blue="0.3713316941624365" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="importCover:" destination="mDB-Wh-Lyi" eventType="touchUpInside" id="PhX-f4-qkc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BEV-5v-xa4">
+                                <rect key="frame" x="136" y="183" width="103" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Avatar">
+                                    <color key="titleColor" red="0.24728463039362153" green="0.43670760363890571" blue="0.55389435279187815" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.66333972472635072" green="0.71236972320572201" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="importImage:" destination="mDB-Wh-Lyi" eventType="touchUpInside" id="rUx-O7-jkK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -790,7 +793,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HM0-q4-8ys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5846" y="2750"/>
+            <point key="canvasLocation" x="5845.6000000000004" y="2749.4752623688159"/>
         </scene>
         <!--CLUBS SUBSCRIBED-->
         <scene sceneID="6uv-bH-eGX">
@@ -2131,55 +2134,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITw-LF-fBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5014" y="2911"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="V2G-Is-1NH">
-            <objects>
-                <tableViewController id="sG8-NJ-YCK" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="147" sectionHeaderHeight="28" sectionFooterHeight="28" id="QPr-Ui-g63">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="147" id="6V5-rn-5aL" customClass="DemoTableViewCell" customModule="IDK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="147"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6V5-rn-5aL" id="u5j-La-AHh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="note content" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jkk-3h-Oe1">
-                                            <rect key="frame" x="56" y="8" width="240" height="78"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red" translatesAutoresizingMaskIntoConstraints="NO" id="omP-RA-f3g">
-                                            <rect key="frame" x="8" y="53" width="40" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Timecreated" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="JUq-Sf-KTs">
-                                            <rect key="frame" x="127" y="111" width="240" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="sG8-NJ-YCK" id="Fxc-hQ-5Lk"/>
-                            <outlet property="delegate" destination="sG8-NJ-YCK" id="zCs-Vh-ZhE"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3D0-iz-WvJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3884" y="3398.9505247376314"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="GWX-bA-GRn">
