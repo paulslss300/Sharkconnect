@@ -18,6 +18,7 @@ var MyDescription: String = ""
 
 var subscribedClubs = [Club]()
 var subscribedPosts = [Post]()
+var imagesInPost = [UIImage]()
 
 // 37 dates
 var selectedMonth = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]

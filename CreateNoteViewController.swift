@@ -12,12 +12,20 @@ class CreateNoteViewController: UIViewController {
 
     @IBOutlet weak var noteContent: UITextView!
     
+    @IBOutlet weak var noteSwitchOutlet: UISwitch!
+    
     var selectedNote: Note? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         noteContent.text = selectedNote?.noteDe
+        
+        if selectedNote?.isHomework == true {
+            noteSwitchOutlet.isOn = true
+        } else {
+            noteSwitchOutlet.isOn = false
+        }
     }
     
     override func viewWillDisappear(_ _animated : Bool) {

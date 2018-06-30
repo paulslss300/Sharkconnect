@@ -108,6 +108,8 @@ class MoreViewController: UIViewController,UITableViewDataSource, UITableViewDel
         cell.timeCreated.text? = note.timeCreated
         if note.isHomework == false {
             cell.dot.isHidden = true
+        } else {
+            cell.dot.isHidden = false
         }
         
         return cell
