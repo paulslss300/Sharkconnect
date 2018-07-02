@@ -8,11 +8,15 @@
 
 import UIKit
 
-class ClubIInformationTableViewCell: UITableViewCell {
+class ClubIInformationTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
+
+    var imageList = [UIImage]()
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        postImage.delegate = self
+        postImage.dataSource = self
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,6 +27,20 @@ class ClubIInformationTableViewCell: UITableViewCell {
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var postDate: UILabel!
     @IBOutlet weak var postDescription: UITextView!
-    @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var postImage: UICollectionView!
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imageList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageInPostNormal", for: indexPath) as! PostedImageCVCellNormalAtClubInfoVC
+        
+        let image = imageList[indexPath.row]
+        
+        cell.postedImage.image = image
+        
+        return cell
+    }
 
 }

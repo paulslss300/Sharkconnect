@@ -73,9 +73,9 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             post = subscribedPosts[indexPath.row]
         }
         
-        if post.postedImage == nil && post.postDe == "" {
+        if post.postedImage.isEmpty && post.postDe == "" {
             return 126
-        } else if post.postedImage == nil {
+        } else if post.postedImage.isEmpty {
             return 182
         } else if post.postDe == "" {
             return 218
@@ -116,7 +116,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             post = subscribedPosts[indexPath.row]
         }
         
-        if post.postedImage == nil && post.postDe == "" {
+        if post.postedImage.isEmpty && post.postDe == "" {
             
             let cell: HomeTableViewCellWithoutBoth = tableView.dequeueReusableCell(withIdentifier: "cellWithoutBoth", for: indexPath) as! HomeTableViewCellWithoutBoth
             
@@ -153,7 +153,8 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             cell.labelOverImage?.text = post.clubIdentifier
             cell.cellTitle?.text = post.postTi
             cell.cellImage.image = post.postImage
-            cell.cellPostedImage.image = post.postedImage
+            cell.imageList = post.postedImage
+            cell.cellPostedImage.reloadData()
             cell.cellIdentifier?.text = post.clubIdentifier
             if post.postDa != nil {
                 let dateFormatter = DateFormatter()
@@ -165,7 +166,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             
             return cell
         }
-        else if post.postedImage == nil {
+        else if post.postedImage.isEmpty {
             
             let cell: HomeTableViewCellWithoutImage = tableView.dequeueReusableCell(withIdentifier: "cellWithoutImage", for: indexPath) as! HomeTableViewCellWithoutImage
             
@@ -192,7 +193,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         }
         else {
             
-            let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath) as!HomeTableViewCell
+            let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath) as! HomeTableViewCell
             
             // allowing action when label (over the cellImage) is tapped
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
@@ -204,7 +205,8 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             cell.cellTitle?.text = post.postTi
             cell.cellDescription?.text = post.postDe
             cell.cellImage.image = post.postImage
-            cell.cellPostedImage.image = post.postedImage
+            cell.imageList = post.postedImage
+            cell.cellPostedImage.reloadData()
             cell.cellIdentifier?.text = post.clubIdentifier
             if post.postDa != nil {
                 let dateFormatter = DateFormatter()

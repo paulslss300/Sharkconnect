@@ -18,7 +18,6 @@ var MyDescription: String = ""
 
 var subscribedClubs = [Club]()
 var subscribedPosts = [Post]()
-var imagesInPost = [UIImage]()
 
 // 37 dates
 var selectedMonth = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
@@ -43,10 +42,10 @@ class Post {
     var clubIdentifier: String
     var postImage: UIImage? = nil
     var postDa: Date? = nil
-    var postedImage: UIImage? = nil
+    var postedImage = [UIImage]()
     static var posts = [Post]()
     
-    init(postTi: String, postDe: String, clubIdentifier: String, postImage: UIImage, postDa: Date?, postedImage: UIImage?) {
+    init(postTi: String, postDe: String, clubIdentifier: String, postImage: UIImage, postDa: Date?, postedImage: [UIImage]) {
         self.postTi = postTi
         self.postDe = postDe
         self.clubIdentifier = clubIdentifier

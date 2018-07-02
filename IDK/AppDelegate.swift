@@ -94,41 +94,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
         if let date = dateFormatter.date(from: "2018-03-09") {
-            let samplePost1 = Post.init(postTi: "Notice", postDe: "Hey crew!!!! We decided to EXTEND crew applications for R.E.D until Monday! There are a few people who want to hand it in Monday so we decided to extend it until Monday for everyone.", clubIdentifier: "Drama Club", postImage: photo1!, postDa: date, postedImage: #imageLiteral(resourceName: "image1"))
+            let samplePost1 = Post.init(postTi: "Notice", postDe: "Hey crew!!!! We decided to EXTEND crew applications for R.E.D until Monday! There are a few people who want to hand it in Monday so we decided to extend it until Monday for everyone.", clubIdentifier: "Drama Club", postImage: photo1!, postDa: date, postedImage: [#imageLiteral(resourceName: "image1")])
             Post.posts += [samplePost1]
         }
         
         if let date = dateFormatter.date(from: "2018-03-17") {
-            let samplePost2 = Post.init(postTi: "Update", postDe: "Cayley, Pascal and Gauss math contests are on Tuesday. Talk to Mr.Lin if you want to participate", clubIdentifier: "Math Club", postImage: photo6!, postDa: date, postedImage: #imageLiteral(resourceName: "image2"))
+            let samplePost2 = Post.init(postTi: "Update", postDe: "Cayley, Pascal and Gauss math contests are on Tuesday. Talk to Mr.Lin if you want to participate", clubIdentifier: "Math Club", postImage: photo6!, postDa: date, postedImage: [#imageLiteral(resourceName: "image2")])
+            let samplePost3 = Post.init(postTi: "Notice", postDe: "Hey guys! There will be no general meeting tomorrow. More updates on our projects will be coming up next week!", clubIdentifier: "Math Club", postImage: photo6!, postDa: date, postedImage: [#imageLiteral(resourceName: "image3")])
+
             Post.posts += [samplePost2]
             Post.posts += [samplePost2]
             Post.posts += [samplePost2]
             Post.posts += [samplePost2]
+            Post.posts += [samplePost3]
         }
       
         
         if let date = dateFormatter.date(from: "2018-04-13") {
-            let samplePost3 = Post.init(postTi: "Notice", postDe: "Hey guys! There will be no general meeting tomorrow. More updates on our projects will be coming up next week!", clubIdentifier: "Interact Club", postImage: photo2!, postDa: date, postedImage: #imageLiteral(resourceName: "image3"))
+            let samplePost3 = Post.init(postTi: "Notice", postDe: "Hey guys! There will be no general meeting tomorrow. More updates on our projects will be coming up next week!", clubIdentifier: "Interact Club", postImage: photo2!, postDa: date, postedImage: [#imageLiteral(resourceName: "image3")])
             Post.posts += [samplePost3]
         }
 
         if let date = dateFormatter.date(from: "2018-01-11") {
-            let samplePost4 = Post.init(postTi: "New Program!", postDe: "The Team Challenges Program is back for our first event of 2018! On Friday, Mar. 9 at JN Burnett Secondary, join them for TCP World Domination with snacks and prizes included for only $2 a person.", clubIdentifier: "STEM Club", postImage: photo5!, postDa: date, postedImage: #imageLiteral(resourceName: "image4"))
+            let samplePost4 = Post.init(postTi: "New Program!", postDe: "The Team Challenges Program is back for our first event of 2018! On Friday, Mar. 9 at JN Burnett Secondary, join them for TCP World Domination with snacks and prizes included for only $2 a person.", clubIdentifier: "STEM Club", postImage: photo5!, postDa: date, postedImage: [#imageLiteral(resourceName: "image4")])
             Post.posts += [samplePost4]
         }
     
         if let date = dateFormatter.date(from: "2018-02-08") {
-            let samplePost5 = Post.init(postTi: "Upcoming meeting!", postDe: "Meeting today in room 202, we will talking more about our upcoming showcase and showing you guys some art pieces for inspiration :)", clubIdentifier: "Art Club", postImage: photo4!, postDa: date, postedImage: #imageLiteral(resourceName: "image5"))
+            let samplePost5 = Post.init(postTi: "Upcoming meeting!", postDe: "Meeting today in room 202, we will talking more about our upcoming showcase and showing you guys some art pieces for inspiration :)", clubIdentifier: "Art Club", postImage: photo4!, postDa: date, postedImage: [#imageLiteral(resourceName: "image5")])
             Post.posts += [samplePost5]
         }
        
         if let date = dateFormatter.date(from: "2018-06-12"){
-        let samplePost6 = Post.init(postTi: "Volunteers needed!", postDe: "Come to the meeting today at lunch for more information", clubIdentifier: "Student Council", postImage: photo3!, postDa: date, postedImage: #imageLiteral(resourceName: "image6"))
+        let samplePost6 = Post.init(postTi: "Volunteers needed!", postDe: "Come to the meeting today at lunch for more information", clubIdentifier: "Student Council", postImage: photo3!, postDa: date, postedImage: [#imageLiteral(resourceName: "image6")])
         Post.posts += [samplePost6]
         }
         
         if let date = dateFormatter.date(from: "2018-06-13"){
-            let samplePost6 = Post.init(postTi: "School Event", postDe: "Come to the meeting today at lunch for more information", clubIdentifier: "School", postImage: photo13!, postDa: date, postedImage: #imageLiteral(resourceName: "image6"))
+            let samplePost6 = Post.init(postTi: "School Event", postDe: "Come to the meeting today at lunch for more information", clubIdentifier: "School", postImage: photo13!, postDa: date, postedImage: [#imageLiteral(resourceName: "image6")])
             Post.posts += [samplePost6]
             subscribedPosts += [samplePost6]
         }

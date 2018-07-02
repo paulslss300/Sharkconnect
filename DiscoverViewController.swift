@@ -78,7 +78,6 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
         cell.clubImage.image = club.ClubCellImageName
         
         return cell
-        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

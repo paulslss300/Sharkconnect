@@ -8,14 +8,15 @@
 
 import UIKit
 
-class ViewPostViewCellViewController: UIViewController {
+class ViewPostViewCellViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        postImage.delegate = self
+        postImage.dataSource = self
         postDescription.text = selectedPost?.postDe
         clubImage.image = selectedPost?.postImage
         postTitle.text = selectedPost?.postTi
-        postImage.image = selectedPost?.postedImage
         
         if selectedPost?.postDa != nil {
             let dateFormatter = DateFormatter()
@@ -25,7 +26,7 @@ class ViewPostViewCellViewController: UIViewController {
             postDate.isHidden = true
         }
 
-        if postImage.image == nil {
+        if (selectedPost?.postedImage.isEmpty)! {
             postImage.isHidden = true
         }
         if postTitle.text == "" {
@@ -48,7 +49,22 @@ class ViewPostViewCellViewController: UIViewController {
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var postDate: UILabel!
     @IBOutlet weak var postDescription: UITextView!
-    @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var postImage: UICollectionView!
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (selectedPost?.postedImage.count)!
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageInPostAtViewPostVC", for: indexPath) as! PostedImageCVCellAtViewPostVC
+        
+        let image = (selectedPost?.postedImage)![indexPath.row]
+        
+        cell.postedImage.image = image
+        
+        return cell
+    }
+
     /*
     // MARK: - Navigation
 

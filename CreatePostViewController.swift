@@ -8,13 +8,14 @@
 
 import UIKit
 
-class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
+class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
     
     let picker = UIDatePicker()
     
     var actualDatePicked: Date? = nil
-    var actualPostedImagePicked: UIImage? = nil
+    
+    var imagesInPost = [UIImage]()
     
     let homeVCCell = HomeTableViewCell()    //access the constraint from here
     
@@ -24,7 +25,7 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
             postDescription.text = ""
         }
 
-        let post1 = Post(postTi: postTitle.text!, postDe: postDescription.text!, clubIdentifier: clubId, postImage: myAvatar!, postDa: actualDatePicked, postedImage: actualPostedImagePicked)
+        let post1 = Post(postTi: postTitle.text!, postDe: postDescription.text!, clubIdentifier: clubId, postImage: myAvatar!, postDa: actualDatePicked, postedImage: imagesInPost)
         Post.posts.insert(post1, at: 0)
         
        performSegue(withIdentifier: "unwindToTabBar", sender: self)
@@ -33,6 +34,7 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var postDescription: UITextView!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var postImageCV: UICollectionView!
     
     var settingPostImageButton = false
     
@@ -51,23 +53,48 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
         if let myPostImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             //the user has selected an image
             if settingPostImageButton == true{
-                postImageView.image = myPostImage
-                actualPostedImagePicked = postImageView.image
+                imagesInPost += [myPostImage]
+                postImageCV.reloadData()
             }
         }
         self.dismiss(animated: true, completion: nil)
     }
     
-    // Create a club object
-    // Populate image, name and description
-    // Return club object to previous view controller for display in table
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        postDescription.delegate = self
         createDatePicker()
+        postDescription.delegate = self
         postDescription.text = "Add A Description"
         postDescription.textColor = UIColor.lightGray
+        postImageCV.delegate  = self
+        postImageCV.dataSource = self
+    }
+    
+    /*
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var club = Club.clubs[indexPath.row]
+        
+        if isSerching {
+            club = filteredClubs[indexPath.row]
+        }
+        
+        selectedClub = club
+        performSegue(withIdentifier: "showclubinformation", sender: self)
+    }
+     */
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imagesInPost.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageInPost", for: indexPath) as! ImageInPostCollectionViewCell
+
+        let image = imagesInPost[indexPath.row]
+        
+        cell.postImage.image = image
+ 
+        return cell
     }
     
     func textViewDidBeginEditing(_ postDescription: UITextView) {

@@ -111,9 +111,9 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         
         let post = recentPosts[indexPath.row]
         
-        if post.postedImage == nil && post.postDe == "" {
+        if post.postedImage.isEmpty && post.postDe == "" {
             return 80
-        } else if post.postedImage == nil {
+        } else if post.postedImage.isEmpty {
             return 160
         } else if post.postDe == "" {
             return 218
@@ -134,7 +134,7 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         
         let post = recentPosts[indexPath.row]
         
-        if post.postedImage == nil && post.postDe == "" {
+        if post.postedImage.isEmpty && post.postDe == "" {
             let cell: ClubInfoVCTableViewCellWithoutBoth = tableView.dequeueReusableCell(withIdentifier: "CellWithoutBoth2", for: indexPath) as! ClubInfoVCTableViewCellWithoutBoth
             
             cell.cellTitle?.text = post.postTi
@@ -152,7 +152,9 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
             let cell: ClubInfoVCTableViewCellWithoutDescription = tableView.dequeueReusableCell(withIdentifier: "CellWithoutDescription2", for: indexPath) as! ClubInfoVCTableViewCellWithoutDescription
             
             cell.cellTitle?.text = post.postTi
-            cell.cellPostedImage.image = post.postedImage
+            cell.imageList = post.postedImage
+            cell.cellPostedImage.reloadData()
+
             if post.postDa != nil {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -163,7 +165,7 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
             return cell
 
         }
-        else if post.postedImage == nil {
+        else if post.postedImage.isEmpty {
             let cell: ClubInfoVCTableViewCellWithoutImage = tableView.dequeueReusableCell(withIdentifier: "CellWithoutImage2", for: indexPath) as! ClubInfoVCTableViewCellWithoutImage
             
             cell.cellTitle?.text = post.postTi
@@ -184,7 +186,8 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
             
             cell.postTitle?.text = post.postTi
             cell.postDescription?.text = post.postDe
-            cell.postImage?.image = post.postedImage
+            cell.imageList = post.postedImage
+            cell.postImage.reloadData()
             
             if post.postDa != nil {
                 let dateFormatter = DateFormatter()

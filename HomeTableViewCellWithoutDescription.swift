@@ -8,18 +8,22 @@
 
 import UIKit
 
-class HomeTableViewCellWithoutDescription: UITableViewCell {
+class HomeTableViewCellWithoutDescription: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    var imageList = [UIImage]()
     
     @IBOutlet weak var cellTitle: UILabel!
     @IBOutlet weak var cellIdentifier: UILabel!
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellDate: UILabel!
     @IBOutlet weak var labelOverImage: UILabel!
-    @IBOutlet weak var cellPostedImage: UIImageView!
-
+    @IBOutlet weak var cellPostedImage: UICollectionView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        cellPostedImage.delegate = self
+        cellPostedImage.dataSource = self
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -27,5 +31,20 @@ class HomeTableViewCellWithoutDescription: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imageList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageInPostWithoutDescription", for: indexPath) as! PostedImageCollectionViewCellForWithoutDescription
+        
+        let image = imageList[indexPath.row]
+        
+        cell.postedImage.image = image
+        
+        return cell
+    }
+
 
 }
