@@ -127,7 +127,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2Lk-fT-1W0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6Ho-5F-DoX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Specify event date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DGe-4S-UeK">
@@ -175,14 +175,6 @@
                                     <action selector="createPostButton:" destination="mZ3-Ku-5Vc" eventType="touchUpInside" id="chI-tM-NMZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1D4-o3-7LO">
-                                <rect key="frame" x="108" y="552" width="116" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add an image"/>
-                                <connections>
-                                    <action selector="importPostImage:" destination="mZ3-Ku-5Vc" eventType="touchUpInside" id="WPf-59-8yK"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ccd-VB-Dll">
                                 <rect key="frame" x="14" y="431" width="345" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -214,11 +206,17 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1D4-o3-7LO">
+                                <rect key="frame" x="128" y="580" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add an image"/>
+                                <connections>
+                                    <action selector="importPostImage:" destination="mZ3-Ku-5Vc" eventType="touchUpInside" id="WPf-59-8yK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="dateField" destination="DGe-4S-UeK" id="yzz-6C-ntE"/>
                         <outlet property="postDescription" destination="J0U-qp-2kZ" id="F8Y-ae-ARd"/>

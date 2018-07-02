@@ -70,18 +70,13 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
         postImageCV.dataSource = self
     }
     
-    /*
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var club = Club.clubs[indexPath.row]
-        
-        if isSerching {
-            club = filteredClubs[indexPath.row]
-        }
-        
-        selectedClub = club
-        performSegue(withIdentifier: "showclubinformation", sender: self)
+        let image = imagesInPost[indexPath.row]
+        imagesInPost = imagesInPost.filter({$0 != image})
+        postImageCV.reloadData()
     }
-     */
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imagesInPost.count
