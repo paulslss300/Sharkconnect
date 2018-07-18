@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //without this, feature won't work
         //let photo0 = UIImage(named: "default")
         //let firstClub = Club.init(ClubNa: "firstClub", ClubPa: "910282739302", ClubCellImageName: photo0!)
-        //Club.clubs += [firstClub]
+        //clubs += [firstClub]
         
         // Override point for customization after application launch.
         // Load the sample data.
@@ -55,26 +55,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Populate Clubs
         let samplelub1 = Club(ClubNa: "Drama Club", ClubPa: "samplepassword", ClubDe: "Tell members what this group is about. Our newest production is R.E.D. and will be showing in two months! Written by students Emily Ison and Mandy Huang. We put on three to four plays a year. Our last play was High School Confidential - A  KDog Special. Our sponsor teacher? KDog aka Ms Kosar but please call her “KDog.” It makes her happy. Ecstatic. Absolutely glowing. :)",ClubCellImageName: photo1!, ClubCellCoverImage: photo7!)
-        Club.clubs += [samplelub1]
+        clubs += [samplelub1]
         
         let samplelub2 = Club(ClubNa: "Interact Club", ClubPa: "samplepassword", ClubDe: "Interact clubs are part of a larger organization called Rotary International. Our focus is on community involvement and service, demonstrated in our motto, service above self. \n Every project whether done through Interact or Rotary has an impact in our world. Handing out sandwiches to the hungry, fundraising to support charities, and participating in service projects are all ways that Interact and Rotary have helped to make our world a better place. ",ClubCellImageName: photo2!, ClubCellCoverImage: photo8!)
-        Club.clubs += [samplelub2]
+        clubs += [samplelub2]
         
         let samplelub3 = Club(ClubNa: "Student Council", ClubPa: "samplepassword", ClubDe: "Stay up to date with all the events around the school! \n Student Council meetings are Tuesdays at lunch in Ms. Levin's room. The first meeting will be on Tuesday, September 26th :)", ClubCellImageName: photo3!, ClubCellCoverImage: photo9!)
-        Club.clubs += [samplelub3]
+        clubs += [samplelub3]
         
         let samplelub4 = Club(ClubNa: "Art Club", ClubPa: "samplepassword", ClubDe: "Hello Everybody :) Welcome to SLSS Art Club! \n Feel free to add your friends who are interested in art club as well:D \n We host weekly art contests, annual gallery, and contribute to local charities in an artistic way! ", ClubCellImageName: photo4!, ClubCellCoverImage: photo10!)
-        Club.clubs += [samplelub4]
+        clubs += [samplelub4]
         
         let samplelub5 = Club(ClubNa: "STEM Club", ClubPa: "samplepassword", ClubDe: "Welcome to the SLSS STEM (Science, Technology, Engineering, and Math) Club! Meetings are held the first Monday lunch of every month in Ms Ranis' room (room 702). We have leadership opportunities, guest speakers, workshops, and more! See you all there!! ", ClubCellImageName: photo5!, ClubCellCoverImage: photo11!)
-        Club.clubs += [samplelub5]
+        clubs += [samplelub5]
         
         let samplelub6 = Club(ClubNa: "Math Club", ClubPa: "samplepassword", ClubDe: "SLSS Math Club, the only place people buy 64 watermelons and no one wonders why... \n Meetings every Wednesday at lunch in room X.", ClubCellImageName: photo6!, ClubCellCoverImage: photo12!)
-        Club.clubs += [samplelub6]
+        clubs += [samplelub6]
         
         let school = Club(ClubNa: "School", ClubPa: "samplepassword", ClubDe: "This is the school", ClubCellImageName: photo13!, ClubCellCoverImage: photo14!)
-        Club.clubs += [school]
-        subscribedClubs += [school]
+        clubs += [school]
+        loggedInClub?.subscribedClubs += [school]
     }
 
     

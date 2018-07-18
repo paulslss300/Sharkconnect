@@ -209,14 +209,16 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             for checkPost in subscribedPosts {
                 
                 // get the date value for NSDate object
-                let indexOfDate = String(describing: checkPost.postDa!).index(String(describing: checkPost.postDa!).endIndex, offsetBy: -15)
-                
-                if checkCell.number.text! == "" {
-                    break
-                } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == String(describing: checkPost.postDa!).substring(to: indexOfDate) && checkPost.clubIdentifier == "School" {
-                    checkCell.image2.isHidden = false
-                } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == String(describing: checkPost.postDa!).substring(to: indexOfDate) {
-                    checkCell.image.isHidden = false
+                if checkPost.postDa != nil {
+                    let indexOfDate = String(describing: checkPost.postDa!).index(String(describing: checkPost.postDa!).endIndex, offsetBy: -15)
+                    
+                    if checkCell.number.text! == "" {
+                        break
+                    } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == String(describing: checkPost.postDa!).substring(to: indexOfDate) && checkPost.clubIdentifier == "School" {
+                        checkCell.image2.isHidden = false
+                    } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == String(describing: checkPost.postDa!).substring(to: indexOfDate) {
+                        checkCell.image.isHidden = false
+                    }
                 }
             }
         }

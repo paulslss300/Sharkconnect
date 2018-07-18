@@ -25,7 +25,7 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
             postDescription.text = ""
         }
 
-        let post1 = Post(postTi: postTitle.text!, postDe: postDescription.text!, clubIdentifier: clubId, postImage: myAvatar!, postDa: actualDatePicked, postedImage: imagesInPost)
+        let post1 = Post(postTi: postTitle.text!, postDe: postDescription.text!, clubIdentifier: userId, postImage: (loggedInClub?.ClubCellImageName)!, postDa: actualDatePicked, postedImage: imagesInPost)
         Post.posts.insert(post1, at: 0)
         
        performSegue(withIdentifier: "unwindToTabBar", sender: self)

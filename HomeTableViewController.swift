@@ -100,7 +100,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         //the following line indicates the actual label tapped:
         let clubidentifier = tapGestureRecognizer.view as! UILabel
         
-        for club in Club.clubs {
+        for club in clubs {
             if club.ClubNa == clubidentifier.text {
                 selectedClub = club
             }

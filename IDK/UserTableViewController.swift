@@ -14,7 +14,7 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
     
     // IMPORTANT FEATURE ----- LOG OUT BUTTON
     @IBAction func logOutButton(_ sender: Any) {
-        clubId = ""
+        userId = ""
         performSegue(withIdentifier: "unwindToFirst", sender: self)
     }
     
@@ -29,7 +29,7 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
         userTableview.delegate  = self
         userTableview.dataSource = self
         
-        if clubId == "student" {
+        if userId == "studentRandomNumber10382" {
             clubSettingsClub.isHidden = true
         }
 
@@ -72,12 +72,12 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return subscribedClubs.count
+        return (loggedInClub?.subscribedClubs.count)!
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let club = subscribedClubs[indexPath.row]
+        let club = loggedInClub?.subscribedClubs[indexPath.row]
         selectedClub = club
         performSegue(withIdentifier: "showclubinformationthroughuser", sender: self)
     }
@@ -89,11 +89,11 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
         cell.clubImage.layer.cornerRadius = 30.0
         cell.clubImage.layer.masksToBounds = true
 
-        let subscribedClub = subscribedClubs[indexPath.row]
+        let subscribedClub = loggedInClub?.subscribedClubs[indexPath.row]
         
         // Configure the cell...
-        cell.clubImage.image = subscribedClub.ClubCellImageName
-        cell.clubName?.text = subscribedClub.ClubNa
+        cell.clubImage.image = subscribedClub?.ClubCellImageName
+        cell.clubName?.text = subscribedClub?.ClubNa
 
 
         return cell

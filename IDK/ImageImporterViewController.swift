@@ -11,6 +11,7 @@ import UIKit
 class ImageImporterViewController: UIViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate{
 
     @IBOutlet weak var clubDescription: UITextView!
+    @IBOutlet weak var borderForDescription: UIView!
     
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var borderForAvatar: UIView!
@@ -48,42 +49,31 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
         }
     }
     
-    @IBAction func setDescription(_ sender: Any) {
-        MyDescription = clubDescription.text
-        for club in Club.clubs {
-            if club.ClubNa == actualClubName {
-                club.ClubDe = clubDescription.text
+    @IBAction func saveChanges(_ sender: Any) {
+        // set description
+        loggedInClub?.ClubDe = clubDescription.text
+        
+        // set avatar
+        loggedInClub?.ClubCellImageName = myImageView.image
+        
+        for post in Post.posts {
+            if post.clubIdentifier == loggedInClub?.ClubNa {
+                post.postImage = myImageView.image
             }
         }
+        
+        // set cover image
+        loggedInClub?.ClubCellCoverImage = myClubCoverView.image
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
             // The user has selected an image
-            if avatarButtonSelected == true{
+            if avatarButtonSelected == true {
                 myImageView.image = image
-                
-                for club in Club.clubs {
-                    if club.ClubNa == actualClubName {
-                        club.ClubCellImageName = myImageView.image
-                    }
-                }
-                for post in Post.posts {
-                    if post.clubIdentifier == actualClubName {
-                        post.postImage = myImageView.image
-                        myAvatar = myImageView.image
-                    }
-                }
 
             }else {
                 myClubCoverView.image = image
-                
-                for club in Club.clubs {
-                    if club.ClubNa == actualClubName {
-                        club.ClubCellCoverImage = myClubCoverView.image
-                    }
-                }
-
             }
             
         }else{
@@ -97,16 +87,25 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        myImageView.image = myAvatar
+        myImageView.image = loggedInClub?.ClubCellImageName
+        myClubCoverView.image = loggedInClub?.ClubCellCoverImage
+        clubDescription.text = loggedInClub?.ClubDe
         myImageView.layer.cornerRadius = 48
         myImageView.layer.masksToBounds = true
         borderForAvatar.layer.cornerRadius = 48
-        myClubCoverView.image = myClubCover
         myClubCoverView.layer.cornerRadius = 30
         myClubCoverView.layer.masksToBounds = true
         borderForCover.layer.cornerRadius = 30
+        clubDescription.layer.cornerRadius = 30
+        borderForDescription.layer.cornerRadius = 30
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //myImageView.image = myAvatar
+        //myClubCoverView.image = myClubCover
     }
 
     override func didReceiveMemoryWarning() {

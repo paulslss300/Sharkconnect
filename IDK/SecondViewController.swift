@@ -28,10 +28,11 @@ class SecondViewController: UIViewController {
         loginTextFieldText = LoginTextField.text!
         passwordTextFieldText = loginPassword.text!
         
-        for clubAccount in Club.clubs {
+        for clubAccount in clubs {
             if loginTextFieldText == clubAccount.ClubNa && passwordTextFieldText == clubAccount.ClubPa {
                 clubLoginSuccessful = true
-                clubId = loginTextFieldText
+                loggedInClub = clubAccount
+                userId = loginTextFieldText
             } else {
                 clubLoginSuccessful = false
             }

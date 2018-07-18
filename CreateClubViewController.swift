@@ -20,10 +20,9 @@ class CreateClubViewController: UIViewController {
     @IBOutlet weak var createdClubLabel: UILabel!
     
     @IBAction func CreateClubButton(_ sender: Any) {
-        actualClubName = ClubName.text!
         actualClubPassword = ClubPassword.text!
         
-        if actualClubName.isEmpty || actualClubPassword.isEmpty {
+        if ClubName.text!.isEmpty || actualClubPassword.isEmpty {
             createdClub = false
         } else {
             createdClub = true
@@ -31,8 +30,8 @@ class CreateClubViewController: UIViewController {
         
         
         // check 1
-        for club in Club.clubs {
-            if actualClubName != club.ClubNa {
+        for club in clubs {
+            if ClubName.text! != club.ClubNa {
                 checkClubName = true
             } else {
                 checkClubName = false
@@ -40,20 +39,19 @@ class CreateClubViewController: UIViewController {
         }
         
         //check 2
-        if !(actualClubName.isEmpty || actualClubPassword.isEmpty) && checkClubName {
+        if !(ClubName.text!.isEmpty || actualClubPassword.isEmpty) && checkClubName {
             createdClub = true
-        } else if actualClubName.isEmpty || actualClubPassword.isEmpty || !checkClubName {
+        } else if ClubName.text!.isEmpty || actualClubPassword.isEmpty || !checkClubName {
             createdClub = false
         }
 
         
         //create new club
         if createdClub {
-            myAvatar = UIImage(named: "default")
-            myClubCover = UIImage(named: "defaultCoverImage")
-            MyDescription = "No Description"
-            let myClub = Club.init(ClubNa: actualClubName, ClubPa: actualClubPassword, ClubDe: MyDescription, ClubCellImageName: myAvatar!, ClubCellCoverImage: myClubCover!)
-            Club.clubs += [myClub]
+            let myAvatar = UIImage(named: "default")
+            let myClubCover = UIImage(named: "defaultCoverImage")
+            let myClub = Club.init(ClubNa: ClubName.text!, ClubPa: actualClubPassword, ClubDe: "No Description", ClubCellImageName: myAvatar!, ClubCellCoverImage: myClubCover!)
+            clubs += [myClub]
             
             createdClubLabel.text! = "Account Created!"
         } else {

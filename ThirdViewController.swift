@@ -27,7 +27,7 @@ class ThirdViewController: UIViewController {
         for studentAccount in Student.students {
             if loginTextFieldText == studentAccount.StudentNa && passwordTextFieldText == studentAccount.StudentPa {
                 loginSuccessful = true
-                clubId = "student"
+                userId = "studentRandomNumber10382"
             } else {
                 loginSuccessful = false
             }

@@ -8,15 +8,13 @@
 
 import UIKit
 
-var clubId: String = ""
-var actualClubName: String = ""
+var clubs = [Club]()
+
+var userId: String = ""
 var actualClubPassword: String = ""
 
-var myAvatar: UIImage? = nil
-var myClubCover: UIImage? = nil
-var MyDescription: String = ""
+var loggedInClub: Club? = nil
 
-var subscribedClubs = [Club]()
 var subscribedPosts = [Post]()
 
 // 37 dates
@@ -63,7 +61,7 @@ class Club {
     var ClubDe: String
     var ClubCellImageName: UIImage? = nil
     var ClubCellCoverImage: UIImage? = nil
-    static var clubs = [Club]()
+    var subscribedClubs = [Club]()
     
     init(ClubNa: String, ClubPa: String, ClubDe: String, ClubCellImageName: UIImage, ClubCellCoverImage: UIImage) {
         self.ClubNa = ClubNa

@@ -42,7 +42,7 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         }
         postTableView.reloadData()
         
-        for club in subscribedClubs {
+        for club in (loggedInClub?.subscribedClubs)! {
             if club.ClubNa == (selectedClub?.ClubNa)! {
                 subscribeButton.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
             }
@@ -78,12 +78,12 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         
         var noDuplicate: Bool = true
         
-        for club in subscribedClubs {
+        for club in (loggedInClub?.subscribedClubs)! {
             if (selectedClub?.ClubNa)! == club.ClubNa {
                 noDuplicate = false
-                subscribedClubs = subscribedClubs.filter({ (club) -> Bool in
+                loggedInClub?.subscribedClubs = (loggedInClub?.subscribedClubs.filter({ (club) -> Bool in
                     return !(club.ClubNa == selectedClub?.ClubNa)
-                })
+                }))!
                 subscribedPosts = subscribedPosts.filter({$0.clubIdentifier != selectedClub?.ClubNa})
                 subscribeButton.backgroundColor = UIColor(red: 159/225.0, green: 168/225.0, blue: 183/225.0, alpha: 1)
                 break
@@ -91,7 +91,7 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         }
         
         if noDuplicate {
-            subscribedClubs += [selectedClub!]
+            loggedInClub?.subscribedClubs += [selectedClub!]
             for post in Post.posts{
                 if post.clubIdentifier == selectedClub?.ClubNa {
                     subscribedPosts += [post]

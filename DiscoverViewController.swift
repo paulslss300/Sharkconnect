@@ -41,7 +41,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        var club = Club.clubs[indexPath.row]
+        var club = clubs[indexPath.row]
         
         if isSerching {
             club = filteredClubs[indexPath.row]
@@ -57,7 +57,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
             return filteredClubs.count
         }
         
-        return Club.clubs.count
+        return clubs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -67,7 +67,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
         cell.imageView?.layer.cornerRadius = 50.0
         cell.clubImage.layer.masksToBounds = true
         
-        var club = Club.clubs[indexPath.row]
+        var club = clubs[indexPath.row]
         
         if isSerching {
             club = filteredClubs[indexPath.row]
@@ -86,7 +86,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
             discoverView.reloadData()
         } else {
             isSerching = true
-            filteredClubs = Club.clubs.filter({$0.ClubNa.lowercased().contains(searchBar.text!.lowercased())})
+            filteredClubs = clubs.filter({$0.ClubNa.lowercased().contains(searchBar.text!.lowercased())})
             /*
             filteredClubs = Club.clubs.filter({ (club) -> Bool in
                 return !(club.ClubNa == searchBar.text!)
