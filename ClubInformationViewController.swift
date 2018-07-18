@@ -18,10 +18,15 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         postTableView.delegate  = self
         postTableView.dataSource = self
         scrollView.delegate = self
+        clubName.text = selectedClub?.ClubNa
         clubDe.text = selectedClub?.ClubDe
         clubCoverImage.image = selectedClub?.ClubCellCoverImage
         clubImage.image = selectedClub?.ClubCellImageName
         subscribeButton.layer.cornerRadius = 6.0
+        clubImage.layer.cornerRadius = 55
+        clubImage.layer.masksToBounds = true
+        clubDe.layer.cornerRadius = 20
+        postTableView.layer.cornerRadius = 20
     
         self.title = selectedClub?.ClubNa
     }
@@ -64,7 +69,6 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
     @IBOutlet weak var clubName: UILabel!
     
     @IBOutlet weak var clubDe: UITextView!
-    //clubDe.delegate = self
     
     @IBOutlet weak var clubCoverImage: UIImageView!
     

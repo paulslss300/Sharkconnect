@@ -13,8 +13,10 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
     @IBOutlet weak var clubDescription: UITextView!
     
     @IBOutlet weak var myImageView: UIImageView!
+    @IBOutlet weak var borderForAvatar: UIView!
     
     @IBOutlet weak var myClubCoverView: UIImageView!
+    @IBOutlet weak var borderForCover: UIView!
     
     var avatarButtonSelected = false
     
@@ -96,7 +98,13 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         myImageView.image = myAvatar
+        myImageView.layer.cornerRadius = 48
+        myImageView.layer.masksToBounds = true
+        borderForAvatar.layer.cornerRadius = 48
         myClubCoverView.image = myClubCover
+        myClubCoverView.layer.cornerRadius = 30
+        myClubCoverView.layer.masksToBounds = true
+        borderForCover.layer.cornerRadius = 30
 
         // Do any additional setup after loading the view.
     }
