@@ -33,6 +33,7 @@ class SecondViewController: UIViewController {
                 clubLoginSuccessful = true
                 loggedInClub = clubAccount
                 userId = loginTextFieldText
+                break
             } else {
                 clubLoginSuccessful = false
             }
@@ -40,6 +41,23 @@ class SecondViewController: UIViewController {
 
 
         if clubLoginSuccessful {
+            loggedInAsClub = true
+            // add school
+            if (loggedInClub?.subscribedClubs)!.isEmpty {
+                for club in clubs {
+                    if club.ClubNa == "School" {
+                        loggedInClub?.subscribedClubs += [club]
+                    }
+                }
+            }
+            // add subscribed posts
+            for post in Post.posts {
+                for club in (loggedInClub?.subscribedClubs)! {
+                    if post.clubIdentifier == club.ClubNa {
+                        subscribedPosts += [post]
+                    }
+                }
+            }
             performSegue(withIdentifier: "correctLogin", sender: self)
         } else {
             clubLoginLabel.text! = "Please Check Your Inputs Are Correct!"

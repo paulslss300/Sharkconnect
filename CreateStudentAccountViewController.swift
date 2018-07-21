@@ -25,25 +25,26 @@ class CreateStudentAccountViewController: UIViewController {
         actualStudentPassword = StudentPassword.text!
         
         // check 1
-        for student in Student.students {
-            if actualStudentName != student.StudentNa {
-                checkStudentName = true
-            } else {
+        for student in students {
+            if actualStudentName == student.StudentNa {
                 checkStudentName = false
+                break
+            } else {
+                checkStudentName = true
             }
         }
 
         //check 2
         if !(actualStudentName.isEmpty || actualStudentPassword.isEmpty) && checkStudentName {
             createdStudent = true
-        } else if actualStudentName.isEmpty || actualStudentPassword.isEmpty || !checkStudentName {
+        } else {
             createdStudent = false
         }
         
         //create student account
         if createdStudent {
             let newStudent = Student.init(StudentNa: actualStudentName, StudentPa: actualStudentPassword)
-            Student.students += [newStudent]
+            students += [newStudent]
             createdStudentLabel.text! = "Account Created!"
         } else {
             createdStudentLabel.text! = "Please Change a User Name or Password!"

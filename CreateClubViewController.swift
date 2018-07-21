@@ -31,17 +31,18 @@ class CreateClubViewController: UIViewController {
         
         // check 1
         for club in clubs {
-            if ClubName.text! != club.ClubNa {
-                checkClubName = true
-            } else {
+            if ClubName.text! == club.ClubNa {
                 checkClubName = false
+                break
+            } else {
+                checkClubName = true
             }
         }
         
         //check 2
         if !(ClubName.text!.isEmpty || actualClubPassword.isEmpty) && checkClubName {
             createdClub = true
-        } else if ClubName.text!.isEmpty || actualClubPassword.isEmpty || !checkClubName {
+        } else {
             createdClub = false
         }
 

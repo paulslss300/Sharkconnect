@@ -42,11 +42,20 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         }
         postTableView.reloadData()
         
-        for club in (loggedInClub?.subscribedClubs)! {
-            if club.ClubNa == (selectedClub?.ClubNa)! {
-                subscribeButton.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
+        if loggedInAsClub {
+            for club in (loggedInClub?.subscribedClubs)! {
+                if club.ClubNa == (selectedClub?.ClubNa)! {
+                    subscribeButton.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
+                }
+            }
+        } else {
+            for club in (loggedInStudent?.subscribedClubs)! {
+                if club.ClubNa == (selectedClub?.ClubNa)! {
+                    subscribeButton.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
+                }
             }
         }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,29 +87,53 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         
         var noDuplicate: Bool = true
         
-        for club in (loggedInClub?.subscribedClubs)! {
-            if (selectedClub?.ClubNa)! == club.ClubNa {
-                noDuplicate = false
-                loggedInClub?.subscribedClubs = (loggedInClub?.subscribedClubs.filter({ (club) -> Bool in
-                    return !(club.ClubNa == selectedClub?.ClubNa)
-                }))!
-                subscribedPosts = subscribedPosts.filter({$0.clubIdentifier != selectedClub?.ClubNa})
-                subscribeButton.backgroundColor = UIColor(red: 159/225.0, green: 168/225.0, blue: 183/225.0, alpha: 1)
-                break
-            }
-        }
-        
-        if noDuplicate {
-            loggedInClub?.subscribedClubs += [selectedClub!]
-            for post in Post.posts{
-                if post.clubIdentifier == selectedClub?.ClubNa {
-                    subscribedPosts += [post]
+        if loggedInAsClub {
+            for club in (loggedInClub?.subscribedClubs)! {
+                if (selectedClub?.ClubNa)! == club.ClubNa {
+                    noDuplicate = false
+                    loggedInClub?.subscribedClubs = (loggedInClub?.subscribedClubs.filter({ (club) -> Bool in
+                        return !(club.ClubNa == selectedClub?.ClubNa)
+                    }))!
+                    subscribedPosts = subscribedPosts.filter({$0.clubIdentifier != selectedClub?.ClubNa})
+                    subscribeButton.backgroundColor = UIColor(red: 159/225.0, green: 168/225.0, blue: 183/225.0, alpha: 1)
+                    break
                 }
             }
-            subscribeButton.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
+
+            if noDuplicate {
+                loggedInClub?.subscribedClubs += [selectedClub!]
+                for post in Post.posts{
+                    if post.clubIdentifier == selectedClub?.ClubNa {
+                        subscribedPosts += [post]
+                    }
+                }
+                subscribeButton.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
+            }
+        } else {
+            for club in (loggedInStudent?.subscribedClubs)! {
+                if (selectedClub?.ClubNa)! == club.ClubNa {
+                    noDuplicate = false
+                    loggedInStudent?.subscribedClubs = (loggedInStudent?.subscribedClubs.filter({ (club) -> Bool in
+                        return !(club.ClubNa == selectedClub?.ClubNa)
+                    }))!
+                    subscribedPosts = subscribedPosts.filter({$0.clubIdentifier != selectedClub?.ClubNa})
+                    subscribeButton.backgroundColor = UIColor(red: 159/225.0, green: 168/225.0, blue: 183/225.0, alpha: 1)
+                    break
+                }
+            }
+            
+            if noDuplicate {
+                loggedInStudent?.subscribedClubs += [selectedClub!]
+                for post in Post.posts{
+                    if post.clubIdentifier == selectedClub?.ClubNa {
+                        subscribedPosts += [post]
+                    }
+                }
+                subscribeButton.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
+            }
         }
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1

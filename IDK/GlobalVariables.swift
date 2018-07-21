@@ -9,11 +9,14 @@
 import UIKit
 
 var clubs = [Club]()
+var students = [Student]()
+var loggedInAsClub: Bool = false
 
 var userId: String = ""
 var actualClubPassword: String = ""
 
 var loggedInClub: Club? = nil
+var loggedInStudent: Student? = nil
 
 var subscribedPosts = [Post]()
 
@@ -72,10 +75,10 @@ class Club {
     }
 }
 
-struct Student {
+class Student {
     var StudentNa: String
     var StudentPa: String
-    static var students = [Student]()
+    var subscribedClubs = [Club]()
     
     init(StudentNa: String, StudentPa: String) {
         self.StudentNa = StudentNa

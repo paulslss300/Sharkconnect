@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // this is to populate the student array
         //without this, feature won't work
         let firstStudent = Student.init(StudentNa: "Bob", StudentPa: "574739202833")
-        Student.students += [firstStudent]
+        students += [firstStudent]
         
         // this is to populate the club array
         //without this, feature won't work
@@ -74,7 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let school = Club(ClubNa: "School", ClubPa: "samplepassword", ClubDe: "This is the school", ClubCellImageName: photo13!, ClubCellCoverImage: photo14!)
         clubs += [school]
-        loggedInClub?.subscribedClubs += [school]
     }
 
     
@@ -133,7 +132,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let date = dateFormatter.date(from: "2018-06-13"){
             let samplePost6 = Post.init(postTi: "School Event", postDe: "Come to the meeting today at lunch for more information", clubIdentifier: "School", postImage: photo13!, postDa: date, postedImage: [#imageLiteral(resourceName: "image6")])
             Post.posts += [samplePost6]
-            subscribedPosts += [samplePost6]
         }
     }
 

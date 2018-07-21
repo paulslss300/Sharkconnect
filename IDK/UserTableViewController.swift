@@ -15,14 +15,15 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
     // IMPORTANT FEATURE ----- LOG OUT BUTTON
     @IBAction func logOutButton(_ sender: Any) {
         userId = ""
+        loggedInClub = nil
+        loggedInStudent = nil
+        subscribedPosts.removeAll()
         performSegue(withIdentifier: "unwindToFirst", sender: self)
     }
     
     
     @IBOutlet weak var userTableview: UITableView!
     @IBOutlet weak var clubSettingsClub: UIButton!
-    
-    var i: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,13 +72,19 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return (loggedInClub?.subscribedClubs.count)!
+        if loggedInAsClub {
+            return (loggedInClub?.subscribedClubs.count)!
+        }
         
+        return (loggedInStudent?.subscribedClubs.count)!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let club = loggedInClub?.subscribedClubs[indexPath.row]
+        var club = loggedInStudent?.subscribedClubs[indexPath.row]
+
+        if loggedInAsClub {
+            club = loggedInClub?.subscribedClubs[indexPath.row]
+        }
         selectedClub = club
         performSegue(withIdentifier: "showclubinformationthroughuser", sender: self)
     }
@@ -88,8 +95,12 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
         
         cell.clubImage.layer.cornerRadius = 30.0
         cell.clubImage.layer.masksToBounds = true
+        
+        var subscribedClub = loggedInStudent?.subscribedClubs[indexPath.row]
 
-        let subscribedClub = loggedInClub?.subscribedClubs[indexPath.row]
+        if loggedInAsClub {
+            subscribedClub = loggedInClub?.subscribedClubs[indexPath.row]
+        }
         
         // Configure the cell...
         cell.clubImage.image = subscribedClub?.ClubCellImageName

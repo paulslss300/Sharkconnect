@@ -24,16 +24,35 @@ class ThirdViewController: UIViewController {
         loginTextFieldText = loginUserName.text!
         passwordTextFieldText = loginPassword.text!
         
-        for studentAccount in Student.students {
+        for studentAccount in students {
             if loginTextFieldText == studentAccount.StudentNa && passwordTextFieldText == studentAccount.StudentPa {
                 loginSuccessful = true
                 userId = "studentRandomNumber10382"
+                loggedInStudent = studentAccount
+                break
             } else {
                 loginSuccessful = false
             }
         }
         
         if loginSuccessful {
+            loggedInAsClub = false
+            // add school
+            if (loggedInStudent?.subscribedClubs)!.isEmpty {
+                for club in clubs {
+                    if club.ClubNa == "School" {
+                        loggedInStudent?.subscribedClubs += [club]
+                    }
+                }
+            }
+            // add subscribed posts
+            for post in Post.posts {
+                for club in (loggedInStudent?.subscribedClubs)! {
+                    if post.clubIdentifier == club.ClubNa {
+                        subscribedPosts += [post]
+                    }
+                }
+            }
             performSegue(withIdentifier: "studentCorrectLogin", sender: self)
         } else {
             studentLoginLabel.text! = "Please Check Your Inputs Are Correct!"
