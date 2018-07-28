@@ -30,6 +30,7 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         
         calendarView.delegate  = self
         calendarView.dataSource = self
+        
         let itemSize = UIScreen.main.bounds.width/7 - 7
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsetsMake(2, 3, 1, 2)
@@ -39,7 +40,6 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         
         calendarView.collectionViewLayout = layout
         
-        // Do any additional setup after loading the view.
         // get the current date
         let today = Date()
         let formatter = DateFormatter()
@@ -128,7 +128,7 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         
         if selectedMonth[indexPath.row] != "" {
             let checkDate =  String(format: "%02d", Int(selectedMonth[indexPath.row])!)
-            date?.backgroundColor = UIColor.red
+            date?.backgroundColor = UIColor.yellow
             
             // this is the actual date picked
             let indexOfDatePicked = result.index(result.endIndex, offsetBy: -2)
@@ -154,7 +154,6 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return selectedMonth.count
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -173,7 +172,6 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         result = String(yearIndex) + "-" + finalMonthIndex + "-01"
         
         // displaying year & month
-        displayText.text = result
         let displayTextIndex = result.index(result.endIndex, offsetBy: -3)
         displayText.text = result.substring(to: displayTextIndex)
         
@@ -204,7 +202,7 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         let dates = selectedMonth[indexPath.row]
         cell.number?.text = dates
         
-        // Highlight allthe events
+        // Highlight all the events
         for checkCell in [cell] as [CalendarCVCell] {
             for checkPost in subscribedPosts {
                 

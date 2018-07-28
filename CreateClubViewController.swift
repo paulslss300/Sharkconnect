@@ -10,53 +10,52 @@ import UIKit
 
 class CreateClubViewController: UIViewController {
     
-    
-    
-    var createdClub: Bool = false
-    var checkClubName: Bool = false
-    
     @IBOutlet weak var ClubName: UITextField!
     @IBOutlet weak var ClubPassword: UITextField!
     @IBOutlet weak var createdClubLabel: UILabel!
     
     @IBAction func CreateClubButton(_ sender: Any) {
-        actualClubPassword = ClubPassword.text!
         
-        if ClubName.text!.isEmpty || actualClubPassword.isEmpty {
-            createdClub = false
-        } else {
-            createdClub = true
+        var createdClub: Bool = false
+
+        guard let inputName = ClubName.text, !(inputName.trimmingCharacters(in: .whitespaces).isEmpty) else {
+            createdClubLabel.text = "Change Your Club Name!"
+            return
         }
         
+        guard let inputPW = ClubPassword.text, !(inputPW.trimmingCharacters(in: .whitespaces).isEmpty) else {
+            createdClubLabel.text = "Change Your Password!"
+            return
+        }
         
-        // check 1
         for club in clubs {
-            if ClubName.text! == club.ClubNa {
-                checkClubName = false
+            if club.ClubNa == inputName {
+                createdClub = false
                 break
             } else {
-                checkClubName = true
+                createdClub = true
             }
         }
-        
-        //check 2
-        if !(ClubName.text!.isEmpty || actualClubPassword.isEmpty) && checkClubName {
-            createdClub = true
-        } else {
-            createdClub = false
-        }
 
-        
         //create new club
         if createdClub {
-            let myAvatar = UIImage(named: "default")
-            let myClubCover = UIImage(named: "defaultCoverImage")
-            let myClub = Club.init(ClubNa: ClubName.text!, ClubPa: actualClubPassword, ClubDe: "No Description", ClubCellImageName: myAvatar!, ClubCellCoverImage: myClubCover!)
+            guard let myAvatar = UIImage(named: "default") else {
+                createdClubLabel.text = "Failed to load default avatar"
+                return
+            }
+            
+            guard let myClubCover = UIImage(named: "defaultCoverImage") else {
+                createdClubLabel.text = "Failed to load default cover image"
+                return
+            }
+            
+            let myClub = Club.init(ClubNa: inputName, ClubPa: inputPW, ClubDe: "No Description", ClubCellImageName: myAvatar, ClubCellCoverImage: myClubCover)
             clubs += [myClub]
             
-            createdClubLabel.text! = "Account Created!"
+            createdClubLabel.text = "Account Created!"
+            
         } else {
-            createdClubLabel.text! = "Please Change a User Name or Password!"
+            createdClubLabel.text = "Club Name Taken!"
         }
     }
 

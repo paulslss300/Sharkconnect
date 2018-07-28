@@ -10,29 +10,34 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    
-
     @IBOutlet weak var LoginTextField: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
     @IBOutlet weak var clubLoginLabel: UILabel!
     
-    var loginTextFieldText: String = ""
-    var passwordTextFieldText: String = ""
-    var clubLoginSuccessful: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        loginTextFieldText = LoginTextField.text!
-        passwordTextFieldText = loginPassword.text!
+        
+        var clubLoginSuccessful: Bool = false
+        
+        guard let LoginTextField = LoginTextField.text else {
+            clubLoginLabel.text = "Input Club Name"
+            return
+        }
+        
+        guard let passwordTextField = loginPassword.text else {
+            clubLoginLabel.text = "Input Club Password"
+            return
+        }
         
         for clubAccount in clubs {
-            if loginTextFieldText == clubAccount.ClubNa && passwordTextFieldText == clubAccount.ClubPa {
+            if LoginTextField == clubAccount.ClubNa && passwordTextField == clubAccount.ClubPa {
                 clubLoginSuccessful = true
                 loggedInClub = clubAccount
-                userId = loginTextFieldText
+                userId = LoginTextField
                 break
             } else {
                 clubLoginSuccessful = false
@@ -42,25 +47,31 @@ class SecondViewController: UIViewController {
 
         if clubLoginSuccessful {
             loggedInAsClub = true
-            // add school
-            if (loggedInClub?.subscribedClubs)!.isEmpty {
+            
+            guard let loggedInClub = loggedInClub else {
+                return
+            }
+            
+            // add school (only works once)
+            if (loggedInClub.subscribedClubs).isEmpty {
                 for club in clubs {
                     if club.ClubNa == "School" {
-                        loggedInClub?.subscribedClubs += [club]
+                        loggedInClub.subscribedClubs += [club]
                     }
                 }
             }
             // add subscribed posts
             for post in Post.posts {
-                for club in (loggedInClub?.subscribedClubs)! {
+                for club in (loggedInClub.subscribedClubs) {
                     if post.clubIdentifier == club.ClubNa {
                         subscribedPosts += [post]
                     }
                 }
             }
             performSegue(withIdentifier: "correctLogin", sender: self)
+            
         } else {
-            clubLoginLabel.text! = "Please Check Your Inputs Are Correct!"
+            clubLoginLabel.text = "Please Check Your Inputs Are Correct!"
         }
         
     }

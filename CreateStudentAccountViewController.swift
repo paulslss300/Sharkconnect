@@ -10,44 +10,41 @@ import UIKit
 
 class CreateStudentAccountViewController: UIViewController {
     
-    
-    var actualStudentName: String = ""
-    var actualStudentPassword: String = ""
-    var createdStudent: Bool = false
-    var checkStudentName: Bool = false
-    
     @IBOutlet weak var createdStudentLabel: UILabel!
     @IBOutlet weak var StudentName: UITextField!
     @IBOutlet weak var StudentPassword: UITextField!
     
     @IBAction func CreateStudentButton(_ sender: Any) {
-        actualStudentName = StudentName.text!
-        actualStudentPassword = StudentPassword.text!
         
-        // check 1
+        var createdStudent: Bool = false
+        
+        guard let inputName = StudentName.text, !(inputName.trimmingCharacters(in: .whitespaces).isEmpty) else {
+            createdStudentLabel.text = "Change Your Account Name!"
+            return
+        }
+        
+        guard let inputPW = StudentPassword.text, !(inputPW.trimmingCharacters(in: .whitespaces).isEmpty) else {
+            createdStudentLabel.text = "Change Your Password!"
+            return
+        }
+        
         for student in students {
-            if actualStudentName == student.StudentNa {
-                checkStudentName = false
+            if student.StudentNa == inputName {
+                createdStudent = false
                 break
             } else {
-                checkStudentName = true
+                createdStudent = true
             }
         }
 
-        //check 2
-        if !(actualStudentName.isEmpty || actualStudentPassword.isEmpty) && checkStudentName {
-            createdStudent = true
-        } else {
-            createdStudent = false
-        }
-        
         //create student account
         if createdStudent {
-            let newStudent = Student.init(StudentNa: actualStudentName, StudentPa: actualStudentPassword)
+            
+            let newStudent = Student.init(StudentNa: inputName, StudentPa: inputPW)
             students += [newStudent]
-            createdStudentLabel.text! = "Account Created!"
+            createdStudentLabel.text = "Account Created!"
         } else {
-            createdStudentLabel.text! = "Please Change a User Name or Password!"
+            createdStudentLabel.text = "Account Name Taken!"
         }
     
     }

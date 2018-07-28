@@ -32,25 +32,42 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        guard  let selectedClub = selectedClub else {
+            print("selectedClub is optional")
+            return
+        }
+        
         recentPosts.removeAll()
+        
         for post in Post.posts {
-            if post.clubIdentifier == (selectedClub?.ClubNa)! {
+            if post.clubIdentifier == (selectedClub.ClubNa) {
                 recentPosts += [post]
-                print(post.postTi)
-                print(post.postDe)
             }
         }
         postTableView.reloadData()
         
         if loggedInAsClub {
-            for club in (loggedInClub?.subscribedClubs)! {
-                if club.ClubNa == (selectedClub?.ClubNa)! {
+            
+            guard let loggedInClub = loggedInClub else {
+                print("loggedInClub is optional")
+                return
+            }
+            
+            for club in (loggedInClub.subscribedClubs) {
+                if club.ClubNa == (selectedClub.ClubNa) {
                     subscribeButton.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
                 }
             }
         } else {
-            for club in (loggedInStudent?.subscribedClubs)! {
-                if club.ClubNa == (selectedClub?.ClubNa)! {
+            
+            guard let loggedInStudent = loggedInStudent else {
+                print("loggedInStudent is optional")
+                return
+            }
+            
+            for club in (loggedInStudent.subscribedClubs) {
+                if club.ClubNa == (selectedClub.ClubNa) {
                     subscribeButton.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
                 }
             }
@@ -87,45 +104,65 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         
         var noDuplicate: Bool = true
         
+        guard let selectedClub = selectedClub else {
+            print("selectedClub is optional")
+            return
+        }
+        
         if loggedInAsClub {
-            for club in (loggedInClub?.subscribedClubs)! {
-                if (selectedClub?.ClubNa)! == club.ClubNa {
+            
+            guard let loggedInClub = loggedInClub else {
+                // Handle the invalid case here
+                print("loggedInClub is optional")
+                return
+            }
+            
+            for club in loggedInClub.subscribedClubs {
+                if selectedClub.ClubNa == club.ClubNa {
                     noDuplicate = false
-                    loggedInClub?.subscribedClubs = (loggedInClub?.subscribedClubs.filter({ (club) -> Bool in
-                        return !(club.ClubNa == selectedClub?.ClubNa)
-                    }))!
-                    subscribedPosts = subscribedPosts.filter({$0.clubIdentifier != selectedClub?.ClubNa})
+                    loggedInClub.subscribedClubs = (loggedInClub.subscribedClubs.filter({ (club) -> Bool in
+                        return !(club.ClubNa == selectedClub.ClubNa)
+                    }))
+                    subscribedPosts = subscribedPosts.filter({$0.clubIdentifier != selectedClub.ClubNa})
                     subscribeButton.backgroundColor = UIColor(red: 159/225.0, green: 168/225.0, blue: 183/225.0, alpha: 1)
                     break
                 }
             }
 
             if noDuplicate {
-                loggedInClub?.subscribedClubs += [selectedClub!]
+                loggedInClub.subscribedClubs += [selectedClub]
                 for post in Post.posts{
-                    if post.clubIdentifier == selectedClub?.ClubNa {
+                    if post.clubIdentifier == selectedClub.ClubNa {
                         subscribedPosts += [post]
                     }
                 }
                 subscribeButton.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
             }
+            
         } else {
-            for club in (loggedInStudent?.subscribedClubs)! {
-                if (selectedClub?.ClubNa)! == club.ClubNa {
+            
+            guard let loggedInStudent = loggedInStudent else {
+                // Handle the invalid case here
+                print("loggedInStudent is optional")
+                return
+            }
+            
+            for club in (loggedInStudent.subscribedClubs) {
+                if (selectedClub.ClubNa) == club.ClubNa {
                     noDuplicate = false
-                    loggedInStudent?.subscribedClubs = (loggedInStudent?.subscribedClubs.filter({ (club) -> Bool in
-                        return !(club.ClubNa == selectedClub?.ClubNa)
-                    }))!
-                    subscribedPosts = subscribedPosts.filter({$0.clubIdentifier != selectedClub?.ClubNa})
+                    loggedInStudent.subscribedClubs = (loggedInStudent.subscribedClubs.filter({ (club) -> Bool in
+                        return !(club.ClubNa == selectedClub.ClubNa)
+                    }))
+                    subscribedPosts = subscribedPosts.filter({$0.clubIdentifier != selectedClub.ClubNa})
                     subscribeButton.backgroundColor = UIColor(red: 159/225.0, green: 168/225.0, blue: 183/225.0, alpha: 1)
                     break
                 }
             }
             
             if noDuplicate {
-                loggedInStudent?.subscribedClubs += [selectedClub!]
+                loggedInStudent.subscribedClubs += [selectedClub]
                 for post in Post.posts{
-                    if post.clubIdentifier == selectedClub?.ClubNa {
+                    if post.clubIdentifier == selectedClub.ClubNa {
                         subscribedPosts += [post]
                     }
                 }
@@ -172,69 +209,84 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         let post = recentPosts[indexPath.row]
         
         if post.postedImage.isEmpty && post.postDe == "" {
-            let cell: ClubInfoVCTableViewCellWithoutBoth = tableView.dequeueReusableCell(withIdentifier: "CellWithoutBoth2", for: indexPath) as! ClubInfoVCTableViewCellWithoutBoth
-            
-            cell.cellTitle?.text = post.postTi
-            if post.postDa != nil {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+            if let cell: ClubInfoVCTableViewCellWithoutBoth = tableView.dequeueReusableCell(withIdentifier: "CellWithoutBoth2", for: indexPath) as? ClubInfoVCTableViewCellWithoutBoth {
+                cell.cellTitle?.text = post.postTi
+                if let postDa = post.postDa {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    cell.cellDate.text = dateFormatter.string(from: postDa)
+                } else {
+                    cell.cellDate.isHidden = true
+                }
+                return cell
+
             } else {
-                cell.cellDate.isHidden = true
+                assertionFailure("Unable to dequeue cell")
+                return UITableViewCell()
             }
-            return cell
-            
         }
         else if post.postDe == "" {
-            let cell: ClubInfoVCTableViewCellWithoutDescription = tableView.dequeueReusableCell(withIdentifier: "CellWithoutDescription2", for: indexPath) as! ClubInfoVCTableViewCellWithoutDescription
+            if let cell: ClubInfoVCTableViewCellWithoutDescription = tableView.dequeueReusableCell(withIdentifier: "CellWithoutDescription2", for: indexPath) as? ClubInfoVCTableViewCellWithoutDescription {
             
-            cell.cellTitle?.text = post.postTi
-            cell.imageList = post.postedImage
-            cell.cellPostedImage.reloadData()
-
-            if post.postDa != nil {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+                cell.cellTitle?.text = post.postTi
+                cell.imageList = post.postedImage
+                cell.cellPostedImage.reloadData()
+                
+                if let postDa = post.postDa {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    cell.cellDate.text = dateFormatter.string(from: postDa)
+                } else {
+                    cell.cellDate.isHidden = true
+                }
+                return cell
+                
             } else {
-                cell.cellDate.isHidden = true
+                assertionFailure("Unable to dequeue cell")
+                return UITableViewCell()
             }
-            return cell
-
         }
         else if post.postedImage.isEmpty {
-            let cell: ClubInfoVCTableViewCellWithoutImage = tableView.dequeueReusableCell(withIdentifier: "CellWithoutImage2", for: indexPath) as! ClubInfoVCTableViewCellWithoutImage
+            if let cell: ClubInfoVCTableViewCellWithoutImage = tableView.dequeueReusableCell(withIdentifier: "CellWithoutImage2", for: indexPath) as? ClubInfoVCTableViewCellWithoutImage {
             
-            cell.cellTitle?.text = post.postTi
-            cell.cellDescription?.text = post.postDe
-            if post.postDa != nil {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+                cell.cellTitle?.text = post.postTi
+                cell.cellDescription?.text = post.postDe
+                if let postDa = post.postDa {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    cell.cellDate.text = dateFormatter.string(from: postDa)
+                } else {
+                    cell.cellDate.isHidden = true
+                }
+                return cell
+                
             } else {
-                cell.cellDate.isHidden = true
+                assertionFailure("Unable to dequeue cell")
+                return UITableViewCell()
             }
-            return cell
-
         }
         else {
-            let cell: ClubIInformationTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ClubInfoPostCells2", for: indexPath) as! ClubIInformationTableViewCell
+            if let cell: ClubIInformationTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ClubInfoPostCells2", for: indexPath) as? ClubIInformationTableViewCell {
             
             
-            cell.postTitle?.text = post.postTi
-            cell.postDescription?.text = post.postDe
-            cell.imageList = post.postedImage
-            cell.postImage.reloadData()
-            
-            if post.postDa != nil {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                cell.postDate.text = dateFormatter.string(from: post.postDa!)
+                cell.postTitle?.text = post.postTi
+                cell.postDescription?.text = post.postDe
+                cell.imageList = post.postedImage
+                cell.postImage.reloadData()
+                
+                if let postDa = post.postDa {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    cell.postDate.text = dateFormatter.string(from: postDa)
+                } else {
+                    cell.postDate.isHidden = true
+                }
+                return cell
+                
             } else {
-                cell.postDate.isHidden = true
+                assertionFailure("Unable to dequeue cell")
+                return UITableViewCell()
             }
-            return cell
-            
         }
     }
     

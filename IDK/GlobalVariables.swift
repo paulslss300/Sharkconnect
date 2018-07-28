@@ -13,7 +13,6 @@ var students = [Student]()
 var loggedInAsClub: Bool = false
 
 var userId: String = ""
-var actualClubPassword: String = ""
 
 var loggedInClub: Club? = nil
 var loggedInStudent: Student? = nil

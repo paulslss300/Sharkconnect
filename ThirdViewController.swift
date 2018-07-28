@@ -14,48 +14,60 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var loginPassword: UITextField!
     @IBOutlet weak var studentLoginLabel: UILabel!
     
-    var loginTextFieldText: String = ""
-    var passwordTextFieldText: String = ""
-    var loginSuccessful: Bool = false
-    
-    
     @IBAction func loginButtonTapped(_ sender: Any) {
-
-        loginTextFieldText = loginUserName.text!
-        passwordTextFieldText = loginPassword.text!
+        
+        var loginSuccessful: Bool = false
+        
+        guard let LoginTextField = loginUserName.text else {
+            studentLoginLabel.text = "Input Account Name"
+            return
+        }
+        
+        guard let passwordTextField = loginPassword.text else {
+            studentLoginLabel.text = "Input Account Password"
+            return
+        }
         
         for studentAccount in students {
-            if loginTextFieldText == studentAccount.StudentNa && passwordTextFieldText == studentAccount.StudentPa {
+            if LoginTextField == studentAccount.StudentNa && passwordTextField == studentAccount.StudentPa {
                 loginSuccessful = true
                 userId = "studentRandomNumber10382"
                 loggedInStudent = studentAccount
                 break
+                
             } else {
                 loginSuccessful = false
             }
         }
         
         if loginSuccessful {
+            
             loggedInAsClub = false
-            // add school
-            if (loggedInStudent?.subscribedClubs)!.isEmpty {
+            
+            guard let loggedInStudent = loggedInStudent else {
+                return
+            }
+            
+            // add school (only works once)
+            if (loggedInStudent.subscribedClubs).isEmpty {
                 for club in clubs {
                     if club.ClubNa == "School" {
-                        loggedInStudent?.subscribedClubs += [club]
+                        loggedInStudent.subscribedClubs += [club]
                     }
                 }
             }
             // add subscribed posts
             for post in Post.posts {
-                for club in (loggedInStudent?.subscribedClubs)! {
+                for club in (loggedInStudent.subscribedClubs) {
                     if post.clubIdentifier == club.ClubNa {
                         subscribedPosts += [post]
                     }
                 }
             }
             performSegue(withIdentifier: "studentCorrectLogin", sender: self)
+            
         } else {
-            studentLoginLabel.text! = "Please Check Your Inputs Are Correct!"
+            studentLoginLabel.text = "Please Check Your Inputs Are Correct!"
         }
 
     }

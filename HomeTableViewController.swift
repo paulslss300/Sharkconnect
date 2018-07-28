@@ -118,105 +118,122 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         
         if post.postedImage.isEmpty && post.postDe == "" {
             
-            let cell: HomeTableViewCellWithoutBoth = tableView.dequeueReusableCell(withIdentifier: "cellWithoutBoth", for: indexPath) as! HomeTableViewCellWithoutBoth
+            if let cell: HomeTableViewCellWithoutBoth = tableView.dequeueReusableCell(withIdentifier: "cellWithoutBoth", for: indexPath) as? HomeTableViewCellWithoutBoth {
             
-            // allowing action when label (over the cellImage) is tapped
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
-            cell.labelOverImage.isUserInteractionEnabled = true
-            cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
+                // allowing action when label (over the cellImage) is tapped
+                let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
+                cell.labelOverImage.isUserInteractionEnabled = true
+                cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
             
-            // Configure the cell...
-            cell.labelOverImage?.text = post.clubIdentifier
-            cell.cellTitle?.text = post.postTi
-            cell.cellImage.image = post.postImage
-            cell.cellIdentifier?.text = post.clubIdentifier
-            if post.postDa != nil {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+                // Configure the cell...
+                cell.labelOverImage?.text = post.clubIdentifier
+                cell.cellTitle?.text = post.postTi
+                cell.cellImage.image = post.postImage
+                cell.cellIdentifier?.text = post.clubIdentifier
+                if let postDa = post.postDa {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    cell.cellDate.text = dateFormatter.string(from: postDa)
+                } else {
+                    cell.cellDate.isHidden = true
+                }
+                return cell
+                
             } else {
-                cell.cellDate.isHidden = true
+                assertionFailure("Unable to dequeue cell")
+                return UITableViewCell()
             }
-            
-            return cell
         }
         else if post.postDe == "" {
 
-            let cell: HomeTableViewCellWithoutDescription = tableView.dequeueReusableCell(withIdentifier: "cellWithoutDescription", for: indexPath) as! HomeTableViewCellWithoutDescription
+            if let cell: HomeTableViewCellWithoutDescription = tableView.dequeueReusableCell(withIdentifier: "cellWithoutDescription", for: indexPath) as? HomeTableViewCellWithoutDescription {
             
-            // allowing action when label (over the cellImage) is tapped
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
-            cell.labelOverImage.isUserInteractionEnabled = true
-            cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
-            
-            // Configure the cell...
-            cell.labelOverImage?.text = post.clubIdentifier
-            cell.cellTitle?.text = post.postTi
-            cell.cellImage.image = post.postImage
-            cell.imageList = post.postedImage
-            cell.cellPostedImage.reloadData()
-            cell.cellIdentifier?.text = post.clubIdentifier
-            if post.postDa != nil {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+                // allowing action when label (over the cellImage) is tapped
+                let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
+                cell.labelOverImage.isUserInteractionEnabled = true
+                cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
+                
+                // Configure the cell...
+                cell.labelOverImage?.text = post.clubIdentifier
+                cell.cellTitle?.text = post.postTi
+                cell.cellImage.image = post.postImage
+                cell.imageList = post.postedImage
+                cell.cellPostedImage.reloadData()
+                cell.cellIdentifier?.text = post.clubIdentifier
+                if let postDa = post.postDa {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    cell.cellDate.text = dateFormatter.string(from: postDa)
+                } else {
+                    cell.cellDate.isHidden = true
+                }
+                return cell
+                
             } else {
-                cell.cellDate.isHidden = true
+                assertionFailure("Unable to dequeue cell")
+                return UITableViewCell()
             }
-            
-            return cell
         }
         else if post.postedImage.isEmpty {
             
-            let cell: HomeTableViewCellWithoutImage = tableView.dequeueReusableCell(withIdentifier: "cellWithoutImage", for: indexPath) as! HomeTableViewCellWithoutImage
+            if let cell: HomeTableViewCellWithoutImage = tableView.dequeueReusableCell(withIdentifier: "cellWithoutImage", for: indexPath) as? HomeTableViewCellWithoutImage {
             
-            // allowing action when label (over the cellImage) is tapped
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
-            cell.labelOverImage.isUserInteractionEnabled = true
-            cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
-            
-            // Configure the cell...
-            cell.labelOverImage?.text = post.clubIdentifier
-            cell.cellTitle?.text = post.postTi
-            cell.cellDescription?.text = post.postDe
-            cell.cellImage.image = post.postImage
-            cell.cellIdentifier?.text = post.clubIdentifier
-            if post.postDa != nil {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+                // allowing action when label (over the cellImage) is tapped
+                let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
+                cell.labelOverImage.isUserInteractionEnabled = true
+                cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
+                
+                // Configure the cell...
+                cell.labelOverImage?.text = post.clubIdentifier
+                cell.cellTitle?.text = post.postTi
+                cell.cellDescription?.text = post.postDe
+                cell.cellImage.image = post.postImage
+                cell.cellIdentifier?.text = post.clubIdentifier
+                if let postDa = post.postDa {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    cell.cellDate.text = dateFormatter.string(from: postDa)
+                } else {
+                    cell.cellDate.isHidden = true
+                }
+                return cell
+                
             } else {
-                cell.cellDate.isHidden = true
+                assertionFailure("Unable to dequeue cell")
+                return UITableViewCell()
             }
-            
-            return cell
         }
         else {
             
-            let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath) as! HomeTableViewCell
-            
-            // allowing action when label (over the cellImage) is tapped
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
-            cell.labelOverImage.isUserInteractionEnabled = true
-            cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
-            
-            // Configure the cell...
-            cell.labelOverImage?.text = post.clubIdentifier
-            cell.cellTitle?.text = post.postTi
-            cell.cellDescription?.text = post.postDe
-            cell.cellImage.image = post.postImage
-            cell.imageList = post.postedImage
-            cell.cellPostedImage.reloadData()
-            cell.cellIdentifier?.text = post.clubIdentifier
-            if post.postDa != nil {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                cell.cellDate.text = dateFormatter.string(from: post.postDa!)
+            if let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath) as? HomeTableViewCell {
+                
+                    // allowing action when label (over the cellImage) is tapped
+                    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
+                    cell.labelOverImage.isUserInteractionEnabled = true
+                    cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
+                
+                    // Configure the cell...
+                    cell.labelOverImage?.text = post.clubIdentifier
+                    cell.cellTitle?.text = post.postTi
+                    cell.cellDescription?.text = post.postDe
+                    cell.cellImage.image = post.postImage
+                    cell.imageList = post.postedImage
+                    cell.cellPostedImage.reloadData()
+                    cell.cellIdentifier?.text = post.clubIdentifier
+                    if let postDa = post.postDa {
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "yyyy-MM-dd"
+                        cell.cellDate.text = dateFormatter.string(from: postDa)
+                    } else {
+                        cell.cellDate.isHidden = true
+                    }
+                
+                return cell
+                
             } else {
-                cell.cellDate.isHidden = true
+                assertionFailure("Unable to dequeue cell")
+                return UITableViewCell()
             }
-            
-            return cell
         }
     }
     

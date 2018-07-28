@@ -18,15 +18,19 @@ class ViewPostViewCellViewController: UIViewController, UICollectionViewDataSour
         clubImage.image = selectedPost?.postImage
         postTitle.text = selectedPost?.postTi
         
-        if selectedPost?.postDa != nil {
+        guard let selectedPost = selectedPost else {
+            return
+        }
+        
+        if let postDa = selectedPost.postDa {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
-            postDate.text = dateFormatter.string(from: (selectedPost?.postDa)!)
+            postDate.text = dateFormatter.string(from: postDa)
         } else {
             postDate.isHidden = true
         }
 
-        if (selectedPost?.postedImage.isEmpty)! {
+        if (selectedPost.postedImage.isEmpty) {
             postImage.isHidden = true
         }
         if postTitle.text == "" {
@@ -52,17 +56,31 @@ class ViewPostViewCellViewController: UIViewController, UICollectionViewDataSour
     @IBOutlet weak var postImage: UICollectionView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (selectedPost?.postedImage.count)!
+        
+        guard let selectedPost = selectedPost else {
+            return 0
+        }
+        
+        return (selectedPost.postedImage.count)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageInPostAtViewPostVC", for: indexPath) as! PostedImageCVCellAtViewPostVC
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageInPostAtViewPostVC", for: indexPath) as? PostedImageCVCellAtViewPostVC {
+            
+            guard let selectedPost = selectedPost else {
+                return UICollectionViewCell()
+            }
         
-        let image = (selectedPost?.postedImage)![indexPath.row]
+            let image = (selectedPost.postedImage)[indexPath.row]
         
-        cell.postedImage.image = image
+            cell.postedImage.image = image
         
-        return cell
+            return cell
+            
+        } else {
+            assertionFailure("Failed to deque cell")
+            return UICollectionViewCell()
+        }
     }
 
     /*
