@@ -98,14 +98,13 @@ class MoreViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: MoreTableViewCell = tableView.dequeueReusableCell(withIdentifier: "notecells", for: indexPath) as! MoreTableViewCell
+        if let cell: MoreTableViewCell = tableView.dequeueReusableCell(withIdentifier: "notecells", for: indexPath) as? MoreTableViewCell {
         
         cell.dot.layer.cornerRadius = 10
         cell.dot.layer.masksToBounds = true
         
         let note = noteList[indexPath.row]
         cell.noteContent.text? = note.noteDe
-        cell.timeCreated.text? = note.timeCreated
         if note.isHomework == false {
             cell.dot.isHidden = true
         } else {
@@ -113,6 +112,11 @@ class MoreViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
         
         return cell
+            
+        } else {
+            assertionFailure("Failed to deque cell")
+            return UITableViewCell()
+        }
     }
 
 

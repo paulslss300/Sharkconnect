@@ -2176,33 +2176,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="124" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AG1-lO-Zbe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AG1-lO-Zbe">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notecells" rowHeight="124" id="bmK-JM-Bhd" customClass="MoreTableViewCell" customModule="IDK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="124"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notecells" rowHeight="94" id="bmK-JM-Bhd" customClass="MoreTableViewCell" customModule="IDK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bmK-JM-Bhd" id="t8A-57-QpI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="93.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="note content" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIE-KJ-cTD">
-                                                    <rect key="frame" x="42" y="6" width="318" height="75"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="TimeCreated" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8GN-SL-jgF">
-                                                    <rect key="frame" x="42" y="89" width="240" height="27"/>
+                                                    <rect key="frame" x="42" y="6" width="318" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red" translatesAutoresizingMaskIntoConstraints="NO" id="wDb-bO-SoH">
-                                                    <rect key="frame" x="8" y="51" width="20" height="20"/>
+                                                    <rect key="frame" x="8" y="36" width="20" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -2210,7 +2203,6 @@
                                         <connections>
                                             <outlet property="dot" destination="wDb-bO-SoH" id="Zgz-mW-2Bh"/>
                                             <outlet property="noteContent" destination="VIE-KJ-cTD" id="Lod-bi-WdA"/>
-                                            <outlet property="timeCreated" destination="8GN-SL-jgF" id="bfZ-tV-MbQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2269,7 +2261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29I-l2-Vvl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4022" y="2678"/>
+            <point key="canvasLocation" x="4021.5999999999999" y="2677.5112443778112"/>
         </scene>
         <!--Create Note View Controller-->
         <scene sceneID="6ts-Ub-oP0">
@@ -2304,7 +2296,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wzy-dv-NDO">
-                                <rect key="frame" x="163" y="28" width="51" height="31"/>
+                                <rect key="frame" x="163" y="74" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="classifyNoteSwitch:" destination="iQd-zB-Y1W" eventType="valueChanged" id="1QZ-o6-cD2"/>

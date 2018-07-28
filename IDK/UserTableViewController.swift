@@ -71,14 +71,26 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+
         if loggedInAsClub {
-            return (loggedInClub?.subscribedClubs.count)!
+            
+            guard let subscribedClubs = loggedInClub?.subscribedClubs else {
+                return 0
+            }
+            
+            return subscribedClubs.count
         }
         
-        return (loggedInStudent?.subscribedClubs.count)!
+        guard let subscribedClubs = loggedInStudent?.subscribedClubs else {
+            return 0
+        }
+        
+        return subscribedClubs.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         var club = loggedInStudent?.subscribedClubs[indexPath.row]
 
         if loggedInAsClub {
@@ -90,61 +102,29 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UserTableViewCell = tableView.dequeueReusableCell(withIdentifier: "userReuseIdentifier", for: indexPath) as! UserTableViewCell
+        if let cell: UserTableViewCell = tableView.dequeueReusableCell(withIdentifier: "userReuseIdentifier", for: indexPath) as? UserTableViewCell {
         
-        cell.clubImage.layer.cornerRadius = 30.0
-        cell.clubImage.layer.masksToBounds = true
-        
-        var subscribedClub = loggedInStudent?.subscribedClubs[indexPath.row]
+            cell.clubImage.layer.cornerRadius = 30.0
+            cell.clubImage.layer.masksToBounds = true
+            
+            var subscribedClub = loggedInStudent?.subscribedClubs[indexPath.row]
+            
+            if loggedInAsClub {
+                subscribedClub = loggedInClub?.subscribedClubs[indexPath.row]
+            }
+            
+            // Configure the cell...
+            cell.clubImage.image = subscribedClub?.ClubCellImageName
+            cell.clubName?.text = subscribedClub?.ClubNa
 
-        if loggedInAsClub {
-            subscribedClub = loggedInClub?.subscribedClubs[indexPath.row]
+            
+            return cell
+            
+        } else {
+            assertionFailure("Unable to deque cell")
+            return UITableViewCell()
         }
-        
-        // Configure the cell...
-        cell.clubImage.image = subscribedClub?.ClubCellImageName
-        cell.clubName?.text = subscribedClub?.ClubNa
-
-
-        return cell
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
     // MARK: - Navigation
     

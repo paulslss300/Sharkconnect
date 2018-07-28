@@ -61,23 +61,28 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "discovercells", for: indexPath) as! DiscoverCollectionViewCell
-        
-        cell.clubImage.layer.cornerRadius = 50.0
-        cell.imageView?.layer.cornerRadius = 50.0
-        cell.clubImage.layer.masksToBounds = true
-        
-        var club = clubs[indexPath.row]
-        
-        if isSerching {
-            club = filteredClubs[indexPath.row]
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "discovercells", for: indexPath) as? DiscoverCollectionViewCell {
+            
+            cell.clubImage.layer.cornerRadius = 50.0
+            cell.imageView?.layer.cornerRadius = 50.0
+            cell.clubImage.layer.masksToBounds = true
+            
+            var club = clubs[indexPath.row]
+            
+            if isSerching {
+                club = filteredClubs[indexPath.row]
+            }
+            
+            
+            cell.clubName?.text = club.ClubNa
+            cell.clubImage.image = club.ClubCellImageName
+            
+            return cell
+            
+        } else {
+            assertionFailure("Failed to deque cell")
+            return UICollectionViewCell()
         }
-        
-        
-        cell.clubName?.text = club.ClubNa
-        cell.clubImage.image = club.ClubCellImageName
-        
-        return cell
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -87,11 +92,6 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
         } else {
             isSerching = true
             filteredClubs = clubs.filter({$0.ClubNa.lowercased().contains(searchBar.text!.lowercased())})
-            /*
-            filteredClubs = Club.clubs.filter({ (club) -> Bool in
-                return !(club.ClubNa == searchBar.text!)
-            })
-             */
             discoverView.reloadData()
         }
     }

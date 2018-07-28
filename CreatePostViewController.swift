@@ -24,12 +24,17 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
         if postDescription.text == "Add A Description" && postDescription.textColor == UIColor.lightGray {
             postDescription.text = ""
         }
+        
+        guard let postImage = loggedInClub?.ClubCellImageName else {
+            return
+        }
 
-        let post1 = Post(postTi: postTitle.text!, postDe: postDescription.text!, clubIdentifier: userId, postImage: (loggedInClub?.ClubCellImageName)!, postDa: actualDatePicked, postedImage: imagesInPost)
+        let post1 = Post(postTi: postTitle.text!, postDe: postDescription.text!, clubIdentifier: userId, postImage: postImage, postDa: actualDatePicked, postedImage: imagesInPost)
         Post.posts.insert(post1, at: 0)
         
        performSegue(withIdentifier: "unwindToTabBar", sender: self)
     }
+    
     @IBOutlet weak var postTitle: UITextField!
     @IBOutlet weak var postDescription: UITextView!
     @IBOutlet weak var dateField: UITextField!
@@ -83,13 +88,18 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageInPost", for: indexPath) as! ImageInPostCollectionViewCell
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageInPost", for: indexPath) as? ImageInPostCollectionViewCell {
 
-        let image = imagesInPost[indexPath.row]
+            let image = imagesInPost[indexPath.row]
         
-        cell.postImage.image = image
+            cell.postImage.image = image
  
-        return cell
+            return cell
+            
+        } else {
+            assertionFailure("Failed to deque cell")
+            return UICollectionViewCell()
+        }
     }
     
     func textViewDidBeginEditing(_ postDescription: UITextView) {

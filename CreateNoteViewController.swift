@@ -18,6 +18,9 @@ class CreateNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
         noteContent.text = selectedNote?.noteDe
         
@@ -46,10 +49,15 @@ class CreateNoteViewController: UIViewController {
     }
     
     @IBAction func deleteNote(_ sender: Any) {
+        
+        guard let timeCreated = selectedNote?.timeCreated else {
+            return
+        }
+        
         for note in noteList {
-            if (selectedNote?.timeCreated)! == note.timeCreated {
+            if timeCreated == note.timeCreated {
                 noteList = noteList.filter({ (note) -> Bool in
-                    return !(note.timeCreated == selectedNote?.timeCreated)
+                    return !(note.timeCreated == timeCreated)
                 })
             }
         }
@@ -86,8 +94,3 @@ class CreateNoteViewController: UIViewController {
     */
 
 }
-
-/* To do:
- 3. save when the user leave createNoteVC, also save when the user presses save
- 4. add time to Note, use time as an identifier
- */
