@@ -211,13 +211,13 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
         if post.postedImage.isEmpty && post.postDe == "" {
             if let cell: ClubInfoVCTableViewCellWithoutBoth = tableView.dequeueReusableCell(withIdentifier: "CellWithoutBoth2", for: indexPath) as? ClubInfoVCTableViewCellWithoutBoth {
                 cell.cellTitle?.text = post.postTi
+                
                 if let postDa = post.postDa {
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                    cell.cellDate.text = dateFormatter.string(from: postDa)
+                    cell.cellDate.text = postDa
                 } else {
                     cell.cellDate.isHidden = true
                 }
+                
                 return cell
 
             } else {
@@ -233,9 +233,7 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
                 cell.cellPostedImage.reloadData()
                 
                 if let postDa = post.postDa {
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                    cell.cellDate.text = dateFormatter.string(from: postDa)
+                    cell.cellDate.text = postDa
                 } else {
                     cell.cellDate.isHidden = true
                 }
@@ -251,13 +249,13 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
             
                 cell.cellTitle?.text = post.postTi
                 cell.cellDescription?.text = post.postDe
+                
                 if let postDa = post.postDa {
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                    cell.cellDate.text = dateFormatter.string(from: postDa)
+                    cell.cellDate.text = postDa
                 } else {
                     cell.cellDate.isHidden = true
                 }
+                
                 return cell
                 
             } else {
@@ -275,12 +273,11 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
                 cell.postImage.reloadData()
                 
                 if let postDa = post.postDa {
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                    cell.postDate.text = dateFormatter.string(from: postDa)
+                    cell.postDate.text = postDa
                 } else {
                     cell.postDate.isHidden = true
                 }
+                
                 return cell
                 
             } else {

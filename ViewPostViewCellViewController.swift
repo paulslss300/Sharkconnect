@@ -23,9 +23,7 @@ class ViewPostViewCellViewController: UIViewController, UICollectionViewDataSour
         }
         
         if let postDa = selectedPost.postDa {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            postDate.text = dateFormatter.string(from: postDa)
+            postDate.text = postDa
         } else {
             postDate.isHidden = true
         }

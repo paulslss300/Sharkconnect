@@ -135,11 +135,7 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             datePicked = result.substring(to: indexOfDatePicked) + checkDate
             
             for post in subscribedPosts {
-                
-                // get the date value for NSDate object
-                let indexOfDate = String(describing: post.postDa!).index(String(describing: post.postDa!).endIndex, offsetBy: -15)
-                
-                if datePicked == String(describing: post.postDa!).substring(to: indexOfDate) {
+                if datePicked == post.postDa! {
                     displayedPosts += [post]
                 }
             }
@@ -205,16 +201,11 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         // Highlight all the events
         for checkCell in [cell] as [CalendarCVCell] {
             for checkPost in subscribedPosts {
-                
                 // get the date value for NSDate object
-                if checkPost.postDa != nil {
-                    let indexOfDate = String(describing: checkPost.postDa!).index(String(describing: checkPost.postDa!).endIndex, offsetBy: -15)
-                    
-                    if checkCell.number.text! == "" {
-                        break
-                    } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == String(describing: checkPost.postDa!).substring(to: indexOfDate) && checkPost.clubIdentifier == "School" {
+                if checkPost.postDa != nil && checkCell.number.text! != "" {
+                    if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == checkPost.postDa! && checkPost.clubIdentifier == "School" {
                         checkCell.image2.isHidden = false
-                    } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == String(describing: checkPost.postDa!).substring(to: indexOfDate) {
+                    } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == checkPost.postDa! {
                         checkCell.image.isHidden = false
                     }
                 }

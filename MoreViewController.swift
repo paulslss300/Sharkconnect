@@ -41,21 +41,19 @@ class MoreViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     @IBAction func newNote(_ sender: Any) {
         
-        let today = Date()
+        let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        let result = formatter.string(from: today)
-
-        let date = Date()
-        let calendar = Calendar.current
+        let result = formatter.string(from: date)
         
-        let hour = calendar.component(.hour, from: date)
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date) - 7
         let minutes = calendar.component(.minute, from: date)
         let seconds = calendar.component(.second, from: date)
         
         let time = result + "-" + String(format: "%02d", hour) + "-" + String(format: "%02d", minutes) + "-" + String(format: "%02d", seconds)
         
-        let newNote = Note(noteDe: "", timeCreated: time, isHomework: false)
+        let newNote = Note(noteDe: "", timeCreated: time, noteDa: nil)
         noteList += [newNote]
 
         selectedNote = newNote
@@ -98,20 +96,14 @@ class MoreViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if let cell: MoreTableViewCell = tableView.dequeueReusableCell(withIdentifier: "notecells", for: indexPath) as? MoreTableViewCell {
         
-        cell.dot.layer.cornerRadius = 10
-        cell.dot.layer.masksToBounds = true
-        
-        let note = noteList[indexPath.row]
-        cell.noteContent.text? = note.noteDe
-        if note.isHomework == false {
-            cell.dot.isHidden = true
-        } else {
-            cell.dot.isHidden = false
-        }
-        
-        return cell
+            let note = noteList[indexPath.row]
+            cell.noteContent.text = note.noteDe
+            cell.noteDate.text = note.noteDa
+            
+            return cell
             
         } else {
             assertionFailure("Failed to deque cell")

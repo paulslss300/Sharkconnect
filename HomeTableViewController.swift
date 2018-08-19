@@ -131,9 +131,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
                 cell.cellImage.image = post.postImage
                 cell.cellIdentifier?.text = post.clubIdentifier
                 if let postDa = post.postDa {
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                    cell.cellDate.text = dateFormatter.string(from: postDa)
+                    cell.cellDate.text = postDa
                 } else {
                     cell.cellDate.isHidden = true
                 }
@@ -161,9 +159,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
                 cell.cellPostedImage.reloadData()
                 cell.cellIdentifier?.text = post.clubIdentifier
                 if let postDa = post.postDa {
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                    cell.cellDate.text = dateFormatter.string(from: postDa)
+                    cell.cellDate.text = postDa
                 } else {
                     cell.cellDate.isHidden = true
                 }
@@ -190,9 +186,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
                 cell.cellImage.image = post.postImage
                 cell.cellIdentifier?.text = post.clubIdentifier
                 if let postDa = post.postDa {
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                    cell.cellDate.text = dateFormatter.string(from: postDa)
+                    cell.cellDate.text = postDa
                 } else {
                     cell.cellDate.isHidden = true
                 }
@@ -207,26 +201,24 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             
             if let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath) as? HomeTableViewCell {
                 
-                    // allowing action when label (over the cellImage) is tapped
-                    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
-                    cell.labelOverImage.isUserInteractionEnabled = true
-                    cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
-                
-                    // Configure the cell...
-                    cell.labelOverImage?.text = post.clubIdentifier
-                    cell.cellTitle?.text = post.postTi
-                    cell.cellDescription?.text = post.postDe
-                    cell.cellImage.image = post.postImage
-                    cell.imageList = post.postedImage
-                    cell.cellPostedImage.reloadData()
-                    cell.cellIdentifier?.text = post.clubIdentifier
-                    if let postDa = post.postDa {
-                        let dateFormatter = DateFormatter()
-                        dateFormatter.dateFormat = "yyyy-MM-dd"
-                        cell.cellDate.text = dateFormatter.string(from: postDa)
-                    } else {
-                        cell.cellDate.isHidden = true
-                    }
+                // allowing action when label (over the cellImage) is tapped
+                let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewImage(tapGestureRecognizer:)))
+                cell.labelOverImage.isUserInteractionEnabled = true
+                cell.labelOverImage.addGestureRecognizer(tapGestureRecognizer)
+            
+                // Configure the cell...
+                cell.labelOverImage?.text = post.clubIdentifier
+                cell.cellTitle?.text = post.postTi
+                cell.cellDescription?.text = post.postDe
+                cell.cellImage.image = post.postImage
+                cell.imageList = post.postedImage
+                cell.cellPostedImage.reloadData()
+                cell.cellIdentifier?.text = post.clubIdentifier
+                if let postDa = post.postDa {
+                    cell.cellDate.text = postDa
+                } else {
+                    cell.cellDate.isHidden = true
+                }
                 
                 return cell
                 

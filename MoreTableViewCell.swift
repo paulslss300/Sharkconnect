@@ -21,6 +21,6 @@ class MoreTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    @IBOutlet weak var dot: UIImageView!
     @IBOutlet weak var noteContent: UITextView!
+    @IBOutlet weak var noteDate: UITextField!
 }

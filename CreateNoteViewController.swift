@@ -11,24 +11,22 @@ import UIKit
 class CreateNoteViewController: UIViewController {
 
     @IBOutlet weak var noteContent: UITextView!
-    
-    @IBOutlet weak var noteSwitchOutlet: UISwitch!
+    @IBOutlet weak var dateField: UITextField!
     
     var selectedNote: Note? = nil
+    var tempDate: String = ""
+    
+    let picker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createDatePicker()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         noteContent.text = selectedNote?.noteDe
-        
-        if selectedNote?.isHomework == true {
-            noteSwitchOutlet.isOn = true
-        } else {
-            noteSwitchOutlet.isOn = false
-        }
+        dateField.text = selectedNote?.noteDa
     }
     
     override func viewWillDisappear(_ _animated : Bool) {
@@ -67,21 +65,45 @@ class CreateNoteViewController: UIViewController {
     @IBAction func saveNote(_ sender: Any) {
         if !noteContent.text.trimmingCharacters(in: .whitespaces).isEmpty {
             selectedNote?.noteDe = noteContent.text
+            selectedNote?.noteDa = tempDate
             self.view.endEditing(true)
         } else {
             deleteNote(self)
             _ = navigationController?.popViewController(animated: true)
         }
-        
     }
     
-    @IBAction func classifyNoteSwitch(_ sender: UISwitch) {
-        if sender.isOn == true {
-            selectedNote?.isHomework = true
-        } else {
-            selectedNote?.isHomework = false
-        }
+    func createDatePicker(){
+        //toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        //done button for the toolbar
+        let done = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([done], animated: false)
+        
+        dateField.inputAccessoryView = toolbar
+        dateField.inputView = picker
+        
+        //format picker for date
+        picker.datePickerMode = .date
     }
+    
+    @objc func donePressed(){
+        //format date
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        
+        let dateString = formatter.string(from: picker.date)
+        
+        formatter.dateFormat = "yyyy-MM-dd"
+        tempDate = formatter.string(from: picker.date)
+        
+        dateField.text = "\(dateString)"
+        self.view.endEditing(true)
+    }
+
     
     /*
     // MARK: - Navigation

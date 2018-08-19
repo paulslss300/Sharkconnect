@@ -13,7 +13,7 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     
     let picker = UIDatePicker()
     
-    var actualDatePicked: Date? = nil
+    var actualDatePicked: String? = nil
     
     var imagesInPost = [UIImage]()
     
@@ -32,7 +32,7 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
         let post1 = Post(postTi: postTitle.text!, postDe: postDescription.text!, clubIdentifier: userId, postImage: postImage, postDa: actualDatePicked, postedImage: imagesInPost)
         Post.posts.insert(post1, at: 0)
         
-       performSegue(withIdentifier: "unwindToTabBar", sender: self)
+        _ = navigationController?.popViewController(animated: true)
     }
     
     @IBOutlet weak var postTitle: UITextField!
@@ -142,10 +142,11 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
         
         let dateString = formatter.string(from: picker.date)
         
+        formatter.dateFormat = "yyyy-MM-dd"
+        actualDatePicked = formatter.string(from: picker.date)
+
         dateField.text = "\(dateString)"
         self.view.endEditing(true)
-        
-        actualDatePicked = picker.date
     }
     
     override func didReceiveMemoryWarning() {

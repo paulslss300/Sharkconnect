@@ -27,12 +27,12 @@ var noteList = [Note]()
 class Note {
     var noteDe: String
     var timeCreated: String
-    var isHomework: Bool
+    var noteDa: String? = nil
     
-    init(noteDe: String, timeCreated: String, isHomework: Bool) {
+    init(noteDe: String, timeCreated: String, noteDa: String?) {
         self.noteDe = noteDe
         self.timeCreated = timeCreated
-        self.isHomework = isHomework
+        self.noteDa = noteDa
     }
 }
 
@@ -41,11 +41,11 @@ class Post {
     var postDe: String
     var clubIdentifier: String
     var postImage: UIImage? = nil
-    var postDa: Date? = nil
+    var postDa: String? = nil
     var postedImage = [UIImage]()
     static var posts = [Post]()
     
-    init(postTi: String, postDe: String, clubIdentifier: String, postImage: UIImage, postDa: Date?, postedImage: [UIImage]) {
+    init(postTi: String, postDe: String, clubIdentifier: String, postImage: UIImage, postDa: String?, postedImage: [UIImage]) {
         self.postTi = postTi
         self.postDe = postDe
         self.clubIdentifier = clubIdentifier

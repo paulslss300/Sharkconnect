@@ -64,6 +64,8 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
         
         // set cover image
         loggedInClub?.ClubCellCoverImage = myClubCoverView.image
+        
+        _ = navigationController?.popViewController(animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
