@@ -22,6 +22,11 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     var finalMonthIndex: String = ""
     var result: String = ""
     var datePicked: String = ""
+    var displayedPosts = [Post]()
+    var displayedNotes = [Note]()
+    var selectedPost: Post? = nil
+    var selectedNote: Note? = nil
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +71,7 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         displayedPosts.removeAll()
+        displayedNotes.removeAll()
     }
 
     
@@ -123,6 +129,7 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         displayedPosts = []
+        displayedNotes = []
         
         let date = collectionView.cellForItem(at: indexPath)
         
@@ -139,6 +146,14 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
                     displayedPosts += [post]
                 }
             }
+            
+            
+            for note in noteList {
+                if datePicked == note.noteDa! {
+                    displayedNotes += [note]
+                }
+            }
+            
         }
         calendarTable.reloadData()
     }
@@ -211,17 +226,42 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
                 }
             }
         }
-        return cell
         
+        for checkCell in [cell] as [CalendarCVCell] {
+            for note in noteList {
+                if note.noteDa != nil && checkCell.number.text! != "" {
+                    if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == note.noteDa! {
+                        checkCell.image.isHidden = false
+                    }
+                }
+            }
+        }
+        
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            let post = displayedPosts[indexPath.row]
+            selectedPost = post
+            performSegue(withIdentifier: "showpostthroughcalendar", sender: self)
+        } else {
+            let note = displayedNotes[indexPath.row]
+            selectedNote = note
+            performSegue(withIdentifier: "shownotethroughcalendar", sender: self)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return displayedPosts.count
+        if section == 0 {
+            return displayedPosts.count
+        } else {
+            return displayedNotes.count
+        }
     }
     
     /*
@@ -234,27 +274,38 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CalendarTVCell = tableView.dequeueReusableCell(withIdentifier: "CalendarTable", for: indexPath) as! CalendarTVCell
+        if indexPath.section == 0 {
+            let cell: CalendarTVCell = tableView.dequeueReusableCell(withIdentifier: "CalendarTable", for: indexPath) as! CalendarTVCell
+            
+            let postsToDisplay = displayedPosts[indexPath.row]
+            cell.clubName.text = postsToDisplay.clubIdentifier
+            cell.postDescription.text = postsToDisplay.postTi
+            
+            return cell
+        }
         
-        let postsToDisplay = displayedPosts[indexPath.row]
+        let cell: CalendarTVCellForNotes = tableView.dequeueReusableCell(withIdentifier: "CalendarTableForNotes", for: indexPath) as! CalendarTVCellForNotes
         
-        cell.clubName?.text = postsToDisplay.clubIdentifier
-        cell.postDescription?.text = postsToDisplay.postTi
+        let notesToDisplay = displayedNotes[indexPath.row]
+        cell.noteContent.text = notesToDisplay.noteDe
         
         return cell
     }
     
     
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        if let destinationViewController = segue.destination as? ViewPostViewCellViewController {
+            destinationViewController.selectedPost = selectedPost
+        } else if let destinationViewController = segue.destination as? CreateNoteViewController {
+            destinationViewController.selectedNote = selectedNote
+        }
      }
-     */
+    
     
 }
 

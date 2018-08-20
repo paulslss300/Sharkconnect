@@ -21,7 +21,6 @@ var subscribedPosts = [Post]()
 
 // 37 dates
 var selectedMonth = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
-var displayedPosts = [Post]()
 var noteList = [Note]()
 
 class Note {

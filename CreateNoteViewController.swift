@@ -14,7 +14,7 @@ class CreateNoteViewController: UIViewController {
     @IBOutlet weak var dateField: UITextField!
     
     var selectedNote: Note? = nil
-    var tempDate: String = ""
+    lazy var tempDate: String = self.selectedNote!.noteDa!
     
     let picker = UIDatePicker()
     

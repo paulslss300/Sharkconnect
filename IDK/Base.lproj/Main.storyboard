@@ -137,7 +137,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a titlte" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OHj-IS-Fsv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OHj-IS-Fsv">
                                 <rect key="frame" x="16" y="104" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -612,6 +612,33 @@
                                                     <outlet property="postDescription" destination="Wxw-qi-M2M" id="zoN-vx-T54"/>
                                                 </connections>
                                             </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CalendarTableForNotes" id="KTJ-Gm-hZR" customClass="CalendarTVCellForNotes" customModule="IDK" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KTJ-Gm-hZR" id="66j-Ms-nIJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNs-B1-vNd">
+                                                            <rect key="frame" x="15" y="11" width="352" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="352" id="cxy-IN-uKH"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="nNs-B1-vNd" firstAttribute="top" secondItem="66j-Ms-nIJ" secondAttribute="topMargin" constant="3" id="1Vh-ED-7uz"/>
+                                                        <constraint firstItem="nNs-B1-vNd" firstAttribute="leading" secondItem="66j-Ms-nIJ" secondAttribute="leadingMargin" constant="7" id="mdm-58-x6R"/>
+                                                        <constraint firstItem="nNs-B1-vNd" firstAttribute="centerY" secondItem="66j-Ms-nIJ" secondAttribute="centerY" id="rMj-cy-HzL"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="noteContent" destination="nNs-B1-vNd" id="7vw-9i-3qu"/>
+                                                </connections>
+                                            </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                 </subviews>
@@ -649,6 +676,8 @@
                         <outlet property="calendarTable" destination="vJQ-ud-F3r" id="JrI-zX-fkD"/>
                         <outlet property="calendarView" destination="bBh-xe-gbg" id="hkC-KU-Rq4"/>
                         <outlet property="displayText" destination="aqj-ON-8g4" id="svD-8A-Jl2"/>
+                        <segue destination="dsp-XH-4Zj" kind="show" identifier="showpostthroughcalendar" id="jaF-ak-0tM"/>
+                        <segue destination="iQd-zB-Y1W" kind="show" identifier="shownotethroughcalendar" id="pId-YO-Ogt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CNq-n5-vaf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -659,7 +688,7 @@
                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                 </collectionViewFlowLayout>
             </objects>
-            <point key="canvasLocation" x="4033" y="1137"/>
+            <point key="canvasLocation" x="4032.8000000000002" y="1136.5817091454273"/>
         </scene>
         <!--Edit Club Settings-->
         <scene sceneID="s18-kL-PYx">
@@ -2151,7 +2180,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xUY-me-N2a">
+                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xUY-me-N2a">
                                                     <rect key="frame" x="263" y="94" width="97" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
@@ -2405,11 +2434,12 @@
         <image name="usericongoodsize" width="22" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="AjU-YC-aKN"/>
         <segue reference="NJP-DE-U0P"/>
         <segue reference="6m8-vh-SW8"/>
         <segue reference="Rwv-9S-APn"/>
-        <segue reference="070-Ad-QMa"/>
-        <segue reference="yXH-D6-ug6"/>
-        <segue reference="AjU-YC-aKN"/>
+        <segue reference="pId-YO-Ogt"/>
+        <segue reference="jaF-ak-0tM"/>
+        <segue reference="cIC-cy-jsf"/>
     </inferredMetricsTieBreakers>
 </document>
