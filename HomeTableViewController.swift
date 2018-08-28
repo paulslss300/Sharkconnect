@@ -13,30 +13,46 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var displayPost: UISegmentedControl!
-
+    
+    @IBOutlet weak var createPostButton: UIBarButtonItem!
+    
     var selectedPost: Post? = nil
     
     var selectedClub: Club? = nil
     
-    var displayAllClubs: Bool = true
+    var displayAllClubs: Bool = false
+    
+    var relevantPosts = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate  = self
         tableView.dataSource = self
+        
+        if userId == "studentRandomNumber10382" {
+            createPostButton.isEnabled = false
+            createPostButton.tintColor = .clear
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let today = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let result = formatter.string(from: today)
+        
+        relevantPosts = subscribedPosts.filter({$0.postDa! >= result})
+        
         tableView.reloadData()
     }
 
     @IBAction func indexChanged(_ sender: Any) {
         switch displayPost.selectedSegmentIndex
         {
-        case 0: displayAllClubs = true
+        case 1: displayAllClubs = true
             
-        case 1: displayAllClubs = false
+        case 0: displayAllClubs = false
             
         default:
             break
@@ -60,7 +76,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         if displayAllClubs {
             return Post.posts.count
         } else {
-            return subscribedPosts.count
+            return relevantPosts.count
         }
         
     }
@@ -70,7 +86,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         var post = Post.posts[indexPath.row]
         
         if !displayAllClubs {
-            post = subscribedPosts[indexPath.row]
+            post = relevantPosts[indexPath.row]
         }
         
         if post.postedImage.isEmpty && post.postDe == "" {
@@ -89,7 +105,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         var post = Post.posts[indexPath.row]
         
         if !displayAllClubs {
-            post = subscribedPosts[indexPath.row]
+            post = relevantPosts[indexPath.row]
         }
 
         selectedPost = post
@@ -113,7 +129,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         var post = Post.posts[indexPath.row]
         
         if !displayAllClubs {
-            post = subscribedPosts[indexPath.row]
+            post = relevantPosts[indexPath.row]
         }
         
         if post.postedImage.isEmpty && post.postDe == "" {

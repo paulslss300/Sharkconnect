@@ -9,20 +9,20 @@
 import UIKit
 
 class FirstViewController: UIViewController {
+    
+    var selectedSchool: School? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.isHidden = true
-        tabBarController?.tabBar.isHidden = true
-        
         studentLogin.layer.cornerRadius = 10.0
         clubLogin.layer.cornerRadius = 10.0
-        // Do any additional setup after loading the view, typically from a nib.
+        schoolName.text = selectedSchool?.SchoolNa
     }
 
     @IBOutlet weak var clubLogin: UIButton!
     @IBOutlet weak var studentLogin: UIButton!
+    @IBOutlet weak var schoolName: UILabel!
     
     @IBAction func unwindToFirst(segue: UIStoryboardSegue) {
         // This is the target when performing an unwind segue all the way back here as a result of logout

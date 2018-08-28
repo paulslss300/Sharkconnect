@@ -130,6 +130,7 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
             }
 
             if noDuplicate {
+                
                 loggedInClub.subscribedClubs += [selectedClub]
                 for post in Post.posts{
                     if post.clubIdentifier == selectedClub.ClubNa {
@@ -160,6 +161,7 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
             }
             
             if noDuplicate {
+
                 loggedInStudent.subscribedClubs += [selectedClub]
                 for post in Post.posts{
                     if post.clubIdentifier == selectedClub.ClubNa {

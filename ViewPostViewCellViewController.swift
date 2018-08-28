@@ -62,6 +62,32 @@ class ViewPostViewCellViewController: UIViewController, UICollectionViewDataSour
         return (selectedPost.postedImage.count)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let selectedPost = selectedPost else {
+            return
+        }
+        
+        let image = (selectedPost.postedImage)[indexPath.row]
+        
+        let newImageView = UIImageView(image: image)
+        newImageView.frame = UIScreen.main.bounds
+        newImageView.backgroundColor = .black
+        newImageView.contentMode = .scaleAspectFit
+        newImageView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
+        newImageView.addGestureRecognizer(tap)
+        self.view.addSubview(newImageView)
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
+        self.navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+        sender.view?.removeFromSuperview()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageInPostAtViewPostVC", for: indexPath) as? PostedImageCVCellAtViewPostVC {
             
@@ -72,6 +98,8 @@ class ViewPostViewCellViewController: UIViewController, UICollectionViewDataSour
             let image = (selectedPost.postedImage)[indexPath.row]
         
             cell.postedImage.image = image
+            
+            
         
             return cell
             

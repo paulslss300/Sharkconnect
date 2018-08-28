@@ -10,6 +10,7 @@ import UIKit
 
 var clubs = [Club]()
 var students = [Student]()
+var schools = [School]()
 var loggedInAsClub: Bool = false
 
 var userId: String = ""
@@ -22,6 +23,22 @@ var subscribedPosts = [Post]()
 // 37 dates
 var selectedMonth = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 var noteList = [Note]()
+
+class School {
+    var SchoolNa: String
+    var SchoolPa: String
+    var SchoolDe: String
+    var SchoolImage: UIImage
+    var Clubs = [Club]()
+    var Students = [Student]()
+    
+    init(SchoolNa: String, SchoolPa: String, SchoolDe: String, SchoolImage: UIImage) {
+        self.SchoolNa = SchoolNa
+        self.SchoolDe = SchoolDe
+        self.SchoolPa = SchoolPa
+        self.SchoolImage = SchoolImage
+    }
+}
 
 class Note {
     var noteDe: String
