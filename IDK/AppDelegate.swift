@@ -16,9 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // this is to populate the student array
-        //without this, feature won't work
-        let firstStudent = Student.init(StudentNa: "Bob", StudentPa: "574739202833")
+        let firstStudent = Student.init(StudentNa: "bob", StudentPa: "1")
         students += [firstStudent]
 
         // Load the sample data.

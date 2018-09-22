@@ -14,7 +14,7 @@ class CreateNoteViewController: UIViewController {
     @IBOutlet weak var dateField: UITextField!
     
     var selectedNote: Note? = nil
-    lazy var tempDate: String = self.selectedNote!.noteDa!
+    var tempDate: String = ""
     
     let picker = UIDatePicker()
     
@@ -65,7 +65,14 @@ class CreateNoteViewController: UIViewController {
     @IBAction func saveNote(_ sender: Any) {
         if !noteContent.text.trimmingCharacters(in: .whitespaces).isEmpty {
             selectedNote?.noteDe = noteContent.text
-            selectedNote?.noteDa = tempDate
+            guard let dateText = dateField.text else {
+                return
+            }
+            if dateText.isEmpty {
+                selectedNote?.noteDa = ""
+            } else {
+                selectedNote?.noteDa = tempDate
+            }
             self.view.endEditing(true)
         } else {
             deleteNote(self)
