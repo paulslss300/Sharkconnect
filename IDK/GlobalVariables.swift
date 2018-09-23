@@ -57,11 +57,11 @@ class Post {
     var postDe: String
     var clubIdentifier: String
     var postImage: UIImage? = nil
-    var postDa: String? = nil
+    var postDa: String = ""
     var postedImage = [UIImage]()
     static var posts = [Post]()
     
-    init(postTi: String, postDe: String, clubIdentifier: String, postImage: UIImage, postDa: String?, postedImage: [UIImage]) {
+    init(postTi: String, postDe: String, clubIdentifier: String, postImage: UIImage, postDa: String, postedImage: [UIImage]) {
         self.postTi = postTi
         self.postDe = postDe
         self.clubIdentifier = clubIdentifier

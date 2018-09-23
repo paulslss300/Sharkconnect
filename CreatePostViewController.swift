@@ -13,7 +13,7 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     
     let picker = UIDatePicker()
     
-    var actualDatePicked: String? = nil
+    var actualDatePicked: String = ""
     
     var imagesInPost = [UIImage]()
     

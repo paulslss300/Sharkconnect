@@ -142,7 +142,7 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             datePicked = result.substring(to: indexOfDatePicked) + checkDate
             
             for post in subscribedPosts {
-                if datePicked == post.postDa! {
+                if datePicked == post.postDa {
                     displayedPosts += [post]
                 }
             }
@@ -217,10 +217,10 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         for checkCell in [cell] as [CalendarCVCell] {
             for checkPost in subscribedPosts {
                 // get the date value for NSDate object
-                if checkPost.postDa != nil && checkCell.number.text! != "" {
-                    if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == checkPost.postDa! && checkPost.clubIdentifier == "School" {
+                if checkPost.postDa != "" && checkCell.number.text! != "" {
+                    if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == checkPost.postDa && checkPost.clubIdentifier == "School" {
                         checkCell.image2.isHidden = false
-                    } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == checkPost.postDa! {
+                    } else if displayText.text! + "-" + String(format: "%02d", Int(checkCell.number.text!)!) == checkPost.postDa {
                         checkCell.image.isHidden = false
                     }
                 }

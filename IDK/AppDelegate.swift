@@ -78,16 +78,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func loadSamplePosts() {
         
-        let photo1 = UIImage(named: "dramaclub")
         let photo2 = UIImage(named: "interactclub")
         let photo3 = UIImage(named: "studentcouncil")
         let photo4 = UIImage(named: "artclub")
         let photo5 = UIImage(named: "stemclub")
         let photo6 = UIImage(named: "mathclub")
         let photo13 = UIImage(named: "school")
-        
-        let samplePost1 = Post.init(postTi: "Notice", postDe: "Hey crew!!!! We decided to EXTEND crew applications for R.E.D until Monday! There are a few people who want to hand it in Monday so we decided to extend it until Monday for everyone.", clubIdentifier: "Drama Club", postImage: photo1!, postDa: "2018-08-28", postedImage: [#imageLiteral(resourceName: "image1")])
-        Post.posts += [samplePost1]
         
         let samplePost2 = Post.init(postTi: "Update", postDe: "Cayley, Pascal and Gauss math contests are on Tuesday. Talk to Mr.Lin if you want to participate", clubIdentifier: "Math Club", postImage: photo6!, postDa: "2018-08-02", postedImage: [#imageLiteral(resourceName: "image2")])
         let samplePost25 = Post.init(postTi: "Notice", postDe: "Hey guys! There will be no general meeting tomorrow. More updates on our projects will be coming up next week!", clubIdentifier: "Math Club", postImage: photo6!, postDa: "2018-08-30", postedImage: [#imageLiteral(resourceName: "image3")])

@@ -14,12 +14,16 @@ class CreateNoteViewController: UIViewController {
     @IBOutlet weak var dateField: UITextField!
     
     var selectedNote: Note? = nil
+    
     var tempDate: String = ""
     
     let picker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let postDate = selectedNote?.noteDa {
+            tempDate = postDate
+        }
         createDatePicker()
     }
     

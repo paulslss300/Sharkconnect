@@ -82,10 +82,22 @@ class MoreViewController: UIViewController,UICollectionViewDataSource, UICollect
         selectedNote = note
         performSegue(withIdentifier: "shownote", sender: self)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return noteList.count
+        var numberOfItemsInSection: Int = 0
+        if noteList.count > 0 {
+            numberOfItemsInSection = noteList.count
+            noteCollectionView.backgroundView = nil
+        } else {
+            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: noteCollectionView.bounds.size.width, height: noteCollectionView.bounds.size.height))
+            noDataLabel.text = "No notes to be shown"
+            noDataLabel.textColor = UIColor.gray
+            noDataLabel.textAlignment = .center
+            noteCollectionView.backgroundView = noDataLabel
+        }
+        return numberOfItemsInSection
     }
+
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "notecells", for: indexPath) as? MoreCollectionViewCell {

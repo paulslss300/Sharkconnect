@@ -12,6 +12,8 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
     
     var selectedClub: Club? = nil
     
+    @IBOutlet weak var studentName: UILabel!
+    
     // IMPORTANT FEATURE ----- LOG OUT BUTTON
     @IBAction func logOutButton(_ sender: Any) {
         userId = ""
@@ -33,12 +35,11 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
         if userId == "studentRandomNumber10382" {
             clubSettingsClub.isHidden = true
         }
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if loggedInAsClub {
+            studentName.text = loggedInClub?.ClubNa
+        } else {
+            studentName.text = loggedInStudent?.StudentNa
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

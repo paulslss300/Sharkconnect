@@ -22,9 +22,8 @@ class ViewPostViewCellViewController: UIViewController, UICollectionViewDataSour
             return
         }
         
-        if let postDa = selectedPost.postDa {
-            postDate.text = postDa
-        } else {
+        postDate.text = selectedPost.postDa
+        if selectedPost.postDa == "" {
             postDate.isHidden = true
         }
 

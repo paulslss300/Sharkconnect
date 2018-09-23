@@ -172,10 +172,28 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
             }
         }
     }
-
+    /*
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
+    }
+     */
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        var numOfSections: Int = 0
+        if recentPosts.count > 0 {
+            tableView.separatorStyle = .singleLine
+            numOfSections = 1
+            tableView.backgroundView = nil
+        } else {
+            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            noDataLabel.text = "No posts to be shown"
+            noDataLabel.textColor = UIColor.gray
+            noDataLabel.textAlignment = .center
+            tableView.backgroundView = noDataLabel
+            tableView.separatorStyle = .none
+        }
+        return numOfSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -214,12 +232,10 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
             if let cell: ClubInfoVCTableViewCellWithoutBoth = tableView.dequeueReusableCell(withIdentifier: "CellWithoutBoth2", for: indexPath) as? ClubInfoVCTableViewCellWithoutBoth {
                 cell.cellTitle?.text = post.postTi
                 
-                if let postDa = post.postDa {
-                    cell.cellDate.text = postDa
-                } else {
+                cell.cellDate.text = post.postDa
+                if post.postDa == "" {
                     cell.cellDate.isHidden = true
                 }
-                
                 return cell
 
             } else {
@@ -234,9 +250,8 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
                 cell.imageList = post.postedImage
                 cell.cellPostedImage.reloadData()
                 
-                if let postDa = post.postDa {
-                    cell.cellDate.text = postDa
-                } else {
+                cell.cellDate.text = post.postDa
+                if post.postDa == "" {
                     cell.cellDate.isHidden = true
                 }
                 return cell
@@ -252,9 +267,8 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
                 cell.cellTitle?.text = post.postTi
                 cell.cellDescription?.text = post.postDe
                 
-                if let postDa = post.postDa {
-                    cell.cellDate.text = postDa
-                } else {
+                cell.cellDate.text = post.postDa
+                if post.postDa == "" {
                     cell.cellDate.isHidden = true
                 }
                 
@@ -274,11 +288,18 @@ class ClubInformationViewController: UIViewController,UITableViewDataSource, UIT
                 cell.imageList = post.postedImage
                 cell.postImage.reloadData()
                 
+                cell.postDate.text = post.postDa
+                if post.postDa == "" {
+                    cell.postDate.isHidden = true
+                }
+                
+                /*
                 if let postDa = post.postDa {
                     cell.postDate.text = postDa
                 } else {
                     cell.postDate.isHidden = true
                 }
+                 */
                 
                 return cell
                 

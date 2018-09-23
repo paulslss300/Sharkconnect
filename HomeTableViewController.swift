@@ -42,7 +42,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         formatter.dateFormat = "yyyy-MM-dd"
         let result = formatter.string(from: today)
         
-        relevantPosts = subscribedPosts.filter({$0.postDa! >= result})
+        relevantPosts = subscribedPosts.filter({$0.postDa >= result})
         
         tableView.reloadData()
     }
@@ -67,11 +67,24 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     }
 
     // MARK: - Table view data source
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        var numOfSections: Int = 0
+        if displayAllClubs && Post.posts.count > 0 || !displayAllClubs && relevantPosts.count > 0 {
+            tableView.separatorStyle = .singleLine
+            numOfSections = 1
+            tableView.backgroundView = nil
+        } else {
+            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            noDataLabel.text = "No posts to be shown"
+            noDataLabel.textColor = UIColor.gray
+            noDataLabel.textAlignment = .center
+            tableView.backgroundView = noDataLabel
+            tableView.separatorStyle = .none
+        }
+        return numOfSections
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if displayAllClubs {
             return Post.posts.count
@@ -146,9 +159,8 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
                 cell.cellTitle?.text = post.postTi
                 cell.cellImage.image = post.postImage
                 cell.cellIdentifier?.text = post.clubIdentifier
-                if let postDa = post.postDa {
-                    cell.cellDate.text = postDa
-                } else {
+                cell.cellDate.text = post.postDa
+                if post.postDa == "" {
                     cell.cellDate.isHidden = true
                 }
                 return cell
@@ -174,9 +186,8 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
                 cell.imageList = post.postedImage
                 cell.cellPostedImage.reloadData()
                 cell.cellIdentifier?.text = post.clubIdentifier
-                if let postDa = post.postDa {
-                    cell.cellDate.text = postDa
-                } else {
+                cell.cellDate.text = post.postDa
+                if post.postDa == "" {
                     cell.cellDate.isHidden = true
                 }
                 return cell
@@ -200,12 +211,11 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
                 cell.cellTitle?.text = post.postTi
                 cell.cellDescription?.text = post.postDe
                 cell.cellImage.image = post.postImage
-                cell.cellIdentifier?.text = post.clubIdentifier
-                if let postDa = post.postDa {
-                    cell.cellDate.text = postDa
-                } else {
+                cell.cellDate.text = post.postDa
+                if post.postDa == "" {
                     cell.cellDate.isHidden = true
                 }
+
                 return cell
                 
             } else {
@@ -230,11 +240,18 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
                 cell.imageList = post.postedImage
                 cell.cellPostedImage.reloadData()
                 cell.cellIdentifier?.text = post.clubIdentifier
-                if let postDa = post.postDa {
-                    cell.cellDate.text = postDa
-                } else {
+                cell.cellDate.text = post.postDa
+                if post.postDa == "" {
                     cell.cellDate.isHidden = true
                 }
+
+                /*
+                 if let postDa = post.postDa {
+                 cell.cellDate.text = postDa
+                 } else {
+                 cell.cellDate.isHidden = true
+                 }
+                 */
                 
                 return cell
                 
