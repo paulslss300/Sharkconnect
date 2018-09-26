@@ -24,6 +24,8 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
     
     var relevantPosts = [Post]()
     
+    var refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate  = self
@@ -33,6 +35,20 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
             createPostButton.isEnabled = false
             createPostButton.tintColor = .clear
         }
+        
+        let nav = self.navigationController?.navigationBar
+        nav?.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 120/225.0, green: 143/225.0, blue: 170/225.0, alpha: 1)]
+        
+        // Pull to update
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh(sender: )), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    @objc func refresh(sender: AnyObject) {
+        // This should be code to fetch data from the database
+        tableView.reloadData()
+        refreshControl.endRefreshing()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,10 +57,8 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let result = formatter.string(from: today)
-        
         relevantPosts = subscribedPosts.filter({$0.postDa >= result})
         
-        tableView.reloadData()
     }
 
     @IBAction func indexChanged(_ sender: Any) {

@@ -36,6 +36,9 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         calendarView.delegate  = self
         calendarView.dataSource = self
         
+        let nav = self.navigationController?.navigationBar
+        nav?.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 120/225.0, green: 143/225.0, blue: 170/225.0, alpha: 1)]
+        
         let itemSize = UIScreen.main.bounds.width/7 - 7
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsetsMake(2, 3, 1, 2)
@@ -263,15 +266,6 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             return displayedNotes.count
         }
     }
-    
-    /*
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     //let club = subscribedClubs[indexPath.row]
-     //selectedClub = club
-     //performSegue(withIdentifier: "showclubinformationthroughuser", sender: self)
-     }
-     */
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {

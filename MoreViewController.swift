@@ -26,6 +26,9 @@ class MoreViewController: UIViewController,UICollectionViewDataSource, UICollect
         
         slideMenu.layer.shadowOpacity = 1
         slideMenu.layer.shadowRadius = 6
+        
+        let nav = self.navigationController?.navigationBar
+        nav?.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 120/225.0, green: 143/225.0, blue: 170/225.0, alpha: 1)]
     }
     
     override func viewWillAppear(_ animated: Bool) {

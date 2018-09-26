@@ -13,6 +13,7 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var loginUserName: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
     @IBOutlet weak var studentLoginLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         
@@ -75,8 +76,12 @@ class ThirdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        loginButton.layer.cornerRadius = loginButton.frame.height / 2
+        loginButton.layer.shadowOpacity = 0.6
+        loginButton.layer.shadowRadius = 6
+        loginButton.layer.shadowOffset = CGSize(width: 4, height: 2)
+        
+        studentLoginLabel.text = ""
     }
 
     override func didReceiveMemoryWarning() {

@@ -13,10 +13,16 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var LoginTextField: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
     @IBOutlet weak var clubLoginLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        loginButton.layer.cornerRadius = loginButton.frame.height / 2
+        loginButton.layer.shadowOpacity = 0.6
+        loginButton.layer.shadowRadius = 6
+        loginButton.layer.shadowOffset = CGSize(width: 4, height: 2)
+        
+        clubLoginLabel.text = ""
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {

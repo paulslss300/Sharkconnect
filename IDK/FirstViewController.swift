@@ -15,8 +15,17 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        studentLogin.layer.cornerRadius = 10.0
-        clubLogin.layer.cornerRadius = 10.0
+        studentLogin.layer.cornerRadius = studentLogin.frame.height / 2
+        studentLogin.layer.shadowOpacity = 0.6
+        studentLogin.layer.shadowRadius = 6
+        studentLogin.layer.shadowOffset = CGSize(width: 4, height: 2)
+        
+        clubLogin.layer.cornerRadius = clubLogin.frame.height / 2
+        clubLogin.layer.shadowOpacity = 0.6
+        clubLogin.layer.shadowRadius = 6
+        clubLogin.layer.shadowOffset = CGSize(width: 4, height: 2)
+
+        
         schoolName.text = selectedSchool?.SchoolNa
     }
 
