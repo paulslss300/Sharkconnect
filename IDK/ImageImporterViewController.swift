@@ -11,7 +11,6 @@ import UIKit
 class ImageImporterViewController: UIViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate{
 
     @IBOutlet weak var clubDescription: UITextView!
-    @IBOutlet weak var borderForDescription: UIView!
     
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var borderForAvatar: UIView!
@@ -99,7 +98,6 @@ class ImageImporterViewController: UIViewController,UINavigationControllerDelega
         myClubCoverView.layer.masksToBounds = true
         borderForCover.layer.cornerRadius = 30
         clubDescription.layer.cornerRadius = 30
-        borderForDescription.layer.cornerRadius = 30
 
         // Do any additional setup after loading the view.
     }

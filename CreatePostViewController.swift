@@ -28,17 +28,23 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
         guard let postImage = loggedInClub?.ClubCellImageName else {
             return
         }
-
-        let post1 = Post(postTi: postTitle.text!, postDe: postDescription.text!, clubIdentifier: userId, postImage: postImage, postDa: actualDatePicked, postedImage: imagesInPost)
-        Post.posts.insert(post1, at: 0)
+        guard let postTitle = postTitle.text else {
+            return
+        }
         
-        _ = navigationController?.popViewController(animated: true)
+        if !postDescription.text.trimmingCharacters(in: .whitespaces).isEmpty || !postTitle.trimmingCharacters(in: .whitespaces).isEmpty || !imagesInPost.isEmpty {
+            
+            let post1 = Post(postTi: postTitle, postDe: postDescription.text!, clubIdentifier: userId, postImage: postImage, postDa: actualDatePicked, postedImage: imagesInPost)
+            Post.posts.insert(post1, at: 0)
+            
+            _ = navigationController?.popViewController(animated: true)
+        }
+        
     }
     
     @IBOutlet weak var postTitle: UITextField!
     @IBOutlet weak var postDescription: UITextView!
     @IBOutlet weak var dateField: UITextField!
-    @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var postImageCV: UICollectionView!
     
     var settingPostImageButton = false
