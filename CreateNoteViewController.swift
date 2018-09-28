@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class CreateNoteViewController: UIViewController {
 
@@ -37,11 +38,7 @@ class CreateNoteViewController: UIViewController {
         super.viewWillDisappear(_animated)
         
         if self.isMovingFromParentViewController {
-            if noteContent.text.trimmingCharacters(in: .whitespaces).isEmpty {
-                deleteNote(self)
-            } else {
-                saveNote(self)
-            }
+            saveNote(self)
         }
     }
     
@@ -78,9 +75,20 @@ class CreateNoteViewController: UIViewController {
                 selectedNote?.noteDa = tempDate
             }
             self.view.endEditing(true)
+            saveNoteToLocal()
         } else {
             deleteNote(self)
+            saveNoteToLocal()
             _ = navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    private func saveNoteToLocal() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(noteList, toFile: Note.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Note successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save note...", log: OSLog.default, type: .error)
         }
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 var clubs = [Club]()
 var students = [Student]()
@@ -40,7 +41,7 @@ class School {
     }
 }
 
-class Note {
+class Note: NSObject, NSCoding {
     var noteDe: String
     var timeCreated: String
     var noteDa: String? = nil
@@ -50,6 +51,46 @@ class Note {
         self.timeCreated = timeCreated
         self.noteDa = noteDa
     }
+    
+    //MARK: NSCoding
+    func encode(with Coder: NSCoder) {
+        Coder.encode(noteDe, forKey: PropertyKey.noteDe)
+        Coder.encode(noteDa, forKey: PropertyKey.noteDa)
+        Coder.encode(timeCreated, forKey: PropertyKey.timeCreated)
+
+    }
+    
+    required convenience init?(coder Decoder: NSCoder) {
+        // The noteDe is required. If we cannot decode a name string, the initializer should fail.
+        guard let noteDe = Decoder.decodeObject(forKey: PropertyKey.noteDe) as? String else {
+            os_log("Unable to decode the noteDe for a Note object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        
+        guard let timeCreated = Decoder.decodeObject(forKey: PropertyKey.timeCreated) as? String else {
+            os_log("Unable to decode the timeCreated for a Note object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        
+        // Because noteDa is an optional property of Note, just use conditional cast.
+        let noteDa = Decoder.decodeObject(forKey: PropertyKey.noteDa) as? String
+        
+        // Must call designated initializer.
+        self.init(noteDe: noteDe, timeCreated: timeCreated, noteDa: noteDa!)
+        
+    }
+    
+    
+    //MARK: Archiving Paths
+    
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("notes")
+}
+
+struct PropertyKey {
+    static let noteDe = "noteDe"
+    static let noteDa = "noteDa"
+    static let timeCreated = "timeCreated"
 }
 
 class Post {

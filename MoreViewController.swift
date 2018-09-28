@@ -27,19 +27,28 @@ class MoreViewController: UIViewController,UICollectionViewDataSource, UICollect
         slideMenu.layer.shadowOpacity = 1
         slideMenu.layer.shadowRadius = 6
         
+        // set nav bar text color programmatically
         let nav = self.navigationController?.navigationBar
         nav?.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 120/225.0, green: 143/225.0, blue: 170/225.0, alpha: 1)]
+        
+        // load notes from local
+        if let savedNotes = loadNotes() {
+            noteList += savedNotes
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         noteCollectionView.reloadData()
-        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func loadNotes() -> [Note]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Note.ArchiveURL.path) as? [Note]
     }
     
     @IBAction func newNote(_ sender: Any) {
