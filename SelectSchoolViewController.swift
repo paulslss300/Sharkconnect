@@ -20,6 +20,125 @@ class SelectSchoolViewController: UIViewController, UITableViewDataSource, UITab
         schoolTable.delegate = self
         schoolTable.dataSource = self
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        //Load and login using stored username and password
+        
+        let keychain = KeychainSwift()
+        
+        guard let username = keychain.get("username") else {
+            return
+        }
+        
+        guard let password = keychain.get("password") else {
+            return
+        }
+        
+        guard let loggedInState = UserDefaults.standard.object(forKey: "loggedInState") as? Bool else {
+            return
+        }
+        
+        logIn(username: username, password: password, loggedInState: loggedInState)
+    }
+
+    
+    func logIn(username: String, password: String, loggedInState: Bool) {
+        
+        if loggedInState {
+            
+            ///////////////////////////CLUB LOGIN ROUTE//////////////////////////////
+            
+            var clubLoginSuccessful: Bool = false
+            
+            for clubAccount in clubs {
+                if username == clubAccount.ClubNa && password == clubAccount.ClubPa {
+                    clubLoginSuccessful = true
+                    loggedInClub = clubAccount
+                    userId = username
+                    break
+                } else {
+                    clubLoginSuccessful = false
+                }
+            }
+            
+            if clubLoginSuccessful {
+                
+                guard let loggedInClub = loggedInClub else {
+                    return
+                }
+                
+                // add school (only works once)
+                if (loggedInClub.subscribedClubs).isEmpty {
+                    for club in clubs {
+                        if club.ClubNa == "School" {
+                            loggedInClub.subscribedClubs += [club]
+                        }
+                    }
+                }
+                // add subscribed posts
+                for post in Post.posts {
+                    for club in (loggedInClub.subscribedClubs) {
+                        if post.clubIdentifier == club.ClubNa {
+                            subscribedPosts += [post]
+                        }
+                    }
+                }
+                performSegue(withIdentifier: "autoLogin", sender: self)
+                
+            }
+            
+            /////////////////////////////////////////////////////////////////////////
+            
+        } else {
+            
+            ///////////////////////////STUDENT LOGIN ROUTE///////////////////////////
+            
+            var loginSuccessful: Bool = false
+            
+            for studentAccount in students {
+                if username == studentAccount.StudentNa && password == studentAccount.StudentPa {
+                    loginSuccessful = true
+                    userId = "studentRandomNumber10382"
+                    loggedInStudent = studentAccount
+                    break
+                    
+                } else {
+                    loginSuccessful = false
+                }
+            }
+            
+            if loginSuccessful {
+                
+                guard let loggedInStudent = loggedInStudent else {
+                    return
+                }
+                
+                // add school (only works once)
+                if (loggedInStudent.subscribedClubs).isEmpty {
+                    for club in clubs {
+                        if club.ClubNa == "School" {
+                            loggedInStudent.subscribedClubs += [club]
+                        }
+                    }
+                }
+                // add subscribed posts
+                for post in Post.posts {
+                    for club in (loggedInStudent.subscribedClubs) {
+                        if post.clubIdentifier == club.ClubNa {
+                            subscribedPosts += [post]
+                        }
+                    }
+                }
+                performSegue(withIdentifier: "autoLogin", sender: self)
+                
+            }
+            
+            /////////////////////////////////////////////////////////////////////////
+
+        }
+
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

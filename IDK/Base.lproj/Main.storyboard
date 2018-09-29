@@ -201,6 +201,7 @@
                     <connections>
                         <outlet property="schoolTable" destination="DrR-Fe-7Al" id="RXC-fV-VQu"/>
                         <segue destination="9pv-A4-QxB" kind="show" identifier="schoolSelected" id="4kS-tS-fsu"/>
+                        <segue destination="FPj-r1-3Ew" kind="show" identifier="autoLogin" id="1sw-6R-who"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="neZ-BO-Qx8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -351,7 +352,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="loginButtonTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="4vg-dD-6AQ"/>
+                                    <action selector="logInButtonTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="eL9-vr-1xq"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Warning text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzv-ix-fDY">
@@ -379,6 +380,21 @@
                                     <segue destination="9pv-A4-QxB" kind="show" id="Rwv-9S-APn"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7zv-bT-whI">
+                                <rect key="frame" x="254" y="461" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="0.47058823529411764" green="0.5607843137254902" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="autoLogin:" destination="8rJ-Kc-sve" eventType="valueChanged" id="HAM-eU-p7k"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remember Login" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMl-pV-uns">
+                                <rect key="frame" x="135" y="466" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.2196078431372549" green="0.34509803921568627" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1700,6 +1716,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.8901960784313725" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pGF-v1-xTv">
+                                <rect key="frame" x="254" y="461" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="0.47058823529999999" green="0.56078431370000004" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="autoLogin:" destination="4gB-yS-MLt" eventType="valueChanged" id="lR9-lA-HYj"/>
+                                </connections>
+                            </switch>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sY6-Ro-yTP" userLabel="Underline">
                                 <rect key="frame" x="73" y="451" width="230" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1765,6 +1789,13 @@
                                 <rect key="frame" x="25" y="207" width="324" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="42"/>
+                                <color key="textColor" red="0.21960784310000001" green="0.34509803919999998" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remember Login" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2m-2Q-CoB">
+                                <rect key="frame" x="135" y="466" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.21960784310000001" green="0.34509803919999998" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2058,7 +2089,7 @@
                                         <rect key="frame" x="0.0" y="28" width="240" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cef-ng-lJW" id="I4e-lK-H6W">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Foc-EA-63b">
@@ -2151,11 +2182,11 @@
         <image name="searchperfect" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Rwv-9S-APn"/>
-        <segue reference="NJP-DE-U0P"/>
-        <segue reference="yXH-D6-ug6"/>
-        <segue reference="abM-ay-Kaf"/>
+        <segue reference="4kS-tS-fsu"/>
+        <segue reference="1sw-6R-who"/>
         <segue reference="pId-YO-Ogt"/>
+        <segue reference="Z2G-ff-YfG"/>
+        <segue reference="abM-ay-Kaf"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.21960784310000001" green="0.34509803919999998" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
 </document>

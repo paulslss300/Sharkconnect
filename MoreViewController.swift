@@ -33,7 +33,7 @@ class MoreViewController: UIViewController,UICollectionViewDataSource, UICollect
         
         // load notes from local
         if let savedNotes = loadNotes() {
-            noteList += savedNotes
+            noteList = savedNotes
         }
     }
     

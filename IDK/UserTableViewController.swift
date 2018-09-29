@@ -20,7 +20,16 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
         loggedInClub = nil
         loggedInStudent = nil
         subscribedPosts.removeAll()
-        performSegue(withIdentifier: "unwindToFirst", sender: self)
+        
+        //Delete stored username and password and loggedInState
+        let keychain = KeychainSwift()
+        keychain.delete("username")
+        keychain.delete("password")
+        UserDefaults.standard.removeObject(forKey: "loggedInState")
+        
+        dismiss(animated: true, completion: nil)
+ 
+        //performSegue(withIdentifier: "unwindToFirst", sender: self)
     }
     
     

@@ -15,22 +15,32 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var studentLoginLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     
+    var rememberLogin: Bool = false
+    
+    @IBAction func autoLogin(_ sender: UISwitch) {
+        if sender.isOn == true {
+            rememberLogin = true
+        } else {
+            rememberLogin = false
+        }
+    }
+    
     @IBAction func loginButtonTapped(_ sender: Any) {
         
         var loginSuccessful: Bool = false
         
-        guard let LoginTextField = loginUserName.text else {
+        guard let username = loginUserName.text else {
             studentLoginLabel.text = "Input Account Name"
             return
         }
         
-        guard let passwordTextField = loginPassword.text else {
+        guard let password = loginPassword.text else {
             studentLoginLabel.text = "Input Account Password"
             return
         }
         
         for studentAccount in students {
-            if LoginTextField == studentAccount.StudentNa && passwordTextField == studentAccount.StudentPa {
+            if username == studentAccount.StudentNa && password == studentAccount.StudentPa {
                 loginSuccessful = true
                 userId = "studentRandomNumber10382"
                 loggedInStudent = studentAccount
@@ -44,6 +54,15 @@ class ThirdViewController: UIViewController {
         if loginSuccessful {
             
             loggedInAsClub = false
+            
+            // Store username, password, loggedInState
+            if rememberLogin {
+                let keychain = KeychainSwift()
+                keychain.set(username, forKey: "username")
+                keychain.set(password, forKey: "password")
+                UserDefaults.standard.set(loggedInAsClub, forKey: "loggedInState")
+            }
+
             
             guard let loggedInStudent = loggedInStudent else {
                 return

@@ -15,6 +15,8 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var clubLoginLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     
+    var rememberLogin: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.layer.cornerRadius = loginButton.frame.height / 2
@@ -24,35 +26,50 @@ class SecondViewController: UIViewController {
         
         clubLoginLabel.text = ""
     }
+    
+    @IBAction func autoLogin(_ sender: UISwitch) {
+        if sender.isOn == true {
+            rememberLogin = true
+        } else {
+            rememberLogin = false
+        }
+    }
 
-    @IBAction func loginButtonTapped(_ sender: UIButton) {
+    @IBAction func logInButtonTapped(_ sender: UIButton) {
         
-        var clubLoginSuccessful: Bool = false
-        
-        guard let LoginTextField = LoginTextField.text else {
+        guard let username = LoginTextField.text else {
             clubLoginLabel.text = "Input Club Name"
             return
         }
         
-        guard let passwordTextField = loginPassword.text else {
+        guard let password = loginPassword.text else {
             clubLoginLabel.text = "Input Club Password"
             return
         }
         
+        var clubLoginSuccessful: Bool = false
+        
         for clubAccount in clubs {
-            if LoginTextField == clubAccount.ClubNa && passwordTextField == clubAccount.ClubPa {
+            if username == clubAccount.ClubNa && password == clubAccount.ClubPa {
                 clubLoginSuccessful = true
                 loggedInClub = clubAccount
-                userId = LoginTextField
+                userId = username
                 break
             } else {
                 clubLoginSuccessful = false
             }
         }
-
-
+        
         if clubLoginSuccessful {
             loggedInAsClub = true
+            
+            // Store username, password, loggedInState
+            if rememberLogin {
+                let keychain = KeychainSwift()
+                keychain.set(username, forKey: "username")
+                keychain.set(password, forKey: "password")
+                UserDefaults.standard.set(loggedInAsClub, forKey: "loggedInState")
+            }
             
             guard let loggedInClub = loggedInClub else {
                 return
@@ -79,7 +96,6 @@ class SecondViewController: UIViewController {
         } else {
             clubLoginLabel.text = "Please Check Your Inputs Are Correct!"
         }
-        
     }
 
 
