@@ -44,6 +44,7 @@
 		9874787D206AEB41005C0395 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9874787C206AEB41005C0395 /* GlobalVariables.swift */; };
 		987DB48C20C3A24600441E52 /* ClubIInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987DB48B20C3A24600441E52 /* ClubIInformationTableViewCell.swift */; };
 		9897B22C215F190A00AA1DA1 /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9897B22B215F190A00AA1DA1 /* KeychainSwiftDistrib.swift */; };
+		9897B23021601C2C00AA1DA1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9897B22F21601C2B00AA1DA1 /* TabBarViewController.swift */; };
 		989A49E321348BD500C1EE2B /* SelectSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989A49E221348BD500C1EE2B /* SelectSchoolViewController.swift */; };
 		989A49E5213492C900C1EE2B /* SelectSchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989A49E4213492C900C1EE2B /* SelectSchoolTableViewCell.swift */; };
 		98B534CC209EA55E001FA976 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B534CB209EA55E001FA976 /* MoreViewController.swift */; };
@@ -90,6 +91,7 @@
 		9874787C206AEB41005C0395 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		987DB48B20C3A24600441E52 /* ClubIInformationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClubIInformationTableViewCell.swift; path = ../ClubIInformationTableViewCell.swift; sourceTree = "<group>"; };
 		9897B22B215F190A00AA1DA1 /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = SOURCE_ROOT; };
+		9897B22F21601C2B00AA1DA1 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		989A49E221348BD500C1EE2B /* SelectSchoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectSchoolViewController.swift; path = ../SelectSchoolViewController.swift; sourceTree = "<group>"; };
 		989A49E4213492C900C1EE2B /* SelectSchoolTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSchoolTableViewCell.swift; sourceTree = "<group>"; };
 		98B534CB209EA55E001FA976 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreViewController.swift; path = ../MoreViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				3F2AD06B200EAA450053136F /* HomeTableViewController.swift */,
 				33EED5102030F54300FAFADB /* ImageImporterViewController.swift */,
 				986139BC20E85A8C006E736B /* ImageInPostCollectionViewCell.swift */,
+				9897B22F21601C2B00AA1DA1 /* TabBarViewController.swift */,
 				3F0B7BCE2005B474005BC1CC /* Info.plist */,
 				9897B22B215F190A00AA1DA1 /* KeychainSwiftDistrib.swift */,
 				3F0B7BCB2005B474005BC1CC /* LaunchScreen.storyboard */,
@@ -255,6 +258,7 @@
 				9897B22C215F190A00AA1DA1 /* KeychainSwiftDistrib.swift in Sources */,
 				3FC2FDBA200F00D40006D0DE /* HomeTableViewCell.swift in Sources */,
 				9861396D20CF60DF006E736B /* HomeTableViewCellWithoutDescription.swift in Sources */,
+				9897B23021601C2C00AA1DA1 /* TabBarViewController.swift in Sources */,
 				989A49E5213492C900C1EE2B /* SelectSchoolTableViewCell.swift in Sources */,
 				98B534CC209EA55E001FA976 /* MoreViewController.swift in Sources */,
 				9850558F212B464F00880874 /* CalendarTVCellForNotes.swift in Sources */,

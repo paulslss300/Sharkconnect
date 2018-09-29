@@ -20,6 +20,7 @@ class SelectSchoolViewController: UIViewController, UITableViewDataSource, UITab
         schoolTable.delegate = self
         schoolTable.dataSource = self
     }
+    /*
     
     override func viewDidAppear(_ animated: Bool) {
         
@@ -139,6 +140,8 @@ class SelectSchoolViewController: UIViewController, UITableViewDataSource, UITab
         }
 
     }
+ 
+     */
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -12,12 +12,13 @@ import os.log
 var clubs = [Club]()
 var students = [Student]()
 var schools = [School]()
-var loggedInAsClub: Bool = false
 
 var userId: String = ""
 
 var loggedInClub: Club? = nil
 var loggedInStudent: Student? = nil
+
+var loggedInAsClub: Bool = false
 
 var subscribedPosts = [Post]()
 
@@ -141,3 +142,152 @@ class Student {
         self.StudentPa = StudentPa
     }
 }
+
+func logIn(username: String, password: String, loggedInState: Bool) -> Bool {
+    
+    if loggedInState {
+        
+        ///////////////////////////CLUB LOGIN ROUTE//////////////////////////////
+        
+        var clubLoginSuccessful: Bool = false
+        
+        for clubAccount in clubs {
+            if username == clubAccount.ClubNa && password == clubAccount.ClubPa {
+                clubLoginSuccessful = true
+                loggedInClub = clubAccount
+                userId = username
+                break
+            } else {
+                clubLoginSuccessful = false
+            }
+        }
+        
+        if clubLoginSuccessful {
+            
+            guard let loggedInClub = loggedInClub else {
+                return false
+            }
+            
+            // add school (only works once)
+            if (loggedInClub.subscribedClubs).isEmpty {
+                for club in clubs {
+                    if club.ClubNa == "School" {
+                        loggedInClub.subscribedClubs += [club]
+                    }
+                }
+            }
+            // add subscribed posts
+            for post in Post.posts {
+                for club in (loggedInClub.subscribedClubs) {
+                    if post.clubIdentifier == club.ClubNa {
+                        subscribedPosts += [post]
+                    }
+                }
+            }
+        }
+        
+        return clubLoginSuccessful
+        
+        /////////////////////////////////////////////////////////////////////////
+        
+    } else {
+        
+        ///////////////////////////STUDENT LOGIN ROUTE///////////////////////////
+        
+        var loginSuccessful: Bool = false
+        
+        for studentAccount in students {
+            if username == studentAccount.StudentNa && password == studentAccount.StudentPa {
+                loginSuccessful = true
+                userId = "studentRandomNumber10382"
+                loggedInStudent = studentAccount
+                break
+                
+            } else {
+                loginSuccessful = false
+            }
+        }
+        
+        if loginSuccessful {
+            
+            guard let loggedInStudent = loggedInStudent else {
+                return false
+            }
+            
+            // add school (only works once)
+            if (loggedInStudent.subscribedClubs).isEmpty {
+                for club in clubs {
+                    if club.ClubNa == "School" {
+                        loggedInStudent.subscribedClubs += [club]
+                    }
+                }
+            }
+            // add subscribed posts
+            for post in Post.posts {
+                for club in (loggedInStudent.subscribedClubs) {
+                    if post.clubIdentifier == club.ClubNa {
+                        subscribedPosts += [post]
+                    }
+                }
+            }
+        }
+        
+        return loginSuccessful
+        
+        /////////////////////////////////////////////////////////////////////////
+        
+    }
+    
+}
+
+
+//AUTO LOGIN BRANCHING
+
+class Switcher {
+    
+    static func updateRootVC(){
+        
+        let status = UserDefaults.standard.bool(forKey: "status")
+        var rootVC : UIViewController?
+        
+        guard let loggedInState = UserDefaults.standard.object(forKey: "loggedInAsClub") as? Bool else {
+            rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! SelectSchoolViewController
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController = rootVC
+            return
+        }
+        
+        loggedInAsClub = loggedInState
+        
+        let keychain = KeychainSwift()
+        guard let username = keychain.get("username") else {
+            rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! SelectSchoolViewController
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController = rootVC
+            return
+        }
+        
+        guard let password = keychain.get("password") else {
+            rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! SelectSchoolViewController
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController = rootVC
+            return
+        }
+        
+        if(status == true) && logIn(username: username, password: password, loggedInState: loggedInState) {
+            rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC") as! TabBarViewController
+        }else {
+            rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! SelectSchoolViewController
+            //Delete stored username and password and loggedInAsClub
+            let keychain = KeychainSwift()
+            keychain.delete("username")
+            keychain.delete("password")
+            UserDefaults.standard.removeObject(forKey: "loggedInAsClub")
+            UserDefaults.standard.set(false, forKey: "status")
+        }
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = rootVC
+    }
+}
+

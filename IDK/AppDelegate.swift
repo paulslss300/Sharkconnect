@@ -32,9 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         schools += [sampleSchool]
         
+        //AUTO LOGIN BRANCHING
+        Switcher.updateRootVC()
+        
         return true
     }
     
+        
     private func loadSampleClubs() {
         
         let photo1 = UIImage(named: "dramaclub")
@@ -54,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let photo14 = UIImage(named: "schoolCover")
         
         // Populate Clubs
-        let samplelub1 = Club(ClubNa: "Drama Club", ClubPa: "samplepassword", ClubDe: "Tell members what this group is about. Our newest production is R.E.D. and will be showing in two months! Written by students Emily Ison and Mandy Huang. We put on three to four plays a year. Our last play was High School Confidential - A  KDog Special. Our sponsor teacher? KDog aka Ms Kosar but please call her “KDog.” It makes her happy. Ecstatic. Absolutely glowing. :)",ClubCellImageName: photo1!, ClubCellCoverImage: photo7!)
+        let samplelub1 = Club(ClubNa: "Drama Club", ClubPa: "1", ClubDe: "Tell members what this group is about. Our newest production is R.E.D. and will be showing in two months! Written by students Emily Ison and Mandy Huang. We put on three to four plays a year. Our last play was High School Confidential - A  KDog Special. Our sponsor teacher? KDog aka Ms Kosar but please call her “KDog.” It makes her happy. Ecstatic. Absolutely glowing. :)",ClubCellImageName: photo1!, ClubCellCoverImage: photo7!)
         clubs += [samplelub1]
         
         let samplelub2 = Club(ClubNa: "Interact Club", ClubPa: "samplepassword", ClubDe: "Interact clubs are part of a larger organization called Rotary International. Our focus is on community involvement and service, demonstrated in our motto, service above self. \n Every project whether done through Interact or Rotary has an impact in our world. Handing out sandwiches to the hungry, fundraising to support charities, and participating in service projects are all ways that Interact and Rotary have helped to make our world a better place. ",ClubCellImageName: photo2!, ClubCellCoverImage: photo8!)

@@ -21,15 +21,13 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
         loggedInStudent = nil
         subscribedPosts.removeAll()
         
-        //Delete stored username and password and loggedInState
+        //Delete stored username and password and loggedInAsClub
         let keychain = KeychainSwift()
         keychain.delete("username")
         keychain.delete("password")
-        UserDefaults.standard.removeObject(forKey: "loggedInState")
-        
-        dismiss(animated: true, completion: nil)
- 
-        //performSegue(withIdentifier: "unwindToFirst", sender: self)
+        UserDefaults.standard.removeObject(forKey: "loggedInAsClub")
+        UserDefaults.standard.set(false, forKey: "status")
+        Switcher.updateRootVC()
     }
     
     
@@ -44,30 +42,20 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
         if userId == "studentRandomNumber10382" {
             clubSettingsClub.isHidden = true
         }
+        
         if loggedInAsClub {
             studentName.text = loggedInClub?.ClubNa
         } else {
             studentName.text = loggedInStudent?.StudentNa
         }
+
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        userTableview.reloadData()
+                userTableview.reloadData()
     }
-    
-    //use these functions to make the navigation controller dissapear on a certain view controller
-    /*override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }*/
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -81,7 +69,6 @@ class UserTableViewController: UIViewController,UITableViewDataSource, UITableVi
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
 
         if loggedInAsClub {
             

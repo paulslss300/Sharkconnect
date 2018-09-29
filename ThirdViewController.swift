@@ -15,16 +15,6 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var studentLoginLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     
-    var rememberLogin: Bool = false
-    
-    @IBAction func autoLogin(_ sender: UISwitch) {
-        if sender.isOn == true {
-            rememberLogin = true
-        } else {
-            rememberLogin = false
-        }
-    }
-    
     @IBAction func loginButtonTapped(_ sender: Any) {
         
         var loginSuccessful: Bool = false
@@ -52,16 +42,13 @@ class ThirdViewController: UIViewController {
         }
         
         if loginSuccessful {
-            
-            loggedInAsClub = false
-            
-            // Store username, password, loggedInState
-            if rememberLogin {
-                let keychain = KeychainSwift()
-                keychain.set(username, forKey: "username")
-                keychain.set(password, forKey: "password")
-                UserDefaults.standard.set(loggedInAsClub, forKey: "loggedInState")
-            }
+        
+            // Store username, password, loggedInAsClub
+            let keychain = KeychainSwift()
+            keychain.set(username, forKey: "username")
+            keychain.set(password, forKey: "password")
+            UserDefaults.standard.set(false, forKey: "loggedInAsClub")
+            UserDefaults.standard.set(true, forKey: "status")
 
             
             guard let loggedInStudent = loggedInStudent else {
@@ -84,7 +71,7 @@ class ThirdViewController: UIViewController {
                     }
                 }
             }
-            performSegue(withIdentifier: "studentCorrectLogin", sender: self)
+            Switcher.updateRootVC()
             
         } else {
             studentLoginLabel.text = "Please Check Your Inputs Are Correct!"
