@@ -8,12 +8,16 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class ThirdViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var loginUserName: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
     @IBOutlet weak var studentLoginLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
+    
+    @IBOutlet weak var userName: UITextField!
+    
+    @IBOutlet weak var password: UITextField!
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         
@@ -88,6 +92,13 @@ class ThirdViewController: UIViewController {
         loginButton.layer.shadowOffset = CGSize(width: 4, height: 2)
         
         studentLoginLabel.text = ""
+        self.userName.delegate = self
+        self.password.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 
     override func didReceiveMemoryWarning() {

@@ -99,6 +99,11 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
         }
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+    {
+        self.searchBar.endEditing(true)
+    }
+    
 
     
     // MARK: - Navigation

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var LoginTextField: UITextField!
     @IBOutlet weak var loginPassword: UITextField!

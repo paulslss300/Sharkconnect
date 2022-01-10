@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let firstStudent = Student.init(StudentNa: "bob", StudentPa: "1")
+        let firstStudent = Student.init(StudentNa: "student", StudentPa: "student")
         students += [firstStudent]
 
         // Load the sample data.

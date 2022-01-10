@@ -882,14 +882,14 @@
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3v1-c4-2Ie">
-                                                <rect key="frame" x="132.5" y="150" width="110" height="110"/>
+                                                <rect key="frame" x="132" y="150" width="110" height="110"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="110" id="1iw-uG-9Dv"/>
                                                     <constraint firstAttribute="width" constant="110" id="wAk-bD-pUw"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ara-Ex-Xni">
-                                                <rect key="frame" x="64" y="281" width="247" height="23"/>
+                                                <rect key="frame" x="64" y="281" width="246" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="23" id="8Jj-ud-0du"/>
                                                 </constraints>
@@ -898,40 +898,40 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Club Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w3s-oU-2eR">
-                                                <rect key="frame" x="0.0" y="318" width="375" height="200"/>
+                                                <rect key="frame" x="-1" y="318" width="376" height="200"/>
                                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96862745098039216" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" red="0.21960784310000001" green="0.34509803919999998" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="298" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mda-yS-3di">
-                                                <rect key="frame" x="0.0" y="601" width="375" height="399"/>
+                                                <rect key="frame" x="0.0" y="601" width="374" height="399"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="399" id="pyL-bJ-l8F"/>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ClubInfoPostCells2" rowHeight="298" id="5yH-3v-nBR" customClass="ClubIInformationTableViewCell" customModule="IDK" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="375" height="298"/>
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="298"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5yH-3v-nBR" id="LFX-XG-Zet">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="298"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="298"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDH-dU-vMm">
-                                                                    <rect key="frame" x="15" y="11" width="251" height="21"/>
+                                                                    <rect key="frame" x="15" y="11" width="250" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwm-jC-CnK">
-                                                                    <rect key="frame" x="15" y="40" width="251" height="21"/>
+                                                                    <rect key="frame" x="15" y="40" width="250" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Post Description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLz-AN-YEW">
-                                                                    <rect key="frame" x="18" y="204.5" width="339" height="72"/>
+                                                                    <rect key="frame" x="18" y="204.5" width="338" height="72"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="72" id="HHL-w3-sFE"/>
@@ -940,7 +940,7 @@
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
                                                                 <collectionView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tGz-Oc-maq">
-                                                                    <rect key="frame" x="22" y="74" width="338" height="122.5"/>
+                                                                    <rect key="frame" x="22" y="74" width="337" height="122.5"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SAE-TT-B1d">
                                                                         <size key="itemSize" width="124" height="124"/>
@@ -998,20 +998,20 @@
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellWithoutBoth2" rowHeight="80" id="N1e-NT-aCj" customClass="ClubInfoVCTableViewCellWithoutBoth" customModule="IDK" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="326" width="375" height="80"/>
+                                                        <rect key="frame" x="0.0" y="326" width="374" height="80"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N1e-NT-aCj" id="0nE-ee-akn">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ZL-VZ-y8E">
-                                                                    <rect key="frame" x="15" y="11" width="251" height="21"/>
+                                                                    <rect key="frame" x="15" y="11" width="250" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmY-vb-vmn">
-                                                                    <rect key="frame" x="15" y="40" width="251" height="21"/>
+                                                                    <rect key="frame" x="15" y="40" width="250" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1032,26 +1032,26 @@
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellWithoutDescription2" rowHeight="218" id="hWT-mS-wIo" customClass="ClubInfoVCTableViewCellWithoutDescription" customModule="IDK" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="406" width="375" height="218"/>
+                                                        <rect key="frame" x="0.0" y="406" width="374" height="218"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hWT-mS-wIo" id="wfR-Q9-ZYK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="218"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55y-lY-rRI">
-                                                                    <rect key="frame" x="15" y="11" width="122" height="21"/>
+                                                                    <rect key="frame" x="15" y="11" width="251" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P38-92-80E">
-                                                                    <rect key="frame" x="15" y="40" width="122" height="21"/>
+                                                                    <rect key="frame" x="15" y="40" width="251" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <collectionView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lQc-h3-r8a">
-                                                                    <rect key="frame" x="22" y="74" width="209" height="122.5"/>
+                                                                    <rect key="frame" x="22" y="74" width="338" height="122.5"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="D9e-jE-0l3">
                                                                         <size key="itemSize" width="124" height="124"/>
@@ -1105,26 +1105,26 @@
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellWithoutImage2" rowHeight="160" id="e53-Qj-5MI" customClass="ClubInfoVCTableViewCellWithoutImage" customModule="IDK" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="624" width="375" height="160"/>
+                                                        <rect key="frame" x="0.0" y="624" width="374" height="160"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e53-Qj-5MI" id="wcu-BM-x5V">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="160"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2q8-au-5Cv">
-                                                                    <rect key="frame" x="15" y="11" width="122" height="21"/>
+                                                                    <rect key="frame" x="15" y="11" width="251" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo9-WG-17S">
-                                                                    <rect key="frame" x="15" y="40" width="122" height="21"/>
+                                                                    <rect key="frame" x="15" y="40" width="251" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Post Description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaF-eV-aB9">
-                                                                    <rect key="frame" x="18" y="73" width="203" height="66.5"/>
+                                                                    <rect key="frame" x="18" y="73" width="339" height="66.5"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1152,7 +1152,7 @@
                                                 </prototypes>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Posts:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="158-yk-h5H">
-                                                <rect key="frame" x="91" y="572" width="193" height="21"/>
+                                                <rect key="frame" x="91" y="572" width="192" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="VLf-WU-xrd"/>
                                                 </constraints>
@@ -1685,7 +1685,7 @@
                         <viewControllerLayoutGuide type="bottom" id="9hm-P2-2w3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FDf-Op-ASA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ooj-pq-sAq">
@@ -1766,7 +1766,9 @@
                         <outlet property="loginButton" destination="Zna-ZX-O64" id="4fL-zQ-FBp"/>
                         <outlet property="loginPassword" destination="bWq-jn-pl4" id="3Hr-Ta-oRc"/>
                         <outlet property="loginUserName" destination="TDi-cW-CCG" id="p3t-Zl-xg3"/>
+                        <outlet property="password" destination="bWq-jn-pl4" id="xc9-kw-Zel"/>
                         <outlet property="studentLoginLabel" destination="Bmn-cz-aUg" id="gfe-xQ-NNc"/>
+                        <outlet property="userName" destination="TDi-cW-CCG" id="KdU-YX-9Hn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUF-JR-kgK" sceneMemberID="firstResponder"/>
@@ -2129,7 +2131,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="iEF-49-t1X"/>
         <segue reference="070-Ad-QMa"/>
-        <segue reference="yXH-D6-ug6"/>
+        <segue reference="lnt-xu-q8B"/>
         <segue reference="AIM-Nz-Izg"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.21960784310000001" green="0.34509803919999998" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
