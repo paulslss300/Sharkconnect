@@ -29,7 +29,7 @@ class MoreViewController: UIViewController,UICollectionViewDataSource, UICollect
         
         // set nav bar text color programmatically
         let nav = self.navigationController?.navigationBar
-        nav?.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 120/225.0, green: 143/225.0, blue: 170/225.0, alpha: 1)]
+        nav?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 120/225.0, green: 143/225.0, blue: 170/225.0, alpha: 1)]
         
         // load notes from local
         if let savedNotes = loadNotes() {

@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let firstStudent = Student.init(StudentNa: "bob", StudentPa: "1")
         students += [firstStudent]
@@ -89,27 +89,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let photo6 = UIImage(named: "mathclub")
         let photo13 = UIImage(named: "school")
         
-        let samplePost2 = Post.init(postTi: "Update", postDe: "Cayley, Pascal and Gauss math contests are on Tuesday. Talk to Mr.Lin if you want to participate", clubIdentifier: "Math Club", postImage: photo6!, postDa: "2018-08-02", postedImage: [#imageLiteral(resourceName: "image2")])
-        let samplePost25 = Post.init(postTi: "Notice", postDe: "Hey guys! There will be no general meeting tomorrow. More updates on our projects will be coming up next week!", clubIdentifier: "Math Club", postImage: photo6!, postDa: "2018-08-30", postedImage: [#imageLiteral(resourceName: "image3")])
+        let samplePost2 = Post.init(postTi: "Update", postDe: "Cayley, Pascal and Gauss math contests are on Tuesday. Talk to Mr.Lin if you want to participate", clubIdentifier: "Math Club", postImage: photo6!, postDa: "2022-08-02", postedImage: [#imageLiteral(resourceName: "image2")])
+        let samplePost25 = Post.init(postTi: "Notice", postDe: "Hey guys! There will be no general meeting tomorrow. More updates on our projects will be coming up next week!", clubIdentifier: "Math Club", postImage: photo6!, postDa: "2022-01-30", postedImage: [#imageLiteral(resourceName: "image3")])
         Post.posts += [samplePost2]
         Post.posts += [samplePost2]
         Post.posts += [samplePost2]
         Post.posts += [samplePost2]
         Post.posts += [samplePost25]
       
-        let samplePost3 = Post.init(postTi: "Notice", postDe: "Hey guys! There will be no general meeting tomorrow. More updates on our projects will be coming up next week!", clubIdentifier: "Interact Club", postImage: photo2!, postDa: "2018-09-13", postedImage: [#imageLiteral(resourceName: "image3")])
+        let samplePost3 = Post.init(postTi: "Notice", postDe: "Hey guys! There will be no general meeting tomorrow. More updates on our projects will be coming up next week!", clubIdentifier: "Interact Club", postImage: photo2!, postDa: "2021-09-13", postedImage: [#imageLiteral(resourceName: "image3")])
         Post.posts += [samplePost3]
 
-        let samplePost4 = Post.init(postTi: "New Program!", postDe: "The Team Challenges Program is back for our first event of 2018! On Friday, Mar. 9 at JN Burnett Secondary, join them for TCP World Domination with snacks and prizes included for only $2 a person.", clubIdentifier: "STEM Club", postImage: photo5!, postDa: "2018-09-11", postedImage: [#imageLiteral(resourceName: "image4")])
+        let samplePost4 = Post.init(postTi: "New Program!", postDe: "The Team Challenges Program is back for our first event of 2018! On Friday, Mar. 9 at JN Burnett Secondary, join them for TCP World Domination with snacks and prizes included for only $2 a person.", clubIdentifier: "STEM Club", postImage: photo5!, postDa: "2022-01-11", postedImage: [#imageLiteral(resourceName: "image4")])
         Post.posts += [samplePost4]
     
-        let samplePost5 = Post.init(postTi: "Upcoming meeting!", postDe: "Meeting today in room 202, we will talking more about our upcoming showcase and showing you guys some art pieces for inspiration :)", clubIdentifier: "Art Club", postImage: photo4!, postDa: "2018-09-08", postedImage: [#imageLiteral(resourceName: "image5")])
+        let samplePost5 = Post.init(postTi: "Upcoming meeting!", postDe: "Meeting today in room 202, we will talking more about our upcoming showcase and showing you guys some art pieces for inspiration :)", clubIdentifier: "Art Club", postImage: photo4!, postDa: "2022-02-08", postedImage: [#imageLiteral(resourceName: "image5")])
         Post.posts += [samplePost5]
        
-        let samplePost6 = Post.init(postTi: "Volunteers needed!", postDe: "Come to the meeting today at lunch for more information", clubIdentifier: "Student Council", postImage: photo3!, postDa: "2018-08-29", postedImage: [#imageLiteral(resourceName: "image6")])
+        let samplePost6 = Post.init(postTi: "Volunteers needed!", postDe: "Come to the meeting today at lunch for more information", clubIdentifier: "Student Council", postImage: photo3!, postDa: "2022-03-29", postedImage: [#imageLiteral(resourceName: "image6")])
         Post.posts += [samplePost6]
         
-        let samplePost13 = Post.init(postTi: "School Event", postDe: "Come to the meeting today at lunch for more information", clubIdentifier: "School", postImage: photo13!, postDa: "2018-08-27", postedImage: [#imageLiteral(resourceName: "image6")])
+        let samplePost13 = Post.init(postTi: "School Event", postDe: "Come to the meeting today at lunch for more information", clubIdentifier: "School", postImage: photo13!, postDa: "2022-02-27", postedImage: [#imageLiteral(resourceName: "image6")])
         Post.posts += [samplePost13]
     }
 

@@ -37,7 +37,7 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         calendarView.dataSource = self
         
         let nav = self.navigationController?.navigationBar
-        nav?.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 120/225.0, green: 143/225.0, blue: 170/225.0, alpha: 1)]
+        nav?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 120/225.0, green: 143/225.0, blue: 170/225.0, alpha: 1)]
         
         let itemSize = UIScreen.main.bounds.width/7 - 7
         let layout = UICollectionViewFlowLayout()

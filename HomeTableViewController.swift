@@ -37,7 +37,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         }
         
         let nav = self.navigationController?.navigationBar
-        nav?.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 120/225.0, green: 143/225.0, blue: 170/225.0, alpha: 1)]
+        nav?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 120/225.0, green: 143/225.0, blue: 170/225.0, alpha: 1)]
         
         // Pull to update
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
@@ -139,7 +139,7 @@ class HomeTableViewController: UIViewController,UITableViewDataSource, UITableVi
         performSegue(withIdentifier: "showpost", sender: self)
     }
     
-    func viewImage(tapGestureRecognizer: UITapGestureRecognizer) {
+    @objc func viewImage(tapGestureRecognizer: UITapGestureRecognizer) {
         //the following line indicates the actual label tapped:
         let clubidentifier = tapGestureRecognizer.view as! UILabel
         
